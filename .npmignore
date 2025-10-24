@@ -1,0 +1,58 @@
+# Source files (keep only dist/)
+src/
+public/
+scripts/
+
+# Development files
+.env*
+craco.config.js
+eslint.config.js
+tsconfig.tsbuildinfo
+
+# Build files
+build/
+
+# Git
+.git/
+.gitignore
+
+# Dependencies
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Coverage
+coverage/
+.nyc_output
+
+# Cache
+.npm
+.eslintcache
+.rpt2_cache/
+.rts2_cache_*/
+.cache
+.parcel-cache
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn
+.yarn-integrity
+
+# Other
+.next
+.nuxt
+.vuepress/dist
+.serverless
+.fusebox/
+.dynamodb/
+.tern-port

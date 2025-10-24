@@ -1,0 +1,41 @@
+name: CI-CD
+on:
+  push:
+    branches: ['develop', 'staging', 'production']
+
+jobs:
+  build_develop:
+    runs-on: [self-hosted, sso-develop]
+    if: github.ref == 'refs/heads/develop'
+    steps:
+      - name: Build and run image for develop
+        run: |
+          cd ~/sources/sso/sso-fe
+          git pull
+          cd ../sso-docker
+          docker compose --env-file .env.develop up -d --build sso-fe
+          docker system prune -f
+
+  build_staging:
+    runs-on: [self-hosted, sso-staging]
+    if: github.ref == 'refs/heads/staging'
+    steps:
+      - name: Build and run image for staging
+        run: |
+          cd ~/sources/sso/sso-fe
+          git pull
+          cd ../sso-docker
+          docker compose --env-file .env.staging up -d --build sso-fe
+          docker system prune -f
+
+  build_production:
+    runs-on: [self-hosted, sso-production]
+    if: github.ref == 'refs/heads/production'
+    steps:
+      - name: Build and run image for production
+        run: |
+          cd ~/sources/sso/sso-fe
+          git pull
+          cd ../sso-docker
+          docker compose --env-file .env.production up -d --build sso-fe
+          docker system prune -f
