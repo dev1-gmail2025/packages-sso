@@ -328,9 +328,11 @@ export const APP_OBJ = {
   },
   SYSTEM_CONFIG: {
     path: {
-      local: 'http://localhost:3000/system',
-      develop: 'https://dev.hrm-client.sevago.local/system',
-      staging: 'https://sta.hrm.sevago.local/system',
+      local: 'http://localhost:6003/system',
+      // develop: 'https://dev.hrm-client.sevago.local/system',
+      // staging: 'https://sta.hrm.sevago.local/system',
+      develop: 'https://dev.admin.office.sevago.local/system',
+      staging: 'https://dev.admin.office.sevago.local/system',
       production: '',
       production_vps: '',
     },
