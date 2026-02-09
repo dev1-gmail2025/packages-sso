@@ -278,7 +278,7 @@ export const APP_OBJ = {
     path: {
       local: 'http://localhost:3000/timekeeping',
       develop: 'https://dev.hrm-client.sevago.local/timekeeping',
-      staging: '',
+      staging: 'https://sta.hrm.sevago.local/timekeeping',
       production: '',
       production_vps: '',
     },
