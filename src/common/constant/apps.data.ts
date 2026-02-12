@@ -2,11 +2,11 @@
 export enum AppGroup {
   ALL = 'All',
   HRM = 'HRM',
+  MANUFACTURING = 'Sản xuất',
   WORKFLOW_ENGINE = 'Workflow Engine',
   PLATFORM_AND_INFO = 'Platform & Info',
   B2B = 'B2B',
   OTHER = 'Khác',
-  MANUFACTURING = 'Sản xuất',
   CLIENT = 'Web', // Các trang đi đến khách hàng
 }
 

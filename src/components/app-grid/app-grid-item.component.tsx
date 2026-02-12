@@ -45,7 +45,7 @@ export const AppGridItem: React.FC<AppGridItemProps> = ({
       )}
 
       {showNameApps && (
-        <Typography variant={titleVariant} sx={{ color: titleColor }}>
+        <Typography variant={titleVariant} sx={{ color: titleColor, textAlign: 'center',justifyContent: 'center' }}>
           {app.content}
         </Typography>
       )}
