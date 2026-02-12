@@ -6,6 +6,7 @@ export enum AppGroup {
   PLATFORM_AND_INFO = 'Platform & Info',
   B2B = 'B2B',
   OTHER = 'Khác',
+  MANUFACTURING = 'Sản xuất',
   CLIENT = 'Web', // Các trang đi đến khách hàng
 }
 
@@ -30,6 +31,7 @@ export const APP_GROUP_COLOR = {
   [AppGroup.B2B]: 'linear-gradient(180deg, #FF9A56 0%, #EB6262 100%)',
   [AppGroup.CLIENT]: 'linear-gradient(180deg, #FF9A56 0%, #FF6A43 100%)',
   [AppGroup.OTHER]: 'linear-gradient(180deg, #A509D4 0%, #1B0755 100%)',
+  [AppGroup.MANUFACTURING]: 'linear-gradient(180deg, #D48009 0%, #83610A 100%)',
 };
 
 import { Environment } from '../utils';
@@ -341,6 +343,60 @@ export const APP_OBJ = {
     group: AppGroup.HRM,
     color: APP_GROUP_COLOR[AppGroup.OTHER],
   },
+
+  // MANUFACTURING
+  PURCHASE:{
+    path: {
+      local: 'http://localhost:12015',
+      develop: 'https://dev.admin.purchase.sevago.local',
+      staging: 'https://sta.admin.purchase.sevago.local',
+      production: 'https://admin.purchase.sevago.local',
+      production_vps: '',
+    },
+    icon: sevagoIcon,
+    content: 'Sevago - Mua hàng',
+    group: AppGroup.MANUFACTURING,
+    color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
+  },
+  WAREHOUSE_MATERIA: {
+    path: {
+      local: 'http://localhost:12017',
+      develop: 'https://dev.admin.warehouse-material.sevago.local',
+      staging: 'https://sta.admin.warehouse-material.sevago.local',
+      production: 'https://admin.warehouse-material.sevago.local',
+      production_vps: '',
+    },
+    icon: sevagoIcon,
+    content: 'Sevago - Thực hiệc kế hoạch sản xuất',
+    group: AppGroup.MANUFACTURING,
+    color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
+  },
+  MANUFACTURING_PLAN: {
+    path: {
+      local: 'http://localhost:12019',
+      develop: 'https://dev.admin.manufacturing-plan.sevago.local',
+      staging: 'https://sta.admin.manufacturing-plan.sevago.local',
+      production: 'https://admin.manufacturing-plan.sevago.local',
+      production_vps: '',
+    },
+    icon: sevagoIcon,
+    content: 'Sevago - Kế hoạch sản xuất',
+    group: AppGroup.MANUFACTURING,
+    color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
+  },
+  MANUFACTURING_EXECUTION: {
+    path: {
+      local: 'http://localhost:12021',
+      develop: 'https://dev.admin.manufacturing-execution.sevago.local',
+      staging: 'https://sta.admin.manufacturing-execution.sevago.local',
+      production: 'https://admin.manufacturing-execution.sevago.local',
+      production_vps: '',
+    },
+    icon: sevagoIcon,
+    content: 'Sevago - Sản xuất',
+    group: AppGroup.MANUFACTURING,
+    color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
+  }
 };
 
 const SIZE_LARGE = 32;
