@@ -79,7 +79,7 @@ export const APP_OBJ = {
       production_vps: 'https://admin.office.sevago.com.vn/e-hiring',
     },
     icon: sevagoEHiringIcon,
-    content: 'Sevago - Tuyển dụng',
+    content: 'Tuyển dụng',
     group: AppGroup.HRM,
     color: APP_GROUP_COLOR[AppGroup.HRM],
   },
@@ -92,7 +92,7 @@ export const APP_OBJ = {
       production_vps: 'https://admin.office.sevago.com.vn/hr',
     },
     icon: sevagoHrmIcon,
-    content: 'Sevago - Nhân sự',
+    content: 'Nhân sự',
     group: AppGroup.HRM,
     color: APP_GROUP_COLOR[AppGroup.HRM],
   },
@@ -106,7 +106,7 @@ export const APP_OBJ = {
       production_vps: 'https://admin.office.sevago.com.vn/org',
     },
     icon: sevagoChartIcon,
-    content: 'Sevago - Tổ chức',
+    content: 'Tổ chức',
     group: AppGroup.HRM,
     color: APP_GROUP_COLOR[AppGroup.HRM],
   },
@@ -121,7 +121,7 @@ export const APP_OBJ = {
       production_vps: 'https://admin.office.sevago.com.vn/chat',
     }, // Chat
     icon: sevagoMessageIcon,
-    content: 'Sevago - Chat',
+    content: 'Chat',
     group: AppGroup.PLATFORM_AND_INFO,
     color: APP_GROUP_COLOR[AppGroup.PLATFORM_AND_INFO],
   },
@@ -134,7 +134,7 @@ export const APP_OBJ = {
       production_vps: 'https://admin.office.sevago.com.vn/training',
     }, // Đào tạo
     icon: sevagoTrainingIcon,
-    content: 'Sevago - Đào tạo',
+    content: 'Đào tạo',
     group: AppGroup.PLATFORM_AND_INFO,
     color: APP_GROUP_COLOR[AppGroup.PLATFORM_AND_INFO],
   },
@@ -147,7 +147,7 @@ export const APP_OBJ = {
       production_vps: 'https://admin.office.sevago.com.vn/form',
     }, // Mẫu
     icon: sevagoFormIcon,
-    content: 'Sevago - Biểu mẫu',
+    content: 'Biểu mẫu',
     group: AppGroup.PLATFORM_AND_INFO,
     color: APP_GROUP_COLOR[AppGroup.PLATFORM_AND_INFO],
   },
@@ -160,7 +160,7 @@ export const APP_OBJ = {
       production_vps: 'https://admin.office.sevago.com.vn/inside',
     }, // Truyền Thông và CSNV
     icon: sevagoInsideIcon,
-    content: 'Sevago - Inside',
+    content: 'Inside',
     group: AppGroup.PLATFORM_AND_INFO,
     color: APP_GROUP_COLOR[AppGroup.PLATFORM_AND_INFO],
   },
@@ -173,7 +173,7 @@ export const APP_OBJ = {
       production_vps: 'https://admin.office.sevago.com.vn/booking',
     },
     icon: sevagoInsideIcon,
-    content: 'Sevago - Booking',
+    content: 'Booking',
     group: AppGroup.PLATFORM_AND_INFO,
     color: APP_GROUP_COLOR[AppGroup.PLATFORM_AND_INFO],
   },
@@ -188,7 +188,7 @@ export const APP_OBJ = {
       production_vps: 'https://admin.office.sevago.com.vn/project',
     },
     icon: sevagoProjectIcon,
-    content: 'Sevago - Dự án',
+    content: 'Dự án',
     group: AppGroup.WORKFLOW_ENGINE,
     color: APP_GROUP_COLOR[AppGroup.WORKFLOW_ENGINE],
   },
@@ -201,7 +201,7 @@ export const APP_OBJ = {
       production_vps: 'https://admin.office.sevago.com.vn/request',
     },
     icon: sevagoRequestIcon,
-    content: 'Sevago - Đề xuất',
+    content: 'Đề xuất',
     group: AppGroup.WORKFLOW_ENGINE,
     color: APP_GROUP_COLOR[AppGroup.WORKFLOW_ENGINE],
   },
@@ -214,7 +214,7 @@ export const APP_OBJ = {
       production_vps: 'https://admin.office.sevago.com.vn/process',
     }, //
     icon: sevagoIcon, //
-    content: 'Sevago - Tiến trình', //
+    content: 'Tiến trình', //
     group: AppGroup.WORKFLOW_ENGINE, //
     color: APP_GROUP_COLOR[AppGroup.WORKFLOW_ENGINE],
   },
@@ -227,7 +227,7 @@ export const APP_OBJ = {
       production_vps: 'https://admin.office.sevago.com.vn/workflow',
     }, // Quy trình
     icon: sevagoIcon,
-    content: 'Sevago - Quy trình',
+    content: 'Quy trình',
     group: AppGroup.WORKFLOW_ENGINE,
     color: APP_GROUP_COLOR[AppGroup.WORKFLOW_ENGINE],
   },
@@ -242,7 +242,7 @@ export const APP_OBJ = {
       production_vps: 'https://formula-price.sevago.local',
     },
     icon: sevagoIcon,
-    content: 'Sevago - Tính giá',
+    content: 'Tính giá',
     group: AppGroup.B2B,
     color: APP_GROUP_COLOR[AppGroup.B2B],
   },
@@ -285,7 +285,7 @@ export const APP_OBJ = {
       production_vps: '',
     },
     icon: sevagoCheckinIcon,
-    content: 'Sevago - Chấm công',
+    content: 'Chấm công',
     group: AppGroup.HRM,
     color: APP_GROUP_COLOR[AppGroup.HRM],
   },
@@ -298,7 +298,7 @@ export const APP_OBJ = {
       production_vps: '',
     },
     icon: sevagoPayrollIcon,
-    content: 'Sevago - Lương',
+    content: 'Lương',
     group: AppGroup.HRM,
     color: APP_GROUP_COLOR[AppGroup.HRM],
   },
@@ -311,7 +311,7 @@ export const APP_OBJ = {
       production_vps: '',
     },
     icon: sevagoMealIcon,
-    content: 'Sevago - Đặt cơm',
+    content: 'Đặt cơm',
     group: AppGroup.HRM,
     color: APP_GROUP_COLOR[AppGroup.HRM],
   },
@@ -324,7 +324,7 @@ export const APP_OBJ = {
       production_vps: '',
     },
     icon: sevagoIcon,
-    content: 'Sevago - Nghỉ phép',
+    content: 'Nghỉ phép',
     group: AppGroup.HRM,
     color: APP_GROUP_COLOR[AppGroup.HRM],
   },
@@ -339,38 +339,12 @@ export const APP_OBJ = {
       production_vps: '',
     },
     icon: sevagoSystemConfigIcon,
-    content: 'Sevago - Hệ thống',
+    content: 'Hệ thống',
     group: AppGroup.HRM,
     color: APP_GROUP_COLOR[AppGroup.OTHER],
   },
 
   // MANUFACTURING
-  PURCHASE:{
-    path: {
-      local: 'http://localhost:12015',
-      develop: 'https://dev.admin.purchase.sevago.local',
-      staging: 'https://sta.admin.purchase.sevago.local',
-      production: 'https://admin.purchase.sevago.local',
-      production_vps: '',
-    },
-    icon: sevagoIcon,
-    content: 'Sevago - Mua hàng',
-    group: AppGroup.MANUFACTURING,
-    color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
-  },
-  WAREHOUSE_MATERIA: {
-    path: {
-      local: 'http://localhost:12017',
-      develop: 'https://dev.admin.warehouse-material.sevago.local',
-      staging: 'https://sta.admin.warehouse-material.sevago.local',
-      production: 'https://admin.warehouse-material.sevago.local',
-      production_vps: '',
-    },
-    icon: sevagoIcon,
-    content: 'Sevago - Thực hiệc kế hoạch sản xuất',
-    group: AppGroup.MANUFACTURING,
-    color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
-  },
   MANUFACTURING_PLAN: {
     path: {
       local: 'http://localhost:12019',
@@ -380,10 +354,39 @@ export const APP_OBJ = {
       production_vps: '',
     },
     icon: sevagoIcon,
-    content: 'Sevago - Kế hoạch sản xuất',
+    content: 'Kế hoạch sản xuất',
     group: AppGroup.MANUFACTURING,
     color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
   },
+
+  WAREHOUSE_MATERIA: {
+    path: {
+      local: 'http://localhost:12017',
+      develop: 'https://dev.admin.warehouse-material.sevago.local',
+      staging: 'https://sta.admin.warehouse-material.sevago.local',
+      production: 'https://admin.warehouse-material.sevago.local',
+      production_vps: '',
+    },
+    icon: sevagoIcon,
+    content: 'Thực thi sản xuất',
+    group: AppGroup.MANUFACTURING,
+    color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
+  },
+
+  PURCHASE:{
+    path: {
+      local: 'http://localhost:12015',
+      develop: 'https://dev.admin.purchase.sevago.local',
+      staging: 'https://sta.admin.purchase.sevago.local',
+      production: 'https://admin.purchase.sevago.local',
+      production_vps: '',
+    },
+    icon: sevagoIcon,
+    content: 'Mua hàng',
+    group: AppGroup.MANUFACTURING,
+    color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
+  },
+
   MANUFACTURING_EXECUTION: {
     path: {
       local: 'http://localhost:12021',
@@ -393,7 +396,7 @@ export const APP_OBJ = {
       production_vps: '',
     },
     icon: sevagoIcon,
-    content: 'Sevago - Sản xuất',
+    content: 'Kho & nguyên liệu',
     group: AppGroup.MANUFACTURING,
     color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
   }
