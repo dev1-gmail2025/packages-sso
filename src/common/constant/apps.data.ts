@@ -368,7 +368,7 @@ export const APP_OBJ = {
       production_vps: '',
     },
     icon: sevagoIcon,
-    content: 'Thực thi sản xuất',
+    content: 'Kho & Nguyên liệu',
     group: AppGroup.MANUFACTURING,
     color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
   },
@@ -396,7 +396,7 @@ export const APP_OBJ = {
       production_vps: '',
     },
     icon: sevagoIcon,
-    content: 'Kho & nguyên liệu',
+    content: 'Thực thi sản xuất',
     group: AppGroup.MANUFACTURING,
     color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
   }
