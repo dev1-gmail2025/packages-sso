@@ -1,5 +1,5 @@
 import type { ThemeOptions } from '@mui/material';
-import { Mode } from '../enums/mode.enum';
+import { Mode } from '../enums/system.enum';
 
 export const dark = {
   palette: {
@@ -244,11 +244,4 @@ export const OTHER: ThemeOptions = {
       fontWeight: 300,
     },
   },
-};
-
-// Export MODE object that contains all themes
-export const MODE = {
-  dark,
-  light,
-  OTHER,
 };

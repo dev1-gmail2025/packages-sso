@@ -1,8 +1,9 @@
 import { SxProps, Theme, Typography } from '@mui/material';
 import React from 'react';
-import { STYLE, getLimitLineCss } from '../../../common';
+import { STYLE } from '../../../common';
 import { StackRowAlignCenter } from '../../styles';
 import { IconElementProps, IconElement } from './icon.element';
+import { getLimitLineCss } from '../../../common/utils/other.util';
 
 export interface IconContentElementProps extends IconElementProps {
   content: any;
@@ -48,11 +49,13 @@ export const IconContentElement: React.FC<IconContentElementProps> = ({
         <Typography
           color={color}
           variant={size ? STYLE.VARIANT_BY_SIZE[size] : 'body1'}
-          sx={{
-            ...(isNowrap ? { whiteSpace: 'nowrap' } : getLimitLineCss(1)),
-            transform: `translateY(0.5px)`,
-            ...sxText,
-          }}
+          sx={
+            {
+              ...(isNowrap ? { whiteSpace: 'nowrap' } : getLimitLineCss(1)),
+              transform: `translateY(0.5px)`,
+              ...sxText,
+            } as SxProps<Theme>
+          }
         >
           {content}
         </Typography>

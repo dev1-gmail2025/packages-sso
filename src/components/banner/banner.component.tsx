@@ -1,6 +1,6 @@
 import React from 'react';
 import { ImageElement } from '../elements/image/image.element';
-import { STYLE } from '../../common/constant';
+import { STYLE } from '../../common/const';
 import { Fade, Stack } from '@mui/material';
 
 export interface BannerComponentProps {
@@ -13,12 +13,7 @@ export const BannerComponent: React.FC<BannerComponentProps> = ({ url }) => {
       <Stack>
         <ImageElement
           url={url}
-          sx={{
-            borderRadius: STYLE.BORDER_RADIUS_ELEMENT,
-            maxWidth: '100%',
-            width: '100%',
-            height: 'auto',
-          }}
+          sx={{ borderRadius: STYLE.BORDER_RADIUS_ELEMENT, maxWidth: '100%', width: '100%', height: 'auto' }}
         />
       </Stack>
     </Fade>

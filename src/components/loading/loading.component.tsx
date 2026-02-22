@@ -1,5 +1,6 @@
-import { CircularProgress, Stack, SxProps, Theme } from '@mui/material';
+import { CircularProgress, SxProps, Theme } from '@mui/material';
 import { STYLE } from '../../common';
+import { StackAlignJustCenter } from '../styles';
 
 export interface LoadingComponentProps {
   color?: string;
@@ -9,15 +10,8 @@ export interface LoadingComponentProps {
 
 export const LoadingComponent: React.FC<LoadingComponentProps> = ({ color, size = 'medium', sx = {} }) => {
   return (
-    <Stack
-      sx={{
-        ...sx,
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
+    <StackAlignJustCenter sx={{ ...sx, flex: 1 }}>
       <CircularProgress size={STYLE.FONT_SIZE_LOADING[size]} sx={{ color }} />
-    </Stack>
+    </StackAlignJustCenter>
   );
 };

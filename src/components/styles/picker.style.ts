@@ -1,6 +1,6 @@
 import { Palette, SxProps, Theme } from '@mui/material';
-import { STYLE } from '../../common/constant';
-import { OPACITY } from '../../common/constant/opacity.constant';
+import { STYLE } from '../../common/const';
+import { OPACITY } from '../../common/const/other.const';
 
 export const getPickerSx = (palette: Palette, sx: SxProps<Theme>) => ({
   '& fieldset legend': { maxWidth: '100% !important' },

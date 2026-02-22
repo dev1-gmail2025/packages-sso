@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import { Avatar, AvatarProps, Tooltip, TooltipProps, tooltipClasses } from '@mui/material';
 import React, { ReactNode } from 'react';
-import { SizeProps, MAP_SIZE } from '../../../common';
+import { SizeProps } from '../../../common';
+import { MAP_SIZE } from '../../../common/const/style.const';
 
 export interface AvatarElementProps extends AvatarProps {
   url?: string | null;
@@ -12,15 +13,13 @@ export interface AvatarElementProps extends AvatarProps {
 const ArrowTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} arrow classes={{ popper: className }} />
 ))(() => ({
-  [`& .${tooltipClasses.arrow}`]: {
-    color: 'white',
-  },
+  [`& .${tooltipClasses.arrow}`]: { color: 'white' },
 }));
 
 export const AvatarElement: React.FC<AvatarElementProps> = ({
   url,
   sx = {},
-  size = 'medium',
+  size = SizeProps.MEDIUM,
   tooltipContent,
   ...rest
 }) => {

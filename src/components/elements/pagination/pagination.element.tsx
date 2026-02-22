@@ -10,7 +10,7 @@ import {
   useTheme,
 } from '@mui/material';
 import React from 'react';
-import { STYLE, TYPOGRAPHY_STYLES } from '../../../common';
+import { STYLE } from '../../../common';
 import { StackRowAlignCenter } from '../../styles';
 
 export interface PaginationElementProps {
@@ -48,7 +48,7 @@ export const PaginationElement: React.FC<PaginationElementProps> = ({
     <StackRowAlignCenter gap={0.75} sx={{ ml: 'auto', p: STYLE.PADDING_GAP_BUTTON, ...sx }}>
       {openRowsPerPage && (
         <StackRowAlignCenter gap={0.5}>
-          <Typography sx={{ ...TYPOGRAPHY_STYLES.textSm.regular, marginRight: '8px' }}>Hiển thị:</Typography>
+          <Typography sx={{ ...STYLE.TYPOGRAPHY.textSm.regular, marginRight: '8px' }}>Hiển thị:</Typography>
           <FormControl size="small">
             <Select
               value={displayTake}

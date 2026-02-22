@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Mode } from './common';
-import { getTheme } from './common/utils/theme.utils';
+import { getTheme } from './common/utils/other.util';
 
 export default function App() {
   return (

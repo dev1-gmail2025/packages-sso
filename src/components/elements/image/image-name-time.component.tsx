@@ -15,7 +15,7 @@ export const ImageContentTimeComponent: React.FC<ImageContentTimeComponentProps>
   url,
   content,
   time,
-  sizeType = 'medium',
+  sizeType = SizeProps.MEDIUM,
 }) => {
   return (
     <StackRow alignItems="center">

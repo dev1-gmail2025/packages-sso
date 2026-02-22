@@ -1,8 +1,9 @@
 import { Box, type BoxProps, Skeleton, useTheme } from '@mui/material';
 import React, { type ReactNode, useState } from 'react';
-import { SizeProps, STYLE, MAP_SIZE } from '../../../common';
+import { SizeProps, STYLE } from '../../../common';
 import { StackRow } from '../../styles/stack.style';
 import { ImageSizeType } from './image.enum';
+import { MAP_SIZE } from '../../../common/const/style.const';
 
 export interface ImageElementProps extends BoxProps {
   url: string;
@@ -13,13 +14,7 @@ export interface ImageElementProps extends BoxProps {
 }
 
 const ImageWrapper: React.FC<{ isWrap: boolean; children: ReactNode }> = ({ isWrap = false, children }) => {
-  return isWrap ? (
-    <StackRow alignItems="center" className="jsdsdj">
-      {children}
-    </StackRow>
-  ) : (
-    <>{children}</>
-  );
+  return isWrap ? <StackRow alignItems="center">{children}</StackRow> : <>{children}</>;
 };
 
 export const ImageElement: React.FC<ImageElementProps> = ({
@@ -29,7 +24,7 @@ export const ImageElement: React.FC<ImageElementProps> = ({
   isBorder = false,
   isWrap = false,
   sizeType = ImageSizeType.CIRCLE,
-  size = 'medium',
+  size = SizeProps.MEDIUM,
   ...rest
 }) => {
   const { palette } = useTheme();
@@ -41,8 +36,8 @@ export const ImageElement: React.FC<ImageElementProps> = ({
     sizeType === ImageSizeType.CIRCLE
       ? '50%'
       : sizeType === ImageSizeType.SQUARE
-      ? STYLE.BORDER_RADIUS_ELEMENT_SMALL
-      : 0;
+        ? STYLE.BORDER_RADIUS_ELEMENT_SMALL
+        : 0;
 
   return (
     <ImageWrapper isWrap={isWrap}>

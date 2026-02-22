@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { STYLE } from '../../common/constant';
+import { STYLE } from '../../common/const';
 import { ImageElement } from '../elements/image/image.element';
 
 export const ImageBrand = styled(ImageElement)(({ theme }) => ({

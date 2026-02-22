@@ -21,7 +21,7 @@ export const ImageContentCaptionComponent: React.FC<ImageContentCaptionComponent
   url,
   content,
   caption,
-  sizeType = 'medium',
+  sizeType = SizeProps.MEDIUM,
   sx,
   sxContent,
   sxCaption,

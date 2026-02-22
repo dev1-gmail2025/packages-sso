@@ -2,7 +2,6 @@ export const stringToColor = (string: string) => {
   let hash = 0;
   let i;
 
-  /* eslint-disable no-bitwise */
   for (i = 0; i < string.length; i += 1) {
     hash = string.charCodeAt(i) + ((hash << 5) - hash);
   }
@@ -13,9 +12,18 @@ export const stringToColor = (string: string) => {
     const value = (hash >> (i * 8)) & 0xff;
     color += `00${value.toString(16)}`.slice(-2);
   }
-  /* eslint-enable no-bitwise */
 
   return color;
+};
+
+export const extractNumberAtStartString = (string: string) => {
+  if (!string) return 0;
+  const match = string.match(/^\d+(\.\d+)?/);
+  return match ? parseFloat(match[0]) : 0;
+};
+
+export const camelToKebabCase = (str: string) => {
+  return str.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`);
 };
 
 /**
@@ -42,22 +50,42 @@ export const lightenColorTree = (color: string, percentage: number): string => {
   );
 };
 
-export const extractNumberAtStartString = (string: string) => {
-  const match = string.match(/^\d+(\.\d+)?/);
-  return match ? parseFloat(match[0]) : 0;
-};
-
 export const stripHtml = (html: string): string => {
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = html;
   return tempDiv.textContent || tempDiv.innerText || '';
 };
 
-export const getErrorMessage = (e: unknown) => (e as Error)?.message ?? 'Đã xảy ra lỗi không xác định!';
-
 export const truncateText = (text: string, maxLength: number = 27): string => {
   if (!text || text.length <= maxLength) {
     return text;
   }
   return `${text.substring(0, maxLength)}...`;
+};
+
+export const normalizeText = (text: string) => {
+  const vietnameseChars = [
+    {
+      base: 'a',
+      accents: ['á', 'à', 'ả', 'ã', 'ạ', 'ă', 'ắ', 'ằ', 'ẳ', 'ẵ', 'ặ', 'â', 'ấ', 'ầ', 'ẩ', 'ẫ', 'ậ'],
+    },
+    {
+      base: 'e',
+      accents: ['é', 'è', 'ẻ', 'ẽ', 'ẹ', 'ê', 'ế', 'ề', 'ể', 'ễ', 'ệ'],
+    },
+    { base: 'i', accents: ['í', 'ì', 'ỉ', 'ĩ', 'ị'] },
+    {
+      base: 'o',
+      accents: ['ó', 'ò', 'ỏ', 'õ', 'ọ', 'ô', 'ố', 'ồ', 'ổ', 'ỗ', 'ộ', 'ơ', 'ớ', 'ờ', 'ở', 'ỡ', 'ợ'],
+    },
+    {
+      base: 'u',
+      accents: ['ú', 'ù', 'ủ', 'ũ', 'ụ', 'ư', 'ứ', 'ừ', 'ử', 'ữ', 'ự'],
+    },
+    { base: 'y', accents: ['ý', 'ỳ', 'ỷ', 'ỹ', 'ỵ'] },
+    { base: 'd', accents: ['đ'] },
+  ];
+  return vietnameseChars
+    .reduce((text, { base, accents }) => text.replace(new RegExp(`[${accents.join('')}]`, 'g'), base), text)
+    .toLowerCase();
 };

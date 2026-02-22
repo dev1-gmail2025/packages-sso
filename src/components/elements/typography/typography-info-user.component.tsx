@@ -1,6 +1,6 @@
 import { SxProps, Theme, Typography } from '@mui/material';
 import React from 'react';
-import { COLOR_CONSTANT, STYLE, TYPOGRAPHY_STYLES } from '../../../common';
+import { COLOR, STYLE } from '../../../common';
 import { StackRow } from '../../styles';
 import { highlightYellow } from '../text-field';
 import { Stack } from '@mui/system';
@@ -56,8 +56,8 @@ export const TypographyInfoUser: React.FC<TypographyInfoGridProps> = ({
         >
           <Typography
             sx={{
-              ...TYPOGRAPHY_STYLES.textSm.regular,
-              color: COLOR_CONSTANT.gray6,
+              ...STYLE.TYPOGRAPHY.textSm.regular,
+              color: COLOR.COMMON.gray6,
               flex: 1,
             }}
           >
@@ -66,10 +66,10 @@ export const TypographyInfoUser: React.FC<TypographyInfoGridProps> = ({
 
           <Typography
             sx={{
-              ...TYPOGRAPHY_STYLES.textSm.regular,
-              color: COLOR_CONSTANT.black,
+              ...STYLE.TYPOGRAPHY.textSm.regular,
+              color: COLOR.COMMON.black,
               flex: 1,
-              borderBottom: `1px solid ${COLOR_CONSTANT.gray8}`,
+              borderBottom: `1px solid ${COLOR.COMMON.gray8}`,
               textAlign: 'right',
               ...item.sxValue,
             }}

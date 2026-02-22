@@ -1,11 +1,11 @@
 import { Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import React, { useState } from 'react';
-import { APP_OBJ, AppGroup, AppInfo } from '../../common/constant/apps.data';
-import { PADDING_GAP_TAB } from '../../common/constant/style.constant';
-import { Environment } from '../../common/utils/other/app.utils';
+import { APP_OBJ } from '../../common/const/apps.const';
+import { PADDING_GAP_TAB } from '../../common/const/style.const';
 import { AppGrid } from '../app-grid';
 import { MotionBox } from '../motion';
+import { Environment, AppInfo, AppGroup } from '../../common';
 
 export interface SystemMonitorScreenProps {
   blacklist?: string[];
