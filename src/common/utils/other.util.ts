@@ -137,3 +137,16 @@ export const getCurrentEnvironment = (): Environment => {
   if (hostname.includes('sta.')) return Environment.STAGING;
   return Environment.PRODUCTION;
 };
+
+export const getErrorMessage = (e: unknown) => (e as Error)?.message ?? 'Đã xảy ra lỗi không xác định!';
+
+export const getAppBlackList = (user: any, env: Environment, appBlackList: Record<string, string[]>) => {
+  if (!user) return [];
+  const baseList = appBlackList[env] || [];
+  const result = [...baseList];
+
+  if (env === Environment.DEVELOP && !['01745', '04285', '04356', 'CEO79'].includes(user?.code)) {
+    return [...result, 'MEAL'];
+  }
+  return result;
+};
