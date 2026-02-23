@@ -137,3 +137,5 @@ export const getCurrentEnvironment = (): Environment => {
   if (hostname.includes('sta.')) return Environment.STAGING;
   return Environment.PRODUCTION;
 };
+
+export const getErrorMessage = (e: unknown) => (e as Error)?.message ?? 'Đã xảy ra lỗi không xác định!';
