@@ -21,15 +21,19 @@ export const COMMON = {
   gray8: '#E3E3E3',
   gray9: '#F4F4F7',
   gray10: '#FAFAFA',
+  gray11: '#F5F5F5',
 
   green: '#07554B3D',
   green2: '#E6EEED',
   green3: '#008A77',
   green4: '#f2f6f5',
   green5: '#CFE7E1',
+  green6: '#026D60',
+  green7: '#E6F4F0',
 
   blue: '#EDF2F7',
   blue2: '#2D9CDB',
+  blue3: '#EFF6FFE6',
 
   red: '#F0443829',
   red2: '#F04438',
