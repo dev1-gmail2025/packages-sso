@@ -11,19 +11,11 @@ export const APP_GROUP_COLOR = {
   [AppGroup.MANUFACTURING]: 'linear-gradient(180deg, #D48009 0%, #83610A 100%)',
 };
 
-export const ACCOUNT = {
-  local: 'http://localhost:12003/account',
-  develop: 'https://dev.admin.office.sevago.local/account',
-  staging: 'https://sta.admin.office.sevago.local/account',
-  production: 'https://admin.office.sevago.local/account',
-  production_vps: 'https://admin.office.sevago.com.vn/account',
-};
-
 export const SSO = {
   local: 'http://localhost:12001',
   develop: 'https://dev.account.sevago.local',
   staging: 'https://sta.account.sevago.local',
-  production: 'https://account.sevago.com.vn',
+  production: 'https://account.sevago.local',
   production_vps: 'https://account.sevago.com.vn',
 };
 
