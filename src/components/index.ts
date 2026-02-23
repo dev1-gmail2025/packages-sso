@@ -4,6 +4,7 @@ export * from './elements';
 export * from './empty';
 export * from './layouts';
 export * from './loading';
+export * from './logo';
 export * from './motion';
 export * from './note';
 export * from './price';
