@@ -1,1 +1,1 @@
-export { SystemMonitorScreen } from './system-monitor.screen';
+export * from './system-monitor.screen';

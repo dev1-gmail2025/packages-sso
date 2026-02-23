@@ -3,7 +3,7 @@ import { LayoutGroup, motion } from 'framer-motion';
 import React, { useEffect, useId, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { StackTabs } from '../../styles';
-import { IconContentBadgeCountElement, IconContentBadgeCountSubsElement } from '../icon';
+import { IconContentBadgeElement, IconContentBadgeSubsElement } from '../icon';
 import { LinkElement } from '../link';
 import { TabBadgeCount } from './tabs-badge-count.component';
 import { TAB_BACKGROUND_STYLES, TAB_STYLES } from './tabs.constant';
@@ -61,7 +61,7 @@ export const TabsBadgeCountSubsComponent: React.FC<TabsBadgeCountSubsComponentPr
               onTap={() => !tab.subs && setIdSelected(tab.id)}
             >
               {tab.subs ? (
-                <IconContentBadgeCountSubsElement
+                <IconContentBadgeSubsElement
                   icon={tab.icon}
                   content={tab.name}
                   badgeCount={tab.badgeCount}
@@ -71,7 +71,7 @@ export const TabsBadgeCountSubsComponent: React.FC<TabsBadgeCountSubsComponentPr
                   idSubSelect={tab.subs.find((sub) => location.pathname.includes(sub.id))?.id}
                 />
               ) : (
-                <IconContentBadgeCountElement
+                <IconContentBadgeElement
                   icon={tab.icon}
                   content={tab.name}
                   sx={{ zIndex: 2 }}

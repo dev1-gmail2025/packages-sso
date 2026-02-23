@@ -55,35 +55,31 @@
 **Mô tả**: Hiển thị danh sách ứng dụng dưới dạng lưới (grid) với hỗ trợ phân trang, tuỳ chỉnh số cột/hàng.
 
 **Import**:
+
 ```tsx
 import { AppGrid } from 'sevago-sso-fe';
 ```
 
 **Props**:
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `apps` | `AppInfo[]` | **required** | Danh sách ứng dụng |
-| `columns` | `number` | `5` | Số cột trong lưới |
-| `rows` | `number` | `3` | Số hàng mỗi trang |
-| `iconSize` | `number` | `80` | Kích thước icon (px) |
-| `iconRadius` | `number` | `7` | Bo góc icon |
-| `gap` | `number \| string` | — | Khoảng cách giữa các item |
-| `titleVariant` | `'subtitle1' \| 'body1' \| 'caption'` | `'subtitle1'` | Kiểu chữ tên app |
-| `titleColor` | `string` | — | Màu chữ tên app |
-| `showPagination` | `boolean` | `true` | Hiện/ẩn phân trang |
-| `onClickApp` | `(appInfo: AppInfo) => void` | **required** | Callback khi click vào app |
-| `isShowAppHidden` | `boolean` | `false` | Hiển thị placeholder cho ô trống |
+| Prop              | Kiểu                                  | Mặc định      | Mô tả                            |
+| ----------------- | ------------------------------------- | ------------- | -------------------------------- |
+| `apps`            | `AppInfo[]`                           | **required**  | Danh sách ứng dụng               |
+| `columns`         | `number`                              | `5`           | Số cột trong lưới                |
+| `rows`            | `number`                              | `3`           | Số hàng mỗi trang                |
+| `iconSize`        | `number`                              | `80`          | Kích thước icon (px)             |
+| `iconRadius`      | `number`                              | `7`           | Bo góc icon                      |
+| `gap`             | `number \| string`                    | —             | Khoảng cách giữa các item        |
+| `titleVariant`    | `'subtitle1' \| 'body1' \| 'caption'` | `'subtitle1'` | Kiểu chữ tên app                 |
+| `titleColor`      | `string`                              | —             | Màu chữ tên app                  |
+| `showPagination`  | `boolean`                             | `true`        | Hiện/ẩn phân trang               |
+| `onClickApp`      | `(appInfo: AppInfo) => void`          | **required**  | Callback khi click vào app       |
+| `isShowAppHidden` | `boolean`                             | `false`       | Hiển thị placeholder cho ô trống |
 
 **Ví dụ**:
+
 ```tsx
-<AppGrid
-  apps={myApps}
-  columns={4}
-  rows={2}
-  iconSize={60}
-  onClickApp={(app) => console.log(app)}
-/>
+<AppGrid apps={myApps} columns={4} rows={2} iconSize={60} onClickApp={(app) => console.log(app)} />
 ```
 
 ---
@@ -93,32 +89,28 @@ import { AppGrid } from 'sevago-sso-fe';
 **Mô tả**: Một item đơn lẻ trong lưới ứng dụng, hiển thị icon và tên app.
 
 **Import**:
+
 ```tsx
 import { AppGridItem } from 'sevago-sso-fe';
 ```
 
 **Props**:
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `app` | `AppInfo` | **required** | Thông tin ứng dụng |
-| `iconSize` | `number` | **required** | Kích thước icon |
-| `iconRadius` | `number` | **required** | Bo góc icon |
-| `titleVariant` | `'subtitle1' \| 'body1' \| 'caption'` | `'subtitle1'` | Kiểu chữ |
-| `titleColor` | `string` | — | Màu chữ |
-| `showNameApps` | `boolean` | `true` | Hiển thị tên app |
-| `showIconApps` | `boolean` | `true` | Hiển thị icon app |
-| `direction` | `'row' \| 'column'` | `'column'` | Hướng layout |
+| Prop           | Kiểu                                  | Mặc định      | Mô tả              |
+| -------------- | ------------------------------------- | ------------- | ------------------ |
+| `app`          | `AppInfo`                             | **required**  | Thông tin ứng dụng |
+| `iconSize`     | `number`                              | **required**  | Kích thước icon    |
+| `iconRadius`   | `number`                              | **required**  | Bo góc icon        |
+| `titleVariant` | `'subtitle1' \| 'body1' \| 'caption'` | `'subtitle1'` | Kiểu chữ           |
+| `titleColor`   | `string`                              | —             | Màu chữ            |
+| `showNameApps` | `boolean`                             | `true`        | Hiển thị tên app   |
+| `showIconApps` | `boolean`                             | `true`        | Hiển thị icon app  |
+| `direction`    | `'row' \| 'column'`                   | `'column'`    | Hướng layout       |
 
 **Ví dụ**:
+
 ```tsx
-<AppGridItem
-  app={appInfo}
-  iconSize={60}
-  iconRadius={6}
-  direction="row"
-  showNameApps={true}
-/>
+<AppGridItem app={appInfo} iconSize={60} iconRadius={6} direction="row" showNameApps={true} />
 ```
 
 ---
@@ -128,17 +120,19 @@ import { AppGridItem } from 'sevago-sso-fe';
 **Mô tả**: Hiển thị ảnh banner full-width với hiệu ứng fade-in.
 
 **Import**:
+
 ```tsx
 import { BannerComponent } from 'sevago-sso-fe';
 ```
 
 **Props**:
 
-| Prop | Kiểu | Mô tả |
-|------|------|-------|
+| Prop  | Kiểu     | Mô tả                         |
+| ----- | -------- | ----------------------------- |
 | `url` | `string` | **required** – URL ảnh banner |
 
 **Ví dụ**:
+
 ```tsx
 <BannerComponent url="https://example.com/banner.jpg" />
 ```
@@ -150,20 +144,22 @@ import { BannerComponent } from 'sevago-sso-fe';
 **Mô tả**: Thanh điều hướng breadcrumb với nút back. Tự động navigate(-1) nếu không cung cấp `onBack`.
 
 **Import**:
+
 ```tsx
 import { Breadcrumbs } from 'sevago-sso-fe';
 ```
 
 **Props**:
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `content` | `string` | **required** | Tiêu đề trang |
-| `showBackButton` | `boolean` | `true` | Hiển thị nút back |
-| `onBack` | `() => void` | — | Custom handler khi click back |
-| `sxLabel` | `React.CSSProperties` | — | Custom style cho label |
+| Prop             | Kiểu                  | Mặc định     | Mô tả                         |
+| ---------------- | --------------------- | ------------ | ----------------------------- |
+| `content`        | `string`              | **required** | Tiêu đề trang                 |
+| `showBackButton` | `boolean`             | `true`       | Hiển thị nút back             |
+| `onBack`         | `() => void`          | —            | Custom handler khi click back |
+| `sxLabel`        | `React.CSSProperties` | —            | Custom style cho label        |
 
 **Ví dụ**:
+
 ```tsx
 <Breadcrumbs content="Chi tiết người dùng" onBack={() => navigate('/users')} />
 ```
@@ -175,13 +171,17 @@ import { Breadcrumbs } from 'sevago-sso-fe';
 **Mô tả**: Hiển thị trạng thái rỗng (empty state) với icon minh hoạ. Dùng khi danh sách không có dữ liệu.
 
 **Import**:
+
 ```tsx
 import { EmptyComponent } from 'sevago-sso-fe';
 ```
 
 **Ví dụ**:
+
 ```tsx
-{data.length === 0 && <EmptyComponent />}
+{
+  data.length === 0 && <EmptyComponent />;
+}
 ```
 
 ---
@@ -191,17 +191,19 @@ import { EmptyComponent } from 'sevago-sso-fe';
 **Mô tả**: Layout mặc định bao bọc toàn bộ trang, căn giữa nội dung theo chiều dọc và ngang, chiều cao tối thiểu 100vh.
 
 **Import**:
+
 ```tsx
 import { DefaultLayout } from 'sevago-sso-fe';
 ```
 
 **Props**:
 
-| Prop | Kiểu | Mô tả |
-|------|------|-------|
+| Prop       | Kiểu        | Mô tả              |
+| ---------- | ----------- | ------------------ |
 | `children` | `ReactNode` | Nội dung bên trong |
 
 **Ví dụ**:
+
 ```tsx
 <DefaultLayout>
   <LoginForm />
@@ -215,21 +217,25 @@ import { DefaultLayout } from 'sevago-sso-fe';
 **Mô tả**: Hiển thị spinner CircularProgress, dùng cho trạng thái đang tải dữ liệu.
 
 **Import**:
+
 ```tsx
 import { LoadingComponent } from 'sevago-sso-fe';
 ```
 
 **Props**:
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `color` | `string` | — | Màu spinner |
-| `size` | `'small' \| 'medium' \| 'large'` | `'medium'` | Kích thước spinner |
-| `sx` | `SxProps<Theme>` | — | Custom styles |
+| Prop    | Kiểu                             | Mặc định   | Mô tả              |
+| ------- | -------------------------------- | ---------- | ------------------ |
+| `color` | `string`                         | —          | Màu spinner        |
+| `size`  | `'small' \| 'medium' \| 'large'` | `'medium'` | Kích thước spinner |
+| `sx`    | `SxProps<Theme>`                 | —          | Custom styles      |
 
 **Ví dụ**:
+
 ```tsx
-{isLoading && <LoadingComponent size="small" color="#fff" />}
+{
+  isLoading && <LoadingComponent size="small" color="#fff" />;
+}
 ```
 
 ---
@@ -239,19 +245,21 @@ import { LoadingComponent } from 'sevago-sso-fe';
 **Mô tả**: Hiển thị logo dạng ảnh, có thể click để về trang chủ SSO.
 
 **Import**:
+
 ```tsx
 import { LogoComponent } from 'sevago-sso-fe';
 ```
 
 **Props**:
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `url` | `string` | **required** | URL ảnh logo |
-| `height` | `number` | — | Chiều cao logo |
-| `sx` | `SxProps` | — | Custom styles |
+| Prop     | Kiểu      | Mặc định     | Mô tả          |
+| -------- | --------- | ------------ | -------------- |
+| `url`    | `string`  | **required** | URL ảnh logo   |
+| `height` | `number`  | —            | Chiều cao logo |
+| `sx`     | `SxProps` | —            | Custom styles  |
 
 **Ví dụ**:
+
 ```tsx
 <LogoComponent url="/images/logo.png" height={40} />
 ```
@@ -263,47 +271,53 @@ import { LogoComponent } from 'sevago-sso-fe';
 **Mô tả**: Wrapper animation dùng `framer-motion`. Hỗ trợ nhiều preset animation sẵn có.
 
 **Import**:
+
 ```tsx
 import { MotionBox } from 'sevago-sso-fe';
 ```
 
 **Props**:
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `preset` | `AnimationPreset` | `'fadeInUp'` | Preset animation |
-| `delay` | `number` | — | Độ trễ animation (giây) |
-| `index` | `number` | — | Index cho stagger animation |
-| `hover` | `boolean` | `false` | Bật hiệu ứng hover (scale up) |
-| `sx` | `React.CSSProperties` | — | Custom styles |
-| `children` | `ReactNode` | **required** | Nội dung |
+| Prop       | Kiểu                  | Mặc định     | Mô tả                         |
+| ---------- | --------------------- | ------------ | ----------------------------- |
+| `preset`   | `AnimationPreset`     | `'fadeInUp'` | Preset animation              |
+| `delay`    | `number`              | —            | Độ trễ animation (giây)       |
+| `index`    | `number`              | —            | Index cho stagger animation   |
+| `hover`    | `boolean`             | `false`      | Bật hiệu ứng hover (scale up) |
+| `sx`       | `React.CSSProperties` | —            | Custom styles                 |
+| `children` | `ReactNode`           | **required** | Nội dung                      |
 
 **Các preset animation**:
 
-| Preset | Mô tả |
-|--------|-------|
-| `fadeInUp` | Fadeín từ dưới lên |
-| `fadeInDown` | Fade từ trên xuống |
-| `fadeInLeft` | Fade từ trái sang |
-| `fadeInRight` | Fade từ phải sang |
-| `scaleIn` | Scale phóng to dần |
-| `slideInUp` | Trượt nhẹ từ dưới lên |
-| `staggerItem` | Dùng với `index` – xuất hiện lần lượt |
-| `tabContent` | Dùng cho nội dung tab |
-| `tabUnderline` | Dùng cho underline của tab |
+| Preset         | Mô tả                                 |
+| -------------- | ------------------------------------- |
+| `fadeInUp`     | Fadeín từ dưới lên                    |
+| `fadeInDown`   | Fade từ trên xuống                    |
+| `fadeInLeft`   | Fade từ trái sang                     |
+| `fadeInRight`  | Fade từ phải sang                     |
+| `scaleIn`      | Scale phóng to dần                    |
+| `slideInUp`    | Trượt nhẹ từ dưới lên                 |
+| `staggerItem`  | Dùng với `index` – xuất hiện lần lượt |
+| `tabContent`   | Dùng cho nội dung tab                 |
+| `tabUnderline` | Dùng cho underline của tab            |
 
 **Ví dụ**:
+
 ```tsx
 <MotionBox preset="fadeInUp" hover>
   <MyCard />
-</MotionBox>
+</MotionBox>;
 
-{/* Stagger list */}
-{items.map((item, i) => (
-  <MotionBox key={item.id} preset="staggerItem" index={i}>
-    <ItemCard item={item} />
-  </MotionBox>
-))}
+{
+  /* Stagger list */
+}
+{
+  items.map((item, i) => (
+    <MotionBox key={item.id} preset="staggerItem" index={i}>
+      <ItemCard item={item} />
+    </MotionBox>
+  ));
+}
 ```
 
 ---
@@ -313,20 +327,22 @@ import { MotionBox } from 'sevago-sso-fe';
 **Mô tả**: Hiển thị hộp ghi chú/thông báo với 4 loại: info, recommend, warning, error. Có border màu theo loại.
 
 **Import**:
+
 ```tsx
 import { NoteComponent } from 'sevago-sso-fe';
 ```
 
 **Props**:
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `content` | `string` | **required** | Nội dung thông báo |
-| `type` | `'info' \| 'recommend' \| 'warning' \| 'error'` | `'info'` | Loại thông báo |
-| `contentHref` | `string` | — | Text link đính kèm |
-| `href` | `string` | — | URL của link |
+| Prop          | Kiểu                                            | Mặc định     | Mô tả              |
+| ------------- | ----------------------------------------------- | ------------ | ------------------ |
+| `content`     | `string`                                        | **required** | Nội dung thông báo |
+| `type`        | `'info' \| 'recommend' \| 'warning' \| 'error'` | `'info'`     | Loại thông báo     |
+| `contentHref` | `string`                                        | —            | Text link đính kèm |
+| `href`        | `string`                                        | —            | URL của link       |
 
 **Ví dụ**:
+
 ```tsx
 <NoteComponent type="warning" content="Bạn chưa xác thực email." />
 <NoteComponent type="info" content="Xem thêm tại" contentHref="tài liệu" href="/docs" />
@@ -339,22 +355,24 @@ import { NoteComponent } from 'sevago-sso-fe';
 **Mô tả**: Hiển thị giá, giá gốc (có gạch ngang) và phần trăm giảm giá.
 
 **Import**:
+
 ```tsx
 import { PriceComponent } from 'sevago-sso-fe';
 ```
 
 **Props**:
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `price` | `number` | **required** | Giá hiện tại |
-| `originalPrice` | `number` | — | Giá gốc (hiển thị gạch ngang) |
-| `discountPercent` | `number` | — | Phần trăm giảm giá |
-| `size` | `'small' \| 'medium' \| 'large'` | `'small'` | Kích thước chữ |
-| `color` | `string` | Error color | Màu giá |
-| `onClick` | `(e) => void` | — | Callback khi click |
+| Prop              | Kiểu                             | Mặc định     | Mô tả                         |
+| ----------------- | -------------------------------- | ------------ | ----------------------------- |
+| `price`           | `number`                         | **required** | Giá hiện tại                  |
+| `originalPrice`   | `number`                         | —            | Giá gốc (hiển thị gạch ngang) |
+| `discountPercent` | `number`                         | —            | Phần trăm giảm giá            |
+| `size`            | `'small' \| 'medium' \| 'large'` | `'small'`    | Kích thước chữ                |
+| `color`           | `string`                         | Error color  | Màu giá                       |
+| `onClick`         | `(e) => void`                    | —            | Callback khi click            |
 
 **Ví dụ**:
+
 ```tsx
 <PriceComponent price={250000} originalPrice={500000} discountPercent={50} size="medium" />
 ```
@@ -366,20 +384,22 @@ import { PriceComponent } from 'sevago-sso-fe';
 **Mô tả**: Hiển thị đánh giá sao với điểm trung bình và số lượt review.
 
 **Import**:
+
 ```tsx
 import { ReviewComponent } from 'sevago-sso-fe';
 ```
 
 **Props**:
 
-| Prop | Kiểu | Mô tả |
-|------|------|-------|
-| `averageRating` | `number` | **required** – Điểm trung bình |
-| `reviewCount` | `number` | **required** – Số lượt review |
-| `onClick` | `(e) => void` | Callback khi click |
-| `sx` | `SxProps<Theme>` | Custom styles |
+| Prop            | Kiểu             | Mô tả                          |
+| --------------- | ---------------- | ------------------------------ |
+| `averageRating` | `number`         | **required** – Điểm trung bình |
+| `reviewCount`   | `number`         | **required** – Số lượt review  |
+| `onClick`       | `(e) => void`    | Callback khi click             |
+| `sx`            | `SxProps<Theme>` | Custom styles                  |
 
 **Ví dụ**:
+
 ```tsx
 <ReviewComponent averageRating={4.5} reviewCount={128} onClick={() => scrollToReviews()} />
 ```
@@ -391,22 +411,24 @@ import { ReviewComponent } from 'sevago-sso-fe';
 **Mô tả**: Sidebar trượt ra hiển thị danh sách tất cả ứng dụng trong hệ thống, nhóm theo `AppGroup`. Có overlay backdrop.
 
 **Import**:
+
 ```tsx
 import { AppsSidebar } from 'sevago-sso-fe';
 ```
 
 **Props**:
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `isOpen` | `boolean` | **required** | Trạng thái mở/đóng |
-| `onClose` | `() => void` | **required** | Callback đóng sidebar |
-| `env` | `Environment` | **required** | Môi trường (dev/staging/prod) |
-| `onClickApp` | `(appInfo: AppInfo) => void` | **required** | Callback khi chọn app |
-| `position` | `'left' \| 'right'` | `'left'` | Vị trí sidebar |
-| `blacklist` | `string[]` | `[]` | Danh sách app ẩn (theo key) |
+| Prop         | Kiểu                         | Mặc định     | Mô tả                         |
+| ------------ | ---------------------------- | ------------ | ----------------------------- |
+| `isOpen`     | `boolean`                    | **required** | Trạng thái mở/đóng            |
+| `onClose`    | `() => void`                 | **required** | Callback đóng sidebar         |
+| `env`        | `Environment`                | **required** | Môi trường (dev/staging/prod) |
+| `onClickApp` | `(appInfo: AppInfo) => void` | **required** | Callback khi chọn app         |
+| `position`   | `'left' \| 'right'`          | `'left'`     | Vị trí sidebar                |
+| `blacklist`  | `string[]`                   | `[]`         | Danh sách app ẩn (theo key)   |
 
 **Ví dụ**:
+
 ```tsx
 const [open, setOpen] = useState(false);
 
@@ -415,7 +437,7 @@ const [open, setOpen] = useState(false);
   onClose={() => setOpen(false)}
   env={Environment.PRODUCTION}
   onClickApp={(app) => window.open(app.path[env])}
-/>
+/>;
 ```
 
 ---
@@ -425,27 +447,29 @@ const [open, setOpen] = useState(false);
 **Mô tả**: Component nhỏ dùng trong header/navbar – hiển thị icon lưới app để mở `AppsSidebar`, đồng thời tự detect và hiển thị app hiện tại đang dùng.
 
 **Import**:
+
 ```tsx
 import { SystemMonitorSidebarPart } from 'sevago-sso-fe';
 ```
 
 **Props**:
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `env` | `Environment` | **required** | Môi trường |
-| `onClickApp` | `(appInfo: AppInfo) => void` | **required** | Callback chọn app |
-| `position` | `'left' \| 'right'` | — | Vị trí sidebar |
-| `blacklist` | `string[]` | — | App bị ẩn |
-| `showNameApps` | `boolean` | — | Hiển thị tên app hiện tại |
-| `showIconApps` | `boolean` | — | Hiển thị icon app hiện tại |
-| `direction` | `'row' \| 'column'` | `'row'` | Hướng layout app hiện tại |
+| Prop           | Kiểu                         | Mặc định     | Mô tả                      |
+| -------------- | ---------------------------- | ------------ | -------------------------- |
+| `env`          | `Environment`                | **required** | Môi trường                 |
+| `onClickApp`   | `(appInfo: AppInfo) => void` | **required** | Callback chọn app          |
+| `position`     | `'left' \| 'right'`          | —            | Vị trí sidebar             |
+| `blacklist`    | `string[]`                   | —            | App bị ẩn                  |
+| `showNameApps` | `boolean`                    | —            | Hiển thị tên app hiện tại  |
+| `showIconApps` | `boolean`                    | —            | Hiển thị icon app hiện tại |
+| `direction`    | `'row' \| 'column'`          | `'row'`      | Hướng layout app hiện tại  |
 
 **Ví dụ**:
+
 ```tsx
 <SystemMonitorSidebarPart
   env={Environment.PRODUCTION}
-  onClickApp={(app) => window.location.href = app.path[env]}
+  onClickApp={(app) => (window.location.href = app.path[env])}
   showNameApps
 />
 ```
@@ -457,19 +481,21 @@ import { SystemMonitorSidebarPart } from 'sevago-sso-fe';
 **Mô tả**: Màn hình tổng quan hệ thống hiển thị tất cả ứng dụng SSO, có filter theo nhóm (AppGroup) và animation tab.
 
 **Import**:
+
 ```tsx
 import { SystemMonitorScreen } from 'sevago-sso-fe';
 ```
 
 **Props**:
 
-| Prop | Kiểu | Mô tả |
-|------|------|-------|
-| `env` | `Environment` | **required** – Môi trường |
+| Prop         | Kiểu                         | Mô tả                            |
+| ------------ | ---------------------------- | -------------------------------- |
+| `env`        | `Environment`                | **required** – Môi trường        |
 | `onClickApp` | `(appInfo: AppInfo) => void` | **required** – Callback chọn app |
-| `blacklist` | `string[]` | Danh sách app ẩn |
+| `blacklist`  | `string[]`                   | Danh sách app ẩn                 |
 
 **Ví dụ**:
+
 ```tsx
 <SystemMonitorScreen
   env={Environment.PRODUCTION}
@@ -489,19 +515,21 @@ import { SystemMonitorScreen } from 'sevago-sso-fe';
 **Mô tả**: Avatar hiển thị ảnh người dùng. Hỗ trợ tooltip khi hover.
 
 **Import**:
+
 ```tsx
 import { AvatarElement } from 'sevago-sso-fe';
 ```
 
 **Props**:
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `url` | `string \| null` | — | URL ảnh đại diện |
-| `size` | `SizeProps` | `MEDIUM` | Kích thước avatar |
-| `tooltipContent` | `ReactNode` | — | Nội dung tooltip khi hover |
+| Prop             | Kiểu             | Mặc định | Mô tả                      |
+| ---------------- | ---------------- | -------- | -------------------------- |
+| `url`            | `string \| null` | —        | URL ảnh đại diện           |
+| `size`           | `SizeProps`      | `MEDIUM` | Kích thước avatar          |
+| `tooltipContent` | `ReactNode`      | —        | Nội dung tooltip khi hover |
 
 **Ví dụ**:
+
 ```tsx
 <AvatarElement url={user.avatar} size={SizeProps.LARGE} tooltipContent={<UserCard user={user} />} />
 ```
@@ -521,12 +549,7 @@ import { AvatarElement } from 'sevago-sso-fe';
 **Props chính**: `name`, `url`, `positions[]`, `sizeAvatar`, `isTag` (hiển thị vị trí dạng tag badge), `maxWidth`.
 
 ```tsx
-<AvatarUserInfo
-  name="Nguyễn Văn A"
-  url={user.avatar}
-  positions={['Trưởng phòng', 'Kỹ thuật']}
-  isTag
-/>
+<AvatarUserInfo name="Nguyễn Văn A" url={user.avatar} positions={['Trưởng phòng', 'Kỹ thuật']} isTag />
 ```
 
 ---
@@ -538,17 +561,18 @@ import { AvatarElement } from 'sevago-sso-fe';
 **Mô tả**: Button cơ bản, hỗ trợ loading spinner, icon trái/phải, disable.
 
 **Import**:
+
 ```tsx
 import { ButtonElement } from 'sevago-sso-fe';
 ```
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `content` | `string` | — | Text hiển thị |
-| `loading` | `boolean` | `false` | Hiển thị spinner |
-| `startIcon` | `string \| ReactNode` | — | Icon bên trái (Material icon name hoặc node) |
-| `endIcon` | `string \| ReactNode` | — | Icon bên phải |
-| `variant` | `ButtonProps['variant']` | `'contained'` | Dạng button |
+| Prop        | Kiểu                     | Mặc định      | Mô tả                                        |
+| ----------- | ------------------------ | ------------- | -------------------------------------------- |
+| `content`   | `string`                 | —             | Text hiển thị                                |
+| `loading`   | `boolean`                | `false`       | Hiển thị spinner                             |
+| `startIcon` | `string \| ReactNode`    | —             | Icon bên trái (Material icon name hoặc node) |
+| `endIcon`   | `string \| ReactNode`    | —             | Icon bên phải                                |
+| `variant`   | `ButtonProps['variant']` | `'contained'` | Dạng button                                  |
 
 ```tsx
 <ButtonElement content="Lưu" loading={isSaving} startIcon="save" onClick={handleSave} />
@@ -582,11 +606,11 @@ import { ButtonElement } from 'sevago-sso-fe';
 
 **Mô tả**: Button có ảnh (logo/flag) thay cho Material icon.
 
-| Prop | Mô tả |
-|------|-------|
-| `content` | Text button |
+| Prop        | Mô tả            |
+| ----------- | ---------------- |
+| `content`   | Text button      |
 | `startIcon` | URL ảnh bên trái |
-| `endIcon` | URL ảnh bên phải |
+| `endIcon`   | URL ảnh bên phải |
 
 ```tsx
 <ButtonImageElement content="Google" startIcon="/icons/google.png" onClick={loginGoogle} />
@@ -596,18 +620,14 @@ import { ButtonElement } from 'sevago-sso-fe';
 
 **Mô tả**: Button upload file, mở file picker, trả về danh sách `FileWithPreview` (có preview URL).
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `multiple` | `boolean` | `false` | Cho phép chọn nhiều file |
-| `accept` | `string` | `'image/*'` | Loại file chấp nhận |
-| `onChange` | `(files: FileWithPreview[]) => void` | **required** | Callback nhận file |
+| Prop       | Kiểu                                 | Mặc định     | Mô tả                    |
+| ---------- | ------------------------------------ | ------------ | ------------------------ |
+| `multiple` | `boolean`                            | `false`      | Cho phép chọn nhiều file |
+| `accept`   | `string`                             | `'image/*'`  | Loại file chấp nhận      |
+| `onChange` | `(files: FileWithPreview[]) => void` | **required** | Callback nhận file       |
 
 ```tsx
-<ButtonUploadFileElement
-  multiple
-  accept=".pdf,.docx"
-  onChange={(files) => setAttachments(files)}
-/>
+<ButtonUploadFileElement multiple accept=".pdf,.docx" onChange={(files) => setAttachments(files)} />
 ```
 
 #### `ButtonIconContentOpacityElement`
@@ -629,7 +649,7 @@ import { ButtonElement } from 'sevago-sso-fe';
 ```tsx
 import { CheckboxElement } from 'sevago-sso-fe';
 
-<CheckboxElement label="Tôi đồng ý điều khoản" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} />
+<CheckboxElement label="Tôi đồng ý điều khoản" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} />;
 ```
 
 ---
@@ -641,24 +661,25 @@ import { CheckboxElement } from 'sevago-sso-fe';
 **Mô tả**: Modal dialog linh hoạt với tiêu đề, icon, nội dung tuỳ chỉnh, và tối đa 3 nút (left/center/right). Hỗ trợ Formik form bên trong và bảng giúp đỡ (help panel).
 
 **Import**:
+
 ```tsx
 import { DialogElement } from 'sevago-sso-fe';
 ```
 
 **Props chính**:
 
-| Prop | Kiểu | Mô tả |
-|------|------|-------|
-| `open` | `boolean` | **required** – Trạng thái mở |
-| `label` | `string` | Tiêu đề dialog |
-| `iconLabel` | `string` | Icon phía trước tiêu đề (Material icon name) |
-| `nodeContent` | `ReactNode` | Nội dung chính |
-| `buttonLeft` | `ButtonElementProps & { buttonType? }` | Nút bên trái (thường là Huỷ) |
-| `buttonRight` | `ButtonElementProps & { buttonType? }` | Nút bên phải (thường là Xác nhận) |
-| `buttonCenter` | `ButtonElementProps & { buttonType? }` | Nút giữa |
-| `isForm` | `boolean` | Bọc nội dung trong `<Form>` của Formik |
-| `nodeHelp` | `ReactNode` | Nội dung panel giúp đỡ (toggle bằng nút "Giúp đỡ") |
-| `closeButton` | `boolean` | Hiển thị nút X đóng (mặc định `true`) |
+| Prop           | Kiểu                                   | Mô tả                                              |
+| -------------- | -------------------------------------- | -------------------------------------------------- |
+| `open`         | `boolean`                              | **required** – Trạng thái mở                       |
+| `label`        | `string`                               | Tiêu đề dialog                                     |
+| `iconLabel`    | `string`                               | Icon phía trước tiêu đề (Material icon name)       |
+| `nodeContent`  | `ReactNode`                            | Nội dung chính                                     |
+| `buttonLeft`   | `ButtonElementProps & { buttonType? }` | Nút bên trái (thường là Huỷ)                       |
+| `buttonRight`  | `ButtonElementProps & { buttonType? }` | Nút bên phải (thường là Xác nhận)                  |
+| `buttonCenter` | `ButtonElementProps & { buttonType? }` | Nút giữa                                           |
+| `isForm`       | `boolean`                              | Bọc nội dung trong `<Form>` của Formik             |
+| `nodeHelp`     | `ReactNode`                            | Nội dung panel giúp đỡ (toggle bằng nút "Giúp đỡ") |
+| `closeButton`  | `boolean`                              | Hiển thị nút X đóng (mặc định `true`)              |
 
 **buttonType** nhận một trong: `'success' | 'error' | 'warning' | 'info' | 'cancel'`
 
@@ -728,13 +749,13 @@ import { IconElement } from 'sevago-sso-fe';
 <IconElement icon="edit" onClick={handleEdit} />
 ```
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `icon` | `string` | — | Tên icon Material Symbols |
-| `size` | `'small' \| 'medium' \| 'large'` | `'medium'` | Kích thước |
-| `fill` | `0 \| 1` | `0` | `0` = outline, `1` = filled |
-| `disabled` | `boolean` | — | Vô hiệu hoá icon |
-| `onClick` | `(e) => void` | — | Handler click |
+| Prop       | Kiểu                             | Mặc định   | Mô tả                       |
+| ---------- | -------------------------------- | ---------- | --------------------------- |
+| `icon`     | `string`                         | —          | Tên icon Material Symbols   |
+| `size`     | `'small' \| 'medium' \| 'large'` | `'medium'` | Kích thước                  |
+| `fill`     | `0 \| 1`                         | `0`        | `0` = outline, `1` = filled |
+| `disabled` | `boolean`                        | —          | Vô hiệu hoá icon            |
+| `onClick`  | `(e) => void`                    | —          | Handler click               |
 
 #### `IconButtonElement`
 
@@ -760,12 +781,12 @@ import { IconElement } from 'sevago-sso-fe';
 <IconContentOpacityElement icon="edit" content="Chỉnh sửa" onClick={handleEdit} />
 ```
 
-#### `IconContentBadgeCountElement`
+#### `IconContentBadgeElement`
 
 **Mô tả**: `IconContentElement` với badge số đếm (thông báo chưa đọc, v.v).
 
 ```tsx
-<IconContentBadgeCountElement icon="notifications" content="Thông báo" badgeCount={5} size="medium" />
+<IconContentBadgeElement icon="notifications" content="Thông báo" badgeCount={5} size="medium" />
 ```
 
 #### `IconContentSubsElement`
@@ -783,17 +804,12 @@ import { IconElement } from 'sevago-sso-fe';
 />
 ```
 
-#### `IconContentBadgeCountSubsElement`
+#### `IconContentBadgeSubsElement`
 
 **Mô tả**: Kết hợp badge number + dropdown sub-menu.
 
 ```tsx
-<IconContentBadgeCountSubsElement
-  icon="inbox"
-  content="Hộp thư"
-  badgeCount={12}
-  subs={mailSubTabs}
-/>
+<IconContentBadgeSubsElement icon="inbox" content="Hộp thư" badgeCount={12} subs={mailSubTabs} />
 ```
 
 ---
@@ -811,11 +827,11 @@ import { ImageElement, ImageSizeType } from 'sevago-sso-fe';
 <ImageElement url="/images/product.jpg" sizeType={ImageSizeType.SQUARE} sx={{ width: 120, height: 120 }} />
 ```
 
-| `ImageSizeType` | Mô tả |
-|----------------|-------|
-| `CIRCLE` | Bo tròn 50% |
-| `SQUARE` | Bo góc nhỏ |
-| `FULL_WIDTH` | Không bo góc |
+| `ImageSizeType` | Mô tả        |
+| --------------- | ------------ |
+| `CIRCLE`        | Bo tròn 50%  |
+| `SQUARE`        | Bo góc nhỏ   |
+| `FULL_WIDTH`    | Không bo góc |
 
 #### `ImageContentCaptionComponent`
 
@@ -875,15 +891,15 @@ import { PaginationElement } from 'sevago-sso-fe';
     setCurrentPage(page);
     setPageSize(take);
   }}
-/>
+/>;
 ```
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `total` | `number` | `0` | Tổng số bản ghi |
-| `page` | `number` | **required** | Trang hiện tại |
-| `take` | `number` | `10` | Số bản ghi mỗi trang |
-| `openRowsPerPage` | `boolean` | `true` | Hiện dropdown chọn số hàng |
+| Prop              | Kiểu      | Mặc định     | Mô tả                      |
+| ----------------- | --------- | ------------ | -------------------------- |
+| `total`           | `number`  | `0`          | Tổng số bản ghi            |
+| `page`            | `number`  | **required** | Trang hiện tại             |
+| `take`            | `number`  | `10`         | Số bản ghi mỗi trang       |
+| `openRowsPerPage` | `boolean` | `true`       | Hiện dropdown chọn số hàng |
 
 ---
 
@@ -896,7 +912,7 @@ import { PaginationElement } from 'sevago-sso-fe';
 ```tsx
 import { RadioElement } from 'sevago-sso-fe';
 
-<RadioElement name="gender" value="male" label="Nam" checked={gender === 'male'} onChange={onGenderChange} />
+<RadioElement name="gender" value="male" label="Nam" checked={gender === 'male'} onChange={onGenderChange} />;
 ```
 
 #### `RadioGroupElement`
@@ -921,7 +937,7 @@ import { RadioElement } from 'sevago-sso-fe';
 ```tsx
 import { SwitchElement } from 'sevago-sso-fe';
 
-<SwitchElement name="isActive" value={isActive} onChange={(e) => setIsActive(e.target.value)} />
+<SwitchElement name="isActive" value={isActive} onChange={(e) => setIsActive(e.target.value)} />;
 ```
 
 #### `SwitchContentElement`
@@ -948,16 +964,16 @@ const tabs = [
   { id: 'settings', name: 'Cài đặt', icon: 'settings' },
 ];
 
-<TabsComponent tabs={tabs} idSelect="overview" onChange={(id) => setActiveTab(id)} />
+<TabsComponent tabs={tabs} idSelect="overview" onChange={(id) => setActiveTab(id)} />;
 ```
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `tabs` | `TabComponent[]` | **required** | Danh sách tab |
-| `idSelect` | `string` | — | ID tab đang chọn |
-| `variant` | `'contained' \| 'outlined'` | `'contained'` | Kiểu hiển thị |
-| `direction` | `'row' \| 'column'` | `'row'` | Hướng tab |
-| `onChange` | `(id: string) => void` | — | Callback khi đổi tab |
+| Prop        | Kiểu                        | Mặc định      | Mô tả                |
+| ----------- | --------------------------- | ------------- | -------------------- |
+| `tabs`      | `TabComponent[]`            | **required**  | Danh sách tab        |
+| `idSelect`  | `string`                    | —             | ID tab đang chọn     |
+| `variant`   | `'contained' \| 'outlined'` | `'contained'` | Kiểu hiển thị        |
+| `direction` | `'row' \| 'column'`         | `'row'`       | Hướng tab            |
+| `onChange`  | `(id: string) => void`      | —             | Callback khi đổi tab |
 
 #### `TabsBadgeCountComponent`
 
@@ -969,7 +985,7 @@ const tabs: TabBadgeCount[] = [
   { id: 'sent', name: 'Đã gửi', icon: 'send', badgeCount: 0 },
 ];
 
-<TabsBadgeCountComponent tabs={tabs} idSelect="inbox" onSelect={(id) => setTab(id)} />
+<TabsBadgeCountComponent tabs={tabs} idSelect="inbox" onSelect={(id) => setTab(id)} />;
 ```
 
 #### `TabsSubsComponent`
@@ -989,7 +1005,7 @@ const tabs: TabSubs[] = [
   },
 ];
 
-<TabsSubsComponent tabs={tabs} idSelect="products" />
+<TabsSubsComponent tabs={tabs} idSelect="products" />;
 ```
 
 #### `TabsBadgeCountSubsComponent`
@@ -1017,13 +1033,13 @@ import { TagElement } from 'sevago-sso-fe';
 <TagElement type="#f59e0b" content="Chờ duyệt" variant="outlined-border" />
 ```
 
-| Prop | Kiểu | Mặc định | Mô tả |
-|------|------|----------|-------|
-| `type` | `string` | **required** | Màu hex của tag |
-| `content` | `string` | **required** | Text hiển thị |
-| `size` | `'small' \| 'medium' \| 'large'` | `'medium'` | Kích thước |
-| `variant` | `'contained' \| 'outlined' \| 'outlined-border'` | `'contained'` | Kiểu hiển thị |
-| `iconProps` | `ReactNode` | — | Icon đi kèm |
+| Prop        | Kiểu                                             | Mặc định      | Mô tả           |
+| ----------- | ------------------------------------------------ | ------------- | --------------- |
+| `type`      | `string`                                         | **required**  | Màu hex của tag |
+| `content`   | `string`                                         | **required**  | Text hiển thị   |
+| `size`      | `'small' \| 'medium' \| 'large'`                 | `'medium'`    | Kích thước      |
+| `variant`   | `'contained' \| 'outlined' \| 'outlined-border'` | `'contained'` | Kiểu hiển thị   |
+| `iconProps` | `ReactNode`                                      | —             | Icon đi kèm     |
 
 #### `TagOnClickElement`
 
@@ -1040,6 +1056,7 @@ import { TagElement } from 'sevago-sso-fe';
 **Mô tả**: Utility functions để highlight từ tìm kiếm trong text.
 
 **Import**:
+
 ```tsx
 import { highlightText, highlightYellow } from 'sevago-sso-fe';
 ```
@@ -1052,7 +1069,7 @@ const highlighted = highlightText('Nguyễn Văn An', 'van');
 const highlighted = highlightYellow('Hello World', 'world', false);
 
 // Dùng trong JSX
-<Typography>{highlightText(user.name, searchQuery)}</Typography>
+<Typography>{highlightText(user.name, searchQuery)}</Typography>;
 ```
 
 ---
@@ -1066,7 +1083,7 @@ const highlighted = highlightYellow('Hello World', 'world', false);
 ```tsx
 import { TimeAgoComponent } from 'sevago-sso-fe';
 
-<TimeAgoComponent time={new Date(post.createdAt)} hasText />
+<TimeAgoComponent time={new Date(post.createdAt)} hasText />;
 // Output: "Cập nhật lúc 5 phút trước"
 ```
 
@@ -1091,7 +1108,7 @@ import { TooltipOnHoverElement } from 'sevago-sso-fe';
 
 <TooltipOnHoverElement content={<UserCard user={user} />} placement="top">
   <AvatarElement url={user.avatar} />
-</TooltipOnHoverElement>
+</TooltipOnHoverElement>;
 ```
 
 #### `TooltipOnClickElement`
@@ -1115,7 +1132,7 @@ import { TooltipOnHoverElement } from 'sevago-sso-fe';
 ```tsx
 import { TypographyContentCaption } from 'sevago-sso-fe';
 
-<TypographyContentCaption content="Nguyễn Văn A" caption="nguyenvana@email.com" userTitleName="Admin" />
+<TypographyContentCaption content="Nguyễn Văn A" caption="nguyenvana@email.com" userTitleName="Admin" />;
 ```
 
 #### `TypographyGridInfoRow`
@@ -1154,7 +1171,7 @@ const items = [
   { label: 'Địa chỉ', value: user.address },
 ];
 
-<TypographyInfoUser items={items} columns={2} highlightQuery={searchQuery} />
+<TypographyInfoUser items={items} columns={2} highlightQuery={searchQuery} />;
 ```
 
 #### `TypographyOneLine` (TypographyLimitOneLine)
@@ -1164,7 +1181,7 @@ const items = [
 ```tsx
 import { TypographyOneLine } from 'sevago-sso-fe';
 
-<TypographyOneLine content={longTitle} sx={{ maxWidth: 200 }} />
+<TypographyOneLine content={longTitle} sx={{ maxWidth: 200 }} />;
 ```
 
 ---
@@ -1178,7 +1195,7 @@ import { TypographyOneLine } from 'sevago-sso-fe';
 ```tsx
 import { UserInfo } from 'sevago-sso-fe';
 
-<UserInfo name="Nguyễn Văn A" department="Phòng Kỹ thuật" icon="person" />
+<UserInfo name="Nguyễn Văn A" department="Phòng Kỹ thuật" icon="person" />;
 ```
 
 ---
@@ -1199,19 +1216,19 @@ import { WrapperElement } from 'sevago-sso-fe';
   nodeAction={<ButtonElement content="Thêm mới" startIcon="add" onClick={openCreate} />}
 >
   <UserTable data={users} />
-</WrapperElement>
+</WrapperElement>;
 ```
 
 **Props chính**:
 
-| Prop | Kiểu | Mô tả |
-|------|------|-------|
-| `label` | `string` | Tiêu đề section |
-| `iconLabel` | `string` | Icon Material trước tiêu đề |
-| `loading` | `boolean` | Hiển thị loading spinner |
-| `nodeAction` | `ReactNode` | Node action bên phải tiêu đề |
-| `height` | `string \| number` | Chiều cao container |
-| `direction` | `'column' \| 'row'` | Hướng layout nội dung |
+| Prop         | Kiểu                | Mô tả                        |
+| ------------ | ------------------- | ---------------------------- |
+| `label`      | `string`            | Tiêu đề section              |
+| `iconLabel`  | `string`            | Icon Material trước tiêu đề  |
+| `loading`    | `boolean`           | Hiển thị loading spinner     |
+| `nodeAction` | `ReactNode`         | Node action bên phải tiêu đề |
+| `height`     | `string \| number`  | Chiều cao container          |
+| `direction`  | `'column' \| 'row'` | Hướng layout nội dung        |
 
 #### `WrapperContentElement`
 
@@ -1228,11 +1245,7 @@ import { WrapperElement } from 'sevago-sso-fe';
 **Mô tả**: Container chuyên dùng cho biểu đồ (chart) với tiêu đề giữa và loading state.
 
 ```tsx
-<WrapperChartElement
-  name="Doanh thu theo tháng"
-  loading={isLoading}
-  chart={<RevenueChart data={chartData} />}
-/>
+<WrapperChartElement name="Doanh thu theo tháng" loading={isLoading} chart={<RevenueChart data={chartData} />} />
 ```
 
 ---
@@ -1245,18 +1258,18 @@ Thư viện cung cấp các Styled Components tiện lợi, được export sẵ
 
 ```tsx
 import {
-  StackRow,              // flexDirection: row
-  StackRowWrap,          // row + flex-wrap
-  StackRowAlignCenter,   // row + alignItems: center
+  StackRow, // flexDirection: row
+  StackRowWrap, // row + flex-wrap
+  StackRowAlignCenter, // row + alignItems: center
   StackRowAlignCenterJustBetween, // row + center + space-between
-  StackRowAlignCenterJustEnd,     // row + center + flex-end
-  StackRowJustBetween,   // row + space-between
+  StackRowAlignCenterJustEnd, // row + center + flex-end
+  StackRowJustBetween, // row + space-between
   StackRowAlignJustCenter, // row + center + center
-  StackAlignJustCenter,  // column + center + center
-  StackAlignCenter,      // column + alignItems: center
+  StackAlignJustCenter, // column + center + center
+  StackAlignCenter, // column + alignItems: center
   StackBgDefaultBorRadLayCol, // background.default + padding + border-radius
-  StackBgPaperBorRadLayCol,   // background.paper + padding + border-radius
-  StackTabs,             // styled container cho tabs
+  StackBgPaperBorRadLayCol, // background.paper + padding + border-radius
+  StackTabs, // styled container cho tabs
 } from 'sevago-sso-fe';
 ```
 
@@ -1283,7 +1296,8 @@ Toàn bộ components đều được re-export qua entry point chính:
 ```tsx
 import {
   // Components
-  AppGrid, AppGridItem,
+  AppGrid,
+  AppGridItem,
   BannerComponent,
   Breadcrumbs,
   EmptyComponent,
@@ -1299,38 +1313,71 @@ import {
   SystemMonitorScreen,
 
   // Elements - Avatar
-  AvatarElement, AvatarOnlineStatusElement, AvatarUserInfo,
+  AvatarElement,
+  AvatarOnlineStatusElement,
+  AvatarUserInfo,
 
   // Elements - Button
-  ButtonElement, ButtonIconElement, ButtonIconCircleElement,
-  ButtonIconSquareElement, ButtonImageElement,
-  ButtonUploadFileElement, ButtonIconContentOpacityElement,
+  ButtonElement,
+  ButtonIconElement,
+  ButtonIconCircleElement,
+  ButtonIconSquareElement,
+  ButtonImageElement,
+  ButtonUploadFileElement,
+  ButtonIconContentOpacityElement,
 
   // Elements - Others
   CheckboxElement,
-  DialogElement, DialogConfirmActionElement,
+  DialogElement,
+  DialogConfirmActionElement,
   DashedDividerElement,
-  IconElement, IconButtonElement, IconContentElement,
-  IconContentOpacityElement, IconContentBadgeCountElement,
-  IconContentSubsElement, IconContentBadgeCountSubsElement,
-  ImageElement, ImageContentCaptionComponent, ImageContentTimeComponent,
-  LinkElement, LinkInternalElement,
+  IconElement,
+  IconButtonElement,
+  IconContentElement,
+  IconContentOpacityElement,
+  IconContentBadgeElement,
+  IconContentSubsElement,
+  IconContentBadgeSubsElement,
+  ImageElement,
+  ImageContentCaptionComponent,
+  ImageContentTimeComponent,
+  LinkElement,
+  LinkInternalElement,
   PaginationElement,
-  RadioElement, RadioGroupElement,
-  SwitchElement, SwitchContentElement,
-  TabsComponent, TabsBadgeCountComponent, TabsSubsComponent, TabsBadgeCountSubsComponent,
-  TagElement, TagOnClickElement,
-  highlightText, highlightYellow,
-  TimeAgoComponent, TimeAgoContentComponent,
-  TooltipOnClickElement, TooltipOnHoverElement,
-  TypographyContentCaption, TypographyGridInfoRow, TypographyInfoRow,
-  TypographyInfoUser, TypographyOneLine,
+  RadioElement,
+  RadioGroupElement,
+  SwitchElement,
+  SwitchContentElement,
+  TabsComponent,
+  TabsBadgeCountComponent,
+  TabsSubsComponent,
+  TabsBadgeCountSubsComponent,
+  TagElement,
+  TagOnClickElement,
+  highlightText,
+  highlightYellow,
+  TimeAgoComponent,
+  TimeAgoContentComponent,
+  TooltipOnClickElement,
+  TooltipOnHoverElement,
+  TypographyContentCaption,
+  TypographyGridInfoRow,
+  TypographyInfoRow,
+  TypographyInfoUser,
+  TypographyOneLine,
   UserInfo,
-  WrapperElement, WrapperContentElement, WrapperChartElement,
+  WrapperElement,
+  WrapperContentElement,
+  WrapperChartElement,
 
   // Styles
-  StackRow, StackRowAlignCenter, StackRowAlignCenterJustBetween,
-  StackBgDefaultBorRadLayCol, StackBgPaperBorRadLayCol, StackTabs,
-  TypographyFilter, PaperSelect,
+  StackRow,
+  StackRowAlignCenter,
+  StackRowAlignCenterJustBetween,
+  StackBgDefaultBorRadLayCol,
+  StackBgPaperBorRadLayCol,
+  StackTabs,
+  TypographyFilter,
+  PaperSelect,
 } from 'sevago-sso-fe';
 ```

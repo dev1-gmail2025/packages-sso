@@ -1,16 +1,16 @@
 import { Badge, SxProps } from '@mui/material';
 import React from 'react';
+import { IconContentElement, IconContentElementProps } from './icon-content.element';
 import { Theme } from '@emotion/react';
 import { StackRowJustBetween } from '../../styles';
-import { IconContentElementProps, IconContentElement } from './icon-content.element';
 
-export interface IconContentBadgeCountElementProps extends IconContentElementProps {
+export interface IconContentBadgeElementProps extends IconContentElementProps {
   badgeCount: number;
   sxBadge?: SxProps<Theme>;
   isAddCountToContent?: boolean;
 }
 
-export const IconContentBadgeCountElement: React.FC<IconContentBadgeCountElementProps> = ({
+export const IconContentBadgeElement: React.FC<IconContentBadgeElementProps> = ({
   badgeCount,
   sxBadge = {},
   isAddCountToContent = false,
@@ -24,14 +24,7 @@ export const IconContentBadgeCountElement: React.FC<IconContentBadgeCountElement
           badgeContent={badgeCount}
           color="error"
           slotProps={{
-            badge: {
-              sx: {
-                position: 'static',
-                transform: 'none',
-                alignSelf: 'center',
-                ...sxBadge,
-              },
-            },
+            badge: { sx: { position: 'static', transform: 'none', alignSelf: 'center', ...sxBadge } },
           }}
         />
       )}

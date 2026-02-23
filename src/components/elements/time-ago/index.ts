@@ -1,2 +1,2 @@
-export { TimeAgoContentComponent } from './time-ago-content.component';
-export { TimeAgoComponent } from './time-ago.component';
+export * from './time-ago-content.component';
+export * from './time-ago.component';

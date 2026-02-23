@@ -1,2 +1,2 @@
-export { AppsSidebar } from './apps-sidebar.component';
-export { SystemMonitorSidebarPart } from './system-monitor-sidebar.part';
+export * from './apps-sidebar.component';
+export * from './system-monitor-sidebar.part';

@@ -4,17 +4,17 @@ import { STYLE } from '../../../common';
 import { StackRowAlignCenter } from '../../styles';
 import { TabsBadgeCountComponent } from '../tabs';
 import { TabBadgeCount } from '../tabs/tabs-badge-count.component';
-import { IconContentBadgeCountElement } from './icon-content-badge-count.element';
 import { IconContentElementProps } from './icon-content.element';
 import { IconElement } from './icon.element';
+import { IconContentBadgeElement } from './icon-content-badge.element';
 
-export interface IconContentBadgeCountSubsElementProps extends IconContentElementProps {
+export interface IconContentBadgeSubsElementProps extends IconContentElementProps {
   subs: TabBadgeCount[];
   idSubSelect?: string;
   badgeCount: number;
 }
 
-export const IconContentBadgeCountSubsElement: React.FC<IconContentBadgeCountSubsElementProps> = ({
+export const IconContentBadgeSubsElement: React.FC<IconContentBadgeSubsElementProps> = ({
   icon,
   content,
   size,
@@ -51,7 +51,7 @@ export const IconContentBadgeCountSubsElement: React.FC<IconContentBadgeCountSub
         zIndex: 6,
       }}
     >
-      <IconContentBadgeCountElement
+      <IconContentBadgeElement
         icon={icon}
         content={content}
         color={color}

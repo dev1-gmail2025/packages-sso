@@ -1,1 +1,1 @@
-export { MotionBox } from './motion-box.component';
+export * from './motion-box.component';

@@ -1,1 +1,1 @@
-export { UserInfo } from './user-info.element';
+export * from './user-info.element';

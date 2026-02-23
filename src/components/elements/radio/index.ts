@@ -1,2 +1,2 @@
-export { RadioGroupElement } from './radio-group.element';
-export { RadioElement } from './radio.element';
+export * from './radio-group.element';
+export * from './radio.element';

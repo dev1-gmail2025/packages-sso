@@ -1,1 +1,1 @@
-export { PriceComponent } from './price.component';
+export * from './price.component';

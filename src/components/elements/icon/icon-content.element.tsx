@@ -1,11 +1,11 @@
 import { SxProps, Theme, Typography } from '@mui/material';
 import React from 'react';
-import { STYLE } from '../../../common';
+import { STYLE, otherUtil } from '../../../common';
 import { StackRowAlignCenter } from '../../styles';
 import { IconElementProps, IconElement } from './icon.element';
-import { getLimitLineCss } from '../../../common/utils/other.util';
 
 export interface IconContentElementProps extends IconElementProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   content: any;
   size?: 'large' | 'small' | 'medium';
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
@@ -15,6 +15,7 @@ export interface IconContentElementProps extends IconElementProps {
   applyCssOnClick?: boolean;
   id?: string;
   isNowrap?: boolean;
+  hiddenContent?: boolean;
 }
 
 export const IconContentElement: React.FC<IconContentElementProps> = ({
@@ -30,12 +31,9 @@ export const IconContentElement: React.FC<IconContentElementProps> = ({
   applyCssOnClick,
   id,
   isNowrap = false,
+  hiddenContent = false,
 }) => {
-  if (onClick || applyCssOnClick)
-    sx = {
-      ...sx,
-      cursor: 'pointer',
-    };
+  if (onClick || applyCssOnClick) sx = { ...sx, cursor: 'pointer' };
 
   return (
     <StackRowAlignCenter
@@ -45,14 +43,15 @@ export const IconContentElement: React.FC<IconContentElementProps> = ({
     >
       {icon && <IconElement icon={icon!} sx={sxIcon} color={color} fill={fill} />}
 
-      {content && (
+      {!hiddenContent && (
         <Typography
           color={color}
           variant={size ? STYLE.VARIANT_BY_SIZE[size] : 'body1'}
           sx={
             {
-              ...(isNowrap ? { whiteSpace: 'nowrap' } : getLimitLineCss(1)),
+              ...(isNowrap ? { whiteSpace: 'nowrap' } : otherUtil.getLimitLineCss(1)),
               transform: `translateY(0.5px)`,
+              lineHeight: 1.3,
               ...sxText,
             } as SxProps<Theme>
           }

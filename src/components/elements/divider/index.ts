@@ -1,1 +1,1 @@
-export { DashedDividerElement } from './dashed-divider.element';
+export * from './dashed-divider.element';

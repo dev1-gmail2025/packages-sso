@@ -1,2 +1,2 @@
-export { DialogElement } from './dialog.element';
-export { DialogConfirmActionElement } from './dialog-confirm-action.element';
+export * from './dialog.element';
+export * from './dialog-confirm-action.element';
