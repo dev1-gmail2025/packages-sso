@@ -73,7 +73,7 @@ export default RootApp;
 ```tsx
 import App from 'sevago-sso-fe';
 
-<App />
+<App />;
 ```
 
 #### System Monitor Screen
@@ -83,10 +83,10 @@ import { SystemMonitorScreen, Environment, getCurrentEnvironment } from 'sevago-
 
 const env = getCurrentEnvironment();
 
-<SystemMonitorScreen 
+<SystemMonitorScreen
   env={env}
   blacklist={[]} // Optional: list of paths to exclude
-/>
+/>;
 ```
 
 #### App Grid
@@ -100,14 +100,7 @@ import { AppGrid, Environment, getCurrentEnvironment } from 'sevago-sso-fe';
 
 const env = getCurrentEnvironment(); // or Environment.DEVELOP, etc.
 
-<AppGrid 
-  apps={apps} 
-  env={env}
-  columns={5}
-  rows={3}
-  iconSize={80}
-  showPagination={true}
-/>
+<AppGrid apps={apps} env={env} columns={5} rows={3} iconSize={80} showPagination={true} />;
 ```
 
 #### Sidebar Components
@@ -117,7 +110,7 @@ import { AppsSidebar, SystemMonitorSidebarPart, Environment, getCurrentEnvironme
 
 const env = getCurrentEnvironment();
 
-<AppsSidebar 
+<AppsSidebar
   isOpen={true}
   onClose={() => {}}
   env={env}
@@ -129,8 +122,9 @@ const env = getCurrentEnvironment();
 #### UI Elements
 
 ##### Avatar Elements
+
 ```tsx
-import { 
+import {
   AvatarElement,
   AvatarOnlineStatusElement,
   AvatarUserInfo
@@ -142,8 +136,9 @@ import {
 ```
 
 ##### Button Elements
+
 ```tsx
-import { 
+import {
   ButtonElement,
   ButtonIconElement,
   ButtonIconCircleElement,
@@ -160,12 +155,13 @@ import {
 ```
 
 ##### Icon Elements
+
 ```tsx
-import { 
+import {
   IconElement,
   IconContentElement,
-  IconContentBadgeCountElement,
-  IconContentBadgeCountSubsElement,
+  IconContentBadgeElement,
+  IconContentBadgeSubsElement,
   IconButtonElement,
   IconContentSubsElement,
   IconContentOpacityElement
@@ -173,12 +169,13 @@ import {
 
 <IconElement icon="home" />
 <IconContentElement icon="user" content="Profile" />
-<IconContentBadgeCountElement icon="notifications" count={5} />
+<IconContentBadgeElement icon="notifications" count={5} />
 ```
 
 ##### Image Elements
+
 ```tsx
-import { 
+import {
   ImageElement,
   ImageContentCaptionComponent,
   ImageContentTimeComponent,
@@ -191,8 +188,9 @@ import {
 ```
 
 ##### Link Elements
+
 ```tsx
-import { 
+import {
   LinkElement,
   LinkInternalElement
 } from 'sevago-sso-fe';
@@ -202,8 +200,9 @@ import {
 ```
 
 ##### Form Elements
+
 ```tsx
-import { 
+import {
   RadioElement,
   CheckboxElement
 } from 'sevago-sso-fe';
@@ -213,8 +212,9 @@ import {
 ```
 
 ##### Typography Elements
+
 ```tsx
-import { 
+import {
   TypographyContentCaption,
   TypographyOneLine
 } from 'sevago-sso-fe';
@@ -224,8 +224,9 @@ import {
 ```
 
 ##### Tabs Elements
+
 ```tsx
-import { 
+import {
   TabsComponent,
   TabsSubsComponent,
   TabsBadgeCountComponent,
@@ -239,8 +240,9 @@ import {
 ```
 
 ##### Time Ago Elements
+
 ```tsx
-import { 
+import {
   TimeAgoComponent,
   TimeAgoContentComponent
 } from 'sevago-sso-fe';
@@ -250,8 +252,9 @@ import {
 ```
 
 ##### Other Elements
+
 ```tsx
-import { 
+import {
   DialogElement,
   DialogConfirmActionElement,
   DashedDividerElement,
@@ -259,9 +262,9 @@ import {
 } from 'sevago-sso-fe';
 
 <DialogElement open={open} onClose={handleClose}>Content</DialogElement>
-<DialogConfirmActionElement 
-  open={open} 
-  onConfirm={handleConfirm} 
+<DialogConfirmActionElement
+  open={open}
+  onConfirm={handleConfirm}
   onCancel={handleCancel}
 />
 <DashedDividerElement />
@@ -325,7 +328,7 @@ import { stringUtils } from 'sevago-sso-fe';
 import { Environment, getCurrentEnvironment } from 'sevago-sso-fe';
 
 // Get current environment based on hostname
-const env = getCurrentEnvironment(); 
+const env = getCurrentEnvironment();
 // Returns: Environment.DEVELOP | Environment.STAGING | Environment.PRODUCTION
 
 // Environment enum values
@@ -352,61 +355,62 @@ const env = Environment.DEVELOP;
 
 ### Components
 
-| Component | Description | Props |
-|-----------|-------------|-------|
-| `App` | Main application component with theme provider | None |
-| `SystemMonitorScreen` | System monitoring dashboard screen | `env: Environment`, `blacklist?: string[]` |
-| `AppGrid` | Application grid component with smart URL routing | `apps: AppInfo[]`, `env: Environment`, `columns?: number`, `rows?: number`, `iconSize?: number`, `iconRadius?: number`, `gap?: number \| string`, `showPagination?: boolean`, `titleVariant?`, `titleColor?`, `captionColor?` |
-| `AppsSidebar` | Applications sidebar component | `isOpen: boolean`, `onClose: () => void`, `env: Environment`, `position?: "left" \| "right"`, `blacklist?: string[]` |
-| `SystemMonitorSidebarPart` | System monitor sidebar part | - |
-| **Avatar Elements** | | |
-| `AvatarElement` | Basic avatar element | `src`, `alt`, `sx?` |
-| `AvatarOnlineStatusElement` | Avatar with online status indicator | `src`, `isOnline`, `sx?` |
-| `AvatarUserInfo` | Avatar with user information | `name`, `avatar`, `sx?` |
-| **Button Elements** | | |
-| `ButtonElement` | Standard button | `onClick`, `children`, `variant?`, `sx?` |
-| `ButtonIconElement` | Button with icon | `icon`, `onClick`, `sx?` |
-| `ButtonIconCircleElement` | Circular icon button | `icon`, `onClick`, `sx?` |
-| `ButtonIconSquareElement` | Square icon button | `icon`, `onClick`, `sx?` |
-| `ButtonIconContentOpacityElement` | Button with icon and opacity content | `icon`, `content`, `onClick`, `sx?` |
-| `ButtonImageElement` | Button with image | `image`, `onClick`, `sx?` |
-| `ButtonUploadFileElement` | File upload button | `onUpload`, `accept?`, `sx?` |
-| **Icon Elements** | | |
-| `IconElement` | Basic icon | `icon`, `sx?` |
-| `IconContentElement` | Icon with content | `icon`, `content`, `sx?` |
-| `IconContentBadgeCountElement` | Icon with badge count | `icon`, `count`, `sx?` |
-| `IconContentBadgeCountSubsElement` | Icon with badge count and subtitle | `icon`, `count`, `subtitle`, `sx?` |
-| `IconButtonElement` | Icon button | `icon`, `onClick`, `sx?` |
-| `IconContentSubsElement` | Icon with content and subtitle | `icon`, `content`, `subtitle`, `sx?` |
-| `IconContentOpacityElement` | Icon with opacity content | `icon`, `content`, `opacity?`, `sx?` |
-| **Image Elements** | | |
-| `ImageElement` | Image element | `url: string`, `sizeType?: ImageSizeType`, `sx?` |
-| `ImageContentCaptionComponent` | Image with caption | `image`, `caption`, `sx?` |
-| `ImageContentTimeComponent` | Image with time | `image`, `time`, `sx?` |
-| **Link Elements** | | |
-| `LinkElement` | External link | `href`, `target?`, `children`, `sx?` |
-| `LinkInternalElement` | Internal router link | `to`, `children`, `sx?` |
-| **Form Elements** | | |
-| `RadioElement` | Radio button | `value`, `checked`, `onChange`, `sx?` |
-| `CheckboxElement` | Checkbox | `checked`, `onChange`, `label?`, `sx?` |
-| **Typography Elements** | | |
-| `TypographyContentCaption` | Typography with caption | `children`, `variant?`, `color?`, `sx?` |
-| `TypographyOneLine` | Single line typography (truncated) | `children`, `variant?`, `sx?` |
-| **Tabs Elements** | | |
-| `TabsComponent` | Basic tabs | `tabs`, `value`, `onChange`, `sx?` |
-| `TabsSubsComponent` | Tabs with subtitles | `tabs`, `value`, `onChange`, `sx?` |
-| `TabsBadgeCountComponent` | Tabs with badge counts | `tabs`, `badgeCounts`, `value`, `onChange`, `sx?` |
-| `TabsBadgeCountSubsComponent` | Tabs with badge counts and subtitles | `tabs`, `badgeCounts`, `value`, `onChange`, `sx?` |
-| **Time Elements** | | |
-| `TimeAgoComponent` | Time ago display | `date`, `sx?` |
-| `TimeAgoContentComponent` | Time ago with content | `date`, `content?`, `sx?` |
-| **Other Elements** | | |
-| `DialogElement` | Dialog/modal | `open`, `onClose`, `children`, `sx?` |
-| `DialogConfirmActionElement` | Confirmation dialog | `open`, `onConfirm`, `onCancel`, `title?`, `content?`, `sx?` |
-| `DashedDividerElement` | Dashed divider line | `sx?` |
-| `MotionBox` | Framer Motion animated box | `preset?`, `animate?`, `transition?`, `children`, `hover?`, `index?`, `sx?` |
+| Component                         | Description                                       | Props                                                                                                                                                                                                                         |
+| --------------------------------- | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `App`                             | Main application component with theme provider    | None                                                                                                                                                                                                                          |
+| `SystemMonitorScreen`             | System monitoring dashboard screen                | `env: Environment`, `blacklist?: string[]`                                                                                                                                                                                    |
+| `AppGrid`                         | Application grid component with smart URL routing | `apps: AppInfo[]`, `env: Environment`, `columns?: number`, `rows?: number`, `iconSize?: number`, `iconRadius?: number`, `gap?: number \| string`, `showPagination?: boolean`, `titleVariant?`, `titleColor?`, `captionColor?` |
+| `AppsSidebar`                     | Applications sidebar component                    | `isOpen: boolean`, `onClose: () => void`, `env: Environment`, `position?: "left" \| "right"`, `blacklist?: string[]`                                                                                                          |
+| `SystemMonitorSidebarPart`        | System monitor sidebar part                       | -                                                                                                                                                                                                                             |
+| **Avatar Elements**               |                                                   |                                                                                                                                                                                                                               |
+| `AvatarElement`                   | Basic avatar element                              | `src`, `alt`, `sx?`                                                                                                                                                                                                           |
+| `AvatarOnlineStatusElement`       | Avatar with online status indicator               | `src`, `isOnline`, `sx?`                                                                                                                                                                                                      |
+| `AvatarUserInfo`                  | Avatar with user information                      | `name`, `avatar`, `sx?`                                                                                                                                                                                                       |
+| **Button Elements**               |                                                   |                                                                                                                                                                                                                               |
+| `ButtonElement`                   | Standard button                                   | `onClick`, `children`, `variant?`, `sx?`                                                                                                                                                                                      |
+| `ButtonIconElement`               | Button with icon                                  | `icon`, `onClick`, `sx?`                                                                                                                                                                                                      |
+| `ButtonIconCircleElement`         | Circular icon button                              | `icon`, `onClick`, `sx?`                                                                                                                                                                                                      |
+| `ButtonIconSquareElement`         | Square icon button                                | `icon`, `onClick`, `sx?`                                                                                                                                                                                                      |
+| `ButtonIconContentOpacityElement` | Button with icon and opacity content              | `icon`, `content`, `onClick`, `sx?`                                                                                                                                                                                           |
+| `ButtonImageElement`              | Button with image                                 | `image`, `onClick`, `sx?`                                                                                                                                                                                                     |
+| `ButtonUploadFileElement`         | File upload button                                | `onUpload`, `accept?`, `sx?`                                                                                                                                                                                                  |
+| **Icon Elements**                 |                                                   |                                                                                                                                                                                                                               |
+| `IconElement`                     | Basic icon                                        | `icon`, `sx?`                                                                                                                                                                                                                 |
+| `IconContentElement`              | Icon with content                                 | `icon`, `content`, `sx?`                                                                                                                                                                                                      |
+| `IconContentBadgeElement`         | Icon with badge count                             | `icon`, `count`, `sx?`                                                                                                                                                                                                        |
+| `IconContentBadgeSubsElement`     | Icon with badge count and subtitle                | `icon`, `count`, `subtitle`, `sx?`                                                                                                                                                                                            |
+| `IconButtonElement`               | Icon button                                       | `icon`, `onClick`, `sx?`                                                                                                                                                                                                      |
+| `IconContentSubsElement`          | Icon with content and subtitle                    | `icon`, `content`, `subtitle`, `sx?`                                                                                                                                                                                          |
+| `IconContentOpacityElement`       | Icon with opacity content                         | `icon`, `content`, `opacity?`, `sx?`                                                                                                                                                                                          |
+| **Image Elements**                |                                                   |                                                                                                                                                                                                                               |
+| `ImageElement`                    | Image element                                     | `url: string`, `sizeType?: ImageSizeType`, `sx?`                                                                                                                                                                              |
+| `ImageContentCaptionComponent`    | Image with caption                                | `image`, `caption`, `sx?`                                                                                                                                                                                                     |
+| `ImageContentTimeComponent`       | Image with time                                   | `image`, `time`, `sx?`                                                                                                                                                                                                        |
+| **Link Elements**                 |                                                   |                                                                                                                                                                                                                               |
+| `LinkElement`                     | External link                                     | `href`, `target?`, `children`, `sx?`                                                                                                                                                                                          |
+| `LinkInternalElement`             | Internal router link                              | `to`, `children`, `sx?`                                                                                                                                                                                                       |
+| **Form Elements**                 |                                                   |                                                                                                                                                                                                                               |
+| `RadioElement`                    | Radio button                                      | `value`, `checked`, `onChange`, `sx?`                                                                                                                                                                                         |
+| `CheckboxElement`                 | Checkbox                                          | `checked`, `onChange`, `label?`, `sx?`                                                                                                                                                                                        |
+| **Typography Elements**           |                                                   |                                                                                                                                                                                                                               |
+| `TypographyContentCaption`        | Typography with caption                           | `children`, `variant?`, `color?`, `sx?`                                                                                                                                                                                       |
+| `TypographyOneLine`               | Single line typography (truncated)                | `children`, `variant?`, `sx?`                                                                                                                                                                                                 |
+| **Tabs Elements**                 |                                                   |                                                                                                                                                                                                                               |
+| `TabsComponent`                   | Basic tabs                                        | `tabs`, `value`, `onChange`, `sx?`                                                                                                                                                                                            |
+| `TabsSubsComponent`               | Tabs with subtitles                               | `tabs`, `value`, `onChange`, `sx?`                                                                                                                                                                                            |
+| `TabsBadgeCountComponent`         | Tabs with badge counts                            | `tabs`, `badgeCounts`, `value`, `onChange`, `sx?`                                                                                                                                                                             |
+| `TabsBadgeCountSubsComponent`     | Tabs with badge counts and subtitles              | `tabs`, `badgeCounts`, `value`, `onChange`, `sx?`                                                                                                                                                                             |
+| **Time Elements**                 |                                                   |                                                                                                                                                                                                                               |
+| `TimeAgoComponent`                | Time ago display                                  | `date`, `sx?`                                                                                                                                                                                                                 |
+| `TimeAgoContentComponent`         | Time ago with content                             | `date`, `content?`, `sx?`                                                                                                                                                                                                     |
+| **Other Elements**                |                                                   |                                                                                                                                                                                                                               |
+| `DialogElement`                   | Dialog/modal                                      | `open`, `onClose`, `children`, `sx?`                                                                                                                                                                                          |
+| `DialogConfirmActionElement`      | Confirmation dialog                               | `open`, `onConfirm`, `onCancel`, `title?`, `content?`, `sx?`                                                                                                                                                                  |
+| `DashedDividerElement`            | Dashed divider line                               | `sx?`                                                                                                                                                                                                                         |
+| `MotionBox`                       | Framer Motion animated box                        | `preset?`, `animate?`, `transition?`, `children`, `hover?`, `index?`, `sx?`                                                                                                                                                   |
 
 **Note:** `AppGrid` automatically handles URL routing:
+
 - If `env` is a valid Environment enum value (develop/staging/production): uses configured URLs from `app.path[env]`
 - If `env` is not valid (e.g., localhost development): extracts path and uses `window.location.origin` with the path
 
@@ -455,13 +459,7 @@ const env = Environment.DEVELOP;
 Full TypeScript support with comprehensive type definitions:
 
 ```tsx
-import type { 
-  AppInfo,
-  AppGridProps,
-  SystemMonitorScreenProps,
-  AppsSidebarProps,
-  Environment
-} from 'sevago-sso-fe';
+import type { AppInfo, AppGridProps, SystemMonitorScreenProps, AppsSidebarProps, Environment } from 'sevago-sso-fe';
 
 // AppInfo interface
 interface AppInfo {

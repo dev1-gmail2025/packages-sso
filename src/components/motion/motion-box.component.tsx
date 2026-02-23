@@ -1,7 +1,7 @@
 import { motion, type MotionProps } from 'framer-motion';
 import React from 'react';
 
-type AnimationPreset =
+export type AnimationPreset =
   | 'fadeInUp'
   | 'fadeInDown'
   | 'fadeInLeft'
@@ -12,7 +12,7 @@ type AnimationPreset =
   | 'tabContent'
   | 'tabUnderline';
 
-interface MotionBoxProps extends Omit<MotionProps, 'initial' | 'animate' | 'transition'> {
+export interface MotionBoxProps extends Omit<MotionProps, 'initial' | 'animate' | 'transition'> {
   children: React.ReactNode;
   sx?: React.CSSProperties;
   onClick?: () => void;
@@ -22,7 +22,7 @@ interface MotionBoxProps extends Omit<MotionProps, 'initial' | 'animate' | 'tran
   hover?: boolean;
 }
 
-const animationPresets = {
+export const animationPresets = {
   fadeInUp: {
     initial: { opacity: 0, y: 50 },
     animate: { opacity: 1, y: 0 },

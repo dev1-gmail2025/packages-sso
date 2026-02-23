@@ -4,7 +4,7 @@ import { Box, Typography, IconButton } from '@mui/material';
 import { IconElement } from '../elements';
 import { STYLE } from '../../common';
 
-interface BreadcrumbsProps {
+export interface BreadcrumbsProps {
   content: string;
   showBackButton?: boolean;
   onBack?: () => void;

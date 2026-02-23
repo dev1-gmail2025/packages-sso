@@ -1,3 +1,3 @@
-export { AvatarOnlineStatusElement } from './avatar-online-status.element';
-export { AvatarUserInfo } from './avatar-user-info.element';
-export { AvatarElement } from './avatar.element';
+export * from './avatar-online-status.element';
+export * from './avatar-user-info.element';
+export * from './avatar.element';

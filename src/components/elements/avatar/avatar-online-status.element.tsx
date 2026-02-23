@@ -4,7 +4,7 @@ import React from 'react';
 import { AvatarElement } from './avatar.element';
 import { COLOR, SizeProps } from '../../../common';
 
-interface AvatarOnlineStatusElementProps {
+export interface AvatarOnlineStatusElementProps {
   url?: string | null;
   size?: SizeProps;
   online?: boolean;
@@ -75,5 +75,3 @@ export const AvatarOnlineStatusElement: React.FC<AvatarOnlineStatusElementProps>
     </Badge>
   );
 };
-
-export default AvatarOnlineStatusElement;

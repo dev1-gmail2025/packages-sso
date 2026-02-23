@@ -2,7 +2,7 @@ import { Stack, SxProps, useTheme } from '@mui/material';
 import { LayoutGroup, motion } from 'framer-motion';
 import React, { useEffect, useId, useState } from 'react';
 import { StackTabs } from '../../styles';
-import { IconContentBadgeCountElement } from '../icon';
+import { IconContentBadgeElement } from '../icon';
 import { LinkElement } from '../link';
 import { TabComponent } from './tabs.component';
 import { TAB_BACKGROUND_STYLES, TAB_STYLES } from './tabs.constant';
@@ -60,7 +60,7 @@ export const TabsBadgeCountComponent: React.FC<TabsBadgeCountComponentProps> = (
                 onSelect?.(tab.id);
               }}
             >
-              <IconContentBadgeCountElement
+              <IconContentBadgeElement
                 icon={tab.icon}
                 content={tab.name}
                 badgeCount={tab.badgeCount}

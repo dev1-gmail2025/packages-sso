@@ -1,5 +1,4 @@
 export * from './app-grid';
-export * from './banner';
 export * from './bread-cumbs';
 export * from './elements';
 export * from './empty';

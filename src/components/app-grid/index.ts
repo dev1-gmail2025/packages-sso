@@ -1,2 +1,2 @@
-export { AppGrid } from './app-grid.component';
-export { AppGridItem } from './app-grid-item.component';
+export * from './app-grid.component';
+export * from './app-grid-item.component';

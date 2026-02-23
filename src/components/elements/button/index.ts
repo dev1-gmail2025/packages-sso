@@ -1,7 +1,7 @@
-export { ButtonIconCircleElement } from './button-icon-circle.element';
-export { ButtonIconContentOpacityElement } from './button-icon-content-opacity.element';
-export { ButtonIconSquareElement } from './button-icon-square.element';
-export { ButtonIconElement } from './button-icon.element';
-export { ButtonImageElement } from './button-image.element';
-export { ButtonUploadFileElement } from './button-upload-file.element';
-export { ButtonElement } from './button.element';
+export * from './button-icon-circle.element';
+export * from './button-icon-content-opacity.element';
+export * from './button-icon-square.element';
+export * from './button-icon.element';
+export * from './button-image.element';
+export * from './button-upload-file.element';
+export * from './button.element';

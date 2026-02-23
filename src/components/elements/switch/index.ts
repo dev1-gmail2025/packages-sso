@@ -1,2 +1,2 @@
-export { SwitchContentElement } from './switch-content.element';
-export { SwitchElement } from './switch.element';
+export * from './switch-content.element';
+export * from './switch.element';
