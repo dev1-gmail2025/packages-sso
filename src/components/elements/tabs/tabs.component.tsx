@@ -1,7 +1,7 @@
 import { Stack, SxProps, useTheme } from '@mui/material';
 import { LayoutGroup, motion } from 'framer-motion';
 import React, { useEffect, useId, useState } from 'react';
-import { COLOR_CONSTANT, STYLE } from '../../../common';
+import { COLOR, STYLE } from '../../../common';
 import { StackTabs } from '../../styles';
 import { IconContentElement } from '../icon';
 import { LinkElement } from '../link';
@@ -77,7 +77,7 @@ export const TabsComponent: React.FC<TabsComponentProps> = ({
                 position: 'relative',
                 padding: `10px ${STYLE.PADDING_GAP_LAYOUT}`,
                 cursor: 'pointer',
-                borderRight: index < tabs.length - 1 ? `1px solid ${COLOR_CONSTANT.gray}` : 'none',
+                borderRight: index < tabs.length - 1 ? `1px solid ${COLOR.COMMON.gray}` : 'none',
                 ...sxTabs,
               }}
               initial={{

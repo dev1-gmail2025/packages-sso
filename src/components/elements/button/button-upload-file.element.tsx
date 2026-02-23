@@ -1,7 +1,7 @@
 import { ButtonProps, Stack } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
-import { FileWithPreview } from '../../../common/interfaces/image-with-preview.interface';
 import { ButtonIconElement } from './button-icon.element';
+import { FileWithPreview } from '../../../common';
 
 export interface ButtonUploadFileElementProps extends Omit<ButtonProps, 'onChange'> {
   multiple?: boolean;

@@ -1,13 +1,14 @@
 import { Stack, SxProps, Theme, Typography } from '@mui/material';
 import React from 'react';
-import { checkEmptyText, getLimitLineCss, TYPOGRAPHY_STYLES } from '../../../common';
+import { getLimitLineCss } from '../../../common/utils/other.util';
+import { STYLE } from '../../../common';
 
 export interface TypographyContentCaptionProps {
   sx?: SxProps<Theme>;
   content?: any; // fix
   caption?: string;
-  sxContent?: SxProps;
-  sxCaption?: SxProps;
+  sxContent?: SxProps<Theme>;
+  sxCaption?: SxProps<Theme>;
   userTitleName?: string;
 }
 
@@ -21,35 +22,11 @@ export const TypographyContentCaption: React.FC<TypographyContentCaptionProps> =
 }) => {
   return (
     <Stack gap={0} sx={{ ...sx }}>
-      <Typography
-        sx={{
-          ...getLimitLineCss(1),
-          ...sxContent,
-        }}
-      >
-        {checkEmptyText(content)}
-      </Typography>
+      <Typography sx={{ ...getLimitLineCss(1), ...sxContent } as SxProps<Theme>}>{content}</Typography>
       {userTitleName && (
-        <Typography
-          sx={{
-            ...TYPOGRAPHY_STYLES.textXs.regular,
-            ...getLimitLineCss(1),
-          }}
-        >
-          {checkEmptyText(userTitleName)}
-        </Typography>
+        <Typography sx={{ ...STYLE.TYPOGRAPHY.textXs.regular, ...getLimitLineCss(1) }}>{userTitleName}</Typography>
       )}
-      {caption && (
-        <Typography
-          sx={{
-            ...TYPOGRAPHY_STYLES.textXs.regular,
-            // ...getLimitLineCss(1),
-            ...sxCaption,
-          }}
-        >
-          {checkEmptyText(caption)}
-        </Typography>
-      )}
+      {caption && <Typography sx={{ ...STYLE.TYPOGRAPHY.textXs.regular, ...sxCaption }}>{caption}</Typography>}
     </Stack>
   );
 };

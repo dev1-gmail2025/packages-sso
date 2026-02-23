@@ -6,7 +6,7 @@ export const StackRow = styled(Stack)(() => ({
   flexDirection: 'row',
 }));
 
-export const StackWrap = styled(Stack)(() => ({
+export const StackRowWrap = styled(Stack)(() => ({
   flexDirection: 'row',
   flexWrap: 'wrap',
 }));
@@ -16,8 +16,16 @@ export const StackRowAlignCenter = styled(Stack)(() => ({
   alignItems: 'center',
 }));
 
+export const StackAlignCenter = styled(Stack)(() => ({
+  alignItems: 'center',
+}));
+
 export const StackRowAlignEnd = styled(Stack)(() => ({
   flexDirection: 'row',
+  alignItems: 'flex-end',
+}));
+
+export const StackAlignEnd = styled(Stack)(() => ({
   alignItems: 'flex-end',
 }));
 
@@ -26,13 +34,26 @@ export const StackRowJustCenter = styled(Stack)(() => ({
   justifyContent: 'center',
 }));
 
+export const StackJustCenter = styled(Stack)(() => ({
+  flexDirection: 'row',
+}));
+
 export const StackRowJustAround = styled(Stack)(() => ({
   flexDirection: 'row',
   justifyContent: 'space-around',
 }));
 
+export const StackJustAround = styled(Stack)(() => ({
+  justifyContent: 'space-around',
+}));
+
 export const StackRowAlignJustCenter = styled(Stack)(() => ({
   flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
+
+export const StackAlignJustCenter = styled(Stack)(() => ({
   alignItems: 'center',
   justifyContent: 'center',
 }));
@@ -43,13 +64,26 @@ export const StackRowAlignCenterJustEnd = styled(Stack)(() => ({
   justifyContent: 'flex-end',
 }));
 
+export const StackAlignCenterJustEnd = styled(Stack)(() => ({
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+}));
+
 export const StackRowJustEnd = styled(Stack)(() => ({
   flexDirection: 'row',
   justifyContent: 'flex-end',
 }));
 
+export const StackJustEnd = styled(Stack)(() => ({
+  justifyContent: 'flex-end',
+}));
+
 export const StackRowJustBetween = styled(Stack)(() => ({
   flexDirection: 'row',
+  justifyContent: 'space-between',
+}));
+
+export const StackJustBetween = styled(Stack)(() => ({
   justifyContent: 'space-between',
 }));
 
@@ -59,8 +93,18 @@ export const StackRowAlignCenterJustBetween = styled(Stack)(() => ({
   justifyContent: 'space-between',
 }));
 
+export const StackAlignCenterJustBetween = styled(Stack)(() => ({
+  alignItems: 'center',
+  justifyContent: 'space-between',
+}));
+
 export const StackRowAlignStartJustBetween = styled(Stack)(() => ({
   flexDirection: 'row',
+  alignItems: 'flex-start',
+  justifyContent: 'space-between',
+}));
+
+export const StackAlignStartJustBetween = styled(Stack)(() => ({
   alignItems: 'flex-start',
   justifyContent: 'space-between',
 }));

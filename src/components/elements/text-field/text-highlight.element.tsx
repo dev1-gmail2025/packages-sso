@@ -1,7 +1,6 @@
 import React from 'react';
-import { COLOR_CONSTANT } from '../../../common/constant/color.constant';
-import { COLOR_HIERARCHIAL } from '../../../common/constant/hierarchical.constant';
-import { normalizeText } from '../../../common/utils/other/hierarchical.utils';
+import { normalizeText } from '../../../common/utils/string.util';
+import { COLOR } from '../../../common';
 
 export const highlightText = (text: string, searchTerm: string): React.ReactNode => {
   if (!searchTerm || !text) return text;
@@ -26,7 +25,7 @@ export const highlightText = (text: string, searchTerm: string): React.ReactNode
         <span
           key={i}
           style={{
-            color: COLOR_HIERARCHIAL.COLOR_HIGHLIGHT_TEXT,
+            color: COLOR.HIERARCHIAL.HIGHLIGHT_TEXT,
             textDecoration: 'underline',
           }}
         >
@@ -60,7 +59,7 @@ export const highlightYellow = (text: string | React.ReactNode, highlightQuery: 
   return (
     <span>
       {before}
-      <mark style={{ backgroundColor: COLOR_CONSTANT.yellow, padding: 0 }}>{match}</mark>
+      <mark style={{ backgroundColor: COLOR.COMMON.yellow, padding: 0 }}>{match}</mark>
       {after}
     </span>
   );

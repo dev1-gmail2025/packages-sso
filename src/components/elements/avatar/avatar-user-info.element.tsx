@@ -1,8 +1,9 @@
-import { Stack, SxProps, Typography, useTheme } from '@mui/material';
+import { Stack, SxProps, Theme, Typography, useTheme } from '@mui/material';
 import React from 'react';
-import { SizeProps, STYLE, getLimitLineCss, TYPOGRAPHY_STYLES } from '../../../common';
+import { SizeProps, STYLE } from '../../../common';
 import { StackRow } from '../../styles';
 import { AvatarElement } from './avatar.element';
+import { getLimitLineCss } from '../../../common/utils/other.util';
 
 export interface AvatarUserInfoProps {
   name: string;
@@ -10,8 +11,8 @@ export interface AvatarUserInfoProps {
   positions?: string[];
   maxWidth?: string | number;
   isTag?: boolean;
-  sxName?: SxProps;
-  sxPosition?: SxProps;
+  sxName?: SxProps<Theme>;
+  sxPosition?: SxProps<Theme>;
   sizeAvatar?: SizeProps;
 }
 
@@ -23,7 +24,7 @@ export const AvatarUserInfo: React.FC<AvatarUserInfoProps> = ({
   isTag = false,
   sxName,
   sxPosition,
-  sizeAvatar = 'large',
+  sizeAvatar = SizeProps.LARGE,
 }) => {
   const { palette } = useTheme();
 
@@ -33,48 +34,46 @@ export const AvatarUserInfo: React.FC<AvatarUserInfoProps> = ({
       {positions.length > 0 ? (
         <Stack sx={{ gap: 0 }}>
           <Typography
-            sx={{
-              fontWeight: '600',
-              fontSize: '14px',
-              lineHeight: '20px',
-              ...getLimitLineCss(1),
-              ...sxName,
-            }}
+            sx={
+              {
+                fontWeight: '600',
+                fontSize: '14px',
+                lineHeight: '20px',
+                ...getLimitLineCss(1),
+                ...sxName,
+              } as SxProps<Theme>
+            }
           >
             {name}
           </Typography>
 
           <Typography
             variant="caption"
-            sx={{
-              ...getLimitLineCss(1),
-              color: palette.text.disabled,
-              maxWidth,
-              ...(isTag && {
-                display: 'flex',
-                padding: '2px 4px',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '10px',
-                borderRadius: '4px',
-                background: ' #EFF8FF',
-                color: ' #035388',
-                width: 'fit-content',
-                ...sxPosition,
-              }),
-            }}
+            sx={
+              {
+                ...getLimitLineCss(1),
+                color: palette.text.disabled,
+                maxWidth,
+                ...(isTag && {
+                  display: 'flex',
+                  padding: '2px 4px',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: '10px',
+                  borderRadius: '4px',
+                  background: ' #EFF8FF',
+                  color: ' #035388',
+                  width: 'fit-content',
+                  ...sxPosition,
+                }),
+              } as SxProps<Theme>
+            }
           >
             {positions.join(' / ')}
           </Typography>
         </Stack>
       ) : (
-        <Typography
-          sx={{
-            ...TYPOGRAPHY_STYLES.textSm.semiBold,
-            ...getLimitLineCss(1),
-            ...sxName,
-          }}
-        >
+        <Typography sx={{ ...STYLE.TYPOGRAPHY.textSm.semiBold, ...getLimitLineCss(1), ...sxName } as SxProps<Theme>}>
           {name}
         </Typography>
       )}

@@ -1,5 +1,5 @@
 import { styled } from '@mui/material';
-import { STYLE } from '../../common/constant';
+import { STYLE } from '../../common/const';
 import { LinkElement } from '../elements/link/link.element';
 
 export const LinkWrapProductRow = styled(LinkElement)(({ theme }) => ({

@@ -1,20 +1,20 @@
 import { Badge, BadgeProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import React from 'react';
-import { COLOR_CONSTANT } from '../../../common';
 import { AvatarElement } from './avatar.element';
+import { COLOR, SizeProps } from '../../../common';
 
 interface AvatarOnlineStatusElementProps {
   url?: string | null;
-  size?: 'small' | 'medium' | 'large' | 'extra_large';
+  size?: SizeProps;
   online?: boolean;
   children?: React.ReactNode;
 }
 
 export const OnlineBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   '& .MuiBadge-badge': {
-    backgroundColor: COLOR_CONSTANT.success,
-    color: COLOR_CONSTANT.success,
+    backgroundColor: COLOR.COMMON.success,
+    color: COLOR.COMMON.success,
     boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
     '&::after': {
       position: 'absolute',
@@ -42,14 +42,14 @@ export const OnlineBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
 
 export const AvatarOnlineStatusElement: React.FC<AvatarOnlineStatusElementProps> = ({
   url,
-  size = 'extra_large',
+  size = SizeProps.EXTRA_LARGE,
   online = false,
   children,
 }) => {
   if (online) {
     return (
       <OnlineBadge overlap="circular" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} variant="dot">
-        <AvatarElement url={url || undefined} size={size} sx={{ backgroundColor: COLOR_CONSTANT.gray2 }}>
+        <AvatarElement url={url || undefined} size={size} sx={{ backgroundColor: COLOR.COMMON.gray2 }}>
           {children}
         </AvatarElement>
       </OnlineBadge>
@@ -63,13 +63,13 @@ export const AvatarOnlineStatusElement: React.FC<AvatarOnlineStatusElementProps>
       variant="dot"
       sx={{
         '& .MuiBadge-badge': {
-          backgroundColor: COLOR_CONSTANT.gray4,
-          color: COLOR_CONSTANT.gray4,
+          backgroundColor: COLOR.COMMON.gray4,
+          color: COLOR.COMMON.gray4,
           boxShadow: (theme) => `0 0 0 2px ${theme.palette.background.paper}`,
         },
       }}
     >
-      <AvatarElement url={url || undefined} size={size} sx={{ backgroundColor: COLOR_CONSTANT.gray2 }}>
+      <AvatarElement url={url || undefined} size={size} sx={{ backgroundColor: COLOR.COMMON.gray2 }}>
         {children}
       </AvatarElement>
     </Badge>

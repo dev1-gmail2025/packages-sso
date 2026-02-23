@@ -1,6 +1,6 @@
 import { Button, ButtonProps, Typography, useTheme } from '@mui/material';
 import React from 'react';
-import { STYLE, TYPOGRAPHY_STYLES } from '../../../common';
+import { STYLE } from '../../../common';
 import { LoadingComponent } from '../../loading';
 import { IconElement } from '../icon';
 
@@ -57,7 +57,7 @@ export const ButtonElement: React.FC<ButtonElementProps> = ({
       {loading ? (
         <LoadingComponent color={palette.primary.contrastText} size="small" sx={{ minHeight: '24.5px' }} />
       ) : (
-        <Typography sx={{ ...TYPOGRAPHY_STYLES.textSm.regular, whiteSpace: 'nowrap' }}>{content}</Typography>
+        <Typography sx={{ ...STYLE.TYPOGRAPHY.textSm.regular, whiteSpace: 'nowrap' }}>{content}</Typography>
       )}
     </Button>
   );

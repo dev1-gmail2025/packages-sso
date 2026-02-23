@@ -1,8 +1,8 @@
 import { Stack, SxProps, Theme, Typography, useTheme } from '@mui/material';
 import React from 'react';
-import { STYLE } from '../../common/constant';
 import { IconElement } from '../elements/icon/icon.element';
 import { StackRowAlignCenter } from '../styles/stack.style';
+import { STYLE } from '../../common';
 
 export interface PriceComponentProps {
   isLineHeight1?: boolean;

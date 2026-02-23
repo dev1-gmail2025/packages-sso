@@ -111,15 +111,7 @@ export const MotionBox: React.FC<MotionBoxProps> = ({
     return {};
   };
 
-  const hoverProps = hover
-    ? {
-        whileHover: {
-          y: -4,
-          scale: 1.05,
-          transition: { duration: 0.2 },
-        },
-      }
-    : {};
+  const hoverProps = hover ? { whileHover: { y: -4, scale: 1.05, transition: { duration: 0.2 } } } : {};
 
   return (
     <motion.div {...motionProps} {...getAnimationProps()} {...hoverProps} onClick={onClick} style={{ ...sx }}>

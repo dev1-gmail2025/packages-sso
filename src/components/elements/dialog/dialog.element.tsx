@@ -13,11 +13,11 @@ import {
 } from '@mui/material';
 import { Form } from 'formik';
 import React, { ReactNode, useState } from 'react';
-import { SnackbarType, colorMap, STYLE } from '../../../common';
 import { StackRowAlignCenterJustBetween, StackRow } from '../../styles';
 import { ButtonElement } from '../button';
 import { ButtonElementProps } from '../button/button.element';
 import { IconContentElement, IconElement } from '../icon';
+import { COLOR, SnackbarType, STYLE } from '../../../common';
 
 export interface DialogElementProps extends DialogProps {
   iconLabel?: string;
@@ -50,13 +50,13 @@ const getButtonColor = (
 ): ButtonElementProps | undefined => {
   if (!button) return button;
 
-  let colors = colorMap[button.buttonType || ''];
+  let colors = COLOR.MAP[button.buttonType || ''];
 
   if (!colors) {
     if (position === 'left') {
-      colors = colorMap.cancel;
+      colors = COLOR.MAP.cancel;
     } else {
-      colors = colorMap.success;
+      colors = COLOR.MAP.success;
     }
   }
 

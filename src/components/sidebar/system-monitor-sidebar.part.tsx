@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { APP_OBJ, AppInfo, Environment, IconAppsSidebar } from '../../common';
+import { AppInfo, Environment, ICONS } from '../../common';
 import { AppGridItem } from '../app-grid';
 import { ImageElement, ImageSizeType } from '../elements';
 import { AppsSidebar } from './apps-sidebar.component';
+import { APP_OBJ } from '../../common/const/apps.const';
 
 export interface SystemMonitorSidebarPartProps {
   position?: 'left' | 'right';
@@ -39,7 +40,7 @@ export const SystemMonitorSidebarPart: React.FC<SystemMonitorSidebarPartProps> =
 
   return (
     <>
-      <ImageElement url={IconAppsSidebar} onClick={() => setOpen(true)} sizeType={ImageSizeType.SQUARE} />
+      <ImageElement url={ICONS.iconApps} onClick={() => setOpen(true)} sizeType={ImageSizeType.SQUARE} />
 
       {currentApp && (
         <AppGridItem

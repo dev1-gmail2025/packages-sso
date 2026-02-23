@@ -1,7 +1,8 @@
-import { SxProps, Theme, Typography } from '@mui/material';
+import { Stack, SxProps, Theme, Typography } from '@mui/material';
 import React from 'react';
-import { COLOR_CONSTANT, STYLE, TYPOGRAPHY_STYLES, getLimitLineCss } from '../../../common';
-import { StackWrap } from '../../styles';
+import { COLOR, STYLE } from '../../../common';
+import { getLimitLineCss } from '../../../common/utils/other.util';
+import { TAG_SIZE } from '../../../common/const/style.const';
 
 export type TagType = 'success' | 'warning' | 'info' | 'secondary' | 'primary' | 'error';
 export type TagSize = 'large' | 'medium' | 'small';
@@ -9,7 +10,7 @@ export type TagVariant = 'contained' | 'outlined' | 'outlined-border';
 
 export const lightenColor = (hex?: string, percent: number = 0): string => {
   if (!hex || !/^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/.test(hex)) {
-    return COLOR_CONSTANT.white;
+    return COLOR.COMMON.white;
   }
 
   let r: number, g: number, b: number;
@@ -29,21 +30,6 @@ export const lightenColor = (hex?: string, percent: number = 0): string => {
   b = Math.round(b + (255 - b) * percent);
 
   return `rgb(${r}, ${g}, ${b})`;
-};
-
-const TAG_SIZE = {
-  large: {
-    padding: '6px 8px',
-    ...TYPOGRAPHY_STYLES.textXs.medium,
-  },
-  medium: {
-    padding: '4px 6px',
-    ...TYPOGRAPHY_STYLES.textXs.medium,
-  },
-  small: {
-    padding: 0.5,
-    ...TYPOGRAPHY_STYLES.textSmall.medium,
-  },
 };
 
 export interface TagElementProps {
@@ -88,7 +74,7 @@ export const TagElement: React.FC<TagElementProps> = ({
   return (
     <>
       {iconProps ? (
-        <StackWrap
+        <Stack
           sx={{
             borderRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
             width,
@@ -101,20 +87,22 @@ export const TagElement: React.FC<TagElementProps> = ({
         >
           {iconProps && iconProps}
           <Typography variant={variation}>{content}</Typography>
-        </StackWrap>
+        </Stack>
       ) : (
         <Typography
           variant={variation}
-          sx={{
-            borderRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
-            width,
-            textAlign: 'center',
-            textWrap: 'nowrap',
-            ...getLimitLineCss(1),
-            ...TAG_SIZE[size],
-            ...TAG_VARIANT[variant],
-            ...sx,
-          }}
+          sx={
+            {
+              borderRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
+              width,
+              textAlign: 'center',
+              textWrap: 'nowrap',
+              ...getLimitLineCss(1),
+              ...TAG_SIZE[size],
+              ...TAG_VARIANT[variant],
+              ...sx,
+            } as SxProps<Theme>
+          }
         >
           {content}
         </Typography>

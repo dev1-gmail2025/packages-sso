@@ -1,6 +1,6 @@
 import { ButtonProps, IconButton, useTheme } from '@mui/material';
-import { OPACITY } from '../../../common';
 import { IconElement } from '../icon';
+import { OPACITY } from '../../../common/const/other.const';
 
 export interface ButtonIconCircleElementProps extends ButtonProps {
   icon: string;

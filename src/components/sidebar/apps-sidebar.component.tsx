@@ -2,10 +2,11 @@ import { Box, IconButton, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import React from 'react';
 import { AppGrid } from '../app-grid/app-grid.component';
-import { Environment, AppInfo, APP_OBJ, AppGroup, SSO } from '../../common';
-import { PADDING_GAP_LAYOUT, PADDING_GAP_ITEM } from '../../common/constant/style.constant';
+import { Environment, AppInfo, AppGroup } from '../../common';
+import { PADDING_GAP_LAYOUT, PADDING_GAP_ITEM } from '../../common/const/style.const';
 import { IconElement } from '../elements';
 import { MotionBox } from '../motion';
+import { APP_OBJ, SSO } from '../../common/const/apps.const';
 
 interface AppsSidebarProps {
   isOpen: boolean;
@@ -28,15 +29,18 @@ export const AppsSidebar: React.FC<AppsSidebarProps> = ({
 
   const theme = useTheme();
 
-  const appsGroupObj = Object.keys(APP_OBJ).reduce((r, key) => {
-    if (blacklist.includes(key)) return r;
-    const e = (APP_OBJ as any)[key] as AppInfo;
+  const appsGroupObj = Object.keys(APP_OBJ).reduce(
+    (r, key) => {
+      if (blacklist.includes(key)) return r;
+      const e = (APP_OBJ as any)[key] as AppInfo;
 
-    if (r[e.group]) r[e.group].push(e);
-    else r[e.group] = [e];
+      if (r[e.group]) r[e.group].push(e);
+      else r[e.group] = [e];
 
-    return r;
-  }, {} as Record<AppGroup, AppInfo[]>);
+      return r;
+    },
+    {} as Record<AppGroup, AppInfo[]>,
+  );
 
   return (
     <>

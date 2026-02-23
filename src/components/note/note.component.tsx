@@ -1,4 +1,4 @@
-import { STYLE } from '../../common/constant';
+import { STYLE } from '../../common/const';
 import { Stack, Typography, useTheme } from '@mui/material';
 import React, { Fragment } from 'react';
 import { IconElement } from '../elements/icon/icon.element';
@@ -16,26 +16,10 @@ export const NoteComponent: React.FC<NoteComponentProps> = ({ content, contentHr
   const { palette } = useTheme();
 
   const tempData = {
-    info: {
-      icon: 'error',
-      title: 'Info',
-      color: palette.success.dark,
-    },
-    recommend: {
-      icon: 'gpp_maybe',
-      title: 'Recommend',
-      color: palette.info.dark,
-    },
-    warning: {
-      icon: 'report',
-      title: 'Warning',
-      color: palette.warning.dark,
-    },
-    error: {
-      icon: 'emergency_home',
-      title: 'Error',
-      color: palette.error.dark,
-    },
+    info: { icon: 'error', title: 'Info', color: palette.success.dark },
+    recommend: { icon: 'gpp_maybe', title: 'Recommend', color: palette.info.dark },
+    warning: { icon: 'report', title: 'Warning', color: palette.warning.dark },
+    error: { icon: 'emergency_home', title: 'Error', color: palette.error.dark },
   };
 
   return (

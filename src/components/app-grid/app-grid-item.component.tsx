@@ -29,12 +29,7 @@ export const AppGridItem: React.FC<AppGridItemProps> = ({
     <StackRowAlignCenter sx={{ flexDirection: direction, gap: STYLE.PADDING_GAP_ITEM }}>
       {showIconApps && (
         <StackRowAlignJustCenter
-          sx={{
-            width: iconSize,
-            height: iconSize,
-            borderRadius: iconRadius,
-            background: app.color,
-          }}
+          sx={{ width: iconSize, height: iconSize, borderRadius: iconRadius, background: app.color }}
         >
           <ImageElement
             sx={{ width: iconSize * 0.56, height: iconSize * 0.56 }}
@@ -45,7 +40,7 @@ export const AppGridItem: React.FC<AppGridItemProps> = ({
       )}
 
       {showNameApps && (
-        <Typography variant={titleVariant} sx={{ color: titleColor, textAlign: 'center',justifyContent: 'center' }}>
+        <Typography variant={titleVariant} sx={{ color: titleColor, textAlign: 'center', justifyContent: 'center' }}>
           {app.content}
         </Typography>
       )}

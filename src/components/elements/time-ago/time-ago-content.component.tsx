@@ -16,14 +16,7 @@ export const TimeAgoContentComponent: React.FC<TimeAgoContentComponentProps> = (
   height = STYLE.HEIGHT_IMAGE_DEFAULT,
 }) => {
   return (
-    <Stack
-      sx={{
-        height,
-        gap: 0,
-        justifyContent: 'space-between',
-        alignItems: 'flex-start',
-      }}
-    >
+    <Stack sx={{ height, gap: 0, justifyContent: 'space-between', alignItems: 'flex-start' }}>
       <TypographyOneLine content={content} />
       <TimeAgoComponent time={time} />
     </Stack>

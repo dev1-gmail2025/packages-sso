@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material';
 import React from 'react';
-import { getLimitLineCss, getTimeAgo } from '../../../common';
+import { getLimitLineCss } from '../../../common/utils/other.util';
+import { getTimeAgo } from '../../../common/utils/time.util';
 
 export interface TimeAgoComponentProps {
   time: Date;

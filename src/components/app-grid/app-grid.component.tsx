@@ -1,15 +1,15 @@
 import { Box, IconButton } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import React from 'react';
-import IconLeft from '../../assets/icon/icon-left';
-import IconRight from '../../assets/icon/icon-right';
+import IconLeft from '../../assets/icon-tsx/icon-left';
+import IconRight from '../../assets/icon-tsx/icon-right';
 import { AppInfo } from '../../common';
 import {
   PADDING_GAP_ITEM,
   PADDING_GAP_BUTTON,
   PADDING_GAP_ITEM_SMALL,
   BORDER_RADIUS_ELEMENT_WRAPPER,
-} from '../../common/constant/style.constant';
+} from '../../common/const/style.const';
 import { MotionBox } from '../motion';
 import { AppGridItem } from './app-grid-item.component';
 

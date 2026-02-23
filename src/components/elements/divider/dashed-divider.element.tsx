@@ -1,6 +1,6 @@
 import { Box } from '@mui/system';
 import React from 'react';
-import { COLOR_CONSTANT } from '../../../common';
+import { COLOR } from '../../../common';
 
 interface DashedDividerElementProps {
   orientation?: 'horizontal' | 'vertical';
@@ -13,7 +13,7 @@ interface DashedDividerElementProps {
 
 export const DashedDividerElement: React.FC<DashedDividerElementProps> = ({
   orientation = 'horizontal',
-  color = COLOR_CONSTANT.gray2,
+  color = COLOR.COMMON.gray2,
   thickness = 1,
   length = '100%',
   sx,
