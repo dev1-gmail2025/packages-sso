@@ -14,6 +14,7 @@ export const LinkElement: React.FC<LinkElementProps> = ({ onClick, sx = {}, targ
       sx={{ textDecoration: 'none', color: 'unset', ...sx }}
       onClick={(event) => {
         if (onClick) {
+          event.stopPropagation();
           event.preventDefault();
           onClick();
         }
