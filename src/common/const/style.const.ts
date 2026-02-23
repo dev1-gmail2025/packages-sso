@@ -32,6 +32,10 @@ export const PADDING_GAP_ITEM = '8px';
 
 export const PADDING_GAP_ITEM_SMALL = '6px';
 
+export const PADDING_GAP_SECTION_BOTTOM = '20px';
+
+export const PADDING_BOX_DETAIL_SECTION = `${PADDING_GAP_LAYOUT} ${PADDING_GAP_LAYOUT} ${PADDING_GAP_SECTION_BOTTOM}`;
+
 //
 
 export const HEIGHT_ELEMENT_OTHER = '36px';
@@ -51,6 +55,8 @@ export const BORDER_RADIUS_ELEMENT_MIDDLE = '8px';
 export const BORDER_RADIUS_ELEMENT_TAG = '3px';
 
 export const HEIGHT_DEFAULT_TEXT_FIELD_BUTTON = '37.13px';
+
+export const HEIGHT_TEXTFIELD_LABEL_MULTI_LINE = '50px';
 
 //
 export const TYPOGRAPHY = {
@@ -521,6 +527,7 @@ export const TEXT_FIELD = {
 
 export const FONT_SIZE_ICON = {
   large: '22px',
+  xl: '20px',
   medium: '19px',
   small: '12px',
 };
