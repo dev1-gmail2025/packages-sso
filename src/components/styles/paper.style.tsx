@@ -1,8 +1,8 @@
 import { Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { STYLE } from '../../common';
-import { lightenColor } from '../elements/tag/tag.element';
 import { TREE_COLOR } from '../../common/const/style.const';
+import { lightenColor } from '../../common/utils/other.util';
 
 interface PaperSelectProps {
   disableSelectedStyle?: boolean;
