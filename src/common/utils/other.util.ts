@@ -1,6 +1,6 @@
 import { createTheme, SxProps, Theme } from '@mui/material';
 import { Environment, Mode } from '../enums';
-import { MODE, STYLE } from '../const';
+import { COLOR, MODE, STYLE } from '../const';
 import { OPACITY } from '../const/other.const';
 
 export const getTheme = (mode = Mode.LIGHT) => {
@@ -149,4 +149,28 @@ export const getAppBlackList = (user: any, env: Environment, appBlackList: Recor
     return [...result, 'MEAL'];
   }
   return result;
+};
+
+export const lightenColor = (hex?: string, percent: number = 0): string => {
+  if (!hex || !/^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/.test(hex)) {
+    return COLOR.COMMON.white;
+  }
+
+  let r: number, g: number, b: number;
+
+  if (hex.length === 7) {
+    r = parseInt(hex.slice(1, 3), 16);
+    g = parseInt(hex.slice(3, 5), 16);
+    b = parseInt(hex.slice(5, 7), 16);
+  } else {
+    r = parseInt(hex[1] + hex[1], 16);
+    g = parseInt(hex[2] + hex[2], 16);
+    b = parseInt(hex[3] + hex[3], 16);
+  }
+
+  r = Math.round(r + (255 - r) * percent);
+  g = Math.round(g + (255 - g) * percent);
+  b = Math.round(b + (255 - b) * percent);
+
+  return `rgb(${r}, ${g}, ${b})`;
 };
