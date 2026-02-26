@@ -5,7 +5,7 @@ import { LoadingComponent } from '../../loading';
 import { IconElement } from '../icon';
 
 export interface ButtonElementProps extends ButtonProps {
-  content?: string;
+  content?: any;
   loading?: boolean;
   startIcon?: string | React.ReactNode;
   endIcon?: string | React.ReactNode;
