@@ -2,6 +2,12 @@ import { createTheme, SxProps, Theme } from '@mui/material';
 import { Environment, Mode } from '../enums';
 import { COLOR, MODE, STYLE } from '../const';
 import { OPACITY } from '../const/other.const';
+import IconExcel from '../../assets/icon/icon-excel.png';
+import IconDoc from '../../assets/icon/icon-doc.png';
+import IconPDF from '../../assets/icon/icon-pdf.png';
+import IconPPT from '../../assets/icon/icon-ppt.png';
+import { FileWithPreviewOrUrl } from '../interfaces';
+import { getFileExtension } from './file.util';
 
 export const getTheme = (mode = Mode.LIGHT) => {
   return createTheme({
@@ -173,4 +179,23 @@ export const lightenColor = (hex?: string, percent: number = 0): string => {
   b = Math.round(b + (255 - b) * percent);
 
   return `rgb(${r}, ${g}, ${b})`;
+};
+
+export const getDocumentIcon = (file: FileWithPreviewOrUrl): FileWithPreviewOrUrl => {
+  const ext = getFileExtension(file);
+  switch (ext) {
+    case 'pdf':
+      return IconPDF;
+    case 'doc':
+    case 'docx':
+      return IconDoc;
+    case 'xls':
+    case 'xlsx':
+      return IconExcel;
+    case 'ppt':
+    case 'pptx':
+      return IconPPT;
+    default:
+      return file;
+  }
 };

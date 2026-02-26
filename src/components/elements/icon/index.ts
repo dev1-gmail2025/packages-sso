@@ -6,3 +6,4 @@ export * from './icon-content-subs.element';
 export * from './icon-content.element';
 export * from './icon-image.element';
 export * from './icon.element';
+export * from './icon-image-zoom.element';
