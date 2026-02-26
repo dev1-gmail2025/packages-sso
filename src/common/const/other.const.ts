@@ -101,3 +101,5 @@ export const OPACITY = {
   1: '03',
   0: '00',
 };
+
+export const PAGE_TAKE_DEFAULT = { page: 1, take: 10 };

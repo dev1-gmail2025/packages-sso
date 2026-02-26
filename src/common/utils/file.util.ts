@@ -2,6 +2,7 @@
 import ExcelJS from 'exceljs';
 import { saveAs } from 'file-saver';
 import { EXCEL_STYLE } from '../const/style.const';
+import { FileWithPreviewOrUrl } from '../interfaces';
 
 export const styleDefaultRowExcel = (row: ExcelJS.Row) => {
   row.eachCell((cell) => {
@@ -100,4 +101,14 @@ export const downloadFileFromBlob = (response: any, fileName?: string) => {
   link.click();
   document.body.removeChild(link);
   window.URL.revokeObjectURL(url);
+};
+
+export const getFileExtension = (file: FileWithPreviewOrUrl): string => {
+  const name = typeof file === 'string' ? file : file?.name || '';
+  return name.split('.').pop()?.toLowerCase() || '';
+};
+
+export const isImageFile = (file: FileWithPreviewOrUrl): boolean => {
+  const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'svg'];
+  return imageExtensions.includes(getFileExtension(file));
 };
