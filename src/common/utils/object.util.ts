@@ -39,7 +39,7 @@ export const omitProperties = <T extends object, K extends keyof T>(obj: T, keys
   return Object.fromEntries(Object.entries(obj).filter(([key]) => !keysToOmit.includes(key as K))) as Omit<T, K>;
 };
 
-export const objectToStyleInline = (styleObj: Record<string, SxProps<Theme>>): string => {
+export const objectToStyleInline = (styleObj: any): string => {
   return Object.entries(styleObj)
     .map(([key, value]) => `${camelToKebabCase(key)}:${value}`)
     .join(';');

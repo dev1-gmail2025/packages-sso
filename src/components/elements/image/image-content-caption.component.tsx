@@ -9,7 +9,7 @@ export interface ImageContentCaptionComponentProps {
   url?: string;
   content?: string;
   caption?: string;
-  sizeType?: SizeProps;
+  sizeType?: SizeProps | string;
   sx?: SxProps;
   sxContent?: SxProps;
   sxCaption?: SxProps;

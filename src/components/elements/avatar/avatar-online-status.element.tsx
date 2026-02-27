@@ -6,7 +6,7 @@ import { COLOR, SizeProps } from '../../../common';
 
 export interface AvatarOnlineStatusElementProps {
   url?: string | null;
-  size?: SizeProps;
+  size?: SizeProps | string;
   online?: boolean;
   children?: React.ReactNode;
 }

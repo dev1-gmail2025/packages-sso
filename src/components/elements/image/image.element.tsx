@@ -10,7 +10,7 @@ export interface ImageElementProps extends BoxProps {
   isBorder?: boolean;
   isWrap?: boolean;
   sizeType?: ImageSizeType;
-  size?: SizeProps;
+  size?: SizeProps | string;
 }
 
 const ImageWrapper: React.FC<{ isWrap: boolean; children: ReactNode }> = ({ isWrap = false, children }) => {

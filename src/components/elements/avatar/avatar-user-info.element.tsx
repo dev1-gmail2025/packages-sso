@@ -13,7 +13,7 @@ export interface AvatarUserInfoProps {
   isTag?: boolean;
   sxName?: SxProps<Theme>;
   sxPosition?: SxProps<Theme>;
-  sizeAvatar?: SizeProps;
+  sizeAvatar?: SizeProps | string;
 }
 
 export const AvatarUserInfo: React.FC<AvatarUserInfoProps> = ({

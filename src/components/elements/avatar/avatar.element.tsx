@@ -6,7 +6,7 @@ import { MAP_SIZE } from '../../../common/const/style.const';
 
 export interface AvatarElementProps extends AvatarProps {
   url?: string | null;
-  size?: SizeProps;
+  size?: SizeProps | string;
   tooltipContent?: ReactNode;
 }
 
