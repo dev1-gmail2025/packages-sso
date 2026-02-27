@@ -1,8 +1,7 @@
-import dayjs from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import './vi.js';
-import { FileWithPreviewOrUrl } from '../interfaces/file.interface.js';
 
 dayjs.extend(utc);
 dayjs.extend(relativeTime);
@@ -79,4 +78,40 @@ export const isDateString = (value: any): boolean => {
   ];
 
   return datePatterns.some((pattern) => pattern.test(value));
+};
+
+export const getDateISO = (date?: Date | string | null): string | undefined => {
+  if (date == null) return undefined;
+
+  if (typeof date === 'string') {
+    const trimmed = date.trim();
+    if (!trimmed) return undefined;
+    const parsed = dayjs(trimmed);
+    if (parsed.isValid()) {
+      return parsed.format('YYYY-MM-DD');
+    }
+    return trimmed.includes('T') ? trimmed.split('T')[0] : trimmed;
+  }
+
+  const d = dayjs(date);
+  return d.isValid() ? d.format('YYYY-MM-DD') : undefined;
+};
+
+export const formatActivityDateLabel = (time: Date | string) => {
+  const date = dayjs(time);
+  if (!date.isValid()) return '';
+
+  const weekdays = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
+  const weekdayLabel = weekdays[date.day()];
+  const dayMonth = date.format('DD/MM');
+
+  return `${weekdayLabel}, ${dayMonth}`;
+};
+
+export const formatRange = (range: [Dayjs | null, Dayjs | null]) => {
+  const [start, end] = range;
+  if (!start && !end) return '';
+  if (start && end) return `${start.format('DD/MM/YYYY')} - ${end.format('DD/MM/YYYY')}`;
+  if (start) return `${start.format('DD/MM/YYYY')} - `;
+  return ` - ${end?.format('DD/MM/YYYY')}`;
 };

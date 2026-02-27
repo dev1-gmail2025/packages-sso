@@ -8,7 +8,7 @@ export interface ImageContentTimeComponentProps {
   url: string;
   content: string;
   time: Date;
-  sizeType?: SizeProps;
+  sizeType?: SizeProps | string;
 }
 
 export const ImageContentTimeComponent: React.FC<ImageContentTimeComponentProps> = ({
