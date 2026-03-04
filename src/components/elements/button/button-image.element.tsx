@@ -10,6 +10,7 @@ export interface ButtonImageElementProps extends ButtonProps {
   endIcon?: string;
   content: string;
   sx?: SxProps;
+  permission?: boolean;
 }
 
 export const ButtonImageElement: React.FC<ButtonImageElementProps> = ({
@@ -18,9 +19,11 @@ export const ButtonImageElement: React.FC<ButtonImageElementProps> = ({
   startIcon,
   endIcon,
   sx,
+  permission,
   ...rest
 }) => {
   const { palette } = useTheme();
+  if (permission === false) return null;
   return (
     <Button
       {...rest}

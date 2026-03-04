@@ -9,6 +9,7 @@ export interface ButtonIconContentOpacityElementProps extends ButtonProps {
   icon: string;
   content: any;
   isQuare?: boolean;
+  permission?: boolean;
 }
 
 export const ButtonIconContentOpacityElement: React.FC<ButtonIconContentOpacityElementProps> = ({
@@ -17,8 +18,10 @@ export const ButtonIconContentOpacityElement: React.FC<ButtonIconContentOpacityE
   content,
   isQuare = false,
   variant = 'outlined',
+  permission,
   ...rest
 }) => {
+  if (permission === false) return null;
   return (
     <Button
       {...rest}
