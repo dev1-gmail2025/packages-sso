@@ -7,6 +7,7 @@ import { IconElement } from '../icon';
 export interface ButtonIconSquareElementProps extends ButtonProps {
   loading?: boolean;
   icon: string;
+  permission?: boolean;
 }
 
 export const ButtonIconSquareElement: React.FC<ButtonIconSquareElementProps> = ({
@@ -14,9 +15,11 @@ export const ButtonIconSquareElement: React.FC<ButtonIconSquareElementProps> = (
   icon,
   variant = 'outlined',
   sx,
+  permission,
   ...rest
 }) => {
   const { palette } = useTheme();
+  if (permission === false) return null;
 
   return (
     <Button

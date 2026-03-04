@@ -6,9 +6,11 @@ import { IconElement } from '../icon';
 
 export interface ButtonIconElementProps extends ButtonProps {
   icon: string;
+  permission?: boolean;
 }
 
-export const ButtonIconElement: React.FC<ButtonIconElementProps> = ({ loading, icon, ...rest }) => {
+export const ButtonIconElement: React.FC<ButtonIconElementProps> = ({ loading, icon, permission, ...rest }) => {
+  if (permission === false) return null;
   return (
     <Button
       {...rest}

@@ -4,6 +4,7 @@ import { OPACITY } from '../../../common/const/other.const';
 
 export interface ButtonIconCircleElementProps extends ButtonProps {
   icon: string;
+  permission?: boolean;
 }
 
 export const ButtonIconCircleElement: React.FC<ButtonIconCircleElementProps> = ({
@@ -11,9 +12,11 @@ export const ButtonIconCircleElement: React.FC<ButtonIconCircleElementProps> = (
   color,
   size = 'medium',
   sx,
+  permission,
   ...rest
 }) => {
   const { palette } = useTheme();
+  if (permission === false) return null;
 
   if (!color) sx = { color: palette.text.primary, ...sx };
 

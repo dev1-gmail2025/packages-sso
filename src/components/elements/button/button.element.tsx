@@ -10,6 +10,7 @@ export interface ButtonElementProps extends ButtonProps {
   startIcon?: string | React.ReactNode;
   endIcon?: string | React.ReactNode;
   disabled?: boolean;
+  permission?: boolean;
 }
 
 export const ButtonElement: React.FC<ButtonElementProps> = ({
@@ -20,8 +21,10 @@ export const ButtonElement: React.FC<ButtonElementProps> = ({
   variant = 'contained',
   sx,
   disabled = false,
+  permission,
   ...rest
 }) => {
+  if (permission === false) return null;
   const { palette } = useTheme();
 
   return (

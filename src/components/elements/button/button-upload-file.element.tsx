@@ -7,14 +7,17 @@ export interface ButtonUploadFileElementProps extends Omit<ButtonProps, 'onChang
   multiple?: boolean;
   onChange: (files: FileWithPreview[]) => void;
   accept?: string;
+  permission?: boolean;
 }
 
 export const ButtonUploadFileElement: React.FC<ButtonUploadFileElementProps> = ({
   multiple = false,
   onChange,
   accept = 'image/*',
+  permission,
   ...rest
 }) => {
+  if (permission === false) return null;
   const [files, setFiles] = useState<FileWithPreview[]>([]);
 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
