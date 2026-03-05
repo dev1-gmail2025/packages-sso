@@ -24,7 +24,7 @@ export const ButtonElement: React.FC<ButtonElementProps> = ({
   permission,
   ...rest
 }) => {
-  if (permission === false) return null;
+  // if (permission === false) return null;
   const { palette } = useTheme();
 
   return (
