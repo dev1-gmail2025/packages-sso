@@ -41,6 +41,7 @@ export const COMMON = {
   black: '#0A0A0A',
 
   yellow: '#FFF59D',
+  //
 
   //ProjectStatus
   new: '#DFDFDF',
