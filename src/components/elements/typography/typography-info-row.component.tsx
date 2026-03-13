@@ -26,7 +26,7 @@ export const TypographyInfoRow: React.FC<TypographyInfoRowProps> = ({
           {label}:
         </Typography>
       )}
-      <Stack color="text.secondary" sx={{ ...getLimitLineCss(lineLimit), paddingTop: '2.5px', flex: 1 }}>
+      <Stack color="text.secondary" sx={{ ...getLimitLineCss(lineLimit),  flex: 1 }}>
         {value || 'Không có'}
       </Stack>
     </Stack>

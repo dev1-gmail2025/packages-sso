@@ -1,13 +1,14 @@
 import { ButtonProps, Stack } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
-import { ButtonIconElement } from './button-icon.element';
-import { FileWithPreview } from '../../../common';
+import { FileWithPreview } from '../../../../common';
+import { ButtonIconElement } from '../button-icon-element/button-icon.element';
 
 export interface ButtonUploadFileElementProps extends Omit<ButtonProps, 'onChange'> {
   multiple?: boolean;
   onChange: (files: FileWithPreview[]) => void;
   accept?: string;
   permission?: boolean;
+  loading?: boolean;
 }
 
 export const ButtonUploadFileElement: React.FC<ButtonUploadFileElementProps> = ({
@@ -15,6 +16,7 @@ export const ButtonUploadFileElement: React.FC<ButtonUploadFileElementProps> = (
   onChange,
   accept = 'image/*',
   permission,
+  loading = false,
   ...rest
 }) => {
   if (permission === false) return null;
@@ -33,7 +35,7 @@ export const ButtonUploadFileElement: React.FC<ButtonUploadFileElementProps> = (
 
   useEffect(() => {
     return () =>
-      files?.forEach((file) => {
+      files?.forEach(file => {
         URL.revokeObjectURL(file.preview);
       });
   }, [files]);
@@ -43,11 +45,12 @@ export const ButtonUploadFileElement: React.FC<ButtonUploadFileElementProps> = (
       <Stack sx={{ width: 'fit-content', height: 'fit-content' }}>
         <ButtonIconElement
           {...rest}
-          icon="attach_file"
+          loading={loading}
+          icon='attach_file'
           onClick={() => fileInputRef.current && fileInputRef.current.click()}
         />
       </Stack>
-      <input type="file" accept={accept} hidden multiple={multiple} ref={fileInputRef} onChange={change} />
+      <input type='file' accept={accept} hidden multiple={multiple} ref={fileInputRef} onChange={change} />
     </React.Fragment>
   );
 };
