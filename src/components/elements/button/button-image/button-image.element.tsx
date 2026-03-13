@@ -1,8 +1,8 @@
-import { Button, ButtonProps, SxProps, Typography, useTheme } from '@mui/material';
+import { Button, ButtonProps, SxProps, Typography } from '@mui/material';
 import React from 'react';
-import { STYLE } from '../../../common';
-import { LoadingComponent } from '../../loading';
-import { ImageElement } from '../image';
+import { STYLE } from '../../../../common';
+import { LoadingComponent } from '../../../loading';
+import { ImageElement } from '../../image';
 
 export interface ButtonImageElementProps extends ButtonProps {
   loading?: boolean;
@@ -22,7 +22,6 @@ export const ButtonImageElement: React.FC<ButtonImageElementProps> = ({
   permission,
   ...rest
 }) => {
-  const { palette } = useTheme();
   if (permission === false) return null;
   return (
     <Button
@@ -66,7 +65,7 @@ export const ButtonImageElement: React.FC<ButtonImageElementProps> = ({
       }}
     >
       {loading ? (
-        <LoadingComponent color={palette.primary.contrastText} size="small" sx={{ minHeight: '24.5px' }} />
+        <LoadingComponent size='small' sx={{ minHeight: '24.5px' }} />
       ) : (
         <Typography sx={{ transform: `translateY(0.5px)`, whiteSpace: 'nowrap' }}>{content}</Typography>
       )}

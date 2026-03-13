@@ -44,6 +44,7 @@ export const IconElement: React.FC<IconElementProps> = ({
         cursor: 'inherit',
         fontSize: STYLE.FONT_SIZE_ICON[size],
         fontVariationSettings: `'FILL' ${fill}, 'wght' 100, 'GRAD' 200, 'opsz' 24`,
+        alignContent: 'center',
         ...sx,
       }}
       component={'span'}
