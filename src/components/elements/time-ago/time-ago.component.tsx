@@ -10,7 +10,7 @@ export interface TimeAgoComponentProps {
 
 export const TimeAgoComponent: React.FC<TimeAgoComponentProps> = ({ time, hasText }) => {
   return (
-    <Typography variant="caption" sx={{ ...getLimitLineCss(1), color: 'text.disabled', lineHeight: 1.2 }}>
+    <Typography variant='caption' sx={{ ...getLimitLineCss(1), color: 'text.disabled' }}>
       {(hasText ? 'Cập nhật lúc ' : '') + getTimeAgo(time)}
     </Typography>
   );

@@ -3,7 +3,7 @@ import { AvatarUserInfo } from './avatar-user-info.element';
 import { avatarUserInfoArgTypes } from './avatar-user-info.argtypes';
 
 const meta: Meta<typeof AvatarUserInfo> = {
-  title: 'Components/Avatar/AvatarUserInfo',
+  title: 'Elements/Avatar/AvatarUserInfo',
   component: AvatarUserInfo,
   tags: ['autodocs'],
   args: {

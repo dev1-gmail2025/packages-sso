@@ -1,6 +1,6 @@
 import { useTheme } from '@mui/material';
-import React from 'react';
 import { motion, MotionConfig } from 'framer-motion';
+import React from 'react';
 
 export interface SwitchElementProps {
   name?: string;
@@ -20,7 +20,7 @@ export const SwitchElement: React.FC<SwitchElementProps> = ({ name, value = fals
   return (
     <MotionConfig transition={{ duration: 0.2, ease: 'easeOut' }}>
       <motion.div
-        className="switch"
+        className='switch'
         initial={false}
         animate={{
           backgroundColor: value ? palette.primary.main : palette.text.disabled,
@@ -40,7 +40,7 @@ export const SwitchElement: React.FC<SwitchElementProps> = ({ name, value = fals
       >
         <motion.div
           layout
-          className="handle"
+          className='handle'
           style={{
             background: '#fdfdfd',
             aspectRatio: 1,

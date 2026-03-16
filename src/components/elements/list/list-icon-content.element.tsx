@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react';
 import { List, ListItem, useTheme } from '@mui/material';
-import { IconContentElement } from '../icon/icon-content.element';
+import { ReactNode } from 'react';
 import { STYLE } from '../../../common';
+import { IconContentElement } from '../icon';
 
 export interface ListIconContentElementProps {
   titleNode?: ReactNode;
@@ -37,7 +37,7 @@ export const ListIconContentElement: React.FC<ListIconContentElementProps> = ({ 
           {titleNode}
         </ListItem>
       )}
-      {list.map((e) => (
+      {list.map(e => (
         <ListItem
           key={e.content}
           onClick={e.onClick}

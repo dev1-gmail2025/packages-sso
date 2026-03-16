@@ -7,7 +7,7 @@ import { ICONS } from '../../../../common/const/icons.const';
 import { buttonImageArgTypes } from './button-image.argtypes';
 
 const meta: Meta<typeof ButtonImageElement> = {
-  title: 'Components/Button/ButtonImageElement',
+  title: 'Elements/Button/ButtonImageElement',
   component: ButtonImageElement,
   tags: ['autodocs'],
   args: {

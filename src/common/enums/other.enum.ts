@@ -24,3 +24,19 @@ export enum SnackbarType {
   ERROR = 'error',
   WARNING = 'warning',
 }
+
+export enum TabSizeProps {
+  LARGE = 'large',
+  SMALL = 'small',
+  MEDIUM = 'medium',
+}
+
+export enum DirectionProps {
+  ROW = 'row',
+  COLUMN = 'column',
+}
+
+export enum VariantProps {
+  CONTAINED = 'contained',
+  OUTLINED = 'outlined',
+}

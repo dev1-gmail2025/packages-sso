@@ -3,9 +3,8 @@ import { expect, fn, userEvent, within } from '@storybook/test';
 import { ButtonIconContentOpacityElement } from './button-icon-content-opacity.element';
 import { buttonIconContentOpacityArgTypes } from './button-icon-content-opacity.argtypes';
 
-
 const meta: Meta<typeof ButtonIconContentOpacityElement> = {
-  title: 'Components/Button/ButtonIconContentOpacityElement',
+  title: 'Elements/Button/ButtonIconContentOpacityElement',
   component: ButtonIconContentOpacityElement,
   tags: ['autodocs'],
   args: {
@@ -29,11 +28,11 @@ type Story = StoryObj<typeof ButtonIconContentOpacityElement>;
 export const Default: Story = {};
 
 export const Variants: Story = {
-  render: (args) => (
+  render: args => (
     <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-      <ButtonIconContentOpacityElement {...args} variant="contained" content="Contained" />
-      <ButtonIconContentOpacityElement {...args} variant="outlined" content="Outlined" />
-      <ButtonIconContentOpacityElement {...args} variant="text" content="Text" />
+      <ButtonIconContentOpacityElement {...args} variant='contained' content='Contained' />
+      <ButtonIconContentOpacityElement {...args} variant='outlined' content='Outlined' />
+      <ButtonIconContentOpacityElement {...args} variant='text' content='Text' />
     </div>
   ),
 };
@@ -52,4 +51,3 @@ export const ClickCallsOnClick: Story = {
     await expect(args.onClick).toHaveBeenCalledTimes(1);
   },
 };
-

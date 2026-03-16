@@ -5,7 +5,7 @@ import { checkboxArgTypes } from './check-box.argtypes';
 import { CheckboxElement } from './check-box.element';
 
 const meta: Meta<typeof CheckboxElement> = {
-  title: 'Components/CheckBox/CheckBox',
+  title: 'Elements/CheckBox/CheckBox',
   component: CheckboxElement,
   tags: ['autodocs'],
   args: {

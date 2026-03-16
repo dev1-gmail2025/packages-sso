@@ -3,7 +3,7 @@ import { AvatarElement } from './avatar.element';
 import { avatarArgTypes } from './avatar.argtypes';
 
 const meta: Meta<typeof AvatarElement> = {
-  title: 'Components/Avatar/Avatar',
+  title: 'Elements/Avatar/Avatar',
   component: AvatarElement,
   tags: ['autodocs'],
   args: {

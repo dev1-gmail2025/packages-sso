@@ -5,7 +5,7 @@ import { STYLE } from '../../common';
 import { StackRowAlignCenterJustBetween, StackRowAlignJustCenter } from '../styles';
 import { lightenColor } from '../../common/utils/other.util';
 
-interface CardStatisticsComponentProps {
+export interface CardStatisticsComponentProps {
   label: string;
   count: number;
   color: string;

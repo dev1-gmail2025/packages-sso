@@ -1,8 +1,8 @@
 import { Stack, SxProps, Theme, Typography } from '@mui/material';
 import React from 'react';
 import { STYLE } from '../../../common';
-import { getLimitLineCss, lightenColor } from '../../../common/utils/other.util';
 import { TAG_SIZE } from '../../../common/const/style.const';
+import { getLimitLineCss, lightenColor } from '../../../common/utils/other.util';
 
 export type TagType = 'success' | 'warning' | 'info' | 'secondary' | 'primary' | 'error';
 export type TagSize = 'large' | 'medium' | 'small';
@@ -73,6 +73,7 @@ export const TagElement: React.FC<TagElementProps> = ({
               width,
               textAlign: 'center',
               textWrap: 'nowrap',
+              justifyContent: 'center',
               ...getLimitLineCss(1),
               ...TAG_SIZE[size],
               ...TAG_VARIANT[variant],

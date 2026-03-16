@@ -4,6 +4,7 @@ import { STYLE } from '../../common';
 
 export const StackRow = styled(Stack)(() => ({
   flexDirection: 'row',
+  gap: STYLE.PADDING_GAP_ITEM_SMALL,
 }));
 
 export const StackRowWrap = styled(Stack)(() => ({

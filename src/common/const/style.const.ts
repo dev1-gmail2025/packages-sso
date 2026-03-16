@@ -1,6 +1,5 @@
 // CÁC THÔNG SỐ CÙNG GROUP CÓ TỶ LỆ VỚI NHAU
 import { TypographyVariant } from '@mui/material/styles';
-import { SizeProps } from '../enums';
 
 //
 
