@@ -17,7 +17,8 @@ export const getTimeAgo = (time: Date | string) => {
 
 export const getDateTime = (time?: Date | string, isGetDay?: boolean) => {
   if (!time) return '';
-  return isGetDay ? dayjs(time).format('DD/MM/YYYY hh:mm') : dayjs(time).format('DD/MM/YYYY hh:mm A');
+  // 24h format: HH:mm
+  return isGetDay ? dayjs(time).format('DD/MM/YYYY') : dayjs(time).format('DD/MM/YYYY HH:mm');
 };
 
 export const getDate = (time?: Date | string) => {
