@@ -1,9 +1,9 @@
 import { Stack, SxProps, Theme, Typography, useTheme } from '@mui/material';
 import React from 'react';
-import { SizeProps, STYLE } from '../../../common';
-import { StackRow } from '../../styles';
-import { AvatarElement } from './avatar.element';
-import { getLimitLineCss } from '../../../common/utils/other.util';
+import { SizeProps, STYLE } from '../../../../common';
+import { StackRow } from '../../../styles';
+import { AvatarElement } from '../avatar.element';
+import { getLimitLineCss } from '../../../../common/utils/other.util';
 
 export interface AvatarUserInfoProps {
   name: string;
@@ -48,7 +48,7 @@ export const AvatarUserInfo: React.FC<AvatarUserInfoProps> = ({
           </Typography>
 
           <Typography
-            variant="caption"
+            variant='caption'
             sx={
               {
                 ...getLimitLineCss(1),
