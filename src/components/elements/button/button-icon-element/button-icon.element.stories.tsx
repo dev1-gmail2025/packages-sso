@@ -10,7 +10,7 @@ import { STYLE } from '../../../../common';
 import { ImageSizeType } from '../../image';
 
 const meta: Meta<typeof ButtonIconElement> = {
-  title: 'Components/Button/ButtonIconElement',
+  title: 'Elements/Button/ButtonIconElement',
   component: ButtonIconElement,
   tags: ['autodocs'],
   args: {

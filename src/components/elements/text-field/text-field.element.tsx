@@ -1,8 +1,8 @@
 import { Box, TextField, TextFieldProps, Typography, useTheme } from '@mui/material';
 import React from 'react';
+import { STYLE } from '../../../common';
 import { IconButtonElement } from '../icon';
 import { TextFieldLabelElement } from './text-field-label.element';
-import { STYLE } from '../../../common';
 
 export interface TextFieldElementProps extends Omit<TextFieldProps, ''> {
   iconLabel?: string;
@@ -36,7 +36,7 @@ export const TextFieldElement: React.FC<TextFieldElementProps> = ({
   if (rest.type === 'number') throw 'Please use component TextFieldNumberElement!';
 
   const change = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (onChange) onChange({ target: { name, value: event.target.value || null } });
+    if (onChange) onChange({ target: { name, value: event.target.value === '' ? '' : event.target.value || null } });
   };
   const { palette, typography } = useTheme();
   return (
@@ -53,33 +53,25 @@ export const TextFieldElement: React.FC<TextFieldElementProps> = ({
           ...InputProps,
           endAdornment:
             showResetButton && value && onReset ? (
-              <IconButtonElement icon="close" onClick={onReset} />
+              <IconButtonElement icon='close' onClick={onReset} />
             ) : (
               InputProps?.endAdornment
             ),
-          sx: {
-            ...InputProps?.sx,
-            // padding: `${STYLE.PADDING_GAP_ITEM_SMALL}`,
-          },
+          sx: { ...InputProps?.sx },
         }}
         {...(rows && { rows, multiline: true })}
-        sx={{
-          '& .MuiOutlinedInput-notchedOutline': {
-            borderRadius: STYLE.BORDER_RADIUS_ELEMENT_MIDDLE,
-          },
-          ...sx,
-        }}
+        sx={{ ...sx }}
         {...rest}
       />
       {description && (
         <Typography
-          variant="body2"
+          variant='body2'
           sx={{
             position: 'absolute',
             bottom: 8,
             left: STYLE.GAP_ICON_CONTENT_BY_SIZE.large,
             backgroundColor: palette.background.paper,
-            borderRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
+            borderRadius: STYLE.BORDER_RADIUS_ELEMENT_MIDDLE,
             px: 1,
             width: '97%',
             display: 'flex',

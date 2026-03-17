@@ -1,6 +1,6 @@
-import { STYLE } from '../../common/const';
 import { Stack, Typography, useTheme } from '@mui/material';
 import React, { Fragment } from 'react';
+import { STYLE } from '../../common/const';
 import { IconElement } from '../elements/icon/icon.element';
 import { LinkElement } from '../elements/link/link.element';
 import { StackRowAlignCenter } from '../styles/stack.style';
@@ -36,7 +36,7 @@ export const NoteComponent: React.FC<NoteComponentProps> = ({ content, contentHr
       <StackRowAlignCenter sx={{ gap: STYLE.PADDING_GAP_ITEM_SMALL }}>
         <IconElement icon={tempData[type].icon} sx={{ color: tempData[type].color }} />
 
-        <Typography sx={{ color: tempData[type].color }} variant="body2">
+        <Typography sx={{ color: tempData[type].color }} variant='body2'>
           {tempData[type].title}
         </Typography>
       </StackRowAlignCenter>

@@ -13,11 +13,11 @@ import {
 } from '@mui/material';
 import { Form } from 'formik';
 import React, { ReactNode, useState } from 'react';
-import { StackRowAlignCenterJustBetween, StackRow } from '../../styles';
+import { COLOR, SnackbarType, STYLE } from '../../../common';
+import { StackRow, StackRowAlignCenterJustBetween } from '../../styles';
 import { ButtonElement } from '../button';
 import { ButtonElementProps } from '../button/button.element';
 import { IconContentElement, IconElement } from '../icon';
-import { COLOR, SnackbarType, STYLE } from '../../../common';
 
 export interface DialogElementProps extends DialogProps {
   iconLabel?: string;
@@ -108,7 +108,7 @@ export const DialogElement: React.FC<DialogElementProps> = ({
 
   // STYLE
   if (widthButton)
-    [buttonLeft, buttonCenter, buttonRight].forEach((btn) => btn && (btn.sx = { width: widthButton, ...btn.sx }));
+    [buttonLeft, buttonCenter, buttonRight].forEach(btn => btn && (btn.sx = { width: widthButton, ...btn.sx }));
 
   // Apply automatic color styling to buttons
   const styledButtonLeft = getButtonColor(buttonLeft, 'left');
@@ -149,7 +149,7 @@ export const DialogElement: React.FC<DialogElementProps> = ({
             <IconContentElement
               icon={iconLabel}
               content={label.toLowerCase()}
-              size="medium"
+              size='medium'
               sxText={{ fontSize: '16px', ...sxTitle }}
             />
             {closeButton && (
@@ -190,17 +190,17 @@ export const DialogElement: React.FC<DialogElementProps> = ({
                   {nodeBottomLeft}
                   {nodeHelp && (
                     <ButtonElement
-                      variant="outlined"
-                      content="Giúp đỡ"
+                      variant='outlined'
+                      content='Giúp đỡ'
                       endIcon={openHelp ? 'keyboard_arrow_down' : 'keyboard_arrow_up'}
-                      size="medium"
+                      size='medium'
                       onClick={() => setOpenHelp(!openHelp)}
                       fullWidth={false}
                     />
                   )}
                 </StackRow>
 
-                <StackRow sx={{ flex: 1, justifyContent: 'flex-end' }}>
+                <StackRow sx={{ flex: 1, justifyContent: 'flex-end', gap: STYLE.PADDING_GAP_ITEM_SMALL }}>
                   {styledButtonLeft && <ButtonElement {...styledButtonLeft} fullWidth={fullWidth} />}
                   {styledButtonCenter && <ButtonElement {...styledButtonCenter} fullWidth={fullWidth} />}
                   {styledButtonRight && (

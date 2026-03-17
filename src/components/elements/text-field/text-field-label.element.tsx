@@ -3,7 +3,7 @@ import React from 'react';
 import { STYLE } from '../../../common';
 import { IconElement } from '../icon';
 
-interface TextFieldLabelElementProps {
+export interface TextFieldLabelElementProps {
   label?: string | React.ReactNode;
   iconLabel?: string;
   colorLabel?: string;

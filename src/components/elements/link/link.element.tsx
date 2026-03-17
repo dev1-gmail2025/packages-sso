@@ -10,9 +10,9 @@ export const LinkElement: React.FC<LinkElementProps> = ({ onClick, sx = {}, targ
   return (
     <Link
       target={target}
-      rel="noopener"
+      rel='noopener'
       sx={{ textDecoration: 'none', color: 'unset', ...sx }}
-      onClick={(event) => {
+      onClick={event => {
         if (onClick) {
           event.stopPropagation();
           event.preventDefault();

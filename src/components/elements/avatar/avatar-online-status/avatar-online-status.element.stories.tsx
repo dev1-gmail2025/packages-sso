@@ -3,7 +3,7 @@ import { AvatarOnlineStatusElement } from './avatar-online-status.element';
 import { avatarOnlineStatusArgTypes } from './avatar-online-status.argtypes';
 
 const meta: Meta<typeof AvatarOnlineStatusElement> = {
-  title: 'Components/Avatar/AvatarOnlineStatus',
+  title: 'Elements/Avatar/AvatarOnlineStatus',
   component: AvatarOnlineStatusElement,
   tags: ['autodocs'],
   args: {

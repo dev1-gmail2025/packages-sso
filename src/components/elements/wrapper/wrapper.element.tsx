@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 import { STYLE } from '../../../common/const';
 import { LoadingComponent } from '../../loading/loading.component';
 import { StackRowAlignJustCenter, StackRowJustBetween } from '../../styles/stack.style';
-import { IconContentElement } from '../icon/icon-content.element';
+import { IconContentElement } from '../icon';
 
 export interface WrapperElementProps {
   iconLabel?: string;

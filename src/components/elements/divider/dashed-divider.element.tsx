@@ -1,8 +1,7 @@
 import { Box } from '@mui/system';
 import React from 'react';
 import { COLOR } from '../../../common';
-
-interface DashedDividerElementProps {
+export interface DashedDividerElementProps {
   orientation?: 'horizontal' | 'vertical';
   color?: string;
   thickness?: number;

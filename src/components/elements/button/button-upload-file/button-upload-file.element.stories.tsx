@@ -4,7 +4,7 @@ import { expect, fn, userEvent, within } from '@storybook/test';
 import { ButtonUploadFileElement } from './button-upload-file.element';
 
 const meta: Meta<typeof ButtonUploadFileElement> = {
-  title: 'Components/Button/ButtonUploadFileElement',
+  title: 'Elements/Button/ButtonUploadFileElement',
   component: ButtonUploadFileElement,
   tags: ['autodocs'],
   args: {
