@@ -1,0 +1,1 @@
+const r={error:"#EF1515",success:"#069021",white:"#ffffff",gray2:"#BEBEBE",gray4:"#525252",gray6:"#737373",gray8:"#E3E3E3",black:"#0A0A0A",yellow:"#FFF59D"},o={HIGHLIGHT_TEXT:"rgba(50, 112, 255, 1)"},c={success:{backgroundColor:r.success,color:r.white},error:{backgroundColor:r.error,color:r.white},cancel:{backgroundColor:r.gray2,color:r.white}};export{r as C,o as H,c as M};

@@ -1,0 +1,16 @@
+import{j as t}from"./jsx-runtime-D_zvdyIk.js";import{f as m}from"./index-DtL3pAzF.js";import{r as d}from"./index-j62jqFia.js";import{T as s}from"./tooltip-on-click.element-Bddqgttb.js";import{B as c}from"./Button-Bw6dTtTN.js";import{S as u}from"./Stack-BlQw5Kbs.js";import{T as y}from"./Typography-CjbH1rA4.js";import"./useForkRef-BVpE-hzr.js";import"./getReactElementRef-CJ1MGg2c.js";import"./TransitionGroupContext-DM7DmuUd.js";import"./index-CWS0_3Nh.js";import"./index-Ctr1kwqx.js";import"./useTimeout-1tU6oJ84.js";import"./useSlotProps-_-7fWPp0.js";import"./useSlot-DBQWuDEP.js";import"./DefaultPropsProvider-Brxq0OUc.js";import"./defaultTheme-CiSRXe73.js";import"./Tooltip-pSKwotpI.js";import"./index-C8adVhmr.js";import"./useTheme-eMA7PP5Z.js";import"./useControlled-CdETZoY_.js";import"./useId-CFSqmtgZ.js";import"./Grow-BH2Uzhjw.js";import"./isFocusVisible-B8k4qzLc.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./ButtonBase-RoDX6TIe.js";import"./extendSxProp-QnK7WPWm.js";import"./CircularProgress-BUaXLBBs.js";import"./createStack-BCgsFCsU.js";const C={content:{control:"text",description:"Tooltip content (string or ReactElement).",table:{type:{summary:"ReactElement | string"}}},placement:{control:"select",options:["top","bottom","left","right","top-start","top-end","bottom-start","bottom-end","left-start","left-end","right-start","right-end"],description:"Tooltip placement.",table:{type:{summary:'TooltipProps["placement"]'},defaultValue:{summary:"top"}}},open:{control:"boolean",description:"Controlled open state. In stories we manage via state.",table:{type:{summary:"boolean"}}},onClickAway:{action:"clickAway",description:"Called when clicking outside.",table:{type:{summary:"() => void"}}},onOpen:{action:"opened"},onClose:{action:"closed"},children:{control:!1}},M={title:"Elements/Tooltip/TooltipOnClick",component:s,tags:["autodocs"],args:{content:"Click-away tooltip",placement:"top",onClickAway:m(),children:t.jsx(c,{variant:"outlined",children:"Click me"})},parameters:{layout:"padded"},argTypes:C},r={render:o=>{const[i,e]=d.useState(!1);return t.jsxs(u,{spacing:2,alignItems:"flex-start",children:[t.jsx(y,{variant:"caption",children:"Click button to toggle. Click outside to close."}),t.jsx(s,{...o,open:i,onOpen:()=>e(!0),onClose:()=>e(!1),onClickAway:()=>{var n;e(!1),(n=o.onClickAway)==null||n.call(o)},children:t.jsx(c,{variant:"outlined",onClick:()=>e(n=>!n),children:i?"Opened":"Closed"})})]})}};var a,p,l;r.parameters={...r.parameters,docs:{...(a=r.parameters)==null?void 0:a.docs,source:{originalSource:`{
+  render: args => {
+    const [open, setOpen] = useState(false);
+    return <Stack spacing={2} alignItems='flex-start'>\r
+        <Typography variant='caption'>Click button to toggle. Click outside to close.</Typography>\r
+        <TooltipOnClickElement {...args} open={open} onOpen={() => setOpen(true)} onClose={() => setOpen(false)} onClickAway={() => {
+        setOpen(false);
+        args.onClickAway?.();
+      }}>\r
+          <Button variant='outlined' onClick={() => setOpen(v => !v)}>\r
+            {open ? 'Opened' : 'Closed'}\r
+          </Button>\r
+        </TooltipOnClickElement>\r
+      </Stack>;
+  }
+}`,...(l=(p=r.parameters)==null?void 0:p.docs)==null?void 0:l.source}}};const N=["Default"];export{r as Default,N as __namedExportsOrder,M as default};

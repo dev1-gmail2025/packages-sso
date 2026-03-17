@@ -1,0 +1,17 @@
+import{j as r}from"./jsx-runtime-D_zvdyIk.js";import{f as g}from"./index-DtL3pAzF.js";import{r as l}from"./index-j62jqFia.js";import{P as i}from"./pagination.element-D4Ud-1mi.js";import{S as c}from"./Stack-BlQw5Kbs.js";import{T as u}from"./Typography-CjbH1rA4.js";import"./FileSaver.min-sVBIqHNu.js";import"./style.const-CSB1CXgR.js";import"./time.util-DFcg3e45.js";import"./typography.style-BVG67HsI.js";import"./image.element-BW2lcbhc.js";import"./stack.style-TwFSz3b5.js";import"./DefaultPropsProvider-Brxq0OUc.js";import"./defaultTheme-CiSRXe73.js";import"./index-C8adVhmr.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./extendSxProp-QnK7WPWm.js";import"./useTheme-eMA7PP5Z.js";import"./Box-CVD-5lJz.js";import"./InputLabel-YLDDHG1v.js";import"./useFormControl-CmOg5wnR.js";import"./link.element-CYkJVmdl.js";import"./isFocusVisible-B8k4qzLc.js";import"./other.util-i5g2ofOC.js";import"./color.const-D0XZ47LU.js";import"./FormControl-BydE9C3D.js";import"./isMuiElement-BY4WSVWD.js";import"./Select-BGXSfyCj.js";import"./useSlot-DBQWuDEP.js";import"./useForkRef-BVpE-hzr.js";import"./useSlotProps-_-7fWPp0.js";import"./ownerWindow-DTuM7CMd.js";import"./Grow-BH2Uzhjw.js";import"./index-CWS0_3Nh.js";import"./index-Ctr1kwqx.js";import"./getReactElementRef-CJ1MGg2c.js";import"./TransitionGroupContext-DM7DmuUd.js";import"./useTimeout-1tU6oJ84.js";import"./mergeSlotProps-Bfz0OzkQ.js";import"./createChainedFunction-BO_9K8Jh.js";import"./Fade-CPtln8nk.js";import"./List-CuT84JTO.js";import"./useControlled-CdETZoY_.js";import"./useId-CFSqmtgZ.js";import"./createSvgIcon-BqnXePOd.js";import"./ButtonBase-RoDX6TIe.js";import"./createStack-BCgsFCsU.js";const d={total:{control:{type:"number",min:0,step:1},description:"Total items.",table:{type:{summary:"number"},defaultValue:{summary:"0"}}},page:{control:{type:"number",min:1,step:1},description:"Current page (1-based). In stories we manage this with local state.",table:{type:{summary:"number"}}},take:{control:{type:"number",min:1,step:1},description:"Rows per page.",table:{type:{summary:"number"}}},openRowsPerPage:{control:"boolean",description:"Show the rows-per-page select.",table:{type:{summary:"boolean"},defaultValue:{summary:"true"}}},onChange:{action:"changed",description:"Fired when page or take changes.",table:{type:{summary:"(pagination: { page: number; take: number }) => void"}}},sx:{control:!1}},it={title:"Elements/Pagination/Pagination",component:i,tags:["autodocs"],args:{total:100,page:1,take:10,openRowsPerPage:!0,onChange:g()},parameters:{layout:"padded"},argTypes:d},a={render:t=>{const[e,s]=l.useState({page:t.page,take:t.take});return r.jsxs(c,{spacing:1,children:[r.jsx(i,{...t,page:e.page,take:e.take,onChange:o=>{s(o),t.onChange(o)}}),r.jsxs(u,{children:["Page: ",e.page," - Take: ",e.take," - Total: ",t.total]})]})}};var p,n,m;a.parameters={...a.parameters,docs:{...(p=a.parameters)==null?void 0:p.docs,source:{originalSource:`{
+  render: args => {
+    const [state, setState] = useState({
+      page: args.page,
+      take: args.take
+    });
+    return <Stack spacing={1}>\r
+        <PaginationElement {...args} page={state.page} take={state.take} onChange={next => {
+        setState(next);
+        args.onChange(next);
+      }} />\r
+        <Typography>\r
+          Page: {state.page} - Take: {state.take} - Total: {args.total}\r
+        </Typography>\r
+      </Stack>;
+  }
+}`,...(m=(n=a.parameters)==null?void 0:n.docs)==null?void 0:m.source}}};const st=["Default"];export{a as Default,st as __namedExportsOrder,it as default};
