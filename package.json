@@ -1,6 +1,6 @@
 {
   "name": "sevago-sso-fe",
-  "version": "1.0.149",
+  "version": "1.0.150",
   "description": "Sevago SSO Frontend Library - A comprehensive SSO solution with React components",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
