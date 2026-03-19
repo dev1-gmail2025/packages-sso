@@ -1,9 +1,9 @@
-import { Typography, useTheme } from '@mui/material';
+import { Typography } from '@mui/material';
 import React from 'react';
 import { STYLE } from '../../../common';
 import { IconElement } from '../icon';
 
-interface TextFieldLabelElementProps {
+export interface TextFieldLabelElementProps {
   label?: string | React.ReactNode;
   iconLabel?: string;
   colorLabel?: string;
@@ -16,15 +16,13 @@ export const TextFieldLabelElement: React.FC<TextFieldLabelElementProps> = ({
   colorLabel,
   required,
 }) => {
-  const { palette } = useTheme();
-
   if (!label) return null;
 
   return (
     <Typography
-      variant='subtitle1'
+      variant="subtitle1"
       sx={{
-        color: colorLabel || palette.text.primary,
+        color: colorLabel || '#595A5D',
         display: 'flex',
         alignItems: 'center',
         gap: STYLE.PADDING_GAP_ITEM_SMALL,

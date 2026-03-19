@@ -1,6 +1,6 @@
 import React from 'react';
-import { normalizeText } from '../../../common/utils/string.util';
-import { COLOR } from '../../../common';
+import { normalizeText } from '../../../../common/utils/string.util';
+import { COLOR } from '../../../../common';
 
 export const highlightText = (text: string, searchTerm: string): React.ReactNode => {
   if (!searchTerm || !text) return text;
