@@ -51,8 +51,6 @@ export const WrapperElement: React.FC<WrapperElementProps> = ({
       <Stack
         sx={{
           ...(width ? { width } : { flex }),
-          paddingTop: STYLE.PADDING_GAP_LAYOUT,
-          paddingX: STYLE.PADDING_GAP_TAB,
           overflowY: 'auto',
           overflowX: 'hidden',
           height,

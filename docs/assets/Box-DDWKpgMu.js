@@ -1,1 +1,0 @@
-import{a as e,C as a}from"./DefaultPropsProvider-Brxq0OUc.js";import{c as s}from"./Box-CVD-5lJz.js";const o=e("MuiBox",["root"]),l=s({defaultClassName:o.root,generateClassName:a.generate});export{l as B};
