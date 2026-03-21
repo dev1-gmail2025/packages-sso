@@ -37,9 +37,9 @@ export const TooltipOnHoverElement: React.FC<TooltipOnHoverElementProps> = ({
                 top: 2,
                 right: 0,
               }}
-              content=""
-              size="small"
-              icon="close"
+              content=''
+              size='small'
+              icon='close'
             />
           )}
           <Box sx={{ pr: showCloseIcon ? 2 : 0 }}>{content}</Box>

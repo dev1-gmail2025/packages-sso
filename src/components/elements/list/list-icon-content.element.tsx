@@ -37,7 +37,7 @@ export const ListIconContentElement: React.FC<ListIconContentElementProps> = ({ 
           {titleNode}
         </ListItem>
       )}
-      {list.map((e) => (
+      {list.map(e => (
         <ListItem
           key={e.content}
           onClick={e.onClick}
