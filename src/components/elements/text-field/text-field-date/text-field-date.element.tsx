@@ -52,12 +52,12 @@ export const TextFieldDateElement: React.FC<TextFieldDateElementProps> = ({
       <TextFieldLabelElement label={label} iconLabel={iconLabel} required={required} />
       <DatePicker
         value={value ? dayjs(value) : null}
-        onChange={newVal => onChange?.({ target: { name, value: newVal } })}
+        onChange={(newVal) => onChange?.({ target: { name, value: newVal } })}
         format={format}
         name={name}
         slots={{
-          openPickerIcon: () => <IconElement icon='calendar_today' />,
-          clearIcon: () => <IconElement icon='close_small' />,
+          openPickerIcon: () => <IconElement icon="calendar_today" />,
+          clearIcon: () => <IconElement icon="close_small" />,
         }}
         slotProps={{
           textField: ({ inputProps, ...rest }: any) => ({

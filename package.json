@@ -69,7 +69,10 @@
   "dependencies": {
     "@storybook/core-events": "^8.6.14",
     "exceljs": "^4.4.0",
-    "file-saver": "^2.0.5"
+    "file-saver": "^2.0.5",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

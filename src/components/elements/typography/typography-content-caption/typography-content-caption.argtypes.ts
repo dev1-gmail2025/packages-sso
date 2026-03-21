@@ -21,4 +21,3 @@ export const typographyContentCaptionArgTypes: Partial<ArgTypes<TypographyConten
   sxContent: { control: false },
   sxCaption: { control: false },
 };
-

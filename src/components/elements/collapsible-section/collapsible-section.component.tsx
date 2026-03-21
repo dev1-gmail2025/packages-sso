@@ -49,7 +49,7 @@ export const CollapsibleSection = forwardRef<HTMLDivElement, CollapsibleSectionP
             />
           </StackRowAlignCenter>
         </StackRowAlignCenterJustBetween>
-        <Collapse in={expanded} timeout='auto' unmountOnExit>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
           <Stack sx={{ p: STYLE.PADDING_GAP_LAYOUT, gap: STYLE.PADDING_GAP_BUTTON }}>{children}</Stack>
         </Collapse>
       </Stack>

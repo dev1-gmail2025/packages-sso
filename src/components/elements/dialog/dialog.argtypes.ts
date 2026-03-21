@@ -85,4 +85,3 @@ export const dialogArgTypes: Partial<ArgTypes<DialogElementProps>> = {
     control: false,
   },
 };
-

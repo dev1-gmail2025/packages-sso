@@ -38,4 +38,3 @@ export const imageContentCaptionArgTypes: Partial<ArgTypes<ImageContentCaptionCo
   sxContent: { control: false },
   sxCaption: { control: false },
 };
-

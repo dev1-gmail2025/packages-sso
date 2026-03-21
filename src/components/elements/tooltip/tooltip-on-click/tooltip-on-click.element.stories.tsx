@@ -14,7 +14,7 @@ const meta: Meta<typeof TooltipOnClickElement> = {
     content: 'Click-away tooltip',
     placement: 'top',
     onClickAway: fn(),
-    children: <Button variant='outlined'>Click me</Button>,
+    children: <Button variant="outlined">Click me</Button>,
   },
   parameters: {
     layout: 'padded',
@@ -26,12 +26,12 @@ export default meta;
 type Story = StoryObj<typeof TooltipOnClickElement>;
 
 export const Default: Story = {
-  render: args => {
+  render: (args) => {
     const [open, setOpen] = useState(false);
 
     return (
-      <Stack spacing={2} alignItems='flex-start'>
-        <Typography variant='caption'>Click button to toggle. Click outside to close.</Typography>
+      <Stack spacing={2} alignItems="flex-start">
+        <Typography variant="caption">Click button to toggle. Click outside to close.</Typography>
         <TooltipOnClickElement
           {...args}
           open={open}
@@ -42,7 +42,7 @@ export const Default: Story = {
             args.onClickAway?.();
           }}
         >
-          <Button variant='outlined' onClick={() => setOpen(v => !v)}>
+          <Button variant="outlined" onClick={() => setOpen((v) => !v)}>
             {open ? 'Opened' : 'Closed'}
           </Button>
         </TooltipOnClickElement>

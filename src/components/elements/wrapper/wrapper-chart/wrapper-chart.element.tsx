@@ -15,7 +15,7 @@ export const WrapperChartElement: React.FC<WrapperChartElementProps> = ({ name, 
   return (
     <Fade in={true} timeout={STYLE.ANIMATION_TIME}>
       <StackBgDefaultBorRadLayCol>
-        <Typography variant='subtitle1' sx={{ lineHeight: 1, textAlign: 'center' }}>
+        <Typography variant="subtitle1" sx={{ lineHeight: 1, textAlign: 'center' }}>
           {name}
         </Typography>
 

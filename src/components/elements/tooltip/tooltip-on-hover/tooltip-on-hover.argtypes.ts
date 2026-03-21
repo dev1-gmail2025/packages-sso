@@ -9,7 +9,20 @@ export const tooltipOnHoverArgTypes: Partial<ArgTypes<TooltipOnHoverElementProps
   },
   placement: {
     control: 'select',
-    options: ['top', 'bottom', 'left', 'right', 'top-start', 'top-end', 'bottom-start', 'bottom-end', 'left-start', 'left-end', 'right-start', 'right-end'],
+    options: [
+      'top',
+      'bottom',
+      'left',
+      'right',
+      'top-start',
+      'top-end',
+      'bottom-start',
+      'bottom-end',
+      'left-start',
+      'left-end',
+      'right-start',
+      'right-end',
+    ],
     description: 'Tooltip placement.',
     table: { type: { summary: 'TooltipProps["placement"]' }, defaultValue: { summary: 'top' } },
   },
@@ -32,4 +45,3 @@ export const tooltipOnHoverArgTypes: Partial<ArgTypes<TooltipOnHoverElementProps
   onClose: { action: 'closed' },
   children: { control: false },
 };
-

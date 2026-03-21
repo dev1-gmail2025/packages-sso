@@ -18,4 +18,3 @@ export const systemMonitorArgTypes: Partial<ArgTypes<SystemMonitorScreenProps>> 
     table: { type: { summary: '(appInfo: AppInfo) => void' } },
   },
 };
-

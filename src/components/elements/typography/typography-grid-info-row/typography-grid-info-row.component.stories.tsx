@@ -30,11 +30,11 @@ export const Horizontal: Story = {
 };
 
 export const ManyRows: Story = {
-  render: args => (
+  render: (args) => (
     <Stack spacing={1}>
-      <TypographyGridInfoRow {...args} label='Name' value='Nguyễn Văn A' />
-      <TypographyGridInfoRow {...args} label='Phone' value='0123 456 789' />
-      <TypographyGridInfoRow {...args} label='Address' value='Hà Nội, Việt Nam' />
+      <TypographyGridInfoRow {...args} label="Name" value="Nguyễn Văn A" />
+      <TypographyGridInfoRow {...args} label="Phone" value="0123 456 789" />
+      <TypographyGridInfoRow {...args} label="Address" value="Hà Nội, Việt Nam" />
     </Stack>
   ),
 };

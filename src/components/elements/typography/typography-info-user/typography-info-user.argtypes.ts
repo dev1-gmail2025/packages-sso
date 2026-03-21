@@ -41,4 +41,3 @@ export const typographyInfoUserArgTypes: Partial<ArgTypes<TypographyInfoGridProp
   items: { control: false },
   sx: { control: false },
 };
-

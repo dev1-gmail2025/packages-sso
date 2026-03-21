@@ -15,4 +15,3 @@ export const loadingArgTypes: Partial<ArgTypes<LoadingComponentProps>> = {
   },
   sx: { control: false },
 };
-

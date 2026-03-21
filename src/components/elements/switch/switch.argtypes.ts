@@ -18,4 +18,3 @@ export const switchArgTypes: Partial<ArgTypes<SwitchElementProps>> = {
     table: { type: { summary: '(eventLike: { target: { name?: string; value: boolean } }) => void' } },
   },
 };
-

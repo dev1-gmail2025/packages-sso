@@ -16,4 +16,3 @@ export const buttonIconContentOpacityArgTypes: ArgTypes<ButtonIconContentOpacity
   },
   onClick: { action: 'clicked' },
 };
-

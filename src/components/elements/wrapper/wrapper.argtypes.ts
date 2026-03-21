@@ -64,4 +64,3 @@ export const wrapperArgTypes: Partial<ArgTypes<WrapperElementProps>> = {
   sxChildren: { control: false },
   sxLabel: { control: false },
 };
-

@@ -7,4 +7,3 @@ export const iconButtonArgTypes: Partial<ArgTypes<IconButtonElementProps>> = {
   onClick: { action: 'clicked' },
   sx: { control: false },
 };
-

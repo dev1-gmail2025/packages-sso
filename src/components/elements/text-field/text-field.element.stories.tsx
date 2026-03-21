@@ -31,11 +31,11 @@ export default meta;
 type Story = StoryObj<typeof TextFieldElement>;
 
 export const Default: Story = {
-  render: args => <TextFieldElement {...args} />,
+  render: (args) => <TextFieldElement {...args} />,
 };
 
 export const WithoutLabel: Story = {
-  render: args => <TextFieldElement {...args} />,
+  render: (args) => <TextFieldElement {...args} />,
   args: {
     label: undefined,
     iconLabel: '',
@@ -43,12 +43,12 @@ export const WithoutLabel: Story = {
 };
 
 export const Required: Story = {
-  render: args => <TextFieldElement {...args} />,
+  render: (args) => <TextFieldElement {...args} />,
   args: { required: true },
 };
 
 export const ErrorState: Story = {
-  render: args => <TextFieldElement {...args} />,
+  render: (args) => <TextFieldElement {...args} />,
   args: {
     error: 'Invalid value',
     helperText: 'Please check your input',
@@ -56,11 +56,10 @@ export const ErrorState: Story = {
 };
 
 export const Multiline: Story = {
-  render: args => <TextFieldElement {...args} />,
+  render: (args) => <TextFieldElement {...args} />,
   args: {
     rows: 3,
     value: 'Line 1\nLine 2\nLine 3',
     showResetButton: false,
   },
 };
-

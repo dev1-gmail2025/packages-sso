@@ -53,7 +53,7 @@ export const TextFieldElement: React.FC<TextFieldElementProps> = ({
           ...InputProps,
           endAdornment:
             showResetButton && value && onReset ? (
-              <IconButtonElement icon='close' onClick={onReset} />
+              <IconButtonElement icon="close" onClick={onReset} />
             ) : (
               InputProps?.endAdornment
             ),
@@ -65,7 +65,7 @@ export const TextFieldElement: React.FC<TextFieldElementProps> = ({
       />
       {description && (
         <Typography
-          variant='body2'
+          variant="body2"
           sx={{
             position: 'absolute',
             bottom: 8,

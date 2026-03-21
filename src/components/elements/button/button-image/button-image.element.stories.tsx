@@ -27,20 +27,20 @@ type Story = StoryObj<typeof ButtonImageElement>;
 export const Default: Story = {};
 
 export const WithImages: Story = {
-  render: args => (
+  render: (args) => (
     <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-      <ButtonImageElement {...args} startIcon={ICONS.iconApps} content='Apps' />
-      <ButtonImageElement {...args} startIcon={ICONS.iconHR} endIcon={ICONS.iconSystem} content='HR System' />
+      <ButtonImageElement {...args} startIcon={ICONS.iconApps} content="Apps" />
+      <ButtonImageElement {...args} startIcon={ICONS.iconHR} endIcon={ICONS.iconSystem} content="HR System" />
     </div>
   ),
 };
 
 export const Variants: Story = {
-  render: args => (
+  render: (args) => (
     <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-      <ButtonImageElement {...args} variant='contained' startIcon={ICONS.iconApps} content='Contained' />
-      <ButtonImageElement {...args} variant='outlined' startIcon={ICONS.iconApps} content='Outlined' />
-      <ButtonImageElement {...args} variant='text' startIcon={ICONS.iconApps} content='Text' />
+      <ButtonImageElement {...args} variant="contained" startIcon={ICONS.iconApps} content="Contained" />
+      <ButtonImageElement {...args} variant="outlined" startIcon={ICONS.iconApps} content="Outlined" />
+      <ButtonImageElement {...args} variant="text" startIcon={ICONS.iconApps} content="Text" />
     </div>
   ),
 };

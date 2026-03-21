@@ -30,7 +30,7 @@ export const Required: Story = {
 };
 
 export const WithoutLabel: Story = {
-  render: args => <TextFieldLabelElement {...args} label={undefined} />,
+  render: (args) => <TextFieldLabelElement {...args} label={undefined} />,
   args: {
     iconLabel: 'info',
   },

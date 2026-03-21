@@ -5,4 +5,3 @@ export * from './text-field-email-autocomplete/text-field-email-autocomplete.ele
 export * from './text-field-label/text-field-label.element';
 export * from './text-field.element';
 export * from './text-highlight/text-highlight.element';
-

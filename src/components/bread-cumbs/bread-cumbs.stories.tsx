@@ -14,7 +14,7 @@ const meta: Meta<typeof Breadcrumbs> = {
   },
   parameters: { layout: 'padded' },
   decorators: [
-    Story => (
+    (Story) => (
       <MemoryRouter initialEntries={['/']}>
         <Story />
       </MemoryRouter>

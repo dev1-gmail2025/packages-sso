@@ -13,4 +13,3 @@ export const iconContentBadgeArgTypes: Partial<ArgTypes<IconContentBadgeElementP
   sxText: { control: false },
   sxBadge: { control: false },
 };
-

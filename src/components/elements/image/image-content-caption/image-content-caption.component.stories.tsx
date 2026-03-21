@@ -25,18 +25,18 @@ type Story = StoryObj<typeof ImageContentCaptionComponent>;
 export const Default: Story = {};
 
 export const Sizes: Story = {
-  render: args => (
+  render: (args) => (
     <Stack spacing={2}>
       <Box>
-        <Typography variant='caption'>Small</Typography>
+        <Typography variant="caption">Small</Typography>
         <ImageContentCaptionComponent {...args} sizeType={SizeProps.SMALL} />
       </Box>
       <Box>
-        <Typography variant='caption'>Medium</Typography>
+        <Typography variant="caption">Medium</Typography>
         <ImageContentCaptionComponent {...args} sizeType={SizeProps.MEDIUM} />
       </Box>
       <Box>
-        <Typography variant='caption'>Large</Typography>
+        <Typography variant="caption">Large</Typography>
         <ImageContentCaptionComponent {...args} sizeType={SizeProps.LARGE} />
       </Box>
     </Stack>

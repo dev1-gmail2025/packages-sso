@@ -43,4 +43,3 @@ export const tagArgTypes: Partial<ArgTypes<TagElementProps>> = {
   iconProps: { control: false },
   sx: { control: false },
 };
-

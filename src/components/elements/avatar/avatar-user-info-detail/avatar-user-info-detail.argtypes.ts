@@ -39,4 +39,3 @@ export const avatarUserInfoDetailArgTypes: Partial<ArgTypes<AvatarUserInfoDetail
     table: { type: { summary: 'any[]' } },
   },
 };
-

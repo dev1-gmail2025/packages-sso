@@ -29,15 +29,18 @@ export const AppsSidebar: React.FC<AppsSidebarProps> = ({
 
   const theme = useTheme();
 
-  const appsGroupObj = Object.keys(APP_OBJ).reduce((r, key) => {
-    if (blacklist.includes(key)) return r;
-    const e = (APP_OBJ as any)[key] as AppInfo;
+  const appsGroupObj = Object.keys(APP_OBJ).reduce(
+    (r, key) => {
+      if (blacklist.includes(key)) return r;
+      const e = (APP_OBJ as any)[key] as AppInfo;
 
-    if (r[e.group]) r[e.group].push(e);
-    else r[e.group] = [e];
+      if (r[e.group]) r[e.group].push(e);
+      else r[e.group] = [e];
 
-    return r;
-  }, {} as Record<AppGroup, AppInfo[]>);
+      return r;
+    },
+    {} as Record<AppGroup, AppInfo[]>,
+  );
 
   return (
     <>
@@ -56,7 +59,7 @@ export const AppsSidebar: React.FC<AppsSidebarProps> = ({
 
       {/* Sidebar */}
       <MotionBox
-        preset='fadeInLeft'
+        preset="fadeInLeft"
         sx={{
           position: 'fixed',
           top: 0,
@@ -86,7 +89,7 @@ export const AppsSidebar: React.FC<AppsSidebarProps> = ({
               '&:hover': { backgroundColor: theme.palette.grey[100] },
             }}
           >
-            <IconElement icon='close' />
+            <IconElement icon="close" />
           </IconButton>
           <IconButton
             sx={{
@@ -94,11 +97,11 @@ export const AppsSidebar: React.FC<AppsSidebarProps> = ({
               '&:hover': { backgroundColor: theme.palette.grey[100] },
             }}
           >
-            <IconElement icon='home' onClick={() => (window.location.href = SSO[env])} />
+            <IconElement icon="home" onClick={() => (window.location.href = SSO[env])} />
           </IconButton>
         </Box>
 
-        {Object.keys(appsGroupObj).map(group => (
+        {Object.keys(appsGroupObj).map((group) => (
           <Box
             key={group}
             sx={{
@@ -107,7 +110,7 @@ export const AppsSidebar: React.FC<AppsSidebarProps> = ({
               flexDirection: 'column',
             }}
           >
-            <Typography variant='subtitle2'>
+            <Typography variant="subtitle2">
               {group === AppGroup.PLATFORM_AND_INFO ? 'Platform & Info' : group}
             </Typography>
             <AppGrid
@@ -115,8 +118,8 @@ export const AppsSidebar: React.FC<AppsSidebarProps> = ({
               iconSize={60}
               iconRadius={5.5}
               gap={PADDING_GAP_ITEM}
-              titleVariant='body1'
-              captionVariant='caption'
+              titleVariant="body1"
+              captionVariant="caption"
               titleColor={theme.palette.grey[800]}
               captionColor={theme.palette.grey[600]}
               onClickApp={onClickApp}

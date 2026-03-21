@@ -29,4 +29,3 @@ export const paginationArgTypes: Partial<ArgTypes<PaginationElementProps>> = {
   },
   sx: { control: false },
 };
-

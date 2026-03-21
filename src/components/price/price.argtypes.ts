@@ -41,4 +41,3 @@ export const priceArgTypes: Partial<ArgTypes<PriceComponentProps>> = {
   onClick: { action: 'clicked' },
   sx: { control: false },
 };
-

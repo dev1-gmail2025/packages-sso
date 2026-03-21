@@ -53,7 +53,7 @@ export const TextFieldDateRangeElement: React.FC<TextFieldDateRangeElementProps>
       {/* DatePicker 1: Ngày bắt đầu */}
       <DatePicker
         value={fromDate ? dayjs(fromDate) : null}
-        onChange={newDate => {
+        onChange={(newDate) => {
           if (newDate) {
             const dateString = newDate.format('YYYY-MM-DD');
             onFromDateChange?.(dateString);
@@ -106,7 +106,7 @@ export const TextFieldDateRangeElement: React.FC<TextFieldDateRangeElementProps>
       {/* DatePicker 2: Ngày kết thúc */}
       <DatePicker
         value={toDate ? dayjs(toDate) : null}
-        onChange={newDate => {
+        onChange={(newDate) => {
           if (newDate) {
             const dateString = newDate.format('YYYY-MM-DD');
             onToDateChange?.(dateString);

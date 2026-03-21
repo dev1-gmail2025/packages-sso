@@ -35,4 +35,3 @@ export const tabsArgTypes: Partial<ArgTypes<TabsComponentProps>> = {
   sxTabs: { control: false },
   sxWrapper: { control: false },
 };
-

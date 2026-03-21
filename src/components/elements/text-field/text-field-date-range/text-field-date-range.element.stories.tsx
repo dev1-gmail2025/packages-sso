@@ -31,7 +31,7 @@ export default meta;
 type Story = StoryObj<typeof TextFieldDateRangeElement>;
 
 export const Default: Story = {
-  render: args => {
+  render: (args) => {
     const [fromDate, setFromDate] = useState<string>(args.fromDate ?? '');
     const [toDate, setToDate] = useState<string>(args.toDate ?? '');
 
@@ -41,11 +41,11 @@ export const Default: Story = {
           {...args}
           fromDate={fromDate}
           toDate={toDate}
-          onFromDateChange={d => {
+          onFromDateChange={(d) => {
             setFromDate(d);
             args.onFromDateChange?.(d);
           }}
-          onToDateChange={d => {
+          onToDateChange={(d) => {
             setToDate(d);
             args.onToDateChange?.(d);
           }}
@@ -56,7 +56,7 @@ export const Default: Story = {
 };
 
 export const EmptyValues: Story = {
-  render: args => {
+  render: (args) => {
     const [fromDate, setFromDate] = useState<string>(args.fromDate ?? '');
     const [toDate, setToDate] = useState<string>(args.toDate ?? '');
 
@@ -66,11 +66,11 @@ export const EmptyValues: Story = {
           {...args}
           fromDate={fromDate}
           toDate={toDate}
-          onFromDateChange={d => {
+          onFromDateChange={(d) => {
             setFromDate(d);
             args.onFromDateChange?.(d);
           }}
-          onToDateChange={d => {
+          onToDateChange={(d) => {
             setToDate(d);
             args.onToDateChange?.(d);
           }}
@@ -85,7 +85,7 @@ export const EmptyValues: Story = {
 };
 
 export const Disabled: Story = {
-  render: args => {
+  render: (args) => {
     const [fromDate, setFromDate] = useState<string>(args.fromDate ?? '');
     const [toDate, setToDate] = useState<string>(args.toDate ?? '');
 
@@ -95,11 +95,11 @@ export const Disabled: Story = {
           {...args}
           fromDate={fromDate}
           toDate={toDate}
-          onFromDateChange={d => {
+          onFromDateChange={(d) => {
             setFromDate(d);
             args.onFromDateChange?.(d);
           }}
-          onToDateChange={d => {
+          onToDateChange={(d) => {
             setToDate(d);
             args.onToDateChange?.(d);
           }}
@@ -113,7 +113,7 @@ export const Disabled: Story = {
 };
 
 export const CustomFormat: Story = {
-  render: args => {
+  render: (args) => {
     const [fromDate, setFromDate] = useState<string>(args.fromDate ?? '');
     const [toDate, setToDate] = useState<string>(args.toDate ?? '');
 
@@ -123,11 +123,11 @@ export const CustomFormat: Story = {
           {...args}
           fromDate={fromDate}
           toDate={toDate}
-          onFromDateChange={d => {
+          onFromDateChange={(d) => {
             setFromDate(d);
             args.onFromDateChange?.(d);
           }}
-          onToDateChange={d => {
+          onToDateChange={(d) => {
             setToDate(d);
             args.onToDateChange?.(d);
           }}

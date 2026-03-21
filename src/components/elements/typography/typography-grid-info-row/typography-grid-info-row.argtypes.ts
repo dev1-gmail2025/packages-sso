@@ -28,4 +28,3 @@ export const typographyGridInfoRowArgTypes: Partial<ArgTypes<TypographyGridInfoR
   sxLabel: { control: false },
   lineLimit: { control: false },
 };
-

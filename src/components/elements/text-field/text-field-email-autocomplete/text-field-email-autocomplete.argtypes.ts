@@ -2,7 +2,6 @@ import type { ArgTypes } from '@storybook/react';
 import type { ComponentProps } from 'react';
 import { TextFieldEmailAutocomplete } from './text-field-email-autocomplete.element';
 
-
 type TextFieldEmailAutocompleteProps = ComponentProps<typeof TextFieldEmailAutocomplete>;
 
 export const textFieldEmailAutocompleteArgTypes: Partial<ArgTypes<TextFieldEmailAutocompleteProps>> = {
@@ -43,4 +42,3 @@ export const textFieldEmailAutocompleteArgTypes: Partial<ArgTypes<TextFieldEmail
   onRemove: { action: 'removeClicked' },
   showRemove: { control: 'boolean', table: { type: { summary: 'boolean | undefined' } } },
 };
-

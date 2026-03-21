@@ -23,4 +23,3 @@ export const textFieldLabelArgTypes: Partial<ArgTypes<TextFieldLabelElementProps
     table: { type: { summary: 'boolean' } },
   },
 };
-

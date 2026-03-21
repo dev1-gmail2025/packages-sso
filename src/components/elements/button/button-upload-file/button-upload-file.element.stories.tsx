@@ -24,10 +24,10 @@ type Story = StoryObj<typeof ButtonUploadFileElement>;
 export const Default: Story = {};
 
 export const AcceptVariants: Story = {
-  render: args => (
+  render: (args) => (
     <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-      <ButtonUploadFileElement {...args} accept='image/*' />
-      <ButtonUploadFileElement {...args} accept='.pdf,.png,.jpg' />
+      <ButtonUploadFileElement {...args} accept="image/*" />
+      <ButtonUploadFileElement {...args} accept=".pdf,.png,.jpg" />
     </div>
   ),
 };

@@ -33,4 +33,3 @@ export const collapsibleSectionArgTypes: Partial<ArgTypes<CollapsibleSectionProp
     table: { type: { summary: 'SxProps<Theme>' } },
   },
 };
-

@@ -17,7 +17,7 @@ const meta: Meta<typeof TooltipOnHoverElement> = {
     openTest: false,
     showCloseIcon: false,
     onCloseClick: fn(),
-    children: <ButtonElement variant='outlined' content='Hover me' />,
+    children: <ButtonElement variant="outlined" content="Hover me" />,
   },
   parameters: {
     layout: 'padded',
@@ -31,19 +31,19 @@ type Story = StoryObj<typeof TooltipOnHoverElement>;
 export const Default: Story = {};
 
 export const Placements: Story = {
-  render: args => (
+  render: (args) => (
     <StackRow>
-      <TooltipOnHoverElement {...args} placement='top'>
-        <ButtonElement variant='outlined' content='Top' />
+      <TooltipOnHoverElement {...args} placement="top">
+        <ButtonElement variant="outlined" content="Top" />
       </TooltipOnHoverElement>
-      <TooltipOnHoverElement {...args} placement='bottom'>
-        <ButtonElement variant='outlined' content='Bottom' />
+      <TooltipOnHoverElement {...args} placement="bottom">
+        <ButtonElement variant="outlined" content="Bottom" />
       </TooltipOnHoverElement>
-      <TooltipOnHoverElement {...args} placement='right'>
-        <ButtonElement variant='outlined' content='Right' />
+      <TooltipOnHoverElement {...args} placement="right">
+        <ButtonElement variant="outlined" content="Right" />
       </TooltipOnHoverElement>
-      <TooltipOnHoverElement {...args} placement='left'>
-        <ButtonElement variant='outlined' content='Left' />
+      <TooltipOnHoverElement {...args} placement="left">
+        <ButtonElement variant="outlined" content="Left" />
       </TooltipOnHoverElement>
     </StackRow>
   ),
@@ -54,6 +54,6 @@ export const ForcedOpenWithCloseIcon: Story = {
     openTest: true,
     showCloseIcon: true,
     content: 'Pinned tooltip (openTest=true)',
-    children: <ButtonElement variant='outlined' content='Always open' />,
+    children: <ButtonElement variant="outlined" content="Always open" />,
   },
 };

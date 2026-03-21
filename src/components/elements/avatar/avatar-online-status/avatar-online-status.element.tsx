@@ -48,7 +48,7 @@ export const AvatarOnlineStatusElement: React.FC<AvatarOnlineStatusElementProps>
 }) => {
   if (online) {
     return (
-      <OnlineBadge overlap='circular' anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} variant='dot'>
+      <OnlineBadge overlap="circular" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} variant="dot">
         <AvatarElement url={url || undefined} size={size} sx={{ backgroundColor: COLOR.COMMON.gray2 }}>
           {children}
         </AvatarElement>
@@ -58,14 +58,14 @@ export const AvatarOnlineStatusElement: React.FC<AvatarOnlineStatusElementProps>
 
   return (
     <Badge
-      overlap='circular'
+      overlap="circular"
       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-      variant='dot'
+      variant="dot"
       sx={{
         '& .MuiBadge-badge': {
           backgroundColor: COLOR.COMMON.gray4,
           color: COLOR.COMMON.gray4,
-          boxShadow: theme => `0 0 0 2px ${theme.palette.background.paper}`,
+          boxShadow: (theme) => `0 0 0 2px ${theme.palette.background.paper}`,
         },
       }}
     >

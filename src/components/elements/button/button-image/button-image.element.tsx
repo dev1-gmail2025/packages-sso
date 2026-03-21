@@ -65,7 +65,7 @@ export const ButtonImageElement: React.FC<ButtonImageElementProps> = ({
       }}
     >
       {loading ? (
-        <LoadingComponent size='small' sx={{ minHeight: '24.5px' }} />
+        <LoadingComponent size="small" sx={{ minHeight: '24.5px' }} />
       ) : (
         <Typography sx={{ transform: `translateY(0.5px)`, whiteSpace: 'nowrap' }}>{content}</Typography>
       )}

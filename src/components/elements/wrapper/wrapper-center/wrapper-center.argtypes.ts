@@ -9,4 +9,3 @@ export const wrapperCenterArgTypes: Partial<ArgTypes<WrapperCenterElementProps>>
   },
   children: { control: false },
 };
-

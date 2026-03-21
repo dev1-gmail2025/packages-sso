@@ -24,4 +24,3 @@ export const noteArgTypes: Partial<ArgTypes<NoteComponentProps>> = {
     table: { type: { summary: 'string' } },
   },
 };
-

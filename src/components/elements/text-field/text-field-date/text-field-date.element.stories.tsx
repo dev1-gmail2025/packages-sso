@@ -33,22 +33,22 @@ export default meta;
 type Story = StoryObj<typeof TextFieldDateElement>;
 
 export const Default: Story = {
-  render: args => {
+  render: (args) => {
     const [value, setValue] = useState<string>(args.value ?? '');
     return (
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <TextFieldDateElement {...args} value={value} onChange={e => setValue(e.target.value)} />
+        <TextFieldDateElement {...args} value={value} onChange={(e) => setValue(e.target.value)} />
       </LocalizationProvider>
     );
   },
 };
 
 export const Required: Story = {
-  render: args => {
+  render: (args) => {
     const [value, setValue] = useState<string>(args.value ?? '');
     return (
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <TextFieldDateElement {...args} value={value} onChange={e => setValue(e.target.value)} />
+        <TextFieldDateElement {...args} value={value} onChange={(e) => setValue(e.target.value)} />
       </LocalizationProvider>
     );
   },
@@ -58,7 +58,7 @@ export const Required: Story = {
 };
 
 export const ErrorState: Story = {
-  render: args => (
+  render: (args) => (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <TextFieldDateElement {...args} />
     </LocalizationProvider>

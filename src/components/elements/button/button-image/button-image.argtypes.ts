@@ -21,4 +21,3 @@ export const buttonImageArgTypes: ArgTypes<ButtonImageElementProps> = {
   endIcon: { control: false },
   onClick: { action: 'clicked' },
 };
-

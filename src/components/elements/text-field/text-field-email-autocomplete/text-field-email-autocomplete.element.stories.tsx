@@ -23,18 +23,18 @@ export default meta;
 type Story = StoryObj<typeof TextFieldEmailAutocomplete>;
 
 export const Default: Story = {
-  render: args => <TextFieldEmailAutocomplete {...args} />,
+  render: (args) => <TextFieldEmailAutocomplete {...args} />,
 };
 
 export const Disabled: Story = {
-  render: args => <TextFieldEmailAutocomplete {...args} />,
+  render: (args) => <TextFieldEmailAutocomplete {...args} />,
   args: {
     disabled: true,
   },
 };
 
 export const EmptyInitial: Story = {
-  render: args => <TextFieldEmailAutocomplete {...args} />,
+  render: (args) => <TextFieldEmailAutocomplete {...args} />,
   args: {
     value: [],
   },

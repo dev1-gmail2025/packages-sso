@@ -23,7 +23,7 @@ export default meta;
 type Story = StoryObj<typeof CollapsibleSection>;
 
 export const Default: Story = {
-  render: args => (
+  render: (args) => (
     <Box sx={{ maxWidth: 720 }}>
       <CollapsibleSection {...args}>
         <Typography sx={{ fontSize: 14, color: 'text.secondary' }}>
@@ -49,7 +49,7 @@ export const InitiallyCollapsed: Story = {
 };
 
 export const WithHeaderAction: Story = {
-  render: args => (
+  render: (args) => (
     <Box sx={{ maxWidth: 720 }}>
       <CollapsibleSection
         {...args}
@@ -82,7 +82,7 @@ export const WithHeaderAction: Story = {
 };
 
 export const LongContent: Story = {
-  render: args => (
+  render: (args) => (
     <Box sx={{ maxWidth: 720 }}>
       <CollapsibleSection {...args}>
         <Stack spacing={1.5}>
@@ -102,4 +102,3 @@ export const LongContent: Story = {
     chromatic: { delay: 400 },
   },
 };
-

@@ -56,7 +56,7 @@ export const TextFieldDateTimeElement: React.FC<TextFieldDateTimeElementProps> =
       <DateTimePicker
         key={value ? dayjs(value).format('YYYY-MM-DD') : 'empty'}
         defaultValue={value ? dayjs(value) : null}
-        onAccept={newVal => onChange?.({ target: { name, value: newVal } })}
+        onAccept={(newVal) => onChange?.({ target: { name, value: newVal } })}
         format={format}
         name={name}
         {...rest}

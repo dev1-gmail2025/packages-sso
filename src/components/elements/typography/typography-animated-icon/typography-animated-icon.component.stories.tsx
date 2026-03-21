@@ -43,11 +43,11 @@ export const WithoutImage: Story = {
 };
 
 export const Sizes: Story = {
-  render: args => (
+  render: (args) => (
     <Stack spacing={2} sx={{ maxWidth: 420 }}>
-      <TypographyAnimatedIconImage {...args} iconSize='small' content='Small' />
-      <TypographyAnimatedIconImage {...args} iconSize='medium' content='Medium' />
-      <TypographyAnimatedIconImage {...args} iconSize='large' content='Large' />
+      <TypographyAnimatedIconImage {...args} iconSize="small" content="Small" />
+      <TypographyAnimatedIconImage {...args} iconSize="medium" content="Medium" />
+      <TypographyAnimatedIconImage {...args} iconSize="large" content="Large" />
     </Stack>
   ),
 };

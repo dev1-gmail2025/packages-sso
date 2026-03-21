@@ -27,11 +27,11 @@ type Story = StoryObj<typeof IconContentElement>;
 export const Default: Story = {};
 
 export const Sizes: Story = {
-  render: args => (
+  render: (args) => (
     <Stack spacing={2}>
-      <IconContentElement {...args} size='small' content='Small' />
-      <IconContentElement {...args} size='medium' content='Medium' />
-      <IconContentElement {...args} size='large' content='Large' />
+      <IconContentElement {...args} size="small" content="Small" />
+      <IconContentElement {...args} size="medium" content="Medium" />
+      <IconContentElement {...args} size="large" content="Large" />
     </Stack>
   ),
 };

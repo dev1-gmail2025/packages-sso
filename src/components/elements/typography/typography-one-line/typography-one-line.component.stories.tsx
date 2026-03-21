@@ -21,7 +21,7 @@ type Story = StoryObj<typeof TypographyOneLine>;
 export const Default: Story = {};
 
 export const NarrowContainer: Story = {
-  render: args => (
+  render: (args) => (
     <Stack sx={{ width: 220, border: '1px dashed #ddd', p: 1 }}>
       <TypographyOneLine {...args} />
     </Stack>

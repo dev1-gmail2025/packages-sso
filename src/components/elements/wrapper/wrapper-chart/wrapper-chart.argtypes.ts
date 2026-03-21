@@ -15,4 +15,3 @@ export const wrapperChartArgTypes: Partial<ArgTypes<WrapperChartElementProps>> =
   chart: { control: false },
   sx: { control: false },
 };
-

@@ -26,34 +26,34 @@ type Story = StoryObj<typeof IconElement>;
 export const Default: Story = {};
 
 export const Sizes: Story = {
-  render: args => (
-    <Stack direction='row' spacing={3} alignItems='center'>
+  render: (args) => (
+    <Stack direction="row" spacing={3} alignItems="center">
       <Box>
-        <Typography variant='caption'>Small</Typography>
-        <IconElement {...args} size='small' icon='add' />
+        <Typography variant="caption">Small</Typography>
+        <IconElement {...args} size="small" icon="add" />
       </Box>
       <Box>
-        <Typography variant='caption'>Medium</Typography>
-        <IconElement {...args} size='medium' icon='add' />
+        <Typography variant="caption">Medium</Typography>
+        <IconElement {...args} size="medium" icon="add" />
       </Box>
       <Box>
-        <Typography variant='caption'>Large</Typography>
-        <IconElement {...args} size='large' icon='add' />
+        <Typography variant="caption">Large</Typography>
+        <IconElement {...args} size="large" icon="add" />
       </Box>
     </Stack>
   ),
 };
 
 export const Fill: Story = {
-  render: args => (
-    <Stack direction='row' spacing={3} alignItems='center'>
+  render: (args) => (
+    <Stack direction="row" spacing={3} alignItems="center">
       <Box>
-        <Typography variant='caption'>FILL 0</Typography>
-        <IconElement {...args} fill={0} icon='favorite' />
+        <Typography variant="caption">FILL 0</Typography>
+        <IconElement {...args} fill={0} icon="favorite" />
       </Box>
       <Box>
-        <Typography variant='caption'>FILL 1</Typography>
-        <IconElement {...args} fill={1} icon='favorite' />
+        <Typography variant="caption">FILL 1</Typography>
+        <IconElement {...args} fill={1} icon="favorite" />
       </Box>
     </Stack>
   ),

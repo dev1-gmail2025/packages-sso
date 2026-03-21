@@ -25,7 +25,7 @@ export default meta;
 type Story = StoryObj<typeof IconButtonElement>;
 
 export const Default: Story = {
-  render: args => (
+  render: (args) => (
     <Stack sx={{ position: 'relative', width: 240, height: 56, border: '1px solid #eee', borderRadius: 2 }}>
       <Box sx={{ p: 2, color: 'text.secondary' }}>Container demo</Box>
       <IconButtonElement {...args} />

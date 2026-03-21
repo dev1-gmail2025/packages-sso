@@ -37,7 +37,7 @@ export interface TabsMotionBaseProps<T extends TabsMotionItemBase> {
   renderContent: (tab: T) => React.ReactNode;
 }
 
-export function TabsMotionBase<T extends TabsMotionItemBase> ({
+export function TabsMotionBase<T extends TabsMotionItemBase>({
   tabs,
   selectedId,
   onSelectId,
@@ -86,7 +86,7 @@ export function TabsMotionBase<T extends TabsMotionItemBase> ({
                   <Stack
                     component={motion.div}
                     sx={TAB_BACKGROUND_STYLES}
-                    layoutId='selected'
+                    layoutId="selected"
                     animate={{ backgroundColor: palette.primary.main }}
                     initial={{ backgroundColor: palette.primary.main }}
                     transition={{ duration: 0.3 }}
@@ -140,7 +140,7 @@ export const TabsComponent: React.FC<TabsComponentProps> = ({
   const { selected, setSelected } = useTabsSelected(idSelect);
 
   if (variant === VariantProps.OUTLINED) {
-    const selectedIndex = tabs.findIndex(tab => tab.id === selected);
+    const selectedIndex = tabs.findIndex((tab) => tab.id === selected);
     return (
       <StyledTabs
         value={selectedIndex >= 0 ? selectedIndex : 0}
@@ -152,7 +152,7 @@ export const TabsComponent: React.FC<TabsComponentProps> = ({
           }
         }}
       >
-        {tabs.map(it => (
+        {tabs.map((it) => (
           <StyledTab
             icon={it.icon ?? ''}
             key={it.id}
@@ -168,12 +168,12 @@ export const TabsComponent: React.FC<TabsComponentProps> = ({
     <TabsMotionBase
       tabs={tabs}
       selectedId={selected}
-      onSelectId={id => setSelected(id)}
+      onSelectId={(id) => setSelected(id)}
       direction={direction}
       sx={sxTabs}
       stackTabsSx={sxWrapper}
-      isSelectable={tab => !getSubs?.(tab)?.length}
-      renderContent={tab => {
+      isSelectable={(tab) => !getSubs?.(tab)?.length}
+      renderContent={(tab) => {
         const subs = getSubs?.(tab);
         if (subs?.length) {
           return (
@@ -183,7 +183,7 @@ export const TabsComponent: React.FC<TabsComponentProps> = ({
               badgeCount={tab.badgeCount ?? 0}
               sx={{ zIndex: 2 }}
               size={size}
-              subs={subs.map(s => ({
+              subs={subs.map((s) => ({
                 ...s,
                 badgeCount: s.badgeCount ?? 0,
               }))}

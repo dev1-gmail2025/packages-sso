@@ -28,4 +28,3 @@ export const avatarUserInfoUpdateArgTypes: Partial<ArgTypes<AvatarUserInfoUpdate
     table: { type: { summary: '(file: FileWithPreview | null) => void' } },
   },
 };
-

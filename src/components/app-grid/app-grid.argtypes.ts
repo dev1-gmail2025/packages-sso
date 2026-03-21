@@ -53,4 +53,3 @@ export const appGridArgTypes: Partial<ArgTypes<AppGridProps>> = {
   captionVariant: { control: false },
   captionColor: { control: false },
 };
-

@@ -20,7 +20,7 @@ export const TextFieldLabelElement: React.FC<TextFieldLabelElementProps> = ({
 
   return (
     <Typography
-      variant='subtitle1'
+      variant="subtitle1"
       sx={{
         color: colorLabel || '#595A5D',
         display: 'flex',

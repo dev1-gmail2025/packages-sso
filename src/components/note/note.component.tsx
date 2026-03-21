@@ -36,7 +36,7 @@ export const NoteComponent: React.FC<NoteComponentProps> = ({ content, contentHr
       <StackRowAlignCenter sx={{ gap: STYLE.PADDING_GAP_ITEM_SMALL }}>
         <IconElement icon={tempData[type].icon} sx={{ color: tempData[type].color }} />
 
-        <Typography sx={{ color: tempData[type].color }} variant='body2'>
+        <Typography sx={{ color: tempData[type].color }} variant="body2">
           {tempData[type].title}
         </Typography>
       </StackRowAlignCenter>

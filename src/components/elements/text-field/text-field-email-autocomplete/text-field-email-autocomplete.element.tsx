@@ -60,7 +60,7 @@ export const TextFieldEmailAutocomplete: React.FC<TextFieldEmailAutocompleteProp
         inputValue={inputValue}
         onInputChange={(_, newInputValue) => setInputValue(newInputValue)}
         onChange={handleChange}
-        onKeyDown={e => {
+        onKeyDown={(e) => {
           if ((e.key === 'Enter' || e.key === 'Tab') && inputValue.trim()) {
             e.preventDefault();
             commitInputAsTag();
@@ -71,28 +71,28 @@ export const TextFieldEmailAutocomplete: React.FC<TextFieldEmailAutocompleteProp
         }}
         disableCloseOnSelect
         fullWidth={fullWidth}
-        clearIcon={<IconElement icon='close_small' />}
-        popupIcon={<IconElement icon='arrow_drop_down' />}
+        clearIcon={<IconElement icon="close_small" />}
+        popupIcon={<IconElement icon="arrow_drop_down" />}
         disabled={disabled}
         open={false} // không mở dropdown
         renderTags={(tagValue: string[], getTagProps) =>
           tagValue.map((option: string, index: number) => (
             <Chip
-              variant='outlined'
+              variant="outlined"
               label={option}
               {...getTagProps({ index })}
               sx={{ bgcolor: 'grey.100', height: 32, fontSize: 14 }}
             />
           ))
         }
-        renderInput={params => (
+        renderInput={(params) => (
           <TextField
             {...params}
             name={name}
             placeholder={placeholder}
             error={Boolean(error)}
             helperText={error || helperText}
-            variant='outlined'
+            variant="outlined"
             sx={{ minHeight: 56, ...sxInput }}
             {...restInput}
           />

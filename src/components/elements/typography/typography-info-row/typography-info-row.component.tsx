@@ -26,11 +26,11 @@ export const TypographyInfoRow: React.FC<TypographyInfoRowProps> = ({
       sx={{ alignItems: 'center', gap: STYLE.PADDING_GAP_ITEM_SMALL, ...sx }}
     >
       {label && (
-        <Typography sx={{ ...labelSx }} variant='subtitle1'>
+        <Typography sx={{ ...labelSx }} variant="subtitle1">
           {label}:
         </Typography>
       )}
-      <Stack color='text.secondary' sx={{ ...getLimitLineCss(lineLimit), flex: 1 }}>
+      <Stack color="text.secondary" sx={{ ...getLimitLineCss(lineLimit), flex: 1 }}>
         {value || 'Không có'}
       </Stack>
     </Stack>

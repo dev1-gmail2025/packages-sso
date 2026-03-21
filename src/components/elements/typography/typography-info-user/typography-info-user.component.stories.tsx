@@ -29,13 +29,13 @@ type Story = StoryObj<typeof TypographyInfoUser>;
 export const Default: Story = {};
 
 export const WithHighlightQuery: Story = {
-  render: args => {
+  render: (args) => {
     const [q, setQ] = useState('eng');
 
     return (
       <Stack spacing={2}>
-        <Typography variant='caption'>Type a query to highlight:</Typography>
-        <TextField value={q} onChange={e => setQ(e.target.value)} size='small' label='highlightQuery' />
+        <Typography variant="caption">Type a query to highlight:</Typography>
+        <TextField value={q} onChange={(e) => setQ(e.target.value)} size="small" label="highlightQuery" />
         <TypographyInfoUser {...args} highlightQuery={q} />
       </Stack>
     );

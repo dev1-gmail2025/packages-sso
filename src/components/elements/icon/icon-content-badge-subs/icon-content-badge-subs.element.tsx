@@ -66,13 +66,13 @@ export const IconContentBadgeSubsElement: React.FC<IconContentBadgeSubsElementPr
         transition={{ duration: 0.2 }}
         style={{ display: 'inline-flex' }}
       >
-        <IconElement icon='arrow_drop_down' sx={sxIcon} />
+        <IconElement icon="arrow_drop_down" sx={sxIcon} />
       </motion.span>
 
       <AnimatePresence>
         {hovered ? (
           <motion.div
-            key='tabs'
+            key="tabs"
             initial={{ opacity: 0, y: -5 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -5 }}
@@ -90,7 +90,7 @@ export const IconContentBadgeSubsElement: React.FC<IconContentBadgeSubsElementPr
               tabs={subs}
               idSelect={idSubSelect}
               direction={DirectionProps.COLUMN}
-              mode='badge'
+              mode="badge"
               sxWrapper={{ background: 'transparent', boxShadow: 'none' }}
             />
           </motion.div>

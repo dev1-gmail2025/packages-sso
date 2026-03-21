@@ -75,4 +75,3 @@ export const textFieldArgTypes: Partial<ArgTypes<TextFieldElementProps>> = {
   InputProps: { control: false },
   sx: { control: false },
 };
-

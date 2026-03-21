@@ -30,4 +30,3 @@ export const radioArgTypes: Partial<ArgTypes<RadioElementProps>> = {
   },
   sx: { control: false },
 };
-

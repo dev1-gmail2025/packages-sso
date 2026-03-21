@@ -71,7 +71,7 @@ export const LoadingOverlay: React.FC<LoadingOverlayProps> = ({
         {/* Message */}
         {message && (
           <Typography
-            variant='body2'
+            variant="body2"
             sx={{
               color: 'text.secondary',
               fontSize: '14px',

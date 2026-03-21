@@ -57,4 +57,3 @@ export const textFieldDateArgTypes: Partial<ArgTypes<TextFieldDateElementProps>>
   minDate: { control: false },
   maxDate: { control: false },
 };
-

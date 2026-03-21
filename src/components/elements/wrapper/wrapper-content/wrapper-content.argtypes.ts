@@ -55,4 +55,3 @@ export const wrapperContentArgTypes: Partial<ArgTypes<WrapperContentElementProps
   sx: { control: false },
   sxChildren: { control: false },
 };
-

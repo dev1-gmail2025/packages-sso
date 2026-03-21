@@ -29,11 +29,11 @@ export const WithoutTitle: Story = {
 };
 
 export const ManyExamples: Story = {
-  render: args => (
+  render: (args) => (
     <Stack spacing={2} sx={{ maxWidth: 320 }}>
-      <TypographyContentCaption {...args} content='Nguyễn Văn A' caption='Staff' userTitleName='HR' />
-      <TypographyContentCaption {...args} content='Hoàng Bùi' caption='Admin' userTitleName='System' />
-      <TypographyContentCaption {...args} content='Trần B' caption='Offline' userTitleName={undefined} />
+      <TypographyContentCaption {...args} content="Nguyễn Văn A" caption="Staff" userTitleName="HR" />
+      <TypographyContentCaption {...args} content="Hoàng Bùi" caption="Admin" userTitleName="System" />
+      <TypographyContentCaption {...args} content="Trần B" caption="Offline" userTitleName={undefined} />
     </Stack>
   ),
 };

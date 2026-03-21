@@ -22,15 +22,15 @@ export const Default: Story = {
 
     return (
       <Stack spacing={2}>
-        <TextField label='Query' value={q} onChange={e => setQ(e.target.value)} size='small' />
+        <TextField label="Query" value={q} onChange={(e) => setQ(e.target.value)} size="small" />
 
         <Stack spacing={1}>
-          <Typography variant='caption'>highlightText</Typography>
+          <Typography variant="caption">highlightText</Typography>
           <Typography>{highlightText(text, q)}</Typography>
         </Stack>
 
         <Stack spacing={1}>
-          <Typography variant='caption'>highlightYellow</Typography>
+          <Typography variant="caption">highlightYellow</Typography>
           <Typography>{highlightYellow(text, q, true)}</Typography>
         </Stack>
       </Stack>

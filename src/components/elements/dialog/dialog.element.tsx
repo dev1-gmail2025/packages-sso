@@ -108,7 +108,7 @@ export const DialogElement: React.FC<DialogElementProps> = ({
 
   // STYLE
   if (widthButton)
-    [buttonLeft, buttonCenter, buttonRight].forEach(btn => btn && (btn.sx = { width: widthButton, ...btn.sx }));
+    [buttonLeft, buttonCenter, buttonRight].forEach((btn) => btn && (btn.sx = { width: widthButton, ...btn.sx }));
 
   // Apply automatic color styling to buttons
   const styledButtonLeft = getButtonColor(buttonLeft, 'left');
@@ -149,7 +149,7 @@ export const DialogElement: React.FC<DialogElementProps> = ({
             <IconContentElement
               icon={iconLabel}
               content={label.toLowerCase()}
-              size='medium'
+              size="medium"
               sxText={{ fontSize: '16px', ...sxTitle }}
             />
             {closeButton && (
@@ -190,10 +190,10 @@ export const DialogElement: React.FC<DialogElementProps> = ({
                   {nodeBottomLeft}
                   {nodeHelp && (
                     <ButtonElement
-                      variant='outlined'
-                      content='Giúp đỡ'
+                      variant="outlined"
+                      content="Giúp đỡ"
                       endIcon={openHelp ? 'keyboard_arrow_down' : 'keyboard_arrow_up'}
-                      size='medium'
+                      size="medium"
                       onClick={() => setOpenHelp(!openHelp)}
                       fullWidth={false}
                     />

@@ -13,4 +13,3 @@ export const timeAgoArgTypes: Partial<ArgTypes<TimeAgoComponentProps>> = {
     table: { type: { summary: 'boolean' } },
   },
 };
-

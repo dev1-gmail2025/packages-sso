@@ -29,7 +29,7 @@ export default meta;
 type Story = StoryObj<typeof TextFieldDateTimeElement>;
 
 export const Default: Story = {
-  render: args => (
+  render: (args) => (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <TextFieldDateTimeElement {...args} />
     </LocalizationProvider>
@@ -37,7 +37,7 @@ export const Default: Story = {
 };
 
 export const WithLabelAndRequired: Story = {
-  render: args => (
+  render: (args) => (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <TextFieldDateTimeElement {...args} />
     </LocalizationProvider>
@@ -49,7 +49,7 @@ export const WithLabelAndRequired: Story = {
 };
 
 export const DisablePast: Story = {
-  render: args => (
+  render: (args) => (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <TextFieldDateTimeElement {...args} />
     </LocalizationProvider>
@@ -61,7 +61,7 @@ export const DisablePast: Story = {
 };
 
 export const DateRangeInDays: Story = {
-  render: args => (
+  render: (args) => (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <TextFieldDateTimeElement {...args} />
     </LocalizationProvider>
