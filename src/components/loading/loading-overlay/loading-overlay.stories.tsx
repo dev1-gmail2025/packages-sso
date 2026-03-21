@@ -23,11 +23,11 @@ export default meta;
 type Story = StoryObj<typeof LoadingOverlay>;
 
 export const Default: Story = {
-  render: args => (
+  render: (args) => (
     <Box sx={{ position: 'relative', height: 220, border: '1px dashed #ddd', borderRadius: 2, overflow: 'hidden' }}>
       <Stack spacing={1} sx={{ p: 2 }}>
-        <Typography variant='body2'>Underlying content</Typography>
-        <Typography variant='caption' color='text.secondary'>
+        <Typography variant="body2">Underlying content</Typography>
+        <Typography variant="caption" color="text.secondary">
           Overlay should cover this area.
         </Typography>
       </Stack>

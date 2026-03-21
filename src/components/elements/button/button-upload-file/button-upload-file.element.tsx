@@ -35,7 +35,7 @@ export const ButtonUploadFileElement: React.FC<ButtonUploadFileElementProps> = (
 
   useEffect(() => {
     return () =>
-      files?.forEach(file => {
+      files?.forEach((file) => {
         URL.revokeObjectURL(file.preview);
       });
   }, [files]);
@@ -46,11 +46,11 @@ export const ButtonUploadFileElement: React.FC<ButtonUploadFileElementProps> = (
         <ButtonIconElement
           {...rest}
           loading={loading}
-          icon='attach_file'
+          icon="attach_file"
           onClick={() => fileInputRef.current && fileInputRef.current.click()}
         />
       </Stack>
-      <input type='file' accept={accept} hidden multiple={multiple} ref={fileInputRef} onChange={change} />
+      <input type="file" accept={accept} hidden multiple={multiple} ref={fileInputRef} onChange={change} />
     </React.Fragment>
   );
 };

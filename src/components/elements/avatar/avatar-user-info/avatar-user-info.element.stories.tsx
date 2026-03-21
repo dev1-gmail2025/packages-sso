@@ -45,12 +45,12 @@ export const WithoutImage: Story = {
 };
 
 export const Sizes: Story = {
-  render: args => (
+  render: (args) => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-      <AvatarUserInfo {...args} name='Small Avatar' sizeAvatar='small' url='https://picsum.photos/200' />
-      <AvatarUserInfo {...args} name='Medium Avatar' sizeAvatar='medium' url='https://picsum.photos/200' />
-      <AvatarUserInfo {...args} name='Large Avatar' sizeAvatar='large' url='https://picsum.photos/200' />
-      <AvatarUserInfo {...args} name='Extra Large Avatar' sizeAvatar='extra_large' url='https://picsum.photos/200' />
+      <AvatarUserInfo {...args} name="Small Avatar" sizeAvatar="small" url="https://picsum.photos/200" />
+      <AvatarUserInfo {...args} name="Medium Avatar" sizeAvatar="medium" url="https://picsum.photos/200" />
+      <AvatarUserInfo {...args} name="Large Avatar" sizeAvatar="large" url="https://picsum.photos/200" />
+      <AvatarUserInfo {...args} name="Extra Large Avatar" sizeAvatar="extra_large" url="https://picsum.photos/200" />
     </div>
   ),
 };

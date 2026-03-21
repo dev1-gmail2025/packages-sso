@@ -32,11 +32,11 @@ export const Column: Story = {
 };
 
 export const ManyRows: Story = {
-  render: args => (
+  render: (args) => (
     <Stack gap={1}>
-      <TypographyInfoRow {...args} label='Name' value='Nguyễn Văn A' />
-      <TypographyInfoRow {...args} label='Email' value='a.nguyen@example.com' />
-      <TypographyInfoRow {...args} label='Role' value='Admin' />
+      <TypographyInfoRow {...args} label="Name" value="Nguyễn Văn A" />
+      <TypographyInfoRow {...args} label="Email" value="a.nguyen@example.com" />
+      <TypographyInfoRow {...args} label="Role" value="Admin" />
     </Stack>
   ),
 };

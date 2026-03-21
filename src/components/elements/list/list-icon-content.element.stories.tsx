@@ -10,7 +10,7 @@ const meta: Meta<typeof ListIconContentElement> = {
   component: ListIconContentElement,
   tags: ['autodocs'],
   args: {
-    titleNode: <Typography variant='subtitle2'>Menu</Typography>,
+    titleNode: <Typography variant="subtitle2">Menu</Typography>,
     list: [
       { icon: 'inbox', content: 'Inbox', onClick: fn() },
       { icon: 'mail', content: 'Mail', onClick: fn() },
@@ -26,11 +26,11 @@ type Story = StoryObj<typeof ListIconContentElement>;
 export const Default: Story = {};
 
 export const MoreItems: Story = {
-  render: args => (
+  render: (args) => (
     <Stack sx={{ maxWidth: 320 }}>
       <ListIconContentElement
         {...args}
-        titleNode={<Typography variant='subtitle2'>Quick actions</Typography>}
+        titleNode={<Typography variant="subtitle2">Quick actions</Typography>}
         list={[
           { icon: 'add', content: 'Create', onClick: fn() },
           { icon: 'edit', content: 'Edit', onClick: fn() },

@@ -19,4 +19,3 @@ export const userInfoArgTypes: Partial<ArgTypes<UserInfoProps>> = {
   },
   sx: { control: false },
 };
-

@@ -37,11 +37,11 @@ export const Info: Story = {
     description: 'Đây là dialog xác nhận với màu sắc trung tính.',
     confirmColor: SnackbarType.INFO,
   },
-  render: args => {
+  render: (args) => {
     const [open, setOpen] = useState(false);
     return (
       <>
-        <ButtonElement content='Open confirm dialog' onClick={() => setOpen(true)} />
+        <ButtonElement content="Open confirm dialog" onClick={() => setOpen(true)} />
         <DialogConfirmActionElement
           {...args}
           open={open}
@@ -59,11 +59,11 @@ export const Warning: Story = {
     description: 'Hành động này có thể gây ảnh hưởng tới dữ liệu của bạn.',
     confirmColor: SnackbarType.WARNING,
   },
-  render: args => {
+  render: (args) => {
     const [open, setOpen] = useState(false);
     return (
       <>
-        <ButtonElement content='Open confirm dialog' onClick={() => setOpen(true)} />
+        <ButtonElement content="Open confirm dialog" onClick={() => setOpen(true)} />
         <DialogConfirmActionElement
           {...args}
           open={open}
@@ -80,11 +80,11 @@ export const LoadingState: Story = {
     loading: true,
     description: 'Đang xử lý, vui lòng chờ...',
   },
-  render: args => {
+  render: (args) => {
     const [open, setOpen] = useState(false);
     return (
       <>
-        <ButtonElement content='Open confirm dialog' onClick={() => setOpen(true)} />
+        <ButtonElement content="Open confirm dialog" onClick={() => setOpen(true)} />
         <DialogConfirmActionElement
           {...args}
           open={open}

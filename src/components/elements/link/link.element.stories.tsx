@@ -27,14 +27,14 @@ type Story = StoryObj<typeof LinkElement>;
 export const Default: Story = {};
 
 export const Underlines: Story = {
-  render: args => (
+  render: (args) => (
     <Stack spacing={1}>
-      <Typography variant='caption'>underline="always"</Typography>
-      <LinkElement {...args} underline='always' />
-      <Typography variant='caption'>underline="hover"</Typography>
-      <LinkElement {...args} underline='hover' />
-      <Typography variant='caption'>underline="none"</Typography>
-      <LinkElement {...args} underline='none' />
+      <Typography variant="caption">underline="always"</Typography>
+      <LinkElement {...args} underline="always" />
+      <Typography variant="caption">underline="hover"</Typography>
+      <LinkElement {...args} underline="hover" />
+      <Typography variant="caption">underline="none"</Typography>
+      <LinkElement {...args} underline="none" />
     </Stack>
   ),
 };

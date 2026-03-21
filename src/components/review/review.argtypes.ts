@@ -15,4 +15,3 @@ export const reviewArgTypes: Partial<ArgTypes<ReviewComponentProps>> = {
   onClick: { action: 'clicked' },
   sx: { control: false },
 };
-

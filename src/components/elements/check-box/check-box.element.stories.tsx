@@ -27,22 +27,22 @@ type Story = StoryObj<typeof CheckboxElement>;
 export const Default: Story = {};
 
 export const States: Story = {
-  render: args => (
+  render: (args) => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-      <CheckboxElement {...args} label='Unchecked' checked={false} />
-      <CheckboxElement {...args} label='Checked' checked />
-      <CheckboxElement {...args} label='Indeterminate' indeterminate />
-      <CheckboxElement {...args} label='Disabled unchecked' checked={false} disabled />
-      <CheckboxElement {...args} label='Disabled checked' checked disabled />
+      <CheckboxElement {...args} label="Unchecked" checked={false} />
+      <CheckboxElement {...args} label="Checked" checked />
+      <CheckboxElement {...args} label="Indeterminate" indeterminate />
+      <CheckboxElement {...args} label="Disabled unchecked" checked={false} disabled />
+      <CheckboxElement {...args} label="Disabled checked" checked disabled />
     </div>
   ),
 };
 
 export const Sizes: Story = {
-  render: args => (
+  render: (args) => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-      <CheckboxElement {...args} size='small' label='Small size' />
-      <CheckboxElement {...args} size='medium' label='Medium size' />
+      <CheckboxElement {...args} size="small" label="Small size" />
+      <CheckboxElement {...args} size="medium" label="Medium size" />
     </div>
   ),
 };

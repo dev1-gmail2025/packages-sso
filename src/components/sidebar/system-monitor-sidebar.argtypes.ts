@@ -28,4 +28,3 @@ export const systemMonitorSidebarArgTypes: Partial<ArgTypes<SystemMonitorSidebar
   },
   onClickApp: { action: 'clickApp', table: { type: { summary: '(appInfo: AppInfo) => void' } } },
 };
-

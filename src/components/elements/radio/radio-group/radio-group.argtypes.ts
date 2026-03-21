@@ -51,4 +51,3 @@ export const radioGroupArgTypes: Partial<ArgTypes<RadioGroupElementProps>> = {
   sx: { control: false },
   children: { control: false },
 };
-

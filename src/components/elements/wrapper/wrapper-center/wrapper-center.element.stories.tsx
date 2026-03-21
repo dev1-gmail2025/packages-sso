@@ -12,7 +12,7 @@ const meta: Meta<typeof WrapperCenterElement> = {
     isWrap: true,
     children: (
       <Box sx={{ border: '1px dashed #ddd', borderRadius: 1, p: 2 }}>
-        <Typography variant='body2'>Centered content</Typography>
+        <Typography variant="body2">Centered content</Typography>
       </Box>
     ),
   },

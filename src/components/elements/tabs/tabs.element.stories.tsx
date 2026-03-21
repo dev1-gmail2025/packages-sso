@@ -33,7 +33,7 @@ type Story = StoryObj<typeof TabsComponent>;
 export const Default: Story = {};
 
 export const Variants: Story = {
-  render: args => (
+  render: (args) => (
     <Stack spacing={2}>
       <TabsComponent {...args} />
       <TabsComponent {...args} variant={VariantProps.OUTLINED} />
@@ -42,7 +42,7 @@ export const Variants: Story = {
 };
 
 export const Directions: Story = {
-  render: args => (
+  render: (args) => (
     <Stack spacing={3}>
       <TabsComponent {...args} direction={DirectionProps.ROW} />
       <TabsComponent {...args} direction={DirectionProps.COLUMN} />
@@ -51,12 +51,12 @@ export const Directions: Story = {
 };
 
 export const WithBadges: Story = {
-  render: args => (
+  render: (args) => (
     <Stack spacing={3}>
       <TabsComponent
         {...args}
         direction={DirectionProps.ROW}
-        mode='badge'
+        mode="badge"
         tabs={[
           { id: 'all', name: 'All', icon: 'apps', badgeCount: 12, onClick: fn() },
           { id: 'unread', name: 'Unread', icon: 'mark_email_unread', badgeCount: 3, onClick: fn() },
@@ -66,7 +66,7 @@ export const WithBadges: Story = {
       <TabsComponent
         {...args}
         direction={DirectionProps.COLUMN}
-        mode='badge'
+        mode="badge"
         tabs={[
           { id: 'all', name: 'All', icon: 'apps', badgeCount: 12, onClick: fn() },
           { id: 'unread', name: 'Unread', icon: 'mark_email_unread', badgeCount: 3, onClick: fn() },
@@ -98,7 +98,7 @@ export const WithBadges: Story = {
 };
 
 export const WithSubs: Story = {
-  render: args => (
+  render: (args) => (
     <Stack sx={{ height: '100px' }}>
       <TabsComponent
         {...args}
@@ -117,7 +117,7 @@ export const WithSubs: Story = {
             onClick: fn(),
           },
         ]}
-        getSubs={tab =>
+        getSubs={(tab) =>
           tab.id === 'more'
             ? [
                 { id: 'settings', name: 'Settings', icon: 'settings', onClick: fn() },
@@ -131,11 +131,11 @@ export const WithSubs: Story = {
 };
 
 export const WithBadgesAndSubs: Story = {
-  render: args => (
+  render: (args) => (
     <Stack sx={{ height: '100px' }}>
       <TabsComponent
         {...args}
-        mode='badge'
+        mode="badge"
         tabs={[
           { id: 'all', name: 'All', icon: 'apps', badgeCount: 10, onClick: fn() },
           { id: 'unread', name: 'Unread', icon: 'mark_email_unread', badgeCount: 4, onClick: fn() },
@@ -147,7 +147,7 @@ export const WithBadgesAndSubs: Story = {
             onClick: fn(),
           },
         ]}
-        getSubs={tab =>
+        getSubs={(tab) =>
           tab.id === 'more'
             ? [
                 { id: 'pinned', name: 'Pinned', icon: 'push_pin', badgeCount: 1, onClick: fn() },

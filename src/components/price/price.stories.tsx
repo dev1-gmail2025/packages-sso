@@ -26,11 +26,11 @@ type Story = StoryObj<typeof PriceComponent>;
 export const Default: Story = {};
 
 export const Sizes: Story = {
-  render: args => (
+  render: (args) => (
     <Stack spacing={2}>
-      <PriceComponent {...args} size='small' />
-      <PriceComponent {...args} size='medium' />
-      <PriceComponent {...args} size='large' />
+      <PriceComponent {...args} size="small" />
+      <PriceComponent {...args} size="medium" />
+      <PriceComponent {...args} size="large" />
     </Stack>
   ),
 };

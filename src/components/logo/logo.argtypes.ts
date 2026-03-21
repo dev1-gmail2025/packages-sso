@@ -20,4 +20,3 @@ export const logoArgTypes: Partial<ArgTypes<LogoComponentProps>> = {
   },
   sx: { control: false },
 };
-

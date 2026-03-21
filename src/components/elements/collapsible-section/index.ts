@@ -1,1 +1,1 @@
-export * from './collapsible-section.component'
+export * from './collapsible-section.component';

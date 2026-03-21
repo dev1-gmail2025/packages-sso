@@ -27,7 +27,7 @@ export default meta;
 type Story = StoryObj<typeof PaginationElement>;
 
 export const Default: Story = {
-  render: args => {
+  render: (args) => {
     const [state, setState] = useState({ page: args.page, take: args.take });
 
     return (
@@ -36,7 +36,7 @@ export const Default: Story = {
           {...args}
           page={state.page}
           take={state.take}
-          onChange={next => {
+          onChange={(next) => {
             setState(next);
             args.onChange(next);
           }}

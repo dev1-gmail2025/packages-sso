@@ -37,4 +37,3 @@ export const avatarGroupArgTypes: Partial<ArgTypes<AvatarGroupElementProps>> = {
     table: { type: { summary: '(event) => void' } },
   },
 };
-

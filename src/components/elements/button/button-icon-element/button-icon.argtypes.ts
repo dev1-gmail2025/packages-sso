@@ -24,4 +24,3 @@ export const buttonIconArgTypes: ArgTypes<ButtonIconElementProps> = {
   },
   onClick: { action: 'clicked' },
 };
-

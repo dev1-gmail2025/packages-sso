@@ -25,4 +25,3 @@ export const typographyInfoRowArgTypes: Partial<ArgTypes<TypographyInfoRowProps>
   sx: { control: false },
   labelSx: { control: false },
 };
-

@@ -11,4 +11,3 @@ export const listIconContentArgTypes: Partial<ArgTypes<ListIconContentElementPro
     description: 'List items (content/icon/onClick). Use render to customize.',
   },
 };
-

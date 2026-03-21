@@ -42,7 +42,7 @@ export const LoadingOverlay: Story = {
   },
 };
 
-const ControlledDemo: React.FC<React.ComponentProps<typeof AvatarUserInfoUpdate>> = props => {
+const ControlledDemo: React.FC<React.ComponentProps<typeof AvatarUserInfoUpdate>> = (props) => {
   const [url, setUrl] = useState<any>(props.url);
 
   const mockFile = useMemo(() => {
@@ -56,7 +56,7 @@ const ControlledDemo: React.FC<React.ComponentProps<typeof AvatarUserInfoUpdate>
         <AvatarUserInfoUpdate
           {...props}
           url={url}
-          onChange={file => {
+          onChange={(file) => {
             props.onChange?.(file as any);
             if (!file) {
               setUrl(undefined);
@@ -69,8 +69,8 @@ const ControlledDemo: React.FC<React.ComponentProps<typeof AvatarUserInfoUpdate>
 
         <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
           <Button
-            variant='contained'
-            size='small'
+            variant="contained"
+            size="small"
             onClick={() => {
               setUrl('https://i.pravatar.cc/160?img=58');
             }}
@@ -78,8 +78,8 @@ const ControlledDemo: React.FC<React.ComponentProps<typeof AvatarUserInfoUpdate>
             Set URL
           </Button>
           <Button
-            variant='outlined'
-            size='small'
+            variant="outlined"
+            size="small"
             onClick={() => {
               setUrl({ url: 'https://i.pravatar.cc/160?img=59', name: 'from-api.png' });
             }}
@@ -87,8 +87,8 @@ const ControlledDemo: React.FC<React.ComponentProps<typeof AvatarUserInfoUpdate>
             Set FileFromApi
           </Button>
           <Button
-            variant='outlined'
-            size='small'
+            variant="outlined"
+            size="small"
             onClick={() => {
               setUrl(mockFile);
             }}
@@ -96,9 +96,9 @@ const ControlledDemo: React.FC<React.ComponentProps<typeof AvatarUserInfoUpdate>
             Set FileWithPreview
           </Button>
           <Button
-            color='error'
-            variant='text'
-            size='small'
+            color="error"
+            variant="text"
+            size="small"
             onClick={() => {
               setUrl(undefined);
             }}
@@ -112,7 +112,7 @@ const ControlledDemo: React.FC<React.ComponentProps<typeof AvatarUserInfoUpdate>
 };
 
 export const Controlled: Story = {
-  render: args => <ControlledDemo {...args} url='https://i.pravatar.cc/160?img=55' />,
+  render: (args) => <ControlledDemo {...args} url="https://i.pravatar.cc/160?img=55" />,
   parameters: {
     layout: 'centered',
   },

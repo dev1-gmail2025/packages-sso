@@ -25,14 +25,14 @@ type Story = StoryObj<typeof RadioElement>;
 export const Default: Story = {};
 
 export const Colors: Story = {
-  render: args => (
+  render: (args) => (
     <Stack spacing={1}>
-      <RadioElement {...args} label='Primary' color='primary' />
-      <RadioElement {...args} label='Secondary' color='secondary' />
-      <RadioElement {...args} label='Success' color='success' />
-      <RadioElement {...args} label='Warning' color='warning' />
-      <RadioElement {...args} label='Error' color='error' />
-      <RadioElement {...args} label='Info' color='info' />
+      <RadioElement {...args} label="Primary" color="primary" />
+      <RadioElement {...args} label="Secondary" color="secondary" />
+      <RadioElement {...args} label="Success" color="success" />
+      <RadioElement {...args} label="Warning" color="warning" />
+      <RadioElement {...args} label="Error" color="error" />
+      <RadioElement {...args} label="Info" color="info" />
     </Stack>
   ),
 };

@@ -12,4 +12,3 @@ export const iconContentBadgeSubsArgTypes: Partial<ArgTypes<IconContentBadgeSubs
   sxIcon: { control: false },
   sxText: { control: false },
 };
-

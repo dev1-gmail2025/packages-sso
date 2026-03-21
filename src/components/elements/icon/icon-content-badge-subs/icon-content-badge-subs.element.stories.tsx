@@ -30,7 +30,7 @@ export default meta;
 type Story = StoryObj<typeof IconContentBadgeSubsElement>;
 
 export const Default: Story = {
-  render: args => (
+  render: (args) => (
     <Box sx={{ position: 'relative', height: 200 }}>
       <IconContentBadgeSubsElement {...args} />
     </Box>

@@ -1,0 +1,11 @@
+import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{U as a}from"./user-info.element-DbHzzzW0.js";import{S as f}from"./Stack--5Dd26sT.js";import"./icon.element-C1lSNNtD.js";import"./FileSaver.min-sVBIqHNu.js";import"./index-j62jqFia.js";import"./style.const-DwIRAWA_.js";import"./time.util-BYguZ9lS.js";import"./useTheme-0nskcD3X.js";import"./defaultTheme-D-jjqFHx.js";import"./DefaultPropsProvider-DU9SanKz.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./Typography-crO-zzKF.js";import"./extendSxProp-Cmw4pgNu.js";import"./createStack-C_KW5WTO.js";const x={name:{control:"text",description:"User name.",table:{type:{summary:"string"}}},department:{control:"text",description:"Optional department (renders second line).",table:{type:{summary:"string"}}},icon:{control:"text",description:"Material icon name.",table:{type:{summary:"string"},defaultValue:{summary:"person"}}},sx:{control:!1}},O={title:"Elements/User/UserInfo",component:a,tags:["autodocs"],args:{name:"Nguyễn Văn A",department:"Engineering",icon:"person"},parameters:{layout:"padded"},argTypes:x},r={},t={args:{department:""}},n={render:s=>e.jsxs(f,{spacing:2,children:[e.jsx(a,{...s,icon:"person",name:"User",department:"Dept"}),e.jsx(a,{...s,icon:"admin_panel_settings",name:"Admin",department:"IT"}),e.jsx(a,{...s,icon:"badge",name:"Staff",department:"HR"})]})};var o,m,p;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:"{}",...(p=(m=r.parameters)==null?void 0:m.docs)==null?void 0:p.source}}};var i,c,d;t.parameters={...t.parameters,docs:{...(i=t.parameters)==null?void 0:i.docs,source:{originalSource:`{
+  args: {
+    department: ''
+  }
+}`,...(d=(c=t.parameters)==null?void 0:c.docs)==null?void 0:d.source}}};var l,u,g;n.parameters={...n.parameters,docs:{...(l=n.parameters)==null?void 0:l.docs,source:{originalSource:`{
+  render: args => <Stack spacing={2}>\r
+      <UserInfo {...args} icon="person" name="User" department="Dept" />\r
+      <UserInfo {...args} icon="admin_panel_settings" name="Admin" department="IT" />\r
+      <UserInfo {...args} icon="badge" name="Staff" department="HR" />\r
+    </Stack>
+}`,...(g=(u=n.parameters)==null?void 0:u.docs)==null?void 0:g.source}}};const V=["Default","WithoutDepartment","Icons"];export{r as Default,n as Icons,t as WithoutDepartment,V as __namedExportsOrder,O as default};

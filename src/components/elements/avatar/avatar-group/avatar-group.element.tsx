@@ -60,27 +60,27 @@ export const AvatarGroupElement: React.FC<AvatarGroupElementProps> = ({
         case approveStatus:
           icon = (
             <SmallIcon sx={{ background: palette.success.light, color: 'white' }}>
-              <IconElement icon='done' color={'inherit'} size='small' />
+              <IconElement icon="done" color={'inherit'} size="small" />
             </SmallIcon>
           );
           break;
         case rejectStatus:
           icon = (
             <SmallIcon sx={{ background: palette.error.light, color: 'white' }}>
-              <IconElement icon='close' color={'inherit'} size='small' />
+              <IconElement icon="close" color={'inherit'} size="small" />
             </SmallIcon>
           );
           break;
         default:
           icon = (
             <SmallIcon sx={{ background: palette.warning.light, color: 'white' }}>
-              <IconElement color={'inherit'} icon='access_time' />
+              <IconElement color={'inherit'} icon="access_time" />
             </SmallIcon>
           );
           break;
       }
       return (
-        <Badge key={key} overlap='circular' anchorOrigin={{ vertical: 'top', horizontal: 'left' }} badgeContent={icon}>
+        <Badge key={key} overlap="circular" anchorOrigin={{ vertical: 'top', horizontal: 'left' }} badgeContent={icon}>
           <AvatarElement
             url={item.url}
             alt={item.alt || ''}
@@ -109,7 +109,7 @@ export const AvatarGroupElement: React.FC<AvatarGroupElementProps> = ({
       <AvatarGroup
         renderSurplus={
           renderSurplus ||
-          (surplus => (
+          ((surplus) => (
             <Box
               onClick={handleSurplusClick}
               sx={{
@@ -167,7 +167,7 @@ export const AvatarGroupElement: React.FC<AvatarGroupElementProps> = ({
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
             {surplusItems.map((item, idx) => (
               <Box key={idx} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <AvatarElement url={item.url} alt={item.alt || ''} size='small' />
+                <AvatarElement url={item.url} alt={item.alt || ''} size="small" />
                 <Box sx={{ flex: 1 }}>
                   <Typography sx={{ fontSize: 14, fontWeight: 500 }}>{item.alt || 'N/A'}</Typography>
                   {item.tooltipContent && (
@@ -177,13 +177,13 @@ export const AvatarGroupElement: React.FC<AvatarGroupElementProps> = ({
                 {item.status && (
                   <Box>
                     {item.status === StatusAvatar.APPROVED && (
-                      <IconElement icon='done' sx={{ color: palette.success.main }} />
+                      <IconElement icon="done" sx={{ color: palette.success.main }} />
                     )}
                     {item.status === StatusAvatar.REJECTED && (
-                      <IconElement icon='close' sx={{ color: palette.error.main }} />
+                      <IconElement icon="close" sx={{ color: palette.error.main }} />
                     )}
                     {item.status === StatusAvatar.PENDING && (
-                      <IconElement icon='access_time' sx={{ color: palette.warning.main }} />
+                      <IconElement icon="access_time" sx={{ color: palette.warning.main }} />
                     )}
                   </Box>
                 )}

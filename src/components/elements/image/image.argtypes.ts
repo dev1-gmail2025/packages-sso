@@ -44,4 +44,3 @@ export const imageArgTypes: Partial<ArgTypes<ImageElementProps>> = {
   },
   sx: { control: false },
 };
-

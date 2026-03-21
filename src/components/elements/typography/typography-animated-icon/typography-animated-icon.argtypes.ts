@@ -30,4 +30,3 @@ export const typographyAnimatedIconArgTypes: Partial<ArgTypes<TypographyAnimated
   },
   sx: { control: false },
 };
-

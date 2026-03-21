@@ -17,4 +17,3 @@ export function getFileSource(file: FileWithPreviewOrUrl): string | undefined {
   const maybeUrl = (file as any).url as string | undefined;
   return maybeUrl;
 }
-

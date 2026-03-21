@@ -16,4 +16,3 @@ export const iconContentArgTypes: Partial<ArgTypes<IconContentElementProps>> = {
   sxIcon: { control: false },
   sxText: { control: false },
 };
-

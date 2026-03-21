@@ -2,7 +2,7 @@ import { Box, TextField, TextFieldProps, Typography, useTheme } from '@mui/mater
 import React from 'react';
 import { STYLE } from '../../../common';
 import { IconButtonElement } from '../icon';
-import { TextFieldLabelElement } from './text-field-label.element';
+import { TextFieldLabelElement } from './text-field-label/text-field-label.element';
 
 export interface TextFieldElementProps extends Omit<TextFieldProps, ''> {
   iconLabel?: string;
@@ -53,7 +53,7 @@ export const TextFieldElement: React.FC<TextFieldElementProps> = ({
           ...InputProps,
           endAdornment:
             showResetButton && value && onReset ? (
-              <IconButtonElement icon='close' onClick={onReset} />
+              <IconButtonElement icon="close" onClick={onReset} />
             ) : (
               InputProps?.endAdornment
             ),
@@ -65,7 +65,7 @@ export const TextFieldElement: React.FC<TextFieldElementProps> = ({
       />
       {description && (
         <Typography
-          variant='body2'
+          variant="body2"
           sx={{
             position: 'absolute',
             bottom: 8,

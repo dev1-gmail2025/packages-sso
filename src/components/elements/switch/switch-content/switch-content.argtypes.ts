@@ -24,4 +24,3 @@ export const switchContentArgTypes: Partial<ArgTypes<SwitchContentElementProps>>
   },
   sx: { control: false },
 };
-

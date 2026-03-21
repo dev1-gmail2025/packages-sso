@@ -29,12 +29,12 @@ type Story = StoryObj<typeof IconContentBadgeElement>;
 export const Default: Story = {};
 
 export const BadgeCounts: Story = {
-  render: args => (
+  render: (args) => (
     <Stack spacing={2}>
-      <IconContentBadgeElement {...args} badgeCount={0} content='Zero' />
-      <IconContentBadgeElement {...args} badgeCount={1} content='One' />
-      <IconContentBadgeElement {...args} badgeCount={12} content='Twelve' />
-      <IconContentBadgeElement {...args} badgeCount={120} content='One twenty' />
+      <IconContentBadgeElement {...args} badgeCount={0} content="Zero" />
+      <IconContentBadgeElement {...args} badgeCount={1} content="One" />
+      <IconContentBadgeElement {...args} badgeCount={12} content="Twelve" />
+      <IconContentBadgeElement {...args} badgeCount={120} content="One twenty" />
     </Stack>
   ),
 };

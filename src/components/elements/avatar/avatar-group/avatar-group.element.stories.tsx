@@ -63,7 +63,7 @@ export const WithStatuses: Story = {
 };
 
 export const SurplusPopover: Story = {
-  render: args => (
+  render: (args) => (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
       <Box sx={{ fontSize: 12, color: 'text.secondary' }}>
         Click vào <strong>+N</strong> để mở popover danh sách người còn lại.
@@ -82,7 +82,7 @@ export const SurplusPopover: Story = {
 };
 
 export const Sizes: Story = {
-  render: args => (
+  render: (args) => (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
       <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', flexWrap: 'wrap' }}>
         <Box sx={{ width: 140, fontSize: 12, color: 'text.secondary' }}>small</Box>

@@ -19,4 +19,3 @@ export const breadCumbsArgTypes: Partial<ArgTypes<BreadcrumbsProps>> = {
   },
   sxLabel: { control: false },
 };
-

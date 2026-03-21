@@ -47,7 +47,7 @@ export default meta;
 type Story = StoryObj<typeof AppGrid>;
 
 export const Default: Story = {
-  render: args => (
+  render: (args) => (
     <Box sx={{ backgroundColor: '#0b1b2b', py: '50px' }}>
       <AppGrid {...args} />
     </Box>

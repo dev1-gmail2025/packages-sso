@@ -33,4 +33,3 @@ export const cardStatisticArgTypes: Partial<ArgTypes<CardStatisticsComponentProp
     table: { type: { summary: 'ReactNode' } },
   },
 };
-

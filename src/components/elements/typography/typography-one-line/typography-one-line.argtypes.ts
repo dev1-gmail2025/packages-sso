@@ -14,4 +14,3 @@ export const typographyOneLineArgTypes: Partial<ArgTypes<TypographyOneLineProps>
   },
   sx: { control: false },
 };
-

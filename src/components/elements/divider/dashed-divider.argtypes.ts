@@ -50,4 +50,3 @@ export const dashedDividerArgTypes: Partial<ArgTypes<DashedDividerElementProps>>
     },
   },
 };
-

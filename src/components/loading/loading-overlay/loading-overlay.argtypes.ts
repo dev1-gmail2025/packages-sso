@@ -35,4 +35,3 @@ export const loadingOverlayArgTypes: Partial<ArgTypes<LoadingOverlayProps>> = {
   },
   sx: { control: false },
 };
-

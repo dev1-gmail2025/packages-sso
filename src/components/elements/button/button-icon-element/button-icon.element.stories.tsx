@@ -31,17 +31,17 @@ type Story = StoryObj<typeof ButtonIconElement>;
 export const Default: Story = {};
 
 export const Variants: Story = {
-  render: args => (
+  render: (args) => (
     <Stack gap={STYLE.PADDING_GAP_LAYOUT}>
       <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-        <ButtonIconElement {...args} variant='contained' />
-        <ButtonIconElement {...args} variant='outlined' />
-        <ButtonIconElement {...args} variant='text' />
+        <ButtonIconElement {...args} variant="contained" />
+        <ButtonIconElement {...args} variant="outlined" />
+        <ButtonIconElement {...args} variant="text" />
       </div>
       <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-        <ButtonIconElement {...args} variant='contained' sizeType={ImageSizeType.CIRCLE} />
-        <ButtonIconElement {...args} variant='outlined' sizeType={ImageSizeType.CIRCLE} />
-        <ButtonIconElement {...args} variant='text' sizeType={ImageSizeType.CIRCLE} />
+        <ButtonIconElement {...args} variant="contained" sizeType={ImageSizeType.CIRCLE} />
+        <ButtonIconElement {...args} variant="outlined" sizeType={ImageSizeType.CIRCLE} />
+        <ButtonIconElement {...args} variant="text" sizeType={ImageSizeType.CIRCLE} />
       </div>
     </Stack>
   ),

@@ -1,6 +1,6 @@
 {
   "name": "sevago-sso-fe",
-  "version": "1.0.149",
+  "version": "1.0.151",
   "description": "Sevago SSO Frontend Library - A comprehensive SSO solution with React components",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -17,7 +17,6 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006 --disable-telemetry",
-    "storybook:build": "storybook build --disable-telemetry",
     "build-storybook": "storybook build -o docs && touch docs/.nojekyll",
     "storybook:test": "test-storybook --url http://127.0.0.1:6006",
     "storybook:test:ci": "start-server-and-test storybook http://127.0.0.1:6006 storybook:test",
@@ -69,7 +68,10 @@
   "dependencies": {
     "@storybook/core-events": "^8.6.14",
     "exceljs": "^4.4.0",
-    "file-saver": "^2.0.5"
+    "file-saver": "^2.0.5",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

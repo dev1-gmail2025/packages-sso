@@ -24,28 +24,28 @@ export default meta;
 type Story = StoryObj<typeof DialogElement>;
 
 export const WithHelp: Story = {
-  render: args => {
+  render: (args) => {
     const [open, setOpen] = useState(false);
 
     return (
       <>
-        <ButtonElement content='Open dialog with help' onClick={() => setOpen(true)} />
+        <ButtonElement content="Open dialog with help" onClick={() => setOpen(true)} />
         <DialogElement
           {...args}
           open={open}
           onClose={() => setOpen(false)}
-          label='Dialog có hướng dẫn'
+          label="Dialog có hướng dẫn"
           nodeContent={
             <Stack>
-              <Typography variant='body2'>Nội dung chính của dialog. Có thêm phần hướng dẫn bên dưới.</Typography>
+              <Typography variant="body2">Nội dung chính của dialog. Có thêm phần hướng dẫn bên dưới.</Typography>
             </Stack>
           }
           nodeHelp={
             <Stack>
-              <Typography variant='body2'>
+              <Typography variant="body2">
                 Đây là nội dung hướng dẫn thêm cho người dùng, có thể dài hơn và scroll được.
               </Typography>
-              <Typography variant='body2'>
+              <Typography variant="body2">
                 What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                 Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
                 galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
@@ -81,18 +81,18 @@ export const WithHelp: Story = {
 };
 
 export const WithThreeButtons: Story = {
-  render: args => {
+  render: (args) => {
     const [open, setOpen] = useState(false);
 
     return (
       <>
-        <ButtonElement content='Open 3-button dialog' onClick={() => setOpen(true)} />
+        <ButtonElement content="Open 3-button dialog" onClick={() => setOpen(true)} />
         <DialogElement
           {...args}
           open={open}
           onClose={() => setOpen(false)}
-          label='Dialog 3 nút'
-          nodeContent={<Typography variant='body2'>Ví dụ dialog có 3 nút: Trở lại, Lưu nháp và Lưu.</Typography>}
+          label="Dialog 3 nút"
+          nodeContent={<Typography variant="body2">Ví dụ dialog có 3 nút: Trở lại, Lưu nháp và Lưu.</Typography>}
           buttonLeft={{
             content: 'Trở lại',
             onClick: () => setOpen(false),

@@ -18,4 +18,3 @@ export const timeAgoContentArgTypes: Partial<ArgTypes<TimeAgoContentComponentPro
     table: { type: { summary: 'number | string' } },
   },
 };
-

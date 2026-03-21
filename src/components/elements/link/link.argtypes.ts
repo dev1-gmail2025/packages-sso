@@ -36,4 +36,3 @@ export const linkArgTypes: Partial<ArgTypes<LinkElementProps>> = {
   },
   sx: { control: false },
 };
-

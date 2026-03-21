@@ -29,7 +29,7 @@ export const ImageContentCaptionComponent: React.FC<ImageContentCaptionComponent
   userTitleName,
 }) => {
   return (
-    <StackRow alignItems='center' sx={{ ...sx, gap: STYLE.PADDING_GAP_ITEM }}>
+    <StackRow alignItems="center" sx={{ ...sx, gap: STYLE.PADDING_GAP_ITEM }}>
       <AvatarElement alt={alt} url={url} size={sizeType} />
       <TypographyContentCaption
         userTitleName={userTitleName}

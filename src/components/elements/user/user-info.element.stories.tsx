@@ -29,11 +29,11 @@ export const WithoutDepartment: Story = {
 };
 
 export const Icons: Story = {
-  render: args => (
+  render: (args) => (
     <Stack spacing={2}>
-      <UserInfo {...args} icon='person' name='User' department='Dept' />
-      <UserInfo {...args} icon='admin_panel_settings' name='Admin' department='IT' />
-      <UserInfo {...args} icon='badge' name='Staff' department='HR' />
+      <UserInfo {...args} icon="person" name="User" department="Dept" />
+      <UserInfo {...args} icon="admin_panel_settings" name="Admin" department="IT" />
+      <UserInfo {...args} icon="badge" name="Staff" department="HR" />
     </Stack>
   ),
 };

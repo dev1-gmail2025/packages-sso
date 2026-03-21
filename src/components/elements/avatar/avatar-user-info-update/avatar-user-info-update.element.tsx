@@ -45,7 +45,7 @@ export const AvatarUserInfoUpdate: React.FC<AvatarUserInfoUpdateProps> = ({
         />
         {loading && (
           <LoadingComponent
-            size='small'
+            size="small"
             sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
           />
         )}
@@ -69,10 +69,10 @@ export const AvatarUserInfoUpdate: React.FC<AvatarUserInfoUpdateProps> = ({
         <Stack>
           <input
             ref={fileInputRef}
-            type='file'
+            type="file"
             accept={'.jpg,.jpeg,.png,.gif,.bmp,.webp,.svg'}
             style={{ display: 'none' }}
-            onChange={e => {
+            onChange={(e) => {
               const file = e.target.files && e.target.files[0];
               if (file && onChange) {
                 setLoading(true);

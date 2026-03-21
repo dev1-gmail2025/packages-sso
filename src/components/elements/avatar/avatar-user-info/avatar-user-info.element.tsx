@@ -48,7 +48,7 @@ export const AvatarUserInfo: React.FC<AvatarUserInfoProps> = ({
           </Typography>
 
           <Typography
-            variant='caption'
+            variant="caption"
             sx={
               {
                 ...getLimitLineCss(1),

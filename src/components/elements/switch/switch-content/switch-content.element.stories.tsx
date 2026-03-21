@@ -25,14 +25,14 @@ export default meta;
 type Story = StoryObj<typeof SwitchContentElement>;
 
 export const Default: Story = {
-  render: args => {
+  render: (args) => {
     const [value, setValue] = useState<boolean>(!!args.value);
 
     return (
       <SwitchContentElement
         {...args}
         value={value}
-        onChange={eventLike => {
+        onChange={(eventLike) => {
           setValue(eventLike.target.value);
           args.onChange && args.onChange(eventLike);
         }}

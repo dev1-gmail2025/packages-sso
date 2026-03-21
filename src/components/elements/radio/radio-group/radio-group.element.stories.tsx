@@ -29,16 +29,16 @@ export default meta;
 type Story = StoryObj<typeof RadioGroupElement>;
 
 export const Default: Story = {
-  render: args => (
+  render: (args) => (
     <RadioGroupElement {...args}>
-      <RadioElement value='active' label='Active' />
-      <RadioElement value='inactive' label='Inactive' />
+      <RadioElement value="active" label="Active" />
+      <RadioElement value="inactive" label="Inactive" />
     </RadioGroupElement>
   ),
 };
 
 export const Controlled: Story = {
-  render: args => {
+  render: (args) => {
     const [value, setValue] = useState('active');
 
     return (
@@ -46,14 +46,14 @@ export const Controlled: Story = {
         <RadioGroupElement
           {...args}
           value={value}
-          onChange={eventLike => {
+          onChange={(eventLike) => {
             setValue(eventLike.target.value);
             args.onChange && args.onChange(eventLike);
           }}
         >
-          <RadioElement value='active' label='Active' />
-          <RadioElement value='inactive' label='Inactive' />
-          <RadioElement value='pending' label='Pending' />
+          <RadioElement value="active" label="Active" />
+          <RadioElement value="inactive" label="Inactive" />
+          <RadioElement value="pending" label="Pending" />
         </RadioGroupElement>
       </Stack>
     );

@@ -20,7 +20,8 @@ export const avatarOnlineStatusArgTypes: Partial<ArgTypes<AvatarOnlineStatusElem
   },
   online: {
     control: 'boolean',
-    description: 'If true, shows online status with green badge and animation. If false, shows offline status with gray badge.',
+    description:
+      'If true, shows online status with green badge and animation. If false, shows offline status with gray badge.',
     table: {
       type: { summary: 'boolean' },
       defaultValue: { summary: 'false' },
