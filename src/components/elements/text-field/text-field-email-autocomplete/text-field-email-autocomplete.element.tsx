@@ -2,9 +2,9 @@ import { Box, Chip, SxProps } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField, { TextFieldProps } from '@mui/material/TextField';
 import React, { useState } from 'react';
-import { PaperSelect } from '../../styles/paper.style';
-import { IconElement } from '../icon';
-import { TextFieldLabelElement } from './text-field-label.element';
+import { PaperSelect } from '../../../styles/paper.style';
+import { IconElement } from '../../icon';
+import { TextFieldLabelElement } from '../text-field-label/text-field-label.element';
 
 interface TextFieldEmailAutocompleteProps extends Omit<TextFieldProps, ''> {
   name: string;

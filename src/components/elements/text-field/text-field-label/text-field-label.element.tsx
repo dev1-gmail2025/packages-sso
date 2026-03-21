@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import React from 'react';
-import { STYLE } from '../../../common';
-import { IconElement } from '../icon';
+import { STYLE } from '../../../../common';
+import { IconElement } from '../../icon';
 
 export interface TextFieldLabelElementProps {
   label?: string | React.ReactNode;
@@ -20,7 +20,7 @@ export const TextFieldLabelElement: React.FC<TextFieldLabelElementProps> = ({
 
   return (
     <Typography
-      variant="subtitle1"
+      variant='subtitle1'
       sx={{
         color: colorLabel || '#595A5D',
         display: 'flex',

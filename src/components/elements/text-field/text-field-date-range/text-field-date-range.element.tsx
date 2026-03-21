@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import { Box, Typography, useTheme } from '@mui/material';
+import { Typography, useTheme } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import dayjs, { Dayjs } from 'dayjs';
+import React, { useState } from 'react';
+import { STYLE } from '../../../../common';
+import { StackRowAlignCenter } from '../../../styles';
 
 interface TextFieldDateRangeElementProps {
   fromDate?: string;
@@ -38,27 +40,20 @@ export const TextFieldDateRangeElement: React.FC<TextFieldDateRangeElementProps>
   const [openToDate, setOpenToDate] = useState(false);
 
   return (
-    <Box
+    <StackRowAlignCenter
       sx={{
-        display: 'flex',
-        alignItems: 'center',
-        padding: '0 14px 0 0',
-        backgroundColor: 'white',
         border: '1px solid #E0E0E0',
-        borderRadius: 2,
+        borderRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
         width: 'auto',
         height: 36,
-        '&:hover': {
-          borderColor: disabled ? '#E0E0E0' : theme.palette.primary.main,
-        },
-        transition: 'border-color 0.2s ease',
+        gap: STYLE.PADDING_GAP_ITEM_SMALL,
         ...sx,
       }}
     >
       {/* DatePicker 1: Ngày bắt đầu */}
       <DatePicker
         value={fromDate ? dayjs(fromDate) : null}
-        onChange={(newDate) => {
+        onChange={newDate => {
           if (newDate) {
             const dateString = newDate.format('YYYY-MM-DD');
             onFromDateChange?.(dateString);
@@ -84,64 +79,34 @@ export const TextFieldDateRangeElement: React.FC<TextFieldDateRangeElementProps>
         onClose={() => setOpenFromDate(false)}
         slotProps={{
           textField: {
+            fullWidth: false,
             variant: 'standard',
             size: 'small',
             placeholder: 'Từ ngày',
-            sx: {
-              width: 110, // Chỉnh width
-              '& .MuiInputBase-root': {
-                backgroundColor: 'transparent',
-                border: 'none',
-                cursor: disabled ? 'not-allowed' : 'pointer',
-                '&:before': {
-                  borderBottom: 'none',
-                },
-                '&:after': {
-                  borderBottom: 'none',
-                },
-                '&:hover:not(.Mui-disabled):before': {
-                  borderBottom: 'none',
-                },
-              },
-              '& .MuiInputBase-input': {
-                padding: 0,
-                fontSize: '14px',
-                textAlign: 'center',
-                cursor: disabled ? 'not-allowed' : 'pointer',
-              },
 
-              // [TTK - 26/09/2025] - Ẩn icon calendar
+            sx: {
+              width: '100px',
+              '& .MuiPickersSectionList-root, & .MuiPickersSectionList-section, & .MuiPickersSectionList-sectionContent':
+                {
+                  justifyContent: 'center',
+                },
               '& .MuiInputAdornment-root': {
                 display: 'none', // Ẩn icon calendar
               },
             },
             onClick: () => {
-              if (!disabled) {
-                setOpenFromDate(true);
-              }
+              if (!disabled) setOpenFromDate(true);
             },
-          },
-          popper: {
-            sx: { zIndex: 21000 },
           },
         }}
       />
 
-      <Typography
-        variant="body2"
-        sx={{
-          color: theme.palette.text.secondary,
-          padding: '0 5px 0 0',
-          fontWeight: 400,
-        }}
-      >
-        —
-      </Typography>
+      <Typography sx={{ color: theme.palette.text.secondary }}>—</Typography>
 
       {/* DatePicker 2: Ngày kết thúc */}
       <DatePicker
         value={toDate ? dayjs(toDate) : null}
-        onChange={(newDate) => {
+        onChange={newDate => {
           if (newDate) {
             const dateString = newDate.format('YYYY-MM-DD');
             onToDateChange?.(dateString);
@@ -171,27 +136,11 @@ export const TextFieldDateRangeElement: React.FC<TextFieldDateRangeElementProps>
             size: 'small',
             placeholder: 'Đến ngày',
             sx: {
-              width: 127, // Chỉnh width
-              '& .MuiInputBase-root': {
-                backgroundColor: 'transparent',
-                border: 'none',
-                cursor: disabled ? 'not-allowed' : 'pointer',
-                '&:before': {
-                  borderBottom: 'none',
+              width: '140px',
+              '& .MuiPickersSectionList-root, & .MuiPickersSectionList-section, & .MuiPickersSectionList-sectionContent':
+                {
+                  justifyContent: 'center',
                 },
-                '&:after': {
-                  borderBottom: 'none',
-                },
-                '&:hover:not(.Mui-disabled):before': {
-                  borderBottom: 'none',
-                },
-              },
-              '& .MuiInputBase-input': {
-                padding: 0,
-                fontSize: '14px',
-                textAlign: 'center',
-                cursor: disabled ? 'not-allowed' : 'pointer',
-              },
             },
 
             // [TTK - 26/09/2025] - State openFromDate và openToDate
@@ -201,11 +150,8 @@ export const TextFieldDateRangeElement: React.FC<TextFieldDateRangeElementProps>
               }
             },
           },
-          popper: {
-            sx: { zIndex: 21000 },
-          },
         }}
       />
-    </Box>
+    </StackRowAlignCenter>
   );
 };

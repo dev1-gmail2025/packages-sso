@@ -3,9 +3,9 @@ import { Box, SxProps, Theme, useTheme } from '@mui/material';
 import { DateTimePicker, DateTimePickerProps } from '@mui/x-date-pickers/DateTimePicker';
 import dayjs from 'dayjs';
 import React from 'react';
-import { getActionBarSx, getPickerSx, getPopperProps } from '../../styles';
-import { IconElement } from '../icon';
-import { TextFieldLabelElement } from './text-field-label.element';
+import { getActionBarSx, getPickerSx, getPopperProps } from '../../../styles';
+import { IconElement } from '../../icon';
+import { TextFieldLabelElement } from '../text-field-label/text-field-label.element';
 
 export interface TextFieldDateTimeElementProps extends DateTimePickerProps {
   name: string;
