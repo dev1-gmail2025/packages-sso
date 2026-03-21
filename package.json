@@ -17,7 +17,6 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006 --disable-telemetry",
-    "storybook:build": "storybook build --disable-telemetry",
     "build-storybook": "storybook build -o docs && touch docs/.nojekyll",
     "storybook:test": "test-storybook --url http://127.0.0.1:6006",
     "storybook:test:ci": "start-server-and-test storybook http://127.0.0.1:6006 storybook:test",
