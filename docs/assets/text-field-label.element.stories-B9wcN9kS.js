@@ -1,0 +1,17 @@
+import{j as y}from"./jsx-runtime-D_zvdyIk.js";import{T as L}from"./text-field-label.element-BGwXe-0M.js";import"./FileSaver.min-sVBIqHNu.js";import"./index-j62jqFia.js";import"./style.const-DwIRAWA_.js";import"./time.util-BYguZ9lS.js";import"./icon-button.element-BecJaPZD.js";import"./icon.element-C1lSNNtD.js";import"./useTheme-0nskcD3X.js";import"./defaultTheme-D-jjqFHx.js";import"./DefaultPropsProvider-DU9SanKz.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./IconButton-QbJpFgcV.js";import"./useId-CFSqmtgZ.js";import"./ButtonBase-CJf4BqqU.js";import"./useTimeout-Ck7_m_Mv.js";import"./TransitionGroupContext-DM7DmuUd.js";import"./extendSxProp-Cmw4pgNu.js";import"./useForkRef-BVpE-hzr.js";import"./isFocusVisible-B8k4qzLc.js";import"./CircularProgress-6STgtAQ1.js";import"./icon-content-badge-subs.element-DGcU0uP_.js";import"./typography.style-CdLRrvNw.js";import"./image.element-B9XVatWh.js";import"./stack.style-DH3eO9aD.js";import"./Stack--5Dd26sT.js";import"./createStack-C_KW5WTO.js";import"./index-C8adVhmr.js";import"./Box-0U_G7eaK.js";import"./InputLabel-CY3ncLPD.js";import"./useFormControl-CmOg5wnR.js";import"./link.element-CZ8YGlXk.js";import"./Typography-crO-zzKF.js";import"./other.util-C5oU1vXn.js";import"./color.const-CRNucSci.js";import"./icon-content-badge.element-hbuLxK1r.js";import"./icon-content.element-BPRKvcem.js";import"./Badge-C7vkf73i.js";import"./useSlot-DxC6qITw.js";import"./ownerWindow-BsA78Dfr.js";import"./useSlotProps-BVs4F9FP.js";import"./createSvgIcon-DaUmNjHb.js";import"./proxy-DKXG_8Nh.js";const x={label:{control:"text",description:"Label content.",table:{type:{summary:"string | ReactNode"}}},iconLabel:{control:"text",description:"Optional icon name.",table:{type:{summary:"string"}}},colorLabel:{control:"color",description:"Label color override.",table:{type:{summary:"string"}}},required:{control:"boolean",description:"Show red * when required.",table:{type:{summary:"boolean"}}}},nr={title:"Elements/TextField/TextFieldLabel",component:L,tags:["autodocs"],args:{label:"Label",iconLabel:"info",required:!1},parameters:{layout:"padded"},argTypes:x},r={},e={args:{required:!0}},o={render:f=>y.jsx(L,{...f,label:void 0}),args:{iconLabel:"info"}},t={args:{label:"Custom",iconLabel:"info",colorLabel:"primary.main",required:!1}};var a,i,m;r.parameters={...r.parameters,docs:{...(a=r.parameters)==null?void 0:a.docs,source:{originalSource:"{}",...(m=(i=r.parameters)==null?void 0:i.docs)==null?void 0:m.source}}};var s,p,n;e.parameters={...e.parameters,docs:{...(s=e.parameters)==null?void 0:s.docs,source:{originalSource:`{
+  args: {
+    required: true
+  }
+}`,...(n=(p=e.parameters)==null?void 0:p.docs)==null?void 0:n.source}}};var l,c,d;o.parameters={...o.parameters,docs:{...(l=o.parameters)==null?void 0:l.docs,source:{originalSource:`{
+  render: args => <TextFieldLabelElement {...args} label={undefined} />,
+  args: {
+    iconLabel: 'info'
+  }
+}`,...(d=(c=o.parameters)==null?void 0:c.docs)==null?void 0:d.source}}};var u,b,g;t.parameters={...t.parameters,docs:{...(u=t.parameters)==null?void 0:u.docs,source:{originalSource:`{
+  args: {
+    label: 'Custom',
+    iconLabel: 'info',
+    colorLabel: 'primary.main',
+    required: false
+  }
+}`,...(g=(b=t.parameters)==null?void 0:b.docs)==null?void 0:g.source}}};const lr=["Default","Required","WithoutLabel","CustomIconAndColor"];export{t as CustomIconAndColor,r as Default,e as Required,o as WithoutLabel,lr as __namedExportsOrder,nr as default};
