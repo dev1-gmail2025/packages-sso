@@ -14,6 +14,7 @@ export interface Column<R> {
   align?: 'right' | 'left' | 'center';
   alignHead?: 'right' | 'left' | 'center';
   render?: (row: R, index: number) => React.ReactNode;
+  copyable?: boolean | { getValue?: (row: R, index: number) => string };
   sx?: SxProps<Theme>;
   isRowSpan?: boolean;
   stickyCss?: {

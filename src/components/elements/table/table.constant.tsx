@@ -1,8 +1,8 @@
 import { Palette, SxProps, Theme } from '@mui/material';
 
-import { COLOR, OTHER, STYLE } from '../../../common';
 import { TableActions } from './table.enum';
 import { Column } from './table.interface';
+import { COLOR, STYLE, OTHER } from '../../../common';
 
 export const BORDER_TABLE = `1px solid ${COLOR.COMMON.gray8}`;
 export const DISABLED_DEFAULT = Object.keys(TableActions).reduce((r, key) => {
@@ -21,7 +21,7 @@ export const getStyleCell = (column: Column<any>, palette: Palette, disableRow?:
     ...(column.stickyCss
       ? {
           position: 'sticky',
-          backgroundColor: `${palette.background.default} !important`,
+          backgroundColor: palette.background.default,
           ...column.stickyCss,
         }
       : {}),

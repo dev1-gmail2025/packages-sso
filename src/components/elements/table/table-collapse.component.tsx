@@ -57,6 +57,7 @@ export const TableCollapseComponent: TableCollapseComponentType = ({
     const updateColumns = [...initialColumns];
 
     // Update trước để render head vì dồn collapse vào đây. Chắc chắn cột này sẽ có.
+    // Vào trong RowCollapsePart update thêm hàm render
     updateColumns.push({
       id: 'actions',
       label: 'Actions',

@@ -1,20 +1,22 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, Fade, SxProps, Table, TableBody, TableCell, TableRow, Theme, useTheme } from '@mui/material';
-import React, { JSX, useCallback, useState } from 'react';
+import React, { JSX, useCallback, useEffect, useMemo, useState } from 'react';
 
-import { COLOR } from '../../../common';
+import { COLOR, STYLE } from '../../../common';
 import { EmptyComponent } from '../../empty';
 import { LoadingComponent } from '../../loading';
-import { StackRowAlignJustCenter } from '../../styles';
+import { StackRowAlignCenterJustBetween, StackRowAlignJustCenter } from '../../styles';
 import { CheckboxElement } from '../check-box';
 import { IconElement } from '../icon';
 import { ListIconContentElement } from '../list';
 import { TooltipOnHoverElement } from '../tooltip';
 import { TableContainerPart } from './part/table-container.part';
 import { TableHeadPart } from './part/table-head.part';
+import { buildTreeMeta, TreeToggleCell } from './part/table-tree.part';
 import { BORDER_TABLE, DISABLED_DEFAULT, getStyleCell, getStyleRow } from './table.constant';
 import { TableActions, TableRowKey } from './table.enum';
 import { Column, OnClickRow, OnDisabled } from './table.interface';
+
 export interface TableComponentProps<R> {
   loading?: boolean;
   columns: Column<R>[];
@@ -24,6 +26,10 @@ export interface TableComponentProps<R> {
   rowSx?: { [key: number]: SxProps<Theme> };
   rowKey?: (row: R) => string;
   onClickSelectRow?: boolean;
+
+  /** Optional getter for children of a row in tree mode. Defaults to (row as any).children || [] */
+  enableTree?: boolean;
+  getChildren?: (row: R) => R[];
 
   onClickRow?: OnClickRow<R>;
   onDisabled?: OnDisabled<R>;
@@ -59,6 +65,9 @@ export const TableComponent: TableComponentType = ({
   rowKey,
   onClickSelectRow = false,
 
+  enableTree = false,
+  getChildren,
+
   onClickRow,
   onDisabled,
 
@@ -75,10 +84,10 @@ export const TableComponent: TableComponentType = ({
   onUpdateRow,
   getActionIcon,
   getRowMenu,
-  requiredPermissions,
 }) => {
   rows = rows || [];
   const [tooltipOpen, setTooltipOpen] = useState<{ [key: string]: boolean }>({});
+  const [expandedRowIds, setExpandedRowIds] = useState<Set<string>>(new Set());
 
   const { palette } = useTheme();
 
@@ -96,7 +105,44 @@ export const TableComponent: TableComponentType = ({
     [rowKey],
   );
 
-  const allRowIds = React.useMemo(() => rows.map(getRowId), [rows, getRowId]);
+  const childrenGetter = useCallback(
+    (row: any) => {
+      if (!enableTree) return [];
+      if (getChildren) return getChildren(row);
+      return (row && (row as any).children) || [];
+    },
+    [enableTree, getChildren],
+  );
+
+  useEffect(() => {
+    if (!enableTree) {
+      setExpandedRowIds(new Set());
+      return;
+    }
+
+    const next = new Set<string>();
+    const walkIds = (items: any[]) => {
+      items.forEach(item => {
+        const id = getRowId(item);
+        const children = childrenGetter(item);
+        if (children && children.length > 0) {
+          next.add(id);
+          walkIds(children);
+        }
+      });
+    };
+
+    walkIds(rows);
+    setExpandedRowIds(next);
+  }, [enableTree, getRowId, childrenGetter]);
+
+  // Build visible rows for tree mode:
+  const { visibleRows, rowLevels, hasChildrenById } = useMemo(
+    () => buildTreeMeta({ rows, enableTree, expandedRowIds, getRowId, getChildren: childrenGetter }),
+    [rows, enableTree, expandedRowIds, getRowId, childrenGetter],
+  );
+
+  const allRowIds = React.useMemo(() => visibleRows.map(getRowId), [visibleRows, getRowId]);
   const isAllSelected = selectedRows && allRowIds.every(id => selectedRows.includes(id));
   const isIndeterminate = selectedRows && selectedRows.length > 0 && !isAllSelected;
 
@@ -117,21 +163,52 @@ export const TableComponent: TableComponentType = ({
     [selectedRows, onSelectRows],
   );
 
+  const handleToggleTreeRow = useCallback((rowId: string) => {
+    setExpandedRowIds(prev => {
+      const next = new Set(prev);
+      if (next.has(rowId)) next.delete(rowId);
+      else next.add(rowId);
+      return next;
+    });
+  }, []);
+
   const columns = React.useMemo(() => {
     const updateColumns = [...initialColumns];
+
+    // Expand / collapse column for tree mode
+    if (enableTree) {
+      updateColumns.unshift({
+        id: 'treeToggle',
+        label: '',
+        width: 32,
+        alignHead: 'center',
+        render: row => (
+          <TreeToggleCell
+            row={row}
+            getRowId={getRowId}
+            rowLevels={rowLevels}
+            hasChildrenById={hasChildrenById}
+            expandedRowIds={expandedRowIds}
+            onToggle={handleToggleTreeRow}
+            palette={palette}
+          />
+        ),
+      } as Column<any>);
+    }
 
     if (onSelectRows) {
       updateColumns.unshift({
         id: 'selectCheckbox',
         label: (
-          <CheckboxElement
+          <Box
             onClick={e => {
               e.stopPropagation();
               handleSelectAll();
             }}
-            checked={isAllSelected}
-            indeterminate={isIndeterminate}
-          />
+            sx={{ display: 'flex', justifyContent: 'center', cursor: 'pointer' }}
+          >
+            <CheckboxElement checked={isAllSelected} indeterminate={isIndeterminate} />
+          </Box>
         ),
         width: 35,
         alignHead: 'center',
@@ -140,15 +217,17 @@ export const TableComponent: TableComponentType = ({
           const disabled = onDisabled ? onDisabled(row, index) : { ...DISABLED_DEFAULT };
           const isCheckboxDisabled = disabled.DISABLED_ROW || disabled.DISABLED_CHECKBOX;
           return (
-            <CheckboxElement
-              checked={selectedRows?.includes(getRowId(row))}
-              disabled={isCheckboxDisabled}
-              onClick={e => {
-                e.stopPropagation();
-                if (isCheckboxDisabled) return;
-                handleSelectRow(getRowId(row));
-              }}
-            />
+            <Box>
+              <CheckboxElement
+                checked={selectedRows?.includes(getRowId(row))}
+                disabled={isCheckboxDisabled}
+                onClick={e => {
+                  e.stopPropagation();
+                  if (isCheckboxDisabled) return;
+                  handleSelectRow(getRowId(row));
+                }}
+              />
+            </Box>
           );
         },
       });
@@ -249,6 +328,21 @@ export const TableComponent: TableComponentType = ({
                 />
               )}
 
+              {/* <StackRowAlignJustCenter
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onUpdateRow?.(row, index);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                sx={{ color: 'transparent' }}
+              >
+                <SvgIcon
+                  sx={{ width: 15, height: 15 }}
+                  color={disabledByParent || disabled.UPDATE ? 'disabled' : 'inherit'}
+                  component={EditIcon}
+                  inheritViewBox
+                />
+              </StackRowAlignJustCenter> */}
               {getRowMenu &&
                 (!disabled.DISABLED_GET_ROW_MENU ? (
                   <TooltipOnHoverElement
@@ -262,9 +356,6 @@ export const TableComponent: TableComponentType = ({
                     onOpen={() => setTooltipOpen(prev => ({ ...prev, [rowId]: true }))}
                     onClose={() => setTooltipOpen(prev => ({ ...prev, [rowId]: false }))}
                     content={<ListIconContentElement list={createMenuWithCloseHandler()} />}
-                    slotProps={{
-                      tooltip: { sx: { backgroundColor: palette.background.paper, color: palette.text.primary } },
-                    }}
                   >
                     <IconElement icon='open_in_browser' onClick={e => e.stopPropagation()} />
                   </TooltipOnHoverElement>
@@ -303,7 +394,30 @@ export const TableComponent: TableComponentType = ({
     onDisabled,
     rowKey,
     tooltipOpen,
+    enableTree,
+    rowLevels,
+    expandedRowIds,
+    hasChildrenById,
+    handleToggleTreeRow,
   ]);
+  const renderCopyableCell = useCallback((displayNode: React.ReactNode, copyValue: string | null | undefined) => {
+    const content = copyValue || '';
+
+    return (
+      <StackRowAlignCenterJustBetween sx={{ color: COLOR.BRAND[950] }}>
+        {displayNode}
+        <IconElement
+          icon='content_copy'
+          sx={{ color: COLOR.BRAND[950], fontSize: STYLE.FONT_SIZE_ICON.medium }}
+          onClick={e => {
+            e.stopPropagation();
+            if (!content) return;
+            void navigator.clipboard.writeText(content);
+          }}
+        />
+      </StackRowAlignCenterJustBetween>
+    );
+  }, []);
 
   return (
     <TableContainerPart>
@@ -313,10 +427,8 @@ export const TableComponent: TableComponentType = ({
           height: loading || rows.length === 0 ? '100%' : 'none',
           borderCollapse: 'separate !important',
           '& .MuiTableCell-root': {
+            borderRight: BORDER_TABLE,
             borderBottom: BORDER_TABLE,
-          },
-          '& .MuiTableRow-hover:hover .table-sticky-cell': {
-            backgroundColor: `${palette.background.default} !important`,
           },
         }}
       >
@@ -328,8 +440,8 @@ export const TableComponent: TableComponentType = ({
                 <LoadingComponent />
               </TableCell>
             </TableRow>
-          ) : rows.length ? (
-            rows.map((row, index) => {
+          ) : visibleRows.length ? (
+            visibleRows.map((row, index) => {
               const disabled = onDisabled ? onDisabled(row, index) : { ...DISABLED_DEFAULT };
 
               return (
@@ -372,23 +484,43 @@ export const TableComponent: TableComponentType = ({
                         : {}),
                     }}
                   >
-                    {columns.map(column => (
-                      <TableCell
-                        key={column.id}
-                        className={column.stickyCss ? 'table-sticky-cell' : undefined}
-                        align={column.align}
-                        sx={getStyleCell(column, palette, disabled.DISABLED_ROW)}
-                        onClick={
-                          column.id === 'actions' || column.id === 'selectCheckbox'
-                            ? e => {
-                                e.stopPropagation();
-                              }
-                            : undefined
-                        }
-                      >
-                        {column.render ? column.render(row, index) : (row as any)[column.id]}
-                      </TableCell>
-                    ))}
+                    {columns.map((column, colIndex) => {
+                      const level = enableTree ? rowLevels[getRowId(row)] ?? 0 : 0;
+                      const firstDataColIndex = enableTree ? columns.findIndex(c => c.id !== 'treeToggle') : -1;
+                      const isFirstDataCol = enableTree && colIndex === firstDataColIndex && column.id !== 'treeToggle';
+
+                      return (
+                        <TableCell
+                          key={column.id}
+                          align={column.align}
+                          sx={{
+                            ...getStyleCell(column, palette, disabled.DISABLED_ROW),
+                            ...(isFirstDataCol ? { pl: theme => `calc(${theme.spacing(1)} + ${level * 16}px)` } : {}),
+                          }}
+                          onClick={
+                            column.id === 'actions' || column.id === 'selectCheckbox'
+                              ? e => {
+                                  e.stopPropagation();
+                                }
+                              : undefined
+                          }
+                        >
+                          {(() => {
+                            const rawValue = (row as any)[column.id];
+                            const defaultNode = column.render ? column.render(row, index) : rawValue;
+
+                            if (!column.copyable) return defaultNode;
+
+                            const copyValue =
+                              typeof column.copyable === 'object' && column.copyable.getValue
+                                ? String(column.copyable.getValue(row, index) || '')
+                                : String(rawValue || '');
+
+                            return renderCopyableCell(defaultNode ?? String(rawValue), copyValue);
+                          })()}
+                        </TableCell>
+                      );
+                    })}
                   </TableRow>
                 </Fade>
               );

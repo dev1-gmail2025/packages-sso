@@ -1,11 +1,10 @@
-import { Box } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import React, { useState } from 'react';
+import { Stack } from '@mui/system';
 import { tableArgTypes } from './table.argtypes';
 import { TableComponent } from './table.component';
 import type { Column } from './table.interface';
-import { Stack } from '@mui/system';
 
 type DemoRow = {
   id: string;
@@ -17,7 +16,7 @@ type DemoRow = {
 
 const demoColumns: Column<DemoRow>[] = [
   { id: 'name', label: 'Name', width: 180 },
-  { id: 'email', label: 'Email', width: 230 },
+  { id: 'email', label: 'Email', width: 230, copyable: true },
   { id: 'role', label: 'Role', width: 120, align: 'center', alignHead: 'center' },
   {
     id: 'status',
@@ -113,7 +112,7 @@ export const WithActionsAndSelect: Story = {
       { content: `Open ${row.name}`, icon: 'open_in_new', onClick: fn() },
       { content: 'View detail', icon: 'info', onClick: fn() },
     ],
-    onDisabled: (_row, index) => ({
+    onDisabled: (_row: DemoRow, index: number) => ({
       DELETE: index === 0,
       UPDATE: index === 2,
     }),
