@@ -1,6 +1,6 @@
 {
   "name": "sevago-sso-fe",
-  "version": "1.0.151",
+  "version": "1.0.154",
   "description": "Sevago SSO Frontend Library - A comprehensive SSO solution with React components",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -24,7 +24,6 @@
     "prepublishOnly": "npm run build:lib",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,json,css,md}",
     "version:patch": "npm version patch",
-    "publish:public": "npm publish --access public",
     "version:publish": "npm version patch && npm publish --access public"
   },
   "keywords": [

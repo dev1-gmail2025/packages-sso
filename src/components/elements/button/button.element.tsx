@@ -58,7 +58,12 @@ export const ButtonElement: React.FC<ButtonElementProps> = ({
       disabled={disabled}
     >
       {loading ? (
-        <LoadingComponent color={palette.primary.contrastText} size="small" sx={{ minHeight: '24.5px' }} />
+        <LoadingComponent
+          // color={variant === 'contained' ? palette.primary.contrastText : palette.primary.main}
+          color={variant === 'contained' ? palette.primary.contrastText : (rest.color as string)}
+          size='small'
+          sx={{ minHeight: '24.5px' }}
+        />
       ) : (
         <Typography sx={{ ...STYLE.TYPOGRAPHY.textSm.regular, whiteSpace: 'nowrap' }}>{content}</Typography>
       )}
