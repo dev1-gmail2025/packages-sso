@@ -24,7 +24,6 @@
     "prepublishOnly": "npm run build:lib",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,json,css,md}",
     "version:patch": "npm version patch",
-    "publish:public": "npm publish --access public",
     "version:publish": "npm version patch && npm publish --access public"
   },
   "keywords": [
