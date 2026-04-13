@@ -1,15 +1,25 @@
-import { Box, Fade } from '@mui/material';
+import { Box, Fade, SxProps, Theme, Typography } from '@mui/material';
 import React from 'react';
-import { STYLE } from '../../common/const';
+import { COLOR, STYLE } from '../../common/const';
 import { StackAlignJustCenter } from '../styles';
 
-export interface EmptyComponentProps {}
+export interface EmptyComponentProps {
+  content?: string;
+  sxContent?: SxProps<Theme>;
+}
 
-export const EmptyComponent: React.FC<EmptyComponentProps> = ({}) => {
+export const EmptyComponent: React.FC<EmptyComponentProps> = ({ content, sxContent }) => {
   return (
     <Fade in={true} timeout={STYLE.ANIMATION_TIME}>
       <StackAlignJustCenter sx={{ flex: 1, height: '100%', padding: STYLE.PADDING_GAP_ITEM }}>
         <Box component='img' sx={{ width: 70 }} src='/images/icons/empty.svg' />
+        {content && (
+          <Typography
+            sx={{ ...STYLE.TYPOGRAPHY.textSm.medium, color: COLOR.GRAY[500], textAlign: 'center', ...sxContent }}
+          >
+            {content}
+          </Typography>
+        )}
       </StackAlignJustCenter>
     </Fade>
   );
