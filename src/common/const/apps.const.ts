@@ -347,11 +347,11 @@ export const APP_OBJ = {
   },
   MATERIAL_CONTROL: {
     path: {
-      local: 'http://localhost:12003',
-      develop: 'https://dev.admin.office.sevago.local',
-      staging: 'https://dev.admin.office.sevago.local',
-      production: 'https://admin.office.sevago.local',
-      production_vps: 'https://admin.office.sevago.local',
+      local: 'http://localhost:12024',
+      develop: 'https://dev.admin.material-control.sevago.local',
+      staging: 'https://sta.admin.material-control.sevago.local',
+      production: 'https://admin.material-control.sevago.local',
+      production_vps: '',
     },
     icon: ICONS.iconMaterialControl,
     content: 'Kiểm soát nguyên liệu',
