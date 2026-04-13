@@ -345,4 +345,17 @@ export const APP_OBJ = {
     group: AppGroup.MANUFACTURING,
     color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
   },
+  MATERIAL_CONTROL: {
+    path: {
+      local: 'http://localhost:12003',
+      develop: 'https://dev.admin.office.sevago.local',
+      staging: 'https://dev.admin.office.sevago.local',
+      production: 'https://admin.office.sevago.local',
+      production_vps: 'https://admin.office.sevago.local',
+    },
+    icon: ICONS.iconMaterialControl,
+    content: 'Kiểm soát nguyên liệu',
+    group: AppGroup.MANUFACTURING,
+    color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
+  },
 };
