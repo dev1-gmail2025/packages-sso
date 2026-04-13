@@ -13,6 +13,7 @@ import iconForm from '../../assets/icon/icon-form.svg';
 import iconInside from '../../assets/icon/icon-inside.svg';
 import iconApps from '../../assets/icon/icon-apps.svg';
 import iconSystem from '../../assets/icon/icon-system.svg';
+import iconMaterialControl from '../../assets/icon/icon-material-control.svg';
 
 export const ICONS = {
   iconEHiring,
@@ -32,4 +33,5 @@ export const ICONS = {
   //
   iconDefault,
   iconApps,
+  iconMaterialControl
 };

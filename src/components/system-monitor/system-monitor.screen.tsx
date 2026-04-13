@@ -42,7 +42,7 @@ export const SystemMonitorScreen: React.FC<SystemMonitorScreenProps> = ({ blackl
     >
       <Box
         sx={{
-          width: 865,
+          width: 900,
           gap: 6.25,
           display: 'flex',
           flexDirection: 'column',
