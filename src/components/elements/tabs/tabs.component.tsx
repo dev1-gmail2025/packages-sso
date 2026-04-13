@@ -143,6 +143,7 @@ export const TabsComponent: React.FC<TabsComponentProps> = ({
     const selectedIndex = tabs.findIndex((tab) => tab.id === selected);
     return (
       <StyledTabs
+       sx={sxTabs}
         value={selectedIndex >= 0 ? selectedIndex : 0}
         onChange={(_, newIndex) => {
           const next = tabs[newIndex]?.id;
