@@ -1,11 +1,11 @@
-import { createTheme, SxProps, Theme } from '@mui/material';
-import { Environment, Mode } from '../enums';
-import { COLOR, MODE, STYLE } from '../const';
-import { OPACITY } from '../const/other.const';
-import IconExcel from '../../assets/icon/icon-excel.png';
+import { ButtonProps, createTheme, SxProps, Theme } from '@mui/material';
 import IconDoc from '../../assets/icon/icon-doc.png';
+import IconExcel from '../../assets/icon/icon-excel.png';
 import IconPDF from '../../assets/icon/icon-pdf.png';
 import IconPPT from '../../assets/icon/icon-ppt.png';
+import { COLOR, MODE, STYLE } from '../const';
+import { OPACITY } from '../const/other.const';
+import { Environment, Mode } from '../enums';
 import { FileWithPreviewOrUrl } from '../interfaces';
 import { getFileExtension } from './file.util';
 
@@ -20,13 +20,23 @@ export const getTheme = (mode = Mode.LIGHT) => {
       MuiButton: {
         defaultProps: { size: 'medium', fullWidth: true },
         styleOverrides: {
-          root: {
-            '&.Mui-disabled': {
-              borderColor: MODE[mode].palette.divider,
-            },
-            fontWeight: 400,
-            lineHeight: 'unset',
-            height: STYLE.HEIGHT_DEFAULT_TEXT_FIELD_BUTTON,
+          root: ({ ownerState }: { ownerState: ButtonProps }) => {
+            const size = ownerState?.size ?? 'medium';
+            const height =
+              size === 'small'
+                ? STYLE.HEIGHT_TEXT_FIELD_BUTTON.small
+                : size === 'large'
+                  ? STYLE.HEIGHT_TEXT_FIELD_BUTTON.large
+                  : STYLE.HEIGHT_TEXT_FIELD_BUTTON.medium;
+
+            return {
+              '&.Mui-disabled': {
+                borderColor: MODE[mode].palette.divider,
+              },
+              fontWeight: 400,
+              lineHeight: 'unset',
+              height,
+            };
           },
         },
       },

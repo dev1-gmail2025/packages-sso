@@ -1,7 +1,11 @@
+import { ThemeProvider } from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline';
 import type { Preview } from '@storybook/react';
-import React from 'react';
 
 import { initialize, mswDecorator } from 'msw-storybook-addon';
+import { createElement, Fragment } from 'react';
+import { Mode } from '../src/common';
+import { getTheme } from '../src/common/utils/other.util';
 
 initialize({
   onUnhandledRequest: 'bypass',
@@ -25,13 +29,17 @@ const preview: Preview = {
   decorators: [
     mswDecorator,
     (Story) =>
-      React.createElement(
-        'div',{style: {animation: 'none', transition: 'none'},
-        },
-        React.createElement(Story),
+      createElement(
+        ThemeProvider,
+        { theme: getTheme(Mode.LIGHT) },
+        createElement(
+          Fragment,
+          null,
+          createElement(CssBaseline),
+          createElement('div', { style: { animation: 'none', transition: 'none' } }, createElement(Story)),
+        ),
       ),
   ],
 };
 
 export default preview;
-

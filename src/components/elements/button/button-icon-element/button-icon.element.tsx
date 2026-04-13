@@ -30,15 +30,15 @@ export const ButtonIconElement: React.FC<ButtonIconElementProps> = ({
           sizeType === ImageSizeType.CIRCLE
             ? '50%'
             : sizeType === ImageSizeType.SQUARE
-              ? STYLE.BORDER_RADIUS_ELEMENT_SMALL
-              : 0,
-        width: STYLE.HEIGHT_DEFAULT_TEXT_FIELD_BUTTON,
+            ? STYLE.BORDER_RADIUS_ELEMENT_SMALL
+            : 0,
+        width: STYLE.HEIGHT_TEXT_FIELD_BUTTON.medium,
         minWidth: 'unset',
         ...sx,
       }}
     >
       {loading ? (
-        <LoadingComponent color="primary" size="small" sx={{ minHeight: 24.5 }} />
+        <LoadingComponent color='primary' size='small' sx={{ minHeight: 24.5 }} />
       ) : (
         <IconElement icon={icon} sx={{ height: 24.5 }} />
       )}

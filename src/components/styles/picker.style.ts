@@ -7,7 +7,7 @@ export const getPickerSx = (palette: Palette, sx: SxProps<Theme>) => ({
   '& .MuiPickersInputBase-root': {
     borderColor: palette.divider,
     borderRadius: STYLE.BORDER_RADIUS_ELEMENT,
-    height: STYLE.HEIGHT_DEFAULT_TEXT_FIELD_BUTTON,
+    height: STYLE.HEIGHT_TEXT_FIELD_BUTTON.medium,
   },
   '&.MuiPickersTextField-root': { ...(sx as any) },
 });

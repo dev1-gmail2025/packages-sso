@@ -53,7 +53,13 @@ export const BORDER_RADIUS_ELEMENT_MIDDLE = '8px';
 
 export const BORDER_RADIUS_ELEMENT_TAG = '3px';
 
-export const HEIGHT_DEFAULT_TEXT_FIELD_BUTTON = '37.13px';
+export const HEIGHT_DEFAULT_TEXT_FIELD_BUTTON = '37.13px'; //Chuẩn bị bỏ, không sài nữa
+
+export const HEIGHT_TEXT_FIELD_BUTTON = {
+  small: '26px',
+  medium: '32px',
+  large: '40px',
+};
 
 export const HEIGHT_TEXTFIELD_LABEL_MULTI_LINE = '50px';
 
