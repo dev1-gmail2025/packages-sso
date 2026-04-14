@@ -1,1 +1,0 @@
-import{s as e,u as o}from"./DefaultPropsProvider-DU9SanKz.js";import{c as a}from"./createStack-C_KW5WTO.js";const c=a({createStyledComponent:e("div",{name:"MuiStack",slot:"Root"}),useThemeProps:t=>o({props:t,name:"MuiStack"})});export{c as S};

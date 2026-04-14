@@ -1,0 +1,9 @@
+import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{T as m}from"./typography-limit-one-line.component-CbNP_Q0j.js";import{S as c}from"./Stack-CPAJg9KB.js";import"./other.util-DCRAYZxB.js";import"./FileSaver.min-Bswz-9g7.js";import"./index-j62jqFia.js";import"./color.const-zxGJ9-Cm.js";import"./style.const-wxvmQkzb.js";import"./defaultTheme-DeO7XLhv.js";import"./Typography-Bxxrk_XJ.js";import"./DefaultPropsProvider-CTbmx_9D.js";import"./index-C1XqMcs4.js";import"./extendSxProp-CMsS_Ey0.js";import"./memoTheme-DEbB7Aqb.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./createStack-Du0yveyH.js";const y={content:{control:"text",description:"Content to render (clamped to 1 line).",table:{type:{summary:"any"}}},variant:{control:"text",description:"Typography variant (MUI).",table:{type:{summary:'TypographyProps["variant"]'}}},sx:{control:!1}},E={title:"Elements/Typography/TypographyOneLine",component:m,tags:["autodocs"],args:{content:"This is a very long content that should be clamped to a single line in most containers."},parameters:{layout:"padded"},argTypes:y},r={},t={render:d=>e.jsx(c,{sx:{width:220,border:"1px dashed #ddd",p:1},children:e.jsx(m,{...d})})};var o,a,n;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:"{}",...(n=(a=r.parameters)==null?void 0:a.docs)==null?void 0:n.source}}};var s,p,i;t.parameters={...t.parameters,docs:{...(s=t.parameters)==null?void 0:s.docs,source:{originalSource:`{
+  render: args => <Stack sx={{
+    width: 220,
+    border: '1px dashed #ddd',
+    p: 1
+  }}>\r
+      <TypographyOneLine {...args} />\r
+    </Stack>
+}`,...(i=(p=t.parameters)==null?void 0:p.docs)==null?void 0:i.source}}};const D=["Default","NarrowContainer"];export{r as Default,t as NarrowContainer,D as __namedExportsOrder,E as default};

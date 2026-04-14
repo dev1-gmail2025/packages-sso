@@ -1,0 +1,1 @@
+import{s as o}from"./memoTheme-DEbB7Aqb.js";import{c as e}from"./createStack-Du0yveyH.js";import{u as a}from"./DefaultPropsProvider-CTbmx_9D.js";const p=e({createStyledComponent:o("div",{name:"MuiStack",slot:"Root"}),useThemeProps:t=>a({props:t,name:"MuiStack"})});export{p as S};
