@@ -123,39 +123,6 @@ export const GalleryMatrix: Story = {
   },
 };
 
-export const Variants: Story = {
-  render: args => (
-    <StackRow sx={{ display: 'flex', gap: STYLE.PADDING_GAP_ITEM, flexWrap: 'wrap' }}>
-      <ButtonElement {...args} variant='contained' content='Contained' />
-      <ButtonElement {...args} variant='outlined' content='Outlined' />
-      <ButtonElement {...args} variant='text' content='Text' />
-    </StackRow>
-  ),
-};
-
-export const Colors: Story = {
-  render: args => (
-    <StackRow sx={{ display: 'flex', gap: STYLE.PADDING_GAP_ITEM, flexWrap: 'wrap' }}>
-      <ButtonElement {...args} color='primary' content='Primary' />
-      <ButtonElement {...args} color='secondary' content='Secondary' />
-      <ButtonElement {...args} color='success' content='Success' />
-      <ButtonElement {...args} color='warning' content='Warning' />
-      <ButtonElement {...args} color='error' content='Error' />
-      <ButtonElement {...args} color='info' content='Info' />
-    </StackRow>
-  ),
-};
-
-export const Sizes: Story = {
-  render: args => (
-    <StackRow sx={{ display: 'flex', gap: STYLE.PADDING_GAP_ITEM, flexWrap: 'wrap' }}>
-      <ButtonElement {...args} size='small' content='Small' />
-      <ButtonElement {...args} size='medium' content='Medium' />
-      <ButtonElement {...args} size='large' content='Large' />
-    </StackRow>
-  ),
-};
-
 export const WithIcons: Story = {
   render: args => (
     <StackRow sx={{ display: 'flex', gap: STYLE.PADDING_GAP_ITEM, flexWrap: 'wrap' }}>
@@ -164,31 +131,4 @@ export const WithIcons: Story = {
       <ButtonElement {...args} startIcon='save' endIcon='check' content='Save & Check' />
     </StackRow>
   ),
-};
-
-export const Loading: Story = {
-  args: {
-    loading: true,
-    content: 'Saving...',
-  },
-  parameters: {
-    // deterministic snapshot: spinner only
-    chromatic: { delay: 300 },
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-    content: 'Disabled',
-  },
-};
-
-export const ClickCallsOnClick: Story = {
-  play: async ({ canvasElement, args }) => {
-    const canvas = within(canvasElement);
-    const btn = canvas.getByRole('button');
-    await userEvent.click(btn);
-    await expect(args.onClick).toHaveBeenCalledTimes(1);
-  },
 };

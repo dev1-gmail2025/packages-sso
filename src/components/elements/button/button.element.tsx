@@ -53,6 +53,7 @@ export const ButtonElement: React.FC<ButtonElementProps> = ({
         minWidth: 100,
         textTransform: 'none',
         borderRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
+        width: 'fit-content',
         ...sx,
       }}
       disabled={disabled}
