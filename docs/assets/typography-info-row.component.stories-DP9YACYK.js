@@ -1,0 +1,13 @@
+import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{T as t}from"./typography-info-row.component-CMexIngr.js";import{S as g}from"./Stack-CPAJg9KB.js";import"./other.util-qz7Ku6OH.js";import"./FileSaver.min-BEy-8JuY.js";import"./index-j62jqFia.js";import"./style.const-CsvflsKM.js";import"./defaultTheme-DeO7XLhv.js";import"./time.util-BYguZ9lS.js";import"./Typography-Bxxrk_XJ.js";import"./DefaultPropsProvider-CTbmx_9D.js";import"./index-C1XqMcs4.js";import"./extendSxProp-CMsS_Ey0.js";import"./memoTheme-DEbB7Aqb.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./createStack-Du0yveyH.js";const b={label:{control:"text",description:"Row label.",table:{type:{summary:"ReactNode"}}},value:{control:"text",description:"Row value.",table:{type:{summary:"ReactNode"}}},lineLimit:{control:{type:"number",min:1,max:5,step:1},description:"Clamp value to N lines.",table:{type:{summary:"number"},defaultValue:{summary:"1"}}},isColumn:{control:"boolean",description:"If true, stacks label/value vertically.",table:{type:{summary:"boolean"},defaultValue:{summary:"false"}}},sx:{control:!1},labelSx:{control:!1}},V={title:"Elements/Typography/TypographyInfoRow",component:t,tags:["autodocs"],args:{label:"Status",value:"Active",lineLimit:1,isColumn:!1},parameters:{layout:"padded"},argTypes:b},a={},o={args:{isColumn:!0,value:"This is a longer value to show how it wraps when stacked in a column layout.",lineLimit:2}},r={render:l=>e.jsxs(g,{gap:1,children:[e.jsx(t,{...l,label:"Name",value:"Nguyễn Văn A"}),e.jsx(t,{...l,label:"Email",value:"a.nguyen@example.com"}),e.jsx(t,{...l,label:"Role",value:"Admin"})]})};var s,n,m;a.parameters={...a.parameters,docs:{...(s=a.parameters)==null?void 0:s.docs,source:{originalSource:"{}",...(m=(n=a.parameters)==null?void 0:n.docs)==null?void 0:m.source}}};var p,i,u;o.parameters={...o.parameters,docs:{...(p=o.parameters)==null?void 0:p.docs,source:{originalSource:`{
+  args: {
+    isColumn: true,
+    value: 'This is a longer value to show how it wraps when stacked in a column layout.',
+    lineLimit: 2
+  }
+}`,...(u=(i=o.parameters)==null?void 0:i.docs)==null?void 0:u.source}}};var c,y,d;r.parameters={...r.parameters,docs:{...(c=r.parameters)==null?void 0:c.docs,source:{originalSource:`{
+  render: args => <Stack gap={1}>\r
+      <TypographyInfoRow {...args} label="Name" value="Nguyễn Văn A" />\r
+      <TypographyInfoRow {...args} label="Email" value="a.nguyen@example.com" />\r
+      <TypographyInfoRow {...args} label="Role" value="Admin" />\r
+    </Stack>
+}`,...(d=(y=r.parameters)==null?void 0:y.docs)==null?void 0:d.source}}};const D=["Default","Column","ManyRows"];export{o as Column,a as Default,r as ManyRows,D as __namedExportsOrder,V as default};
