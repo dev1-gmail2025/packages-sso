@@ -5,7 +5,7 @@ import { loadingArgTypes } from './loading.argtypes';
 import { LoadingComponent } from './loading.component';
 
 const meta: Meta<typeof LoadingComponent> = {
-  title: 'Components/Composite/Loading',
+  title: 'Elements/Composite/Loading',
   component: LoadingComponent,
   tags: ['autodocs'],
   args: {

@@ -6,7 +6,7 @@ import { systemMonitorArgTypes } from './system-monitor.argtypes';
 import { SystemMonitorScreen } from './system-monitor.screen';
 
 const meta: Meta<typeof SystemMonitorScreen> = {
-  title: 'Components/SystemMonitor/SystemMonitorScreen',
+  title: 'Pages/SystemMonitor/SystemMonitorScreen',
   component: SystemMonitorScreen,
   tags: ['autodocs'],
   args: {
@@ -31,7 +31,7 @@ export default meta;
 type Story = StoryObj<typeof SystemMonitorScreen>;
 
 export const Default: Story = {
-  render: (args) => (
+  render: args => (
     <Box sx={{ minHeight: '100vh', backgroundColor: '#0b1b2b' }}>
       <SystemMonitorScreen {...args} />
     </Box>
@@ -42,7 +42,7 @@ export const WithBlacklist: Story = {
   args: {
     blacklist: ['SYSTEM', 'E_HIRING'],
   },
-  render: (args) => (
+  render: args => (
     <Box sx={{ minHeight: '100vh', backgroundColor: '#0b1b2b' }}>
       <SystemMonitorScreen {...args} />
     </Box>

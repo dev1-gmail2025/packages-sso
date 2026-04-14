@@ -1,1 +1,60 @@
-import{L as e}from"./loading.component-VGvV-d_M.js";import"./jsx-runtime-D_zvdyIk.js";import"./FileSaver.min-Bswz-9g7.js";import"./index-j62jqFia.js";import"./style.const-wxvmQkzb.js";import"./time.util-BYguZ9lS.js";import"./typography.style-DP0bA-A_.js";import"./image.element-Bf8t_bd_.js";import"./stack.style-D9MTy4l9.js";import"./memoTheme-DEbB7Aqb.js";import"./defaultTheme-DeO7XLhv.js";import"./DefaultPropsProvider-CTbmx_9D.js";import"./Stack-CPAJg9KB.js";import"./createStack-Du0yveyH.js";import"./extendSxProp-CMsS_Ey0.js";import"./index-DP7gAqwz.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./useTheme-B3rGZ43-.js";import"./Box-CDdb2_uU.js";import"./InputLabel-dfS4B9dg.js";import"./useFormControl-CmOg5wnR.js";import"./link.element-D3mcjqpT.js";import"./Typography-Bxxrk_XJ.js";import"./index-C1XqMcs4.js";import"./isFocusVisible-B8k4qzLc.js";import"./other.util-DCRAYZxB.js";import"./color.const-zxGJ9-Cm.js";import"./CircularProgress-B9D4tC5t.js";const i={size:{control:"select",options:["small","medium","large"],description:"Spinner size.",table:{type:{summary:'"large" | "small" | "medium"'},defaultValue:{summary:"medium"}}},color:{control:"color",description:"Spinner color override.",table:{type:{summary:"string"}}},sx:{control:!1}},q={title:"Components/Composite/Loading",component:e,tags:["autodocs"],args:{size:"medium"},parameters:{layout:"padded"},argTypes:i},o={};var r,t,m;o.parameters={...o.parameters,docs:{...(r=o.parameters)==null?void 0:r.docs,source:{originalSource:"{}",...(m=(t=o.parameters)==null?void 0:t.docs)==null?void 0:m.source}}};const w=["Default"];export{o as Default,w as __namedExportsOrder,q as default};
+import { L as e } from './loading.component-VGvV-d_M.js';
+import './jsx-runtime-D_zvdyIk.js';
+import './FileSaver.min-Bswz-9g7.js';
+import './index-j62jqFia.js';
+import './style.const-wxvmQkzb.js';
+import './time.util-BYguZ9lS.js';
+import './typography.style-DP0bA-A_.js';
+import './image.element-Bf8t_bd_.js';
+import './stack.style-D9MTy4l9.js';
+import './memoTheme-DEbB7Aqb.js';
+import './defaultTheme-DeO7XLhv.js';
+import './DefaultPropsProvider-CTbmx_9D.js';
+import './Stack-CPAJg9KB.js';
+import './createStack-Du0yveyH.js';
+import './extendSxProp-CMsS_Ey0.js';
+import './index-DP7gAqwz.js';
+import './createSimplePaletteValueFilter-bm0fmN_7.js';
+import './useTheme-B3rGZ43-.js';
+import './Box-CDdb2_uU.js';
+import './InputLabel-dfS4B9dg.js';
+import './useFormControl-CmOg5wnR.js';
+import './link.element-D3mcjqpT.js';
+import './Typography-Bxxrk_XJ.js';
+import './index-C1XqMcs4.js';
+import './isFocusVisible-B8k4qzLc.js';
+import './other.util-DCRAYZxB.js';
+import './color.const-zxGJ9-Cm.js';
+import './CircularProgress-B9D4tC5t.js';
+const i = {
+    size: {
+      control: 'select',
+      options: ['small', 'medium', 'large'],
+      description: 'Spinner size.',
+      table: { type: { summary: '"large" | "small" | "medium"' }, defaultValue: { summary: 'medium' } },
+    },
+    color: { control: 'color', description: 'Spinner color override.', table: { type: { summary: 'string' } } },
+    sx: { control: !1 },
+  },
+  q = {
+    title: 'Elements/Composite/Loading',
+    component: e,
+    tags: ['autodocs'],
+    args: { size: 'medium' },
+    parameters: { layout: 'padded' },
+    argTypes: i,
+  },
+  o = {};
+var r, t, m;
+o.parameters = {
+  ...o.parameters,
+  docs: {
+    ...((r = o.parameters) == null ? void 0 : r.docs),
+    source: {
+      originalSource: '{}',
+      ...((m = (t = o.parameters) == null ? void 0 : t.docs) == null ? void 0 : m.source),
+    },
+  },
+};
+const w = ['Default'];
+export { o as Default, w as __namedExportsOrder, q as default };

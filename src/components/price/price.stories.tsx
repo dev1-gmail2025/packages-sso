@@ -5,7 +5,7 @@ import { priceArgTypes } from './price.argtypes';
 import { PriceComponent } from './price.component';
 
 const meta: Meta<typeof PriceComponent> = {
-  title: 'Components/Composite/Price',
+  title: 'Elements/Composite/Price',
   component: PriceComponent,
   tags: ['autodocs'],
   args: {
@@ -26,11 +26,11 @@ type Story = StoryObj<typeof PriceComponent>;
 export const Default: Story = {};
 
 export const Sizes: Story = {
-  render: (args) => (
+  render: args => (
     <Stack spacing={2}>
-      <PriceComponent {...args} size="small" />
-      <PriceComponent {...args} size="medium" />
-      <PriceComponent {...args} size="large" />
+      <PriceComponent {...args} size='small' />
+      <PriceComponent {...args} size='medium' />
+      <PriceComponent {...args} size='large' />
     </Stack>
   ),
 };

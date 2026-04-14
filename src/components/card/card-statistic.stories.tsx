@@ -6,7 +6,7 @@ import { CardStatisticsComponent } from './card-statistic.component';
 import { ICONS } from '../../common';
 
 const meta: Meta<typeof CardStatisticsComponent> = {
-  title: 'Components/CardStatistic',
+  title: 'Elements/Composite/CardStatistic',
   component: CardStatisticsComponent,
   tags: ['autodocs'],
   args: {
@@ -26,11 +26,11 @@ type Story = StoryObj<typeof CardStatisticsComponent>;
 export const Default: Story = {};
 
 export const WithInfo: Story = {
-  render: (args) => (
+  render: args => (
     <CardStatisticsComponent
       {...args}
       info={
-        <Typography variant="caption" color="text.secondary">
+        <Typography variant='caption' color='text.secondary'>
           +12% vs last week
         </Typography>
       }

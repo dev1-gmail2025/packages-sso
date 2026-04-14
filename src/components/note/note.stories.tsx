@@ -5,7 +5,7 @@ import { noteArgTypes } from './note.argtypes';
 import { NoteComponent } from './note.component';
 
 const meta: Meta<typeof NoteComponent> = {
-  title: 'Components/Composite/Note',
+  title: 'Elements/Composite/Note',
   component: NoteComponent,
   tags: ['autodocs'],
   args: {
@@ -22,12 +22,12 @@ type Story = StoryObj<typeof NoteComponent>;
 export const Default: Story = {};
 
 export const Types: Story = {
-  render: (args) => (
+  render: args => (
     <Stack spacing={2} sx={{ maxWidth: 520 }}>
-      <NoteComponent {...args} type="info" content="Info message." />
-      <NoteComponent {...args} type="recommend" content="Recommendation message." />
-      <NoteComponent {...args} type="warning" content="Warning message." />
-      <NoteComponent {...args} type="error" content="Error message." />
+      <NoteComponent {...args} type='info' content='Info message.' />
+      <NoteComponent {...args} type='recommend' content='Recommendation message.' />
+      <NoteComponent {...args} type='warning' content='Warning message.' />
+      <NoteComponent {...args} type='error' content='Error message.' />
     </Stack>
   ),
 };

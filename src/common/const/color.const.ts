@@ -100,7 +100,6 @@ export const SUCCESS = {
   950: '#053321',
 };
 
-
 export const WARNING = {
   25: '#FFFCF5',
   50: '#FFFAEB',
@@ -306,7 +305,6 @@ export const ORANGE = {
   900: '#7E2410',
   950: '#511C10',
 };
-
 
 export const HIERARCHIAL = {
   HIGHLIGHT_ROW: 'rgba(7, 85, 75, 0.12)',

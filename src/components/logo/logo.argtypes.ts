@@ -8,11 +8,6 @@ export const logoArgTypes: Partial<ArgTypes<LogoComponentProps>> = {
     description: 'Target environment for logo link (SSO url).',
     table: { type: { summary: 'Environment' } },
   },
-  url: {
-    control: 'text',
-    description: 'Logo image url.',
-    table: { type: { summary: 'string' } },
-  },
   height: {
     control: { type: 'number', min: 16, max: 120, step: 1 },
     description: 'Logo height (px).',
