@@ -1,9 +1,10 @@
-import { Typography, useTheme } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import dayjs, { Dayjs } from 'dayjs';
 import React, { useState } from 'react';
-import { STYLE } from '../../../../common';
-import { StackRowAlignCenter } from '../../../styles';
+import { StackRowAlignCenterJustBetween } from '../../../styles';
+import { IconElement } from '../../icon';
+import { TextFieldLabelElement } from '../text-field-label/text-field-label.element';
 
 interface TextFieldDateRangeElementProps {
   fromDate?: string;
@@ -17,12 +18,15 @@ interface TextFieldDateRangeElementProps {
   format?: string;
   minDate?: Dayjs;
   maxDate?: Dayjs;
+  label?: string;
+  required?: boolean;
 }
 
-// [TTK - 26/09/2025] - Component TextFieldDateRangeElement
+// Component TextFieldDateRangeElement (reused style from erp-client-fe)
 export const TextFieldDateRangeElement: React.FC<TextFieldDateRangeElementProps> = ({
   fromDate = '',
   toDate = '',
+  label = 'Ngày',
   onFromDateChange,
   onToDateChange,
   onDateRangeChange,
@@ -32,126 +36,196 @@ export const TextFieldDateRangeElement: React.FC<TextFieldDateRangeElementProps>
   format = 'DD/MM/YYYY',
   minDate,
   maxDate,
+  required = false,
 }) => {
   const theme = useTheme();
 
-  // [TTK - 26/09/2025] - State openFromDate và openToDate
   const [openFromDate, setOpenFromDate] = useState(false);
   const [openToDate, setOpenToDate] = useState(false);
 
   return (
-    <StackRowAlignCenter
-      sx={{
-        border: '1px solid #E0E0E0',
-        borderRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
-        width: 'auto',
-        height: 36,
-        gap: STYLE.PADDING_GAP_ITEM_SMALL,
-        ...sx,
-      }}
-    >
-      {/* DatePicker 1: Ngày bắt đầu */}
-      <DatePicker
-        value={fromDate ? dayjs(fromDate) : null}
-        onChange={(newDate) => {
-          if (newDate) {
-            const dateString = newDate.format('YYYY-MM-DD');
-            onFromDateChange?.(dateString);
-            if (toDate) {
-              onDateRangeChange?.(dateString, toDate);
-            }
-          }
-        }}
-        // [TTK - 08/10/2025] - Update dateOfWeek format
-        // [Fixed 10/10/2025] - Use date.day() instead of day string parameter
-        dayOfWeekFormatter={(date: Dayjs) => {
-          const dayOfWeek = date.day();
-          const daysInVietnamese = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
-          return daysInVietnamese[dayOfWeek];
-        }}
-        format={format}
-        minDate={minDate}
-        maxDate={maxDate}
-        disabled={disabled}
-        // [TTK - 26/09/2025] - State openFromDate và openToDate
-        open={openFromDate}
-        onOpen={() => setOpenFromDate(true)}
-        onClose={() => setOpenFromDate(false)}
-        slotProps={{
-          textField: {
-            fullWidth: false,
-            variant: 'standard',
-            size: 'small',
-            placeholder: 'Từ ngày',
-
-            sx: {
-              width: '100px',
-              '& .MuiPickersSectionList-root, & .MuiPickersSectionList-section, & .MuiPickersSectionList-sectionContent':
-                {
-                  justifyContent: 'center',
-                },
-              '& .MuiInputAdornment-root': {
-                display: 'none', // Ẩn icon calendar
-              },
-            },
-            onClick: () => {
-              if (!disabled) setOpenFromDate(true);
-            },
+    <Box>
+      {label && <TextFieldLabelElement label={label} required={required} />}
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          padding: '0 8px 0 0',
+          // backgroundColor: 'white',
+          border: '1px solid #E0E0E0',
+          borderRadius: 2,
+          width: '100%',
+          height: 36,
+          '&:hover': {
+            borderColor: disabled ? '#E0E0E0' : theme.palette.primary.main,
           },
+          transition: 'border-color 0.2s ease',
+          gap: 1,
+          ...sx,
         }}
-      />
-
-      <Typography sx={{ color: theme.palette.text.secondary }}>—</Typography>
-
-      {/* DatePicker 2: Ngày kết thúc */}
-      <DatePicker
-        value={toDate ? dayjs(toDate) : null}
-        onChange={(newDate) => {
-          if (newDate) {
-            const dateString = newDate.format('YYYY-MM-DD');
-            onToDateChange?.(dateString);
-            if (fromDate) {
-              onDateRangeChange?.(fromDate, dateString);
-            }
-          }
-        }}
-        // [TTK - 08/10/2025] - Update dateOfWeek format
-        // [Fixed 10/10/2025] - Use date.day() instead of day string parameter
-        dayOfWeekFormatter={(date: Dayjs) => {
-          const dayOfWeek = date.day();
-          const daysInVietnamese = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
-          return daysInVietnamese[dayOfWeek];
-        }}
-        format={format}
-        minDate={fromDate ? dayjs(fromDate) : minDate}
-        maxDate={maxDate}
-        disabled={disabled}
-        // [TTK - 26/09/2025] - State openFromDate và openToDate
-        open={openToDate}
-        onOpen={() => setOpenToDate(true)}
-        onClose={() => setOpenToDate(false)}
-        slotProps={{
-          textField: {
-            variant: 'standard',
-            size: 'small',
-            placeholder: 'Đến ngày',
-            sx: {
-              width: '140px',
-              '& .MuiPickersSectionList-root, & .MuiPickersSectionList-section, & .MuiPickersSectionList-sectionContent':
-                {
-                  justifyContent: 'center',
-                },
-            },
-
-            // [TTK - 26/09/2025] - State openFromDate và openToDate
-            onClick: () => {
-              if (!disabled) {
-                setOpenToDate(true);
+      >
+        <StackRowAlignCenterJustBetween sx={{ flex: 1, gap: 1, pl: 1 }}>
+          <DatePicker
+            value={fromDate ? dayjs(fromDate) : null}
+            onChange={newDate => {
+              if (newDate && newDate.isValid()) {
+                const dateString = newDate.format('YYYY-MM-DD');
+                onFromDateChange?.(dateString);
+                if (toDate) {
+                  onDateRangeChange?.(dateString, toDate);
+                }
+              } else if (newDate === null) {
+                onFromDateChange?.('');
+                onDateRangeChange?.('', toDate || '');
               }
-            },
-          },
-        }}
-      />
-    </StackRowAlignCenter>
+            }}
+            dayOfWeekFormatter={(date: Dayjs) => {
+              const dayOfWeek = date.day();
+              const daysInVietnamese = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
+              return daysInVietnamese[dayOfWeek];
+            }}
+            format={format}
+            minDate={minDate}
+            maxDate={maxDate}
+            disabled={disabled}
+            open={openFromDate}
+            onOpen={() => setOpenFromDate(true)}
+            onClose={() => setOpenFromDate(false)}
+            slotProps={{
+              textField: {
+                variant: 'standard',
+                size: 'small',
+                placeholder: 'Từ ngày',
+                InputProps: {
+                  disableUnderline: true,
+                },
+                sx: {
+                  // width: 120,
+                  '& .MuiInputBase-root': {
+                    backgroundColor: 'transparent',
+                    border: 'none',
+                    cursor: disabled ? 'not-allowed' : 'pointer',
+                  },
+                  '& .MuiInputBase-input': {
+                    padding: 0,
+                    fontSize: '14px',
+                    textAlign: 'center',
+                    cursor: disabled ? 'not-allowed' : 'pointer',
+                  },
+                  '& .MuiInputAdornment-root': {
+                    display: 'none',
+                  },
+                  '& .MuiPickersInputBase-sectionsContainer': {
+                    padding: '0 !important',
+                    width: 'auto',
+                  },
+                },
+                onClick: () => {
+                  if (!disabled) {
+                    setOpenFromDate(true);
+                  }
+                },
+              },
+              popper: {
+                sx: { zIndex: 21000 },
+              },
+            }}
+          />
+
+          <Typography
+            variant='body2'
+            sx={{
+              color: theme.palette.text.secondary,
+              fontWeight: 400,
+              lineHeight: 1,
+            }}
+          >
+            —
+          </Typography>
+
+          <DatePicker
+            value={toDate ? dayjs(toDate) : null}
+            onChange={newDate => {
+              if (newDate && newDate.isValid()) {
+                const dateString = newDate.format('YYYY-MM-DD');
+                onToDateChange?.(dateString);
+                if (fromDate) {
+                  onDateRangeChange?.(fromDate, dateString);
+                }
+              } else if (newDate === null) {
+                onToDateChange?.('');
+                onDateRangeChange?.(fromDate || '', '');
+              }
+            }}
+            dayOfWeekFormatter={(date: Dayjs) => {
+              const dayOfWeek = date.day();
+              const daysInVietnamese = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
+              return daysInVietnamese[dayOfWeek];
+            }}
+            format={format}
+            minDate={fromDate ? dayjs(fromDate) : minDate}
+            maxDate={maxDate}
+            disabled={disabled}
+            open={openToDate}
+            onOpen={() => setOpenToDate(true)}
+            onClose={() => setOpenToDate(false)}
+            slotProps={{
+              textField: {
+                variant: 'standard',
+                size: 'small',
+                placeholder: 'Đến ngày',
+                InputProps: {
+                  disableUnderline: true,
+                },
+                sx: {
+                  // width: 120,
+                  '& .MuiInputBase-root': {
+                    backgroundColor: 'transparent',
+                    border: 'none',
+                    cursor: disabled ? 'not-allowed' : 'pointer',
+                  },
+                  '& .MuiInputAdornment-root': {
+                    display: 'none',
+                  },
+                  '& .MuiInputBase-input': {
+                    padding: 0,
+                    fontSize: '14px',
+                    textAlign: 'center',
+                    cursor: disabled ? 'not-allowed' : 'pointer',
+                  },
+                  // '& .MuiInputAdornment-root': {
+                  //   display: 'none',
+                  // },
+                  '& .MuiPickersInputBase-sectionsContainer': {
+                    padding: '0 !important',
+                    justifyContent: 'center',
+                    width: 'auto',
+                  },
+                },
+                onClick: () => {
+                  if (!disabled) {
+                    setOpenToDate(true);
+                  }
+                },
+              },
+              popper: {
+                sx: { zIndex: 21000 },
+              },
+              // field: { clearable: true },
+            }}
+          />
+        </StackRowAlignCenterJustBetween>
+
+        <IconElement
+          onClick={() => {
+            if (!disabled) {
+              setOpenFromDate(true);
+            }
+          }}
+          icon='calendar_today'
+          sx={{ fontSize: 18 }}
+        />
+      </Box>
+    </Box>
   );
 };
