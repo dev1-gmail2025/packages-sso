@@ -2,16 +2,9 @@ import { ThemeProvider } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import type { Preview } from '@storybook/react';
 
-import { initialize, mswDecorator } from 'msw-storybook-addon';
 import { createElement, Fragment } from 'react';
 import { Mode } from '../src/common';
 import { getTheme } from '../src/common/utils/other.util';
-
-// On GitHub Pages, service worker files are often missing/mis-path'd.
-initialize({
-  onUnhandledRequest: 'bypass',
-  serviceWorker: { url: undefined },
-});
 
 const preview: Preview = {
   parameters: {
@@ -29,7 +22,6 @@ const preview: Preview = {
     },
   },
   decorators: [
-    mswDecorator,
     (Story) =>
       createElement(
         ThemeProvider,
