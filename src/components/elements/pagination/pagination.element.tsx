@@ -1,14 +1,4 @@
-import {
-  FormControl,
-  MenuItem,
-  Pagination,
-  Select,
-  SelectChangeEvent,
-  SxProps,
-  Theme,
-  Typography,
-  useTheme,
-} from '@mui/material';
+import { FormControl, MenuItem, Pagination, Select, SelectChangeEvent, SxProps, Theme, useTheme } from '@mui/material';
 import React from 'react';
 import { STYLE } from '../../../common';
 import { StackRowAlignCenter } from '../../styles';
@@ -46,9 +36,28 @@ export const PaginationElement: React.FC<PaginationElementProps> = ({
 
   return (
     <StackRowAlignCenter gap={0.75} sx={{ ml: 'auto', p: STYLE.PADDING_GAP_BUTTON, ...sx }}>
+      <Pagination
+        count={totalPages}
+        page={page}
+        showFirstButton
+        showLastButton
+        onChange={handlePageChange}
+        // size="small"
+        variant="outlined"
+        shape="rounded"
+        sx={{
+          '& .MuiPaginationItem-root.Mui-disabled': {
+            opacity: 0.5,
+            pointerEvents: 'none',
+          },
+          '& .MuiPaginationItem-root.Mui-selected': {
+            background: palette.primary.main,
+            color: 'white',
+          },
+        }}
+      />
       {openRowsPerPage && (
         <StackRowAlignCenter gap={0.5}>
-          <Typography sx={{ ...STYLE.TYPOGRAPHY.textSm.regular, marginRight: '8px' }}>Hiển thị:</Typography>
           <FormControl size="small">
             <Select
               value={displayTake}
@@ -77,27 +86,6 @@ export const PaginationElement: React.FC<PaginationElementProps> = ({
           </FormControl>
         </StackRowAlignCenter>
       )}
-
-      <Pagination
-        count={totalPages}
-        page={page}
-        showFirstButton
-        showLastButton
-        onChange={handlePageChange}
-        // size="small"
-        variant="outlined"
-        shape="rounded"
-        sx={{
-          '& .MuiPaginationItem-root.Mui-disabled': {
-            opacity: 0.5,
-            pointerEvents: 'none',
-          },
-          '& .MuiPaginationItem-root.Mui-selected': {
-            background: palette.primary.main,
-            color: 'white',
-          },
-        }}
-      />
     </StackRowAlignCenter>
   );
 };
