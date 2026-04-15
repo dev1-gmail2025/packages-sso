@@ -7,8 +7,10 @@ import { createElement, Fragment } from 'react';
 import { Mode } from '../src/common';
 import { getTheme } from '../src/common/utils/other.util';
 
+// On GitHub Pages, service worker files are often missing/mis-path'd.
 initialize({
   onUnhandledRequest: 'bypass',
+  serviceWorker: { url: undefined },
 });
 
 const preview: Preview = {
