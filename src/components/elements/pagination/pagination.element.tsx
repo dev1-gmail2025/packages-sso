@@ -1,7 +1,7 @@
 import { FormControl, MenuItem, Pagination, Select, SelectChangeEvent, SxProps, Theme, useTheme } from '@mui/material';
 import React from 'react';
-import { STYLE } from '../../../common';
 import { StackRowAlignCenter } from '../../styles';
+import { STYLE } from '../../../common';
 
 export interface PaginationElementProps {
   total?: number;
@@ -35,7 +35,7 @@ export const PaginationElement: React.FC<PaginationElementProps> = ({
   };
 
   return (
-    <StackRowAlignCenter gap={0.75} sx={{ ml: 'auto', p: STYLE.PADDING_GAP_BUTTON, ...sx }}>
+    <StackRowAlignCenter gap={0.5} sx={{ ml: 'auto', ...sx }}>
       <Pagination
         count={totalPages}
         page={page}
@@ -46,6 +46,7 @@ export const PaginationElement: React.FC<PaginationElementProps> = ({
         variant="outlined"
         shape="rounded"
         sx={{
+          '& .MuiPaginationItem-root': { margin: `0 6px 0 0` },
           '& .MuiPaginationItem-root.Mui-disabled': {
             opacity: 0.5,
             pointerEvents: 'none',
@@ -57,7 +58,7 @@ export const PaginationElement: React.FC<PaginationElementProps> = ({
         }}
       />
       {openRowsPerPage && (
-        <StackRowAlignCenter gap={0.5}>
+        <StackRowAlignCenter>
           <FormControl size="small">
             <Select
               value={displayTake}
@@ -65,7 +66,7 @@ export const PaginationElement: React.FC<PaginationElementProps> = ({
               sx={{
                 '&.MuiInputBase-root': {
                   borderRadius: '6px',
-                  height: '32px',
+                  height: STYLE.HEIGHT_TEXT_FIELD_BUTTON.medium,
                 },
                 '& .MuiOutlinedInput-notchedOutline': {
                   border: '1px solid var(--Neutral-300, #E4E6E6)',
