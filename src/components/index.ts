@@ -7,6 +7,7 @@ export * from './logo';
 export * from './motion';
 export * from './note';
 export * from './price';
+export * from './providers';
 export * from './review';
 export * from './sidebar';
 export * from './styles';
