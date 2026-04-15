@@ -24,7 +24,7 @@ export const AvatarUserInfo: React.FC<AvatarUserInfoProps> = ({
   isTag = false,
   sxName,
   sxPosition,
-  sizeAvatar = SizeProps.LARGE,
+  sizeAvatar = SizeProps.MEDIUM,
 }) => {
   const { palette } = useTheme();
 
