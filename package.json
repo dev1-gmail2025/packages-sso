@@ -10,13 +10,12 @@
     "README.md"
   ],
   "scripts": {
-    "dev": "vite",
     "build": "vite build --mode library",
     "prepare": "npm run build",
     "build:lib": "vite build --mode library",
     "lint": "eslint .",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006 --disable-telemetry",
+    "dev": "storybook dev -p 6006 --disable-telemetry",
     "build-storybook": "storybook build -o docs && touch docs/.nojekyll",
     "storybook:test": "test-storybook --url http://127.0.0.1:6006",
     "storybook:test:ci": "start-server-and-test storybook http://127.0.0.1:6006 storybook:test",
@@ -66,11 +65,12 @@
   },
   "dependencies": {
     "@storybook/core-events": "^8.6.14",
-    "exceljs": "^4.4.0",
-    "file-saver": "^2.0.5",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
-    "prettier": "^3.8.1"
+    "exceljs": "^4.4.0",
+    "file-saver": "^2.0.5",
+    "prettier": "^3.8.1",
+    "sevago-sso-fe": "^1.0.165"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

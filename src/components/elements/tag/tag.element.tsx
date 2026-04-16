@@ -23,7 +23,7 @@ export interface TagElementProps {
 export const TagElement: React.FC<TagElementProps> = ({
   type,
   content,
-  width,
+  width = 'fit-content',
   variation = 'caption',
   size = 'medium',
   variant = 'contained',
