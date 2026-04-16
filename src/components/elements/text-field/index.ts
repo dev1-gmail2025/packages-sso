@@ -8,6 +8,7 @@ export * from './text-field-month-year/text-field-month-year.element';
 export * from './text-field-number/text-field-number.element';
 export * from './text-field-search/text-field-search.element';
 export * from './text-field-search-custom/text-field-search-custom.element';
+export * from './text-field-select/text-field-select.element';
 export * from './text-field-time/text-field-time.element';
 export * from './text-highlight/text-highlight.element';
 export * from './text-field.element';
