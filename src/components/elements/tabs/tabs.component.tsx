@@ -1,10 +1,10 @@
 import type { Theme } from '@emotion/react';
 import type { SxProps } from '@mui/material';
-import { Stack, useTheme } from '@mui/material';
+import { Divider, Stack, useTheme } from '@mui/material';
 import { LayoutGroup, motion } from 'framer-motion';
-import React, { useEffect, useId, useState } from 'react';
-import { DirectionProps, TabSizeProps, VariantProps } from '../../../common';
-import { StackTabs } from '../../styles';
+import React, { Fragment, useEffect, useId, useState } from 'react';
+import { COLOR, DirectionProps, TabSizeProps, VariantProps } from '../../../common';
+import { StackAlignJustCenter, StackTabs } from '../../styles';
 import { IconContentBadgeElement, IconContentBadgeSubsElement, IconContentElement } from '../icon';
 import { LinkElement } from '../link';
 import { StyledTab, StyledTabs, TAB_BACKGROUND_STYLES, TAB_STYLES } from './tabs.constant';
@@ -34,6 +34,7 @@ export interface TabsMotionBaseProps<T extends TabsMotionItemBase> {
   sx?: SxProps;
   stackTabsSx?: SxProps;
   isSelectable?: (tab: T) => boolean;
+  isDivider?: boolean;
   renderContent: (tab: T) => React.ReactNode;
 }
 
@@ -45,6 +46,7 @@ export function TabsMotionBase<T extends TabsMotionItemBase>({
   sx,
   stackTabsSx,
   isSelectable,
+  isDivider = false,
   renderContent,
 }: TabsMotionBaseProps<T>) {
   const layoutGroupId = useId();
@@ -59,41 +61,51 @@ export function TabsMotionBase<T extends TabsMotionItemBase>({
           const isSelected = id === selectedId;
 
           return (
-            <LinkElement
-              component={tab.href ? 'a' : 'span'}
-              href={tab.href}
-              onClick={tab.onClick}
-              key={tab.key ?? id}
-              id={tab.id}
-            >
-              <Stack
-                component={motion.div}
-                sx={
-                  {
-                    ...TAB_STYLES,
-                    color: isSelected ? palette.primary.contrastText : palette.text.primary,
-                    ...sx,
-                  } as SxProps<Theme>
-                }
-                onClick={() => {
-                  if (!selectable) return;
-                  onSelectId?.(tab.id);
-                }}
-              >
-                {renderContent(tab)}
+            <Fragment key={tab.key ?? id}>
+              <LinkElement className={`${isSelected ? 'tab-selected' : ''}`} component={tab.href ? 'a' : 'span'} href={tab.href} onClick={tab.onClick} id={tab.id}>
+                <Stack
+                  component={motion.div} 
+                  sx={
+                    {
+                      ...TAB_STYLES,
+                      color: isSelected ? palette.primary.main : palette.text.primary,
+                      ...sx,
+                    } as SxProps<Theme>
+                  }
+                  onClick={() => {
+                    if (!selectable) return;
+                    onSelectId?.(tab.id);
+                  }}
+                >
+                  {renderContent(tab)}
 
-                {isSelected && (
-                  <Stack
-                    component={motion.div}
-                    sx={TAB_BACKGROUND_STYLES}
-                    layoutId="selected"
-                    animate={{ backgroundColor: palette.primary.main }}
-                    initial={{ backgroundColor: palette.primary.main }}
-                    transition={{ duration: 0.3 }}
+                  {isSelected && (
+                    <Stack
+                      className="indicator"
+                      component={motion.div}
+                      sx={TAB_BACKGROUND_STYLES}
+                      layoutId="selected"
+                      animate={{ backgroundColor: COLOR.PRIMARY[50] }}
+                      initial={{ backgroundColor: COLOR.PRIMARY[50] }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  )}
+                </Stack>
+              </LinkElement>
+              {index < tabs.length - 1 && isDivider && (
+                <StackAlignJustCenter>
+                  <Divider
+                    orientation={'vertical'}
+                    sx={{
+                      height: '55%',
+                      alignSelf: 'stretch',
+                      borderColor: COLOR.NEUTRAL[500],
+                      opacity: 0.5,
+                    }}
                   />
-                )}
-              </Stack>
-            </LinkElement>
+                </StackAlignJustCenter>
+              )}
+            </Fragment>
           );
         })}
       </StackTabs>
@@ -122,6 +134,7 @@ export interface TabsComponentProps {
   sxWrapper?: SxProps;
   mode?: 'default' | 'badge';
   getSubs?: (tab: TabComponent) => TabComponent[] | undefined;
+  isDivider?: boolean;
 }
 
 export const TabsComponent: React.FC<TabsComponentProps> = ({
@@ -136,6 +149,7 @@ export const TabsComponent: React.FC<TabsComponentProps> = ({
   sxWrapper,
   mode = 'default',
   getSubs,
+  isDivider = false,
 }) => {
   const { selected, setSelected } = useTabsSelected(idSelect);
 
@@ -143,7 +157,7 @@ export const TabsComponent: React.FC<TabsComponentProps> = ({
     const selectedIndex = tabs.findIndex((tab) => tab.id === selected);
     return (
       <StyledTabs
-       sx={sxTabs}
+        sx={sxTabs}
         value={selectedIndex >= 0 ? selectedIndex : 0}
         onChange={(_, newIndex) => {
           const next = tabs[newIndex]?.id;
@@ -167,6 +181,7 @@ export const TabsComponent: React.FC<TabsComponentProps> = ({
 
   return (
     <TabsMotionBase
+      isDivider={isDivider}
       tabs={tabs}
       selectedId={selected}
       onSelectId={(id) => setSelected(id)}
