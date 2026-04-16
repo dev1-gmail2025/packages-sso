@@ -122,7 +122,7 @@ export const TableComponent: TableComponentType = ({
 
     const next = new Set<string>();
     const walkIds = (items: any[]) => {
-      items.forEach(item => {
+      items.forEach((item) => {
         const id = getRowId(item);
         const children = childrenGetter(item);
         if (children && children.length > 0) {
@@ -143,7 +143,7 @@ export const TableComponent: TableComponentType = ({
   );
 
   const allRowIds = React.useMemo(() => visibleRows.map(getRowId), [visibleRows, getRowId]);
-  const isAllSelected = selectedRows && allRowIds.every(id => selectedRows.includes(id));
+  const isAllSelected = selectedRows && allRowIds.every((id) => selectedRows.includes(id));
   const isIndeterminate = selectedRows && selectedRows.length > 0 && !isAllSelected;
 
   const handleSelectAll = useCallback(() => {
@@ -155,7 +155,7 @@ export const TableComponent: TableComponentType = ({
     (id: string) => {
       if (!selectedRows) return;
       if (selectedRows.includes(id)) {
-        onSelectRows?.(selectedRows.filter(i => i !== id));
+        onSelectRows?.(selectedRows.filter((i) => i !== id));
       } else {
         onSelectRows?.([...selectedRows, id]);
       }
@@ -164,7 +164,7 @@ export const TableComponent: TableComponentType = ({
   );
 
   const handleToggleTreeRow = useCallback((rowId: string) => {
-    setExpandedRowIds(prev => {
+    setExpandedRowIds((prev) => {
       const next = new Set(prev);
       if (next.has(rowId)) next.delete(rowId);
       else next.add(rowId);
@@ -182,7 +182,7 @@ export const TableComponent: TableComponentType = ({
         label: '',
         width: 32,
         alignHead: 'center',
-        render: row => (
+        render: (row) => (
           <TreeToggleCell
             row={row}
             getRowId={getRowId}
@@ -201,7 +201,7 @@ export const TableComponent: TableComponentType = ({
         id: 'selectCheckbox',
         label: (
           <Box
-            onClick={e => {
+            onClick={(e) => {
               e.stopPropagation();
               handleSelectAll();
             }}
@@ -221,7 +221,7 @@ export const TableComponent: TableComponentType = ({
               <CheckboxElement
                 checked={selectedRows?.includes(getRowId(row))}
                 disabled={isCheckboxDisabled}
-                onClick={e => {
+                onClick={(e) => {
                   e.stopPropagation();
                   if (isCheckboxDisabled) return;
                   handleSelectRow(getRowId(row));
@@ -249,21 +249,21 @@ export const TableComponent: TableComponentType = ({
           const createMenuWithCloseHandler = () => {
             if (!getRowMenu) return [];
 
-            return getRowMenu(row, index).map(menuItem => ({
+            return getRowMenu(row, index).map((menuItem) => ({
               ...menuItem,
               onClick: () => {
                 menuItem.onClick();
-                setTooltipOpen(prev => ({ ...prev, [rowId]: false }));
+                setTooltipOpen((prev) => ({ ...prev, [rowId]: false }));
               },
             }));
           };
 
           return (
-            <StackRowAlignJustCenter gap={1} onClick={e => e.stopPropagation()}>
+            <StackRowAlignJustCenter gap={1} onClick={(e) => e.stopPropagation()}>
               {onSelectRow && (
                 <IconElement
-                  icon='remove_red_eye'
-                  onClick={e => {
+                  icon="remove_red_eye"
+                  onClick={(e) => {
                     e.stopPropagation();
                     onSelectRow(row, index);
                   }}
@@ -272,19 +272,19 @@ export const TableComponent: TableComponentType = ({
               )}
               {onDeleteRow && (
                 <IconElement
-                  icon='delete'
-                  onClick={e => {
+                  icon="delete"
+                  onClick={(e) => {
                     e.stopPropagation();
                     onDeleteRow(row, index);
                   }}
-                  color='error'
+                  color="error"
                   disabled={disabledByParent || disabled.DELETE}
                 />
               )}
               {onInfoRow && (
                 <IconElement
-                  icon='view_cozy'
-                  onClick={e => {
+                  icon="view_cozy"
+                  onClick={(e) => {
                     e.stopPropagation();
                     onInfoRow(row, index);
                   }}
@@ -296,7 +296,7 @@ export const TableComponent: TableComponentType = ({
                   icon={
                     (getActionIcon && getActionIcon(row, index, 'COPY' as keyof typeof TableActions)) || 'content_copy'
                   }
-                  onClick={e => {
+                  onClick={(e) => {
                     e.stopPropagation();
                     onCopyRow(row, index);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -306,8 +306,8 @@ export const TableComponent: TableComponentType = ({
               )}
               {onHistoryRow && (
                 <IconElement
-                  icon='history'
-                  onClick={e => {
+                  icon="history"
+                  onClick={(e) => {
                     e.stopPropagation();
                     onHistoryRow(row, index);
                   }}
@@ -319,7 +319,7 @@ export const TableComponent: TableComponentType = ({
                   icon={
                     (getActionIcon && getActionIcon(row, index, 'UPDATE' as keyof typeof TableActions)) || 'settings'
                   }
-                  onClick={e => {
+                  onClick={(e) => {
                     e.stopPropagation();
                     onUpdateRow(row, index);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -351,19 +351,19 @@ export const TableComponent: TableComponentType = ({
                       display: 'flex',
                       alignItems: 'center',
                     }}
-                    placement='bottom-end'
+                    placement="bottom-end"
                     open={!!tooltipOpen[rowId]}
-                    onOpen={() => setTooltipOpen(prev => ({ ...prev, [rowId]: true }))}
-                    onClose={() => setTooltipOpen(prev => ({ ...prev, [rowId]: false }))}
+                    onOpen={() => setTooltipOpen((prev) => ({ ...prev, [rowId]: true }))}
+                    onClose={() => setTooltipOpen((prev) => ({ ...prev, [rowId]: false }))}
                     content={<ListIconContentElement list={createMenuWithCloseHandler()} />}
                   >
-                    <IconElement icon='open_in_browser' onClick={e => e.stopPropagation()} />
+                    <IconElement icon="open_in_browser" onClick={(e) => e.stopPropagation()} />
                   </TooltipOnHoverElement>
                 ) : (
                   <IconElement
-                    icon='open_in_browser'
+                    icon="open_in_browser"
                     disabled={disabledByParent || disabled.DISABLED_GET_ROW_MENU}
-                    onClick={e => e.stopPropagation()}
+                    onClick={(e) => e.stopPropagation()}
                   />
                 ))}
             </StackRowAlignJustCenter>
@@ -407,9 +407,9 @@ export const TableComponent: TableComponentType = ({
       <StackRowAlignCenterJustBetween sx={{ color: COLOR.BRAND[950] }}>
         {displayNode}
         <IconElement
-          icon='content_copy'
+          icon="content_copy"
           sx={{ color: COLOR.BRAND[950], fontSize: STYLE.FONT_SIZE_ICON.medium }}
-          onClick={e => {
+          onClick={(e) => {
             e.stopPropagation();
             if (!content) return;
             void navigator.clipboard.writeText(content);
@@ -429,6 +429,9 @@ export const TableComponent: TableComponentType = ({
           '& .MuiTableCell-root': {
             borderRight: BORDER_TABLE,
             borderBottom: BORDER_TABLE,
+            '&:first-of-type': {
+              borderLeft: BORDER_TABLE, 
+            },
           },
         }}
       >
@@ -436,7 +439,7 @@ export const TableComponent: TableComponentType = ({
         <TableBody>
           {loading ? (
             <TableRow>
-              <TableCell colSpan={columns.length}>
+              <TableCell sx={{ borderTopLeftRadius: '0 !important', borderTopRightRadius: '0 !important' }} colSpan={columns.length}>
                 <LoadingComponent />
               </TableCell>
             </TableRow>
@@ -485,8 +488,8 @@ export const TableComponent: TableComponentType = ({
                     }}
                   >
                     {columns.map((column, colIndex) => {
-                      const level = enableTree ? rowLevels[getRowId(row)] ?? 0 : 0;
-                      const firstDataColIndex = enableTree ? columns.findIndex(c => c.id !== 'treeToggle') : -1;
+                      const level = enableTree ? (rowLevels[getRowId(row)] ?? 0) : 0;
+                      const firstDataColIndex = enableTree ? columns.findIndex((c) => c.id !== 'treeToggle') : -1;
                       const isFirstDataCol = enableTree && colIndex === firstDataColIndex && column.id !== 'treeToggle';
 
                       return (
@@ -495,11 +498,11 @@ export const TableComponent: TableComponentType = ({
                           align={column.align}
                           sx={{
                             ...getStyleCell(column, palette, disabled.DISABLED_ROW),
-                            ...(isFirstDataCol ? { pl: theme => `calc(${theme.spacing(1)} + ${level * 16}px)` } : {}),
+                            ...(isFirstDataCol ? { pl: (theme) => `calc(${theme.spacing(1)} + ${level * 16}px)` } : {}),
                           }}
                           onClick={
                             column.id === 'actions' || column.id === 'selectCheckbox'
-                              ? e => {
+                              ? (e) => {
                                   e.stopPropagation();
                                 }
                               : undefined
@@ -527,7 +530,7 @@ export const TableComponent: TableComponentType = ({
             })
           ) : (
             <TableRow>
-              <TableCell sx={{ height: 200 }} colSpan={columns.length}>
+              <TableCell sx={{ height: 200 , borderTopLeftRadius: '0 !important', borderTopRightRadius: '0 !important' }} colSpan={columns.length}>
                 <EmptyComponent />
               </TableCell>
             </TableRow>
