@@ -30,13 +30,14 @@ export const TableHeadPart: TableHeadPartType = ({ columns }) => {
               backgroundColor: '#F9FAFB',
               verticalAlign: 'top',
               textAlign: column.alignHead ? column.alignHead : 'center',
+              borderTop: BORDER_TABLE,
               ...(column.stickyCss
                 ? {
                     ...column.stickyCss,
                     position: 'sticky',
                     backgroundColor: palette.background.paper,
                     zIndex: 4,
-                    borderRight: column.stickyCss?.left != null ? BORDER_TABLE : '',
+                    borderRight: column.stickyCss?.left != null ? BORDER_TABLE : '', 
                   }
                 : {}),
               ...(column.sx ? column.sx : {}),
