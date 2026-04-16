@@ -45,15 +45,16 @@ export const StyledTab = styled(({ icon, ...props }: { label: string; sx?: SxPro
 export const TAB_STYLES: SxProps<Theme> = {
   height: 'auto',
   position: 'relative',
-  padding: `10px ${STYLE.PADDING_GAP_LAYOUT}`,
+  padding: `4px ${STYLE.PADDING_GAP_ITEM}`,
   cursor: 'pointer',
+  
 };
 
 export const TAB_BACKGROUND_STYLES: SxProps<Theme> = {
   width: '100%',
   height: '100%',
   position: 'absolute',
-  borderRadius: STYLE.BORDER_RADIUS_ELEMENT_TAG,
+  borderRadius: '4px',
   top: 0,
-  left: 0,
+  left: 0, 
 };

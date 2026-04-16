@@ -1,6 +1,6 @@
 import { LinearProgress, linearProgressClasses, Stack, TableCell, tableCellClasses } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { STYLE } from '../../common';
+import { COLOR, STYLE } from '../../common';
 
 export const StackRow = styled(Stack)(() => ({
   flexDirection: 'row',
@@ -141,12 +141,13 @@ export const SmallIcon = styled(Stack)(({ theme }) => ({
 }));
 
 export const StackTabs = styled(Stack)(({ theme }) => ({
-  borderRadius: STYLE.BORDER_RADIUS_ELEMENT_TAG,
-  // padding: '6px',
+  borderRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
+  border: `1px solid ${COLOR.NEUTRAL[400]}`,
+  padding: '4px',
   backgroundColor: theme.palette.background.paper,
-  boxShadow: theme.shadows[1],
   width: 'fit-content',
-  gap: 'unset',
+  gap: 5,
+  alignItems: 'stretch',
 }));
 
 export const StyledTableCell = styled(TableCell)(({ theme }) => ({
