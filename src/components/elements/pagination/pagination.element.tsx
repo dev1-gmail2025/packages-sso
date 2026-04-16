@@ -1,7 +1,8 @@
-import { FormControl, MenuItem, Pagination, Select, SelectChangeEvent, SxProps, Theme, useTheme } from '@mui/material';
+import { FormControl, Pagination, SelectChangeEvent, SxProps, Theme, useTheme } from '@mui/material';
 import React from 'react';
-import { StackRowAlignCenter } from '../../styles';
 import { STYLE } from '../../../common';
+import { StackRowAlignCenter } from '../../styles';
+import { TextFieldSelectElement } from '../text-field/text-field-select/text-field-select.element';
 
 export interface PaginationElementProps {
   total?: number;
@@ -42,11 +43,17 @@ export const PaginationElement: React.FC<PaginationElementProps> = ({
         showFirstButton
         showLastButton
         onChange={handlePageChange}
-        // size="small"
-        variant="outlined"
-        shape="rounded"
+        size='medium'
+        variant='outlined'
+        shape='rounded'
         sx={{
-          '& .MuiPaginationItem-root': { margin: `0 6px 0 0` },
+          '& .MuiPagination-ul': {
+            gap: 0.5,
+          },
+          '& .MuiPaginationItem-root': {
+            borderRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
+            m: 0,
+          },
           '& .MuiPaginationItem-root.Mui-disabled': {
             opacity: 0.5,
             pointerEvents: 'none',
@@ -59,31 +66,17 @@ export const PaginationElement: React.FC<PaginationElementProps> = ({
       />
       {openRowsPerPage && (
         <StackRowAlignCenter>
-          <FormControl size="small">
-            <Select
+          <FormControl size='small'>
+            <TextFieldSelectElement
               value={displayTake}
-              onChange={handleChangeRowsPerPage}
+              onChange={event => handleChangeRowsPerPage(event as any)}
+              options={validTakes.map(take => ({ value: take, label: `${take} / trang` }))}
               sx={{
-                '&.MuiInputBase-root': {
-                  borderRadius: '6px',
-                  height: STYLE.HEIGHT_TEXT_FIELD_BUTTON.medium,
-                },
-                '& .MuiOutlinedInput-notchedOutline': {
-                  border: '1px solid var(--Neutral-300, #E4E6E6)',
-                },
-                '&:hover .MuiOutlinedInput-notchedOutline': {
-                  border: '1px solid var(--Neutral-300, #E4E6E6)',
-                },
-                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                  border: '1px solid var(--Neutral-300, #E4E6E6)',
+                '& .MuiOutlinedInput-root': {
+                  borderRadius: '0px !important',
                 },
               }}
-            >
-              <MenuItem value={5}>5 / trang</MenuItem>
-              <MenuItem value={10}>10 / trang</MenuItem>
-              <MenuItem value={25}>25 / trang</MenuItem>
-              <MenuItem value={50}>50 / trang</MenuItem>
-            </Select>
+            />
           </FormControl>
         </StackRowAlignCenter>
       )}

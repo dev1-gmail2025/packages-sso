@@ -1,4 +1,4 @@
-import { ButtonProps, createTheme, SxProps, Theme } from '@mui/material';
+import { ButtonProps, createTheme, SxProps, TextFieldProps, Theme } from '@mui/material';
 import IconDoc from '../../assets/icon/icon-doc.png';
 import IconExcel from '../../assets/icon/icon-excel.png';
 import IconPDF from '../../assets/icon/icon-pdf.png';
@@ -14,6 +14,13 @@ import { Environment, Mode } from '../enums';
 import { FileWithPreviewOrUrl } from '../interfaces';
 import { getFileExtension } from './file.util';
 
+const getControlHeight = (size: 'small' | 'medium' | 'large' = 'medium') =>
+  size === 'small'
+    ? STYLE.HEIGHT_TEXT_FIELD_BUTTON.small
+    : size === 'large'
+      ? STYLE.HEIGHT_TEXT_FIELD_BUTTON.large
+      : STYLE.HEIGHT_TEXT_FIELD_BUTTON.medium;
+
 export const getTheme = (mode = Mode.LIGHT) => {
   return createTheme({
     ...MODE[mode],
@@ -27,12 +34,6 @@ export const getTheme = (mode = Mode.LIGHT) => {
         styleOverrides: {
           root: ({ ownerState }: { ownerState: ButtonProps }) => {
             const size = ownerState?.size ?? 'medium';
-            const height =
-              size === 'small'
-                ? STYLE.HEIGHT_TEXT_FIELD_BUTTON.small
-                : size === 'large'
-                  ? STYLE.HEIGHT_TEXT_FIELD_BUTTON.large
-                  : STYLE.HEIGHT_TEXT_FIELD_BUTTON.medium;
 
             return {
               '&.Mui-disabled': {
@@ -40,7 +41,7 @@ export const getTheme = (mode = Mode.LIGHT) => {
               },
               fontWeight: 400,
               lineHeight: 'unset',
-              height,
+              height: getControlHeight(size),
             };
           },
         },
@@ -53,20 +54,47 @@ export const getTheme = (mode = Mode.LIGHT) => {
             boxShadow: MODE[mode].shadows[1],
             padding: STYLE.PADDING_GAP_ITEM,
             margin: `5px !important`,
-            borderRadius: STYLE.BORDER_RADIUS_ELEMENT_WRAPPER,
+            borderRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
             maxWidth: 'none',
           },
         },
       },
       MuiTextField: {
-        defaultProps: { variant: 'outlined', size: 'small', fullWidth: true },
+        defaultProps: { variant: 'outlined', size: 'medium', fullWidth: true },
         styleOverrides: {
-          root: {
-            '& fieldset': {
-              borderColor: MODE[mode].palette.divider,
-              borderRadius: STYLE.BORDER_RADIUS_ELEMENT,
-            },
-            '& .MuiFormHelperText-root': { ...getLimitLineCss(1) },
+          root: ({ ownerState }: { ownerState: TextFieldProps }) => {
+            const size = ownerState?.size ?? 'medium';
+            return {
+              '& fieldset': {
+                borderColor: MODE[mode].palette.divider,
+                borderRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
+              },
+              '& .MuiOutlinedInput-root': {
+                height: getControlHeight(size),
+              },
+              '& .MuiFormHelperText-root': { ...getLimitLineCss(1) },
+            };
+          },
+        },
+      },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: ({ ownerState }: { ownerState: TextFieldProps }) => {
+            const size = ownerState?.size ?? 'medium';
+            return {
+              '&:not(.MuiInputBase-multiline)': {
+                height: getControlHeight(size),
+              },
+            };
+          },
+          input: {
+            paddingTop: 0,
+            paddingBottom: 0,
+            height: '100%',
+          },
+          inputSizeSmall: {
+            paddingTop: 0,
+            paddingBottom: 0,
           },
         },
       },
@@ -82,12 +110,12 @@ export const getTheme = (mode = Mode.LIGHT) => {
             boxShadow: 'none',
             border: 'none',
             '&:first-of-type': {
-              borderTopLeftRadius: STYLE.BORDER_RADIUS_ELEMENT,
-              borderBottomLeftRadius: STYLE.BORDER_RADIUS_ELEMENT,
+              borderTopLeftRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
+              borderBottomLeftRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
             },
             '&:last-of-type': {
-              borderTopRightRadius: STYLE.BORDER_RADIUS_ELEMENT,
-              borderBottomRightRadius: STYLE.BORDER_RADIUS_ELEMENT,
+              borderTopRightRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
+              borderBottomRightRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
             },
           },
         },
