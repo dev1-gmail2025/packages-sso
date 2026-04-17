@@ -45,6 +45,7 @@ export const TextFieldSelectElement: React.FC<TextFieldSelectElementProps> = ({
       <TextFieldLabelElement label={label} iconLabel={iconLabel} required={rest.required} />
       <TextField
         select
+        fullWidth
         {...rest}
         error={Boolean(error)}
         helperText={helperText || error}

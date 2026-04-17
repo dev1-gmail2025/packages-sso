@@ -81,6 +81,28 @@ export const getTheme = (mode = Mode.LIGHT) => {
           },
         },
       },
+      MuiPickersTextField: {
+        defaultProps: { variant: 'outlined', size: 'medium', fullWidth: true },
+        styleOverrides: {
+          root: ({ ownerState }: { ownerState: TextFieldProps }) => {
+            const size = ownerState?.size ?? 'medium';
+            return {
+              '& fieldset': {
+                borderColor: MODE[mode].palette.divider,
+                borderRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
+              },
+              '& .MuiOutlinedInput-root': {
+                height: getControlHeight(size),
+                '&.MuiAutocomplete-inputRoot': {
+                  height: 'auto',
+                  minHeight: getControlHeight(size),
+                },
+              },
+              '& .MuiFormHelperText-root': { ...getLimitLineCss(1) },
+            };
+          },
+        },
+      },
       MuiOutlinedInput: {
         styleOverrides: {
           root: ({ ownerState }: { ownerState: TextFieldProps }) => {
@@ -99,10 +121,10 @@ export const getTheme = (mode = Mode.LIGHT) => {
                 paddingTop: 0,
                 paddingBottom: 0,
               },
-              '&.MuiAutocomplete-inputRoot .MuiAutocomplete-endAdornment': {
-                top: '50%',
-                transform: 'translateY(-50%)',
-              },
+              // '&.MuiAutocomplete-inputRoot .MuiAutocomplete-endAdornment': {
+              //   top: '50%',
+              //   transform: 'translateY(-50%)',
+              // },
             };
           },
           input: {
@@ -113,6 +135,28 @@ export const getTheme = (mode = Mode.LIGHT) => {
           inputSizeSmall: {
             paddingTop: 0,
             paddingBottom: 0,
+          },
+        },
+      },
+      MuiAutocomplete: {
+        styleOverrides: {
+          root: ({ ownerState }: { ownerState: { size?: 'small' | 'medium' } }) => {
+            const size = ownerState?.size ?? 'medium';
+            return {
+              width: '100%',
+              '& .MuiOutlinedInput-root': { height: getControlHeight(size) },
+              '& .MuiOutlinedInput-root.MuiAutocomplete-inputRoot': {
+                height: 'auto',
+                minHeight: getControlHeight(size),
+                alignItems: 'center',
+                paddingTop: 0,
+                paddingBottom: 0,
+              },
+              // '& .MuiAutocomplete-endAdornment': {
+              //   top: '50%',
+              //   transform: 'translateY(-50%)',
+              // },
+            };
           },
         },
       },
