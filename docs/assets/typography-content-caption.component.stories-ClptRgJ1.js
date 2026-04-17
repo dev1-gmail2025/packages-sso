@@ -1,0 +1,13 @@
+import{j as t}from"./jsx-runtime-D_zvdyIk.js";import{T as r}from"./typography-content-caption.component-Ba3g4VQK.js";import{S as g}from"./Stack-BWemv0CO.js";import"./ckeditor-DTi0F4Ht.js";import"./index-j62jqFia.js";import"./other.util-DImCMSsI.js";import"./defaultTheme-CAzuqlo8.js";import"./time.util-BYguZ9lS.js";import"./Typography-Bf8WTvH-.js";import"./DefaultPropsProvider-BwONcEM9.js";import"./index-F4SWrtxx.js";import"./extendSxProp-BhkXlpcg.js";import"./memoTheme-JcuT4PI6.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./createStack-_FjnXW6X.js";const T={content:{control:"text",description:"Main content text.",table:{type:{summary:"any"}}},caption:{control:"text",description:"Caption text.",table:{type:{summary:"string"}}},userTitleName:{control:"text",description:"Optional title line between content and caption.",table:{type:{summary:"string"}}},sx:{control:!1},sxContent:{control:!1},sxCaption:{control:!1}},v={title:"Elements/Typography/TypographyContentCaption",component:r,tags:["autodocs"],args:{content:"Nguyễn Văn A",userTitleName:"Quản trị viên",caption:"Online"},parameters:{layout:"padded"},argTypes:T},e={},n={args:{userTitleName:void 0}},o={render:a=>t.jsxs(g,{spacing:2,sx:{maxWidth:320},children:[t.jsx(r,{...a,content:"Nguyễn Văn A",caption:"Staff",userTitleName:"HR"}),t.jsx(r,{...a,content:"Hoàng Bùi",caption:"Admin",userTitleName:"System"}),t.jsx(r,{...a,content:"Trần B",caption:"Offline",userTitleName:void 0})]})};var s,i,p;e.parameters={...e.parameters,docs:{...(s=e.parameters)==null?void 0:s.docs,source:{originalSource:"{}",...(p=(i=e.parameters)==null?void 0:i.docs)==null?void 0:p.source}}};var c,m,l;n.parameters={...n.parameters,docs:{...(c=n.parameters)==null?void 0:c.docs,source:{originalSource:`{
+  args: {
+    userTitleName: undefined
+  }
+}`,...(l=(m=n.parameters)==null?void 0:m.docs)==null?void 0:l.source}}};var u,d,y;o.parameters={...o.parameters,docs:{...(u=o.parameters)==null?void 0:u.docs,source:{originalSource:`{
+  render: args => <Stack spacing={2} sx={{
+    maxWidth: 320
+  }}>\r
+      <TypographyContentCaption {...args} content="Nguyễn Văn A" caption="Staff" userTitleName="HR" />\r
+      <TypographyContentCaption {...args} content="Hoàng Bùi" caption="Admin" userTitleName="System" />\r
+      <TypographyContentCaption {...args} content="Trần B" caption="Offline" userTitleName={undefined} />\r
+    </Stack>
+}`,...(y=(d=o.parameters)==null?void 0:d.docs)==null?void 0:y.source}}};const M=["Default","WithoutTitle","ManyExamples"];export{e as Default,o as ManyExamples,n as WithoutTitle,M as __namedExportsOrder,v as default};

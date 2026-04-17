@@ -8,7 +8,7 @@ import { AvatarElement } from '../../avatar';
 import { IconElement } from '../../icon';
 import { TextFieldLabelElement } from '../text-field-label/text-field-label.element';
 
-interface TextFieldSelectElementProps extends BaseTextFieldProps {
+export interface TextFieldSelectElementProps extends BaseTextFieldProps {
   openTest?: boolean;
   iconLabel?: string;
   options: any[];

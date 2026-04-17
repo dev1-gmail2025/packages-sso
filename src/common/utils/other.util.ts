@@ -71,6 +71,10 @@ export const getTheme = (mode = Mode.LIGHT) => {
               },
               '& .MuiOutlinedInput-root': {
                 height: getControlHeight(size),
+                '&.MuiAutocomplete-inputRoot': {
+                  height: 'auto',
+                  minHeight: getControlHeight(size),
+                },
               },
               '& .MuiFormHelperText-root': { ...getLimitLineCss(1) },
             };
@@ -85,6 +89,20 @@ export const getTheme = (mode = Mode.LIGHT) => {
               '&:not(.MuiInputBase-multiline)': {
                 height: getControlHeight(size),
               },
+              // Autocomplete multiple renders tags (chips) inside the input root.
+              // Fixed height causes tags to overflow outside the field.
+              '&.MuiAutocomplete-inputRoot': {
+                height: 'auto',
+                minHeight: getControlHeight(size),
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                paddingTop: 0,
+                paddingBottom: 0,
+              },
+              '&.MuiAutocomplete-inputRoot .MuiAutocomplete-endAdornment': {
+                top: '50%',
+                transform: 'translateY(-50%)',
+              },
             };
           },
           input: {
@@ -95,6 +113,16 @@ export const getTheme = (mode = Mode.LIGHT) => {
           inputSizeSmall: {
             paddingTop: 0,
             paddingBottom: 0,
+          },
+        },
+      },
+      MuiChip: {
+        styleOverrides: {
+          root: {
+            alignItems: 'center',
+          },
+          label: {
+            lineHeight: 1.2,
           },
         },
       },

@@ -69,8 +69,7 @@
     "eslint-plugin-prettier": "^5.5.4",
     "exceljs": "^4.4.0",
     "file-saver": "^2.0.5",
-    "prettier": "^3.8.1",
-    "sevago-sso-fe": "^1.0.165"
+    "prettier": "^3.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
