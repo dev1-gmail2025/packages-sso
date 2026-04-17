@@ -22,7 +22,7 @@ export const IconContentBadgeElement: React.FC<IconContentBadgeElementProps> = (
       {badgeCount > 0 && (
         <Badge
           badgeContent={badgeCount}
-          color="error"
+          color='error'
           slotProps={{
             badge: { sx: { position: 'static', transform: 'none', alignSelf: 'center', ...sxBadge } },
           }}
@@ -30,7 +30,7 @@ export const IconContentBadgeElement: React.FC<IconContentBadgeElementProps> = (
       )}
     </StackRowJustBetween>
   ) : (
-    <Badge badgeContent={badgeCount} color="error" slotProps={{ badge: { sx: { top: -8, right: 3, ...sxBadge } } }}>
+    <Badge badgeContent={badgeCount} color='error' slotProps={{ badge: { sx: { top: -8, right: 3, ...sxBadge } } }}>
       <IconContentElement {...rest} />
     </Badge>
   );

@@ -7,14 +7,14 @@ import React from 'react';
 import { STYLE } from '../../../common';
 import { IconElement } from '../icon';
 
-interface StyledTabsProps {
+export interface StyledTabsProps {
   children?: React.ReactNode;
   value: number;
   onChange: (event: React.SyntheticEvent, newValue: number) => void;
   sx?: SxProps<Theme>;
 }
 export const StyledTabs = styled((props: StyledTabsProps) => (
-  <Tabs {...props} TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }} />
+  <Tabs {...props} TabIndicatorProps={{ children: <span className='MuiTabs-indicatorSpan' /> }} />
 ))({
   '& .MuiTabs-indicator': {
     display: 'flex',
@@ -29,7 +29,7 @@ export const StyledTabs = styled((props: StyledTabsProps) => (
 });
 
 export const StyledTab = styled(({ icon, ...props }: { label: string; sx?: SxProps; icon?: string }) => (
-  <Tab icon={icon ? <IconElement icon={icon} /> : undefined} iconPosition="start" disableRipple {...props} />
+  <Tab icon={icon ? <IconElement icon={icon} /> : undefined} iconPosition='start' disableRipple {...props} />
 ))(({}) => ({
   padding: '8px',
   paddingBottom: '8px',
@@ -47,7 +47,6 @@ export const TAB_STYLES: SxProps<Theme> = {
   position: 'relative',
   padding: `4px ${STYLE.PADDING_GAP_ITEM}`,
   cursor: 'pointer',
-  
 };
 
 export const TAB_BACKGROUND_STYLES: SxProps<Theme> = {
@@ -56,5 +55,14 @@ export const TAB_BACKGROUND_STYLES: SxProps<Theme> = {
   position: 'absolute',
   borderRadius: '4px',
   top: 0,
-  left: 0, 
+  left: 0,
+};
+
+export const TAB_WRAPPER_STYLES: SxProps<Theme> = {
+  borderRadius: STYLE.BORDER_RADIUS_ELEMENT_WRAPPER,
+  padding: '6px',
+  backgroundColor: 'background.paper',
+  boxShadow: 1,
+  width: 'fit-content',
+  gap: 'unset',
 };
