@@ -64,13 +64,14 @@ export const getTheme = (mode = Mode.LIGHT) => {
         styleOverrides: {
           root: ({ ownerState }: { ownerState: TextFieldProps }) => {
             const size = ownerState?.size ?? 'medium';
+            const isMultiline = Boolean(ownerState?.multiline || ownerState?.rows);
             return {
               '& fieldset': {
                 borderColor: MODE[mode].palette.divider,
                 borderRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
               },
               '& .MuiOutlinedInput-root': {
-                height: getControlHeight(size),
+                ...(isMultiline ? {} : { height: getControlHeight(size) }),
                 '&.MuiAutocomplete-inputRoot': {
                   height: 'auto',
                   minHeight: getControlHeight(size),
@@ -86,13 +87,14 @@ export const getTheme = (mode = Mode.LIGHT) => {
         styleOverrides: {
           root: ({ ownerState }: { ownerState: TextFieldProps }) => {
             const size = ownerState?.size ?? 'medium';
+            const isMultiline = Boolean((ownerState as any)?.multiline || (ownerState as any)?.rows);
             return {
               '& fieldset': {
                 borderColor: MODE[mode].palette.divider,
                 borderRadius: STYLE.BORDER_RADIUS_ELEMENT_SMALL,
               },
               '& .MuiOutlinedInput-root': {
-                height: getControlHeight(size),
+                ...(isMultiline ? {} : { height: getControlHeight(size) }),
                 '&.MuiAutocomplete-inputRoot': {
                   height: 'auto',
                   minHeight: getControlHeight(size),
