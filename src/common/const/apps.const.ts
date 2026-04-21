@@ -359,6 +359,32 @@ export const APP_OBJ = {
     group: AppGroup.MANUFACTURING,
     color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
   },
+  PRODUCT_MANAGEMENT: {
+    path: {
+      local: 'http://localhost:12027',
+      develop: 'https://dev.admin.product-management.sevago.local',
+      staging: 'https://sta.admin.product-management.sevago.local',
+      production: 'https://admin.product-management.sevago.local',
+      production_vps: '',
+    },
+    icon: ICONS.iconMaterialControl,
+    content: 'Quản lý sản phẩm',
+    group: AppGroup.MANUFACTURING,
+    color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
+  },
+  QUALITY_MANAGEMENT: {
+    path: {
+      local: 'http://localhost:12029',
+      develop: 'https://dev.admin.quality-management.sevago.local',
+      staging: 'https://sta.admin.quality-management.sevago.local',
+      production: 'https://admin.quality-management.sevago.local',
+      production_vps: '',
+    },
+    icon: ICONS.iconMaterialControl,
+    content: 'Quản lý chất lượng',
+    group: AppGroup.MANUFACTURING,
+    color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
+  },
 };
 
 // PRODUCT_MANAGEMENT_ADMIN_PORT=12027
