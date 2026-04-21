@@ -1,0 +1,50 @@
+import{j as r}from"./jsx-runtime-D_zvdyIk.js";import{f as t}from"./index-DtL3pAzF.js";import{r as D}from"./index-j62jqFia.js";import{a as n}from"./card-statistic.component-DFP4UEp4.js";import{S as x}from"./Stack-PxG0HRcj.js";import"./avatar-group.element-BJs1luY2.js";import"./ckeditor-Cewk8mXO.js";import"./time.util-BYguZ9lS.js";import"./typography.style-QOdJo2K8.js";import"./image.element-CTh3wCKK.js";import"./stack.style-CupkF9jl.js";import"./memoTheme-JcuT4PI6.js";import"./defaultTheme-CAzuqlo8.js";import"./DefaultPropsProvider-BwONcEM9.js";import"./Stack-BWemv0CO.js";import"./createStack-_FjnXW6X.js";import"./extendSxProp-BhkXlpcg.js";import"./index-DP7gAqwz.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./useTheme--firQ3HK.js";import"./Box-CJND6-sR.js";import"./InputLabel-Xf4L_974.js";import"./useFormControl-CmOg5wnR.js";import"./link.element-BIiOul_5.js";import"./Typography-Bf8WTvH-.js";import"./index-F4SWrtxx.js";import"./isFocusVisible-B8k4qzLc.js";import"./other.util-BArkCm4j.js";import"./icon-button.element-B93xAhJf.js";import"./icon.element-CptAJWm0.js";import"./useId-CFSqmtgZ.js";import"./ButtonBase-DMmz3Ngg.js";import"./useTimeout-BnjI5Ij7.js";import"./useEnhancedEffect-Dmr-a5D-.js";import"./TransitionGroupContext-DM7DmuUd.js";import"./useForkRef-BVpE-hzr.js";import"./CircularProgress-SwCU_jrE.js";import"./icon-content-badge-subs.element-BASBk5Xj.js";import"./tooltip-on-click.element-DkCofoav.js";import"./getReactElementRef-BVRziQZO.js";import"./index-CWS0_3Nh.js";import"./index-Ctr1kwqx.js";import"./Grow-DOIJXnb6.js";import"./useSlot-BHAemyrm.js";import"./Tooltip-C-jnBW1Q.js";import"./useControlled-CdETZoY_.js";import"./icon-content-badge.element--ppb6rax.js";import"./icon-content.element-BwzHMvpT.js";import"./Badge-4F4pJWAG.js";import"./ownerWindow-SaFBzm43.js";import"./createSvgIcon-CgF2gLAa.js";import"./proxy-DKXG_8Nh.js";import"./avatar.element-DxWhDApQ.js";import"./Popover-Dcprfih5.js";import"./mergeSlotProps-C1T8RA4K.js";import"./createChainedFunction-BO_9K8Jh.js";import"./Fade-NGFjKnxD.js";import"./avatar-online-status.element-C8YQu5iN.js";import"./avatar-user-info-detail.element-DhKlCMsF.js";import"./avatar-user-info-update.element-yQ3SfcIH.js";import"./string.util-DkuOPhSi.js";import"./loading.component-BuuOckPB.js";import"./avatar-user-info.element-BMJ4eSsI.js";import"./breadcrumb.element-eHL8iJO_.js";import"./button-icon-content-opacity.element-Cnu7kYv0.js";import"./Button-oCoBaHSt.js";import"./button-icon.element-EFGhmDUG.js";import"./time-ago-content.component-bq3Ezs-R.js";import"./typography-content-caption.component-5vfQUz5S.js";import"./typography-grid-info-row.component-Bn3ekmpA.js";import"./typography-info-row.component-WG734_iQ.js";import"./typography-info-user.component-DK-mqBgd.js";import"./text-field-date.element-BLOdENef.js";import"./picker.style-DtPffRxq.js";import"./text-field-label.element-BdaCc7Wc.js";import"./DatePicker-DXZ1lizp.js";import"./useMobilePicker-Dxs5aOXh.js";import"./TextField-BEYRgNgZ.js";import"./FormControl-CkqPUPi_.js";import"./isMuiElement-BY4WSVWD.js";import"./List-sl9rBPBu.js";import"./ListItem-75WI95rP.js";import"./Chip-XHsgVC5o.js";import"./text-field-date-range.element-0zDedPl8.js";import"./text-field-date-time.element-BW1a49g_.js";import"./MenuItem-pKhNro2o.js";import"./text-field-email-autocomplete.element-BFvUKMSy.js";import"./Autocomplete-BJ-LJ4M9.js";import"./text-field-select.element-Dc4stuEl.js";import"./empty.component-eDNNP7S5.js";import"./text-field-select-search-object.element-CVpusmkg.js";import"./text-highlight.element-7r4ACzVc.js";import"./text-field.element-BMTFuiR6.js";import"./typography-limit-one-line.component-C9IdfHj2.js";import"./time-ago.component-DKvo6Uc1.js";import"./button-image.element-DEQoI8tC.js";import"./button-upload-file.element-DiAX4oPc.js";import"./button.element-DW21zqxr.js";import"./check-box.element-rJK9allH.js";import"./FormControlLabel-DhTDT6Oy.js";import"./collapsible-section.component-BjeRh4SJ.js";import"./Collapse-Cv26H6Io.js";import"./dialog.element-CJMN2xfp.js";import"./dialog-confirm-action.element-jevjJpP3.js";import"./dashed-divider.element-CtFYemWC.js";import"./Box-C8MUALAm.js";import"./list-icon-content.element-BMXbyszm.js";import"./pagination.element-Q9Dr4j21.js";import"./radio-group.element-CdBiWEB2.js";import"./radio.element-jcFxjwJV.js";import"./switch.element-DBiBEZmr.js";import"./switch-content.element-Gy5fC6RA.js";import"./tag.element-CJe8DTrl.js";import"./user-info.element-qTcDkUNu.js";import"./wrapper-chart.element-C7XIIaec.js";import"./wrapper-content.element-DTW7y9c5.js";import"./wrapper.element-C3B1r2yS.js";import"./wrapper-center.element-DfHO7zOv.js";import"./note.component-BKJ-Fyed.js";import"./price.component-BtW1LJam.js";const h={loading:{control:"boolean",table:{type:{summary:"boolean"},defaultValue:{summary:"false"}}},columns:{control:!1,table:{type:{summary:"Column<R>[]"}}},rows:{control:!1,table:{type:{summary:"R[]"}}},indexLoadingRow:{control:"number",table:{type:{summary:"number | undefined"}}},isStickyActions:{control:"boolean",table:{type:{summary:"boolean"},defaultValue:{summary:"false"}}},onClickSelectRow:{control:"boolean",table:{type:{summary:"boolean"},defaultValue:{summary:"false"}}},selectedRows:{control:!1},rowSx:{control:!1},rowKey:{control:!1},requiredPermissions:{control:!1},onClickRow:{action:"rowClicked"},onSelectRows:{action:"rowsSelected"},onSelectRow:{action:"selectAction"},onDeleteRow:{action:"deleteAction"},onInfoRow:{action:"infoAction"},onCopyRow:{action:"copyAction"},onHistoryRow:{action:"historyAction"},onUpdateRow:{action:"updateAction"},getActionIcon:{control:!1},getRowMenu:{control:!1},onDisabled:{control:!1}},E=[{id:"name",label:"Name",width:180},{id:"email",label:"Email",width:230,copyable:!0},{id:"role",label:"Role",width:120,align:"center",alignHead:"center"},{id:"status",label:"Status",width:120,align:"center",alignHead:"center",render:o=>o.status==="Active"?"Active":"Inactive"}],T=Array.from({length:20},(o,e)=>({id:`u${e+1}`,name:`Le Van C ${e+1}`,email:`c${e+1}@company.com`,role:"Viewer",status:"Inactive"})),qt={title:"Elements/Table/Table",component:n,tags:["autodocs"],parameters:{layout:"padded"},args:{loading:!1,columns:E,rows:T,onClickSelectRow:!1,isStickyActions:!1,indexLoadingRow:void 0,onClickRow:t(),onDisabled:()=>({}),getRowMenu:()=>[{content:"Open",icon:"open_in_new",onClick:t()},{content:"History",icon:"history",onClick:t()},{content:"Update",icon:"update",onClick:t()}]},argTypes:h},i={render:o=>r.jsx(x,{sx:{width:"100%",height:"300px"},children:r.jsx(n,{...o})})},m={render:o=>r.jsx(n,{...o}),args:{loading:!0}},a={render:o=>r.jsx(n,{...o}),args:{rows:[]}},p={render:o=>{const[e,A]=D.useState([]);return r.jsx(n,{...o,selectedRows:e,onSelectRows:s=>{var c;A(s),(c=o.onSelectRows)==null||c.call(o,s)}})},args:{onSelectRows:t(),onSelectRow:t(),onDeleteRow:t(),onInfoRow:t(),onCopyRow:t(),onHistoryRow:t(),onUpdateRow:t(),getRowMenu:o=>[{content:`Open ${o.name}`,icon:"open_in_new",onClick:t()},{content:"View detail",icon:"info",onClick:t()}],onDisabled:(o,e)=>({DELETE:e===0,UPDATE:e===2}),onClickSelectRow:!0,isStickyActions:!0}};var l,d,w;i.parameters={...i.parameters,docs:{...(l=i.parameters)==null?void 0:l.docs,source:{originalSource:`{
+  render: args => <Stack sx={{
+    width: '100%',
+    height: '300px'
+  }}>\r
+      <TableComponent<DemoRow> {...args} />\r
+    </Stack>
+}`,...(w=(d=i.parameters)==null?void 0:d.docs)==null?void 0:w.source}}};var u,R,f;m.parameters={...m.parameters,docs:{...(u=m.parameters)==null?void 0:u.docs,source:{originalSource:`{
+  render: args => <TableComponent<DemoRow> {...args} />,
+  args: {
+    loading: true
+  }
+}`,...(f=(R=m.parameters)==null?void 0:R.docs)==null?void 0:f.source}}};var g,y,S;a.parameters={...a.parameters,docs:{...(g=a.parameters)==null?void 0:g.docs,source:{originalSource:`{
+  render: args => <TableComponent<DemoRow> {...args} />,
+  args: {
+    rows: []
+  }
+}`,...(S=(y=a.parameters)==null?void 0:y.docs)==null?void 0:S.source}}};var b,C,k;p.parameters={...p.parameters,docs:{...(b=p.parameters)==null?void 0:b.docs,source:{originalSource:`{
+  render: args => {
+    const [selectedRows, setSelectedRows] = useState<string[]>([]);
+    return <TableComponent<DemoRow> {...args} selectedRows={selectedRows} onSelectRows={ids => {
+      setSelectedRows(ids);
+      args.onSelectRows?.(ids);
+    }} />;
+  },
+  args: {
+    onSelectRows: fn(),
+    onSelectRow: fn(),
+    onDeleteRow: fn(),
+    onInfoRow: fn(),
+    onCopyRow: fn(),
+    onHistoryRow: fn(),
+    onUpdateRow: fn(),
+    getRowMenu: row => [{
+      content: \`Open \${row.name}\`,
+      icon: 'open_in_new',
+      onClick: fn()
+    }, {
+      content: 'View detail',
+      icon: 'info',
+      onClick: fn()
+    }],
+    onDisabled: (_row: DemoRow, index: number) => ({
+      DELETE: index === 0,
+      UPDATE: index === 2
+    }),
+    onClickSelectRow: true,
+    isStickyActions: true
+  }
+}`,...(k=(C=p.parameters)==null?void 0:C.docs)==null?void 0:k.source}}};const Kt=["Default","Loading","Empty","WithActionsAndSelect"];export{i as Default,a as Empty,m as Loading,p as WithActionsAndSelect,Kt as __namedExportsOrder,qt as default};
