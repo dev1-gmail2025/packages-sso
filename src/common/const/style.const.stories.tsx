@@ -48,9 +48,9 @@ const TypographyPreview: React.FC = () => {
 
   return (
     <Stack spacing={2}>
-      <Typography variant='h6'>TYPOGRAPHY (preview)</Typography>
+      <Typography variant="h6">TYPOGRAPHY (preview)</Typography>
       <Stack spacing={2}>
-        {sizes.map(sizeKey => {
+        {sizes.map((sizeKey) => {
           const weightGroup = (typography as Record<string, unknown>)[sizeKey];
           if (!isPlainObject(weightGroup)) return null;
           const weights = sortKeys(Object.keys(weightGroup));
@@ -60,12 +60,12 @@ const TypographyPreview: React.FC = () => {
               key={sizeKey}
               sx={{ border: '1px solid rgba(0,0,0,0.08)', borderRadius: 2, padding: 2, background: '#fff' }}
             >
-              <Typography variant='subtitle1' sx={{ fontWeight: 800, marginBottom: 1 }}>
+              <Typography variant="subtitle1" sx={{ fontWeight: 800, marginBottom: 1 }}>
                 {sizeKey}
               </Typography>
 
               <Stack spacing={1.25}>
-                {weights.map(w => {
+                {weights.map((w) => {
                   const css = (weightGroup as Record<string, unknown>)[w];
                   if (!isPlainObject(css)) return null;
                   const { fontSize, lineHeight, fontWeight, letterSpacing, fontFamily } = css as Record<
@@ -92,7 +92,7 @@ const TypographyPreview: React.FC = () => {
                           {sample}
                         </Box>
                         <Typography
-                          variant='caption'
+                          variant="caption"
                           sx={{
                             opacity: 0.75,
                             fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
@@ -123,7 +123,7 @@ export const Overview: Story = {
 
     return (
       <Stack spacing={3}>
-        <Typography variant='h5'>Style tokens</Typography>
+        <Typography variant="h5">Style tokens</Typography>
         <Typography sx={{ opacity: 0.7 }}>
           Source: <code>src/common/const/style.const.ts</code>
         </Typography>
@@ -131,7 +131,7 @@ export const Overview: Story = {
 
         {scalar.length ? (
           <Stack spacing={1}>
-            <Typography variant='h6'>Scalars</Typography>
+            <Typography variant="h6">Scalars</Typography>
             <Box
               sx={{
                 border: '1px solid rgba(0,0,0,0.08)',

@@ -43,7 +43,7 @@ export default meta;
 type Story = StoryObj<typeof TextFieldSelectSearchObjectElement>;
 
 export const Default: Story = {
-  render: args => {
+  render: (args) => {
     const [value, setValue] = React.useState<any>(args.value ?? null);
     const [options, setOptions] = React.useState<any[]>(Array.isArray(args.options) ? args.options : []);
     const [loading, setLoading] = React.useState<boolean>(Boolean(args.loading));
@@ -56,7 +56,7 @@ export const Default: Story = {
         value={value}
         getOptionLabel={(opt: any) => opt?.label ?? ''}
         isOptionEqualToValue={(opt: any, val: any) => opt?.value === val?.value}
-        onChange={event => {
+        onChange={(event) => {
           setValue(event.target.value);
           args.onChange?.(event);
         }}
@@ -65,7 +65,7 @@ export const Default: Story = {
             setLoading(true);
             // Fake async search to demonstrate loading UI.
             window.setTimeout(() => {
-              const next = baseOptions.filter(opt =>
+              const next = baseOptions.filter((opt) =>
                 String(opt.label).toLowerCase().includes(String(newInputValue).toLowerCase()),
               );
               setOptions(next);
@@ -103,7 +103,7 @@ export const Loading: Story = {
 };
 
 export const Multiple: Story = {
-  render: args => {
+  render: (args) => {
     const [value, setValue] = React.useState<any[]>(Array.isArray(args.value) ? args.value : []);
 
     return (
@@ -114,7 +114,7 @@ export const Multiple: Story = {
         options={Array.isArray(args.options) ? args.options : baseOptions}
         getOptionLabel={(opt: any) => opt?.label ?? ''}
         isOptionEqualToValue={(opt: any, val: any) => opt?.value === val?.value}
-        onChange={event => {
+        onChange={(event) => {
           setValue(event.target.value as unknown as any[]);
           args.onChange?.(event);
         }}
@@ -148,4 +148,3 @@ export const FreeSolo: Story = {
     freeSolo: true,
   },
 };
-

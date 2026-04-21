@@ -44,7 +44,7 @@ export const TextFieldSearchElement: React.FC<TextFieldSearchElementProps> = ({
         // value={value}
         placeholder={placeholder}
         onChange={change}
-        name='search'
+        name="search"
         inputRef={inputRef}
         {...(rows && { rows, multiline: true })}
         {...(searchIcon && {

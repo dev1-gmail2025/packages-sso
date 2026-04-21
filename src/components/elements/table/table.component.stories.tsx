@@ -24,7 +24,7 @@ const demoColumns: Column<DemoRow>[] = [
     width: 120,
     align: 'center',
     alignHead: 'center',
-    render: row => (row.status === 'Active' ? 'Active' : 'Inactive'),
+    render: (row) => (row.status === 'Active' ? 'Active' : 'Inactive'),
   },
 ];
 
@@ -65,7 +65,7 @@ export default meta;
 type Story = StoryObj<typeof TableComponent<DemoRow>>;
 
 export const Default: Story = {
-  render: args => (
+  render: (args) => (
     <Stack sx={{ width: '100%', height: '300px' }}>
       <TableComponent<DemoRow> {...args} />
     </Stack>
@@ -73,27 +73,27 @@ export const Default: Story = {
 };
 
 export const Loading: Story = {
-  render: args => <TableComponent<DemoRow> {...args} />,
+  render: (args) => <TableComponent<DemoRow> {...args} />,
   args: {
     loading: true,
   },
 };
 
 export const Empty: Story = {
-  render: args => <TableComponent<DemoRow> {...args} />,
+  render: (args) => <TableComponent<DemoRow> {...args} />,
   args: {
     rows: [],
   },
 };
 
 export const WithActionsAndSelect: Story = {
-  render: args => {
+  render: (args) => {
     const [selectedRows, setSelectedRows] = useState<string[]>([]);
     return (
       <TableComponent<DemoRow>
         {...args}
         selectedRows={selectedRows}
-        onSelectRows={ids => {
+        onSelectRows={(ids) => {
           setSelectedRows(ids);
           args.onSelectRows?.(ids);
         }}
@@ -108,7 +108,7 @@ export const WithActionsAndSelect: Story = {
     onCopyRow: fn(),
     onHistoryRow: fn(),
     onUpdateRow: fn(),
-    getRowMenu: row => [
+    getRowMenu: (row) => [
       { content: `Open ${row.name}`, icon: 'open_in_new', onClick: fn() },
       { content: 'View detail', icon: 'info', onClick: fn() },
     ],

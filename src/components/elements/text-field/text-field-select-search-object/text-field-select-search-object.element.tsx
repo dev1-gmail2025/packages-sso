@@ -87,7 +87,7 @@ export const TextFieldSelectSearchObjectElement: React.FC<TextFieldSelectSearchO
                 key={index}
                 avatar={showAvatar ? <AvatarElement url={option.url} alt={option.label} /> : undefined}
                 label={getOptionLabel ? getOptionLabel(option) : (option as any)?.label || ''}
-                size='small'
+                size="small"
                 sx={
                   {
                     '& .MuiChip-avatar': {
@@ -103,7 +103,7 @@ export const TextFieldSelectSearchObjectElement: React.FC<TextFieldSelectSearchO
           {remaining > 0 && (
             <Chip
               label={`+${remaining}`}
-              size='small'
+              size="small"
               sx={{
                 backgroundColor: 'grey.300',
                 color: 'text.primary',
@@ -197,12 +197,12 @@ export const TextFieldSelectSearchObjectElement: React.FC<TextFieldSelectSearchO
         disableCloseOnSelect={multiple}
         fullWidth={fullWidth}
         loading={loading}
-        clearIcon={<IconElement icon='close_small' />}
-        popupIcon={<IconElement icon='arrow_drop_down' />}
+        clearIcon={<IconElement icon="close_small" />}
+        popupIcon={<IconElement icon="arrow_drop_down" />}
         isOptionEqualToValue={isOptionEqualToValue}
         noOptionsText={<EmptyComponent />}
         loadingText={<LoadingComponent />}
-        renderInput={params => (
+        renderInput={(params) => (
           <TextField
             {...params}
             InputProps={{

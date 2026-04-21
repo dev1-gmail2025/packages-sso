@@ -58,10 +58,10 @@ export const TextFieldMonthYearElement: React.FC<TextFieldMonthYearElementProps>
         minDate={minDate}
         maxDate={maxDate}
         value={value ? dayjs(value) : null}
-        onChange={newVal => onChange?.(newVal ? (dayjs.isDayjs(newVal) ? newVal.toDate() : newVal) : null)}
+        onChange={(newVal) => onChange?.(newVal ? (dayjs.isDayjs(newVal) ? newVal.toDate() : newVal) : null)}
         format={format}
         name={name}
-        slots={{ openPickerIcon: () => <IconElement icon='calendar_today' /> }}
+        slots={{ openPickerIcon: () => <IconElement icon="calendar_today" /> }}
         slotProps={{
           textField: ({ inputProps, ...rest }: any) => ({
             ...rest,

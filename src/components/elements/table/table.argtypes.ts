@@ -45,4 +45,3 @@ export const tableArgTypes: Partial<ArgTypes<TableProps>> = {
   getRowMenu: { control: false },
   onDisabled: { control: false },
 };
-

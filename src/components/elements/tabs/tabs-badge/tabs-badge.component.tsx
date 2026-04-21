@@ -29,7 +29,7 @@ export const TabsBadgeComponent: React.FC<TabsBadgeComponentProps> = ({
   return (
     <LayoutGroup id={layoutGroupId}>
       <Stack direction={direction as any} sx={{ ...TAB_WRAPPER_STYLES, ...sx } as SxProps<Theme>}>
-        {tabs.map(tab => (
+        {tabs.map((tab) => (
           <LinkElement
             component={tab.href ? 'a' : 'span'}
             href={tab.href}
@@ -57,7 +57,7 @@ export const TabsBadgeComponent: React.FC<TabsBadgeComponentProps> = ({
                 <Stack
                   component={motion.div}
                   sx={TAB_BACKGROUND_STYLES}
-                  layoutId='selected'
+                  layoutId="selected"
                   animate={{ backgroundColor: palette.primary.main }}
                   initial={{ backgroundColor: palette.primary.main }}
                   transition={{ duration: 0.2 }}

@@ -16,7 +16,7 @@ export const TableHeadPart: TableHeadPartType = ({ columns }) => {
   return (
     <TableHead>
       <TableRow>
-        {columns.map(column => (
+        {columns.map((column) => (
           <TableCell
             key={column.id}
             align={column.align}
@@ -37,13 +37,13 @@ export const TableHeadPart: TableHeadPartType = ({ columns }) => {
                     position: 'sticky',
                     backgroundColor: palette.background.paper,
                     zIndex: 4,
-                    borderRight: column.stickyCss?.left != null ? BORDER_TABLE : '', 
+                    borderRight: column.stickyCss?.left != null ? BORDER_TABLE : '',
                   }
                 : {}),
               ...(column.sx ? column.sx : {}),
             }}
           >
-            <Typography variant='subtitle1'>{column.label}</Typography>
+            <Typography variant="subtitle1">{column.label}</Typography>
           </TableCell>
         ))}
       </TableRow>

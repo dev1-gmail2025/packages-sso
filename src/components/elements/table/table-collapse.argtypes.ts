@@ -28,4 +28,3 @@ export const tableCollapseArgTypes: Partial<ArgTypes<TableCollapseProps>> = {
   onCopyRow: { action: 'copyAction' },
   onUpdateRow: { action: 'updateAction' },
 };
-

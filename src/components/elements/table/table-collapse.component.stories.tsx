@@ -31,7 +31,7 @@ const childColumns: Column<ChildRow>[] = [
     width: 160,
     align: 'right',
     alignHead: 'right',
-    render: row => row.amount.toLocaleString('en-US'),
+    render: (row) => row.amount.toLocaleString('en-US'),
   },
 ];
 
@@ -84,7 +84,7 @@ export default meta;
 type Story = StoryObj<typeof TableCollapseComponent<ParentRow, ChildRow>>;
 
 export const Default: Story = {
-  render: args => (
+  render: (args) => (
     <Box sx={{ minWidth: 760 }}>
       <TableCollapseComponent<ParentRow, ChildRow> {...args} />
     </Box>
@@ -92,7 +92,7 @@ export const Default: Story = {
 };
 
 export const Loading: Story = {
-  render: args => (
+  render: (args) => (
     <Box sx={{ minWidth: 760 }}>
       <TableCollapseComponent<ParentRow, ChildRow> {...args} />
     </Box>
@@ -103,7 +103,7 @@ export const Loading: Story = {
 };
 
 export const WithActions: Story = {
-  render: args => (
+  render: (args) => (
     <Box sx={{ minWidth: 880 }}>
       <TableCollapseComponent<ParentRow, ChildRow> {...args} />
     </Box>

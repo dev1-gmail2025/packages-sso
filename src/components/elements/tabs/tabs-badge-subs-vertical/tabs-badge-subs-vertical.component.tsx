@@ -45,7 +45,7 @@ export const TabsBadgeSubsVerticalComponent: React.FC<TabsBadgeSubsVerticalCompo
   return (
     <LayoutGroupCondition {...(tabs[0]?.level > 0 ? {} : { id: groupId })}>
       <Stack gap={0} sx={sx}>
-        {tabs.map(tab => (
+        {tabs.map((tab) => (
           <LinkElement
             component={tab.href ? 'a' : 'span'}
             href={tab.href}
@@ -85,7 +85,7 @@ export const TabsBadgeSubsVerticalComponent: React.FC<TabsBadgeSubsVerticalCompo
                 />
               ) : (
                 <TooltipOnHoverElement
-                  placement='right-end'
+                  placement="right-end"
                   content={tab.name}
                   disableHoverListener={!(hiddenContent && hoverWhenHiddenContent)}
                   disableFocusListener={!(hiddenContent && hoverWhenHiddenContent)}

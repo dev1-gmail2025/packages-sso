@@ -75,13 +75,13 @@ export const ButtonIconContentOpacityElement: React.FC<ButtonIconContentOpacityE
       }}
     >
       {loading ? (
-        <LoadingComponent color='primary' size='small' sx={{ minHeight: '24.5px' }} />
+        <LoadingComponent color="primary" size="small" sx={{ minHeight: '24.5px' }} />
       ) : (
         <React.Fragment>
-          <span className='btnIcon'>
-            <IconElement icon={icon} size='medium' sx={{ fontSize: 18 }} />
+          <span className="btnIcon">
+            <IconElement icon={icon} size="medium" sx={{ fontSize: 18 }} />
           </span>
-          <Typography className='btnContent' sx={{ display: 'inline-flex', alignItems: 'center' }}>
+          <Typography className="btnContent" sx={{ display: 'inline-flex', alignItems: 'center' }}>
             {content}
           </Typography>
         </React.Fragment>

@@ -430,7 +430,7 @@ export const TableComponent: TableComponentType = ({
             borderRight: BORDER_TABLE,
             borderBottom: BORDER_TABLE,
             '&:first-of-type': {
-              borderLeft: BORDER_TABLE, 
+              borderLeft: BORDER_TABLE,
             },
           },
         }}
@@ -439,7 +439,10 @@ export const TableComponent: TableComponentType = ({
         <TableBody>
           {loading ? (
             <TableRow>
-              <TableCell sx={{ borderTopLeftRadius: '0 !important', borderTopRightRadius: '0 !important' }} colSpan={columns.length}>
+              <TableCell
+                sx={{ borderTopLeftRadius: '0 !important', borderTopRightRadius: '0 !important' }}
+                colSpan={columns.length}
+              >
                 <LoadingComponent />
               </TableCell>
             </TableRow>
@@ -530,7 +533,10 @@ export const TableComponent: TableComponentType = ({
             })
           ) : (
             <TableRow>
-              <TableCell sx={{ height: 200 , borderTopLeftRadius: '0 !important', borderTopRightRadius: '0 !important' }} colSpan={columns.length}>
+              <TableCell
+                sx={{ height: 200, borderTopLeftRadius: '0 !important', borderTopRightRadius: '0 !important' }}
+                colSpan={columns.length}
+              >
                 <EmptyComponent />
               </TableCell>
             </TableRow>

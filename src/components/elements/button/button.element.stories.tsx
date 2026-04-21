@@ -40,19 +40,19 @@ export const GalleryMatrix: Story = {
     const variants = ['contained', 'outlined', 'text'] as const;
     const colors = ['primary', 'success', 'warning', 'error', 'info'] as const;
 
-    const Row: React.FC<{ label: string; renderBtn: (sz: typeof sizes[number]) => React.ReactNode }> = ({
+    const Row: React.FC<{ label: string; renderBtn: (sz: (typeof sizes)[number]) => React.ReactNode }> = ({
       label,
       renderBtn,
     }) => (
       <StackRow sx={{ display: 'grid', gridTemplateColumns: '160px repeat(3, 1fr)' }}>
         <Typography>{label}</Typography>
-        {sizes.map(size => (
+        {sizes.map((size) => (
           <StackAlignCenter key={size}>{renderBtn(size)}</StackAlignCenter>
         ))}
       </StackRow>
     );
 
-    const Section: React.FC<{ color: typeof colors[number] }> = ({ color }) => (
+    const Section: React.FC<{ color: (typeof colors)[number] }> = ({ color }) => (
       <Stack
         sx={{
           display: 'grid',
@@ -62,7 +62,7 @@ export const GalleryMatrix: Story = {
         }}
       >
         <Typography>{color}</Typography>
-        {variants.map(variant => (
+        {variants.map((variant) => (
           <Stack
             key={variant}
             sx={{
@@ -75,17 +75,17 @@ export const GalleryMatrix: Story = {
           >
             <Typography>{variant}</Typography>
             <Row
-              label='Enable'
-              renderBtn={size => (
-                <ButtonElement content='Button' size={size} color={color} variant={variant} onClick={fn()} />
+              label="Enable"
+              renderBtn={(size) => (
+                <ButtonElement content="Button" size={size} color={color} variant={variant} onClick={fn()} />
               )}
             />
             <Row
-              label='With icon'
-              renderBtn={size => (
+              label="With icon"
+              renderBtn={(size) => (
                 <ButtonElement
-                  content='Button'
-                  startIcon='add'
+                  content="Button"
+                  startIcon="add"
                   size={size}
                   color={color}
                   variant={variant}
@@ -94,15 +94,15 @@ export const GalleryMatrix: Story = {
               )}
             />
             <Row
-              label='Loading'
-              renderBtn={size => (
-                <ButtonElement content='Loading' loading size={size} color={color} variant={variant} />
+              label="Loading"
+              renderBtn={(size) => (
+                <ButtonElement content="Loading" loading size={size} color={color} variant={variant} />
               )}
             />
             <Row
-              label='Disabled'
-              renderBtn={size => (
-                <ButtonElement content='Disabled' disabled size={size} color={color} variant={variant} />
+              label="Disabled"
+              renderBtn={(size) => (
+                <ButtonElement content="Disabled" disabled size={size} color={color} variant={variant} />
               )}
             />
           </Stack>
@@ -112,7 +112,7 @@ export const GalleryMatrix: Story = {
 
     return (
       <Stack sx={{ display: 'grid', gap: STYLE.PADDING_GAP_LAYOUT }}>
-        {colors.map(color => (
+        {colors.map((color) => (
           <Section key={color} color={color} />
         ))}
       </Stack>
@@ -124,11 +124,11 @@ export const GalleryMatrix: Story = {
 };
 
 export const WithIcons: Story = {
-  render: args => (
+  render: (args) => (
     <StackRow sx={{ display: 'flex', gap: STYLE.PADDING_GAP_ITEM, flexWrap: 'wrap' }}>
-      <ButtonElement {...args} startIcon='add' content='Add item' />
-      <ButtonElement {...args} endIcon='arrow_forward' content='Continue' />
-      <ButtonElement {...args} startIcon='save' endIcon='check' content='Save & Check' />
+      <ButtonElement {...args} startIcon="add" content="Add item" />
+      <ButtonElement {...args} endIcon="arrow_forward" content="Continue" />
+      <ButtonElement {...args} startIcon="save" endIcon="check" content="Save & Check" />
     </StackRow>
   ),
 };

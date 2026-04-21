@@ -22,7 +22,7 @@ type Story = StoryObj<typeof ReviewComponent>;
 export const Default: Story = {};
 
 export const Examples: Story = {
-  render: args => (
+  render: (args) => (
     <Stack spacing={2}>
       <ReviewComponent {...args} averageRating={5} reviewCount={999} />
       <ReviewComponent {...args} averageRating={3.4} reviewCount={12} />

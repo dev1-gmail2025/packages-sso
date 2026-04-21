@@ -62,7 +62,7 @@ export const ButtonElement: React.FC<ButtonElementProps> = ({
         <LoadingComponent
           // color={variant === 'contained' ? palette.primary.contrastText : palette.primary.main}
           color={variant === 'contained' ? palette.primary.contrastText : (rest.color as string)}
-          size='small'
+          size="small"
           sx={{ minHeight: '24.5px' }}
         />
       ) : (

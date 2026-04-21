@@ -43,9 +43,9 @@ export const PaginationElement: React.FC<PaginationElementProps> = ({
         showFirstButton
         showLastButton
         onChange={handlePageChange}
-        size='medium'
-        variant='outlined'
-        shape='rounded'
+        size="medium"
+        variant="outlined"
+        shape="rounded"
         sx={{
           '& .MuiPagination-ul': {
             gap: 0.5,
@@ -66,11 +66,11 @@ export const PaginationElement: React.FC<PaginationElementProps> = ({
       />
       {openRowsPerPage && (
         <StackRowAlignCenter>
-          <FormControl size='small'>
+          <FormControl size="small">
             <TextFieldSelectElement
               value={displayTake}
-              onChange={event => handleChangeRowsPerPage(event as any)}
-              options={validTakes.map(take => ({ value: take, label: `${take} / trang` }))}
+              onChange={(event) => handleChangeRowsPerPage(event as any)}
+              options={validTakes.map((take) => ({ value: take, label: `${take} / trang` }))}
               sx={{
                 '& .MuiOutlinedInput-root': {
                   borderRadius: '0px !important',

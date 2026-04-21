@@ -67,7 +67,7 @@ export const TextFieldDateRangeElement: React.FC<TextFieldDateRangeElementProps>
         <StackRowAlignCenterJustBetween sx={{ flex: 1, gap: 1, pl: 1 }}>
           <DatePicker
             value={fromDate ? dayjs(fromDate) : null}
-            onChange={newDate => {
+            onChange={(newDate) => {
               if (newDate && newDate.isValid()) {
                 const dateString = newDate.format('YYYY-MM-DD');
                 onFromDateChange?.(dateString);
@@ -133,7 +133,7 @@ export const TextFieldDateRangeElement: React.FC<TextFieldDateRangeElementProps>
           />
 
           <Typography
-            variant='body2'
+            variant="body2"
             sx={{
               color: theme.palette.text.secondary,
               fontWeight: 400,
@@ -145,7 +145,7 @@ export const TextFieldDateRangeElement: React.FC<TextFieldDateRangeElementProps>
 
           <DatePicker
             value={toDate ? dayjs(toDate) : null}
-            onChange={newDate => {
+            onChange={(newDate) => {
               if (newDate && newDate.isValid()) {
                 const dateString = newDate.format('YYYY-MM-DD');
                 onToDateChange?.(dateString);
@@ -222,7 +222,7 @@ export const TextFieldDateRangeElement: React.FC<TextFieldDateRangeElementProps>
               setOpenFromDate(true);
             }
           }}
-          icon='calendar_today'
+          icon="calendar_today"
           sx={{ fontSize: 18 }}
         />
       </Box>

@@ -36,14 +36,14 @@ export default meta;
 type Story = StoryObj<typeof TextFieldSelectElement>;
 
 export const Default: Story = {
-  render: args => {
+  render: (args) => {
     const [value, setValue] = React.useState<any>(args.value ?? '');
 
     return (
       <TextFieldSelectElement
         {...args}
         value={value}
-        onChange={event => {
+        onChange={(event) => {
           setValue(event.target.value);
           args.onChange?.(event);
         }}
@@ -74,7 +74,7 @@ export const ErrorState: Story = {
 };
 
 export const Multiple: Story = {
-  render: args => {
+  render: (args) => {
     const [value, setValue] = React.useState<any[]>(Array.isArray(args.value) ? args.value : []);
 
     return (
@@ -82,7 +82,7 @@ export const Multiple: Story = {
         {...args}
         multiple
         value={value}
-        onChange={event => {
+        onChange={(event) => {
           setValue(event.target.value as unknown as any[]);
           args.onChange?.(event);
         }}
