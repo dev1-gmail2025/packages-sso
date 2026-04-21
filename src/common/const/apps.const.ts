@@ -348,7 +348,7 @@ export const APP_OBJ = {
   },
   MATERIAL_CONTROL: {
     path: {
-      local: 'http://localhost:12024',
+      local: 'http://localhost:12025',
       develop: 'https://dev.admin.material-control.sevago.local',
       staging: 'https://sta.admin.material-control.sevago.local',
       production: 'https://admin.material-control.sevago.local',
