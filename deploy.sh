@@ -42,4 +42,12 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+# 6. Version bump + publish
+echo "Running npm run version:publish..."
+npm run version:publish
+if [ $? -ne 0 ]; then
+  echo "npm run version:publish failed! Exiting..."
+  exit 1
+fi
+
 echo "Deployment script completed successfully!"
