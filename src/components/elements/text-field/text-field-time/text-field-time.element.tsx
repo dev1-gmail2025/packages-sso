@@ -51,7 +51,7 @@ export const TextFieldTimeElement: React.FC<TextFieldTimeElementProps> = ({
         format={format}
         name={name}
         {...rest}
-        slots={{ openPickerIcon: () => <IconElement icon='schedule' /> }}
+        slots={{ openPickerIcon: () => <IconElement icon="schedule" /> }}
         slotProps={{
           textField: {
             fullWidth: true,

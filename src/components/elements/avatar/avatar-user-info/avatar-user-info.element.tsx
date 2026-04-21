@@ -1,12 +1,12 @@
 import { Stack, SxProps, Theme, Typography, useTheme } from '@mui/material';
 import React from 'react';
 import { SizeProps, STYLE } from '../../../../common';
+import { getLimitLineCss } from '../../../../common/utils/other.util';
 import { StackRow } from '../../../styles';
 import { AvatarElement } from '../avatar.element';
-import { getLimitLineCss } from '../../../../common/utils/other.util';
 
 export interface AvatarUserInfoProps {
-  name: string;
+  name?: string;
   url?: string;
   positions?: string[];
   maxWidth?: string | number;
@@ -17,7 +17,7 @@ export interface AvatarUserInfoProps {
 }
 
 export const AvatarUserInfo: React.FC<AvatarUserInfoProps> = ({
-  name,
+  name = 'Hệ thống',
   url,
   positions = [],
   maxWidth = '440px',

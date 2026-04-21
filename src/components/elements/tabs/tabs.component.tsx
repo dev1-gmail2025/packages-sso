@@ -62,9 +62,15 @@ export function TabsMotionBase<T extends TabsMotionItemBase>({
 
           return (
             <Fragment key={tab.key ?? id}>
-              <LinkElement className={`${isSelected ? 'tab-selected' : ''}`} component={tab.href ? 'a' : 'span'} href={tab.href} onClick={tab.onClick} id={tab.id}>
+              <LinkElement
+                className={`${isSelected ? 'tab-selected' : ''}`}
+                component={tab.href ? 'a' : 'span'}
+                href={tab.href}
+                onClick={tab.onClick}
+                id={tab.id}
+              >
                 <Stack
-                  component={motion.div} 
+                  component={motion.div}
                   sx={
                     {
                       ...TAB_STYLES,

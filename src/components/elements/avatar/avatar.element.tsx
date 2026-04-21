@@ -29,26 +29,12 @@ export const AvatarElement: React.FC<AvatarElementProps> = ({
         <Avatar
           {...rest}
           src={url || ''}
-          sx={{
-            ...MAP_SIZE[size],
-            bgcolor: 'primary.main',
-            ...sx,
-            cursor: 'pointer',
-          }}
+          sx={{ ...MAP_SIZE[size], bgcolor: 'primary.main', ...sx, cursor: 'pointer' }}
         />
       </ArrowTooltip>
     );
   }
   return (
-    <Avatar
-      {...rest}
-      src={url || ''}
-      sx={{
-        ...MAP_SIZE[size],
-        bgcolor: 'primary.main',
-        ...sx,
-        cursor: 'pointer',
-      }}
-    />
+    <Avatar {...rest} src={url || ''} sx={{ ...MAP_SIZE[size], bgcolor: 'primary.main', ...sx, cursor: 'pointer' }} />
   );
 };

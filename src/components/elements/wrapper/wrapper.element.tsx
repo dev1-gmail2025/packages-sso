@@ -48,16 +48,7 @@ export const WrapperElement: React.FC<WrapperElementProps> = ({
 }) => {
   return (
     <Fade in={true} timeout={STYLE.ANIMATION_TIME}>
-      <Stack
-        sx={{
-          ...(width ? { width } : { flex }),
-          overflowY: 'auto',
-          overflowX: 'hidden',
-          height,
-          gap: 'unset',
-          ...sx,
-        }}
-      >
+      <Stack sx={{ ...(width ? { width } : { flex }), overflowY: 'auto', overflowX: 'hidden', height, ...sx }}>
         {/* label */}
         {label && (
           <StackRowJustBetween
@@ -80,13 +71,7 @@ export const WrapperElement: React.FC<WrapperElementProps> = ({
               />
             )}
             {nodeAction && (
-              <Stack
-                sx={{
-                  flexDirection: directionNodeLabel,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
+              <Stack sx={{ flexDirection: directionNodeLabel, justifyContent: 'center', alignItems: 'center' }}>
                 {nodeAction}
               </Stack>
             )}

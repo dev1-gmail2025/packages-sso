@@ -58,7 +58,7 @@ export const TextFieldSelectElement: React.FC<TextFieldSelectElementProps> = ({
           displayEmpty: true,
           renderValue:
             renderValue ||
-            (selected => {
+            ((selected) => {
               if (
                 selected === null ||
                 selected === undefined ||
@@ -70,19 +70,19 @@ export const TextFieldSelectElement: React.FC<TextFieldSelectElementProps> = ({
 
               if (multiple) {
                 return (selected as any[])
-                  .map(value => {
-                    const option = options.find(opt => opt.value === value);
+                  .map((value) => {
+                    const option = options.find((opt) => opt.value === value);
                     return option?.label || value;
                   })
                   .join(', ');
               }
 
-              const option = options.find(opt => opt.value === selected);
+              const option = options.find((opt) => opt.value === selected);
               return option?.label || selected;
             }),
           IconComponent: () => (
             <IconElement
-              icon='arrow_drop_down'
+              icon="arrow_drop_down"
               sx={{
                 marginRight: '8px',
                 transition: 'transform 0.3s',

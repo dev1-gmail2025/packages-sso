@@ -1,8 +1,8 @@
 import { Badge, BadgeProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import React from 'react';
-import { AvatarElement } from '../avatar.element';
 import { COLOR, SizeProps } from '../../../../common';
+import { AvatarElement } from '../avatar.element';
 
 export interface AvatarOnlineStatusElementProps {
   url?: string | null;

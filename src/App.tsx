@@ -3,7 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { Mode } from './common';
 import { getTheme } from './common/utils/other.util';
 
-export default function App () {
+export default function App() {
   return (
     <ThemeProvider theme={getTheme(Mode.LIGHT)}>
       <CssBaseline />

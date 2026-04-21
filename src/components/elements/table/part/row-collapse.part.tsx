@@ -84,35 +84,35 @@ export const RowCollapsePart: RowCollapsePartType = ({
       <StackRowAlignJustCenter gap={1}>
         {onSelectRow && (
           <IconElement
-            icon='info'
+            icon="info"
             onClick={() => onSelectRow(row, index)}
             disabled={disabledByParent || disabled.SELECT}
           />
         )}
         {onInfoRow && (
           <IconElement
-            icon='view_cozy'
+            icon="view_cozy"
             onClick={() => onInfoRow(row, index)}
             disabled={disabledByParent || disabled.INFO}
           />
         )}
         {onDeleteRow && (
           <IconElement
-            icon='delete'
+            icon="delete"
             onClick={() => onDeleteRow(row, index)}
             disabled={disabledByParent || disabled.DELETE}
           />
         )}
         {onCopyRow && (
           <IconElement
-            icon='content_copy'
+            icon="content_copy"
             onClick={() => onCopyRow(row, index)}
             disabled={disabledByParent || disabled.COPY}
           />
         )}
         {onUpdateRow && (
           <IconElement
-            icon='settings'
+            icon="settings"
             onClick={() => {
               window.scrollTo({ top: 0, behavior: 'smooth' });
               onUpdateRow(row, index);
@@ -140,7 +140,7 @@ export const RowCollapsePart: RowCollapsePartType = ({
           onClick={() => onClickRow && onClickRow(row, indexRow)}
           sx={getStyleRow(Boolean(onClickRow), palette, indexRow, rowSx, indexLoadingRow)}
         >
-          {columns.map(column => (
+          {columns.map((column) => (
             <TableCell key={column.id} align={column.align} sx={getStyleCell(column, palette, disabled.DISABLED_ROW)}>
               {column.render ? column.render(row, indexRow) : (row as any)[column.id]}
             </TableCell>
@@ -158,7 +158,7 @@ export const RowCollapsePart: RowCollapsePartType = ({
               width: (collapseTableWidth || 0) - parseInt(STYLE.PADDING_GAP_LAYOUT, 10) * 2 || 'auto',
             }}
           >
-            <Collapse in={open} timeout='auto' unmountOnExit>
+            <Collapse in={open} timeout="auto" unmountOnExit>
               <Stack
                 sx={{
                   padding: STYLE.PADDING_GAP_LAYOUT,
@@ -166,7 +166,7 @@ export const RowCollapsePart: RowCollapsePartType = ({
                   backgroundColor: palette.background.default,
                 }}
               >
-                <IconContentElement icon={collapse.iconTitle || 'filter_list'} content={collapse.title} size='medium' />
+                <IconContentElement icon={collapse.iconTitle || 'filter_list'} content={collapse.title} size="medium" />
 
                 <TableComponent
                   loading={loading}

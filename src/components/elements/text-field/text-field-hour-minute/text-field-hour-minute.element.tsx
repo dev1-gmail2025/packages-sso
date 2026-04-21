@@ -187,8 +187,8 @@ export const TextFieldHourMinuteElement: React.FC<TextFieldHourMinuteElementProp
       >
         <NumericFormat
           customInput={TextField}
-          thousandSeparator=','
-          decimalSeparator='.'
+          thousandSeparator=","
+          decimalSeparator="."
           decimalScale={0} // Giữ tối đa decimalScale số sau dấu thập phân
           fixedDecimalScale
           allowNegative={false}
@@ -234,8 +234,8 @@ export const TextFieldHourMinuteElement: React.FC<TextFieldHourMinuteElementProp
           :
         </Typography>
         <TextField
-          size='small'
-          placeholder='00'
+          size="small"
+          placeholder="00"
           value={minuteValue}
           onChange={handleMinuteChange}
           onBlur={handleMinuteBlur}
@@ -249,7 +249,7 @@ export const TextFieldHourMinuteElement: React.FC<TextFieldHourMinuteElementProp
             ...InputProps,
             endAdornment:
               showResetButton && (hourValue || minuteValue) ? (
-                <IconButtonElement icon='close' onClick={handleReset} />
+                <IconButtonElement icon="close" onClick={handleReset} />
               ) : (
                 InputProps?.endAdornment
               ),
@@ -275,7 +275,7 @@ export const TextFieldHourMinuteElement: React.FC<TextFieldHourMinuteElementProp
       </StackRowAlignCenter>
       {displayError && (
         <Typography
-          variant='caption'
+          variant="caption"
           sx={{
             color: 'error.main',
             mt: 0.5,

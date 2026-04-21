@@ -49,7 +49,6 @@ export const AvatarGroupElement: React.FC<AvatarGroupElementProps> = ({
   };
 
   const openPopover = Boolean(anchorEl);
-  const visibleItems = items.slice(0, maxAvatars);
   const surplusItems = items.slice(maxAvatars);
   const surplusCount = items.length - maxAvatars;
 

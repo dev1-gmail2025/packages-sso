@@ -14,7 +14,7 @@ export interface StyledTabsProps {
   sx?: SxProps<Theme>;
 }
 export const StyledTabs = styled((props: StyledTabsProps) => (
-  <Tabs {...props} TabIndicatorProps={{ children: <span className='MuiTabs-indicatorSpan' /> }} />
+  <Tabs {...props} TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }} />
 ))({
   '& .MuiTabs-indicator': {
     display: 'flex',
@@ -29,7 +29,7 @@ export const StyledTabs = styled((props: StyledTabsProps) => (
 });
 
 export const StyledTab = styled(({ icon, ...props }: { label: string; sx?: SxProps; icon?: string }) => (
-  <Tab icon={icon ? <IconElement icon={icon} /> : undefined} iconPosition='start' disableRipple {...props} />
+  <Tab icon={icon ? <IconElement icon={icon} /> : undefined} iconPosition="start" disableRipple {...props} />
 ))(({}) => ({
   padding: '8px',
   paddingBottom: '8px',

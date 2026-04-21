@@ -6,7 +6,7 @@ import { AvatarGroupElement } from '../avatar-group/avatar-group.element';
 import { AvatarElement } from '../avatar.element';
 
 export interface AvatarUserInfoDetailProps {
-  name: string;
+  name?: string;
   url?: string;
   positions?: string[];
   maxWidth?: string | number;
@@ -16,12 +16,12 @@ export interface AvatarUserInfoDetailProps {
 }
 
 export const AvatarUserInfoDetail: React.FC<AvatarUserInfoDetailProps> = ({
-  name,
+  name = 'Hệ thống',
   url,
   positions = [],
   maxWidth = '440px',
   sizeAvatar = SizeProps.LARGE,
-  code,
+  code = '#####',
   directManagers,
 }) => {
   return (

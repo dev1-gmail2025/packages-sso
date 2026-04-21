@@ -49,7 +49,7 @@ export const TextFieldSearchCustomElement: React.FC<TextFieldSearchCustomElement
         value={localValue}
         placeholder={placeholder}
         onChange={change}
-        name='search'
+        name="search"
         {...(rows && { rows, multiline: true })}
         sx={{
           '& .MuiOutlinedInput-root': {
@@ -71,7 +71,7 @@ export const TextFieldSearchCustomElement: React.FC<TextFieldSearchCustomElement
         slotProps={{
           input: {
             startAdornment: (
-              <InputAdornment position='start'>
+              <InputAdornment position="start">
                 <IconElement sx={{ color: '#7A8188' }} icon={'search'} />
               </InputAdornment>
             ),

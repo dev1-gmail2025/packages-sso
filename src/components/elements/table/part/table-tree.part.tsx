@@ -40,7 +40,7 @@ export const buildTreeMeta = ({
   const visibleRows: any[] = [];
 
   const walk = (items: any[], level: number) => {
-    items.forEach(item => {
+    items.forEach((item) => {
       const id = getRowId(item);
       const children = getChildren(item);
 
@@ -93,7 +93,7 @@ export const TreeToggleCell: React.FC<TreeToggleCellProps> = ({
   return (
     <Box
       sx={{ display: 'flex', alignItems: 'stretch', cursor: hasChildren ? 'pointer' : 'default', minHeight: '100%' }}
-      onClick={e => {
+      onClick={(e) => {
         if (!hasChildren) return;
         e.stopPropagation();
         onToggle(rowId);

@@ -55,12 +55,12 @@ const parseRgba = (rgba: string) => {
   const g = Number(m[2]);
   const b = Number(m[3]);
   const a = m[4] === undefined ? 1 : Number(m[4]);
-  if ([r, g, b, a].some(n => Number.isNaN(n))) return undefined;
+  if ([r, g, b, a].some((n) => Number.isNaN(n))) return undefined;
   return { r, g, b, a };
 };
 
 const relativeLuminance = ({ r, g, b }: { r: number; g: number; b: number }) => {
-  const srgb = [r, g, b].map(v => v / 255).map(c => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
+  const srgb = [r, g, b].map((v) => v / 255).map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
   return 0.2126 * srgb[0] + 0.7152 * srgb[1] + 0.0722 * srgb[2];
 };
 
@@ -103,12 +103,12 @@ const sortKeys = (keys: string[]) =>
 
 const isScaleGroup = (group: ColorGroup) => {
   const keys = Object.keys(group);
-  const numericKeys = keys.filter(k => !Number.isNaN(Number(k)));
+  const numericKeys = keys.filter((k) => !Number.isNaN(Number(k)));
   return numericKeys.length >= Math.max(5, Math.floor(keys.length * 0.7));
 };
 
 const ScaleRow: React.FC<{ name: string; group: Record<string, string> }> = ({ name, group }) => {
-  const keys = sortKeys(Object.keys(group)).filter(k => typeof group[k] === 'string');
+  const keys = sortKeys(Object.keys(group)).filter((k) => typeof group[k] === 'string');
 
   return (
     <Stack
@@ -124,7 +124,7 @@ const ScaleRow: React.FC<{ name: string; group: Record<string, string> }> = ({ n
           gridTemplateColumns: `repeat(${keys.length}, minmax(72px, 1fr))`,
         }}
       >
-        {keys.map(k => {
+        {keys.map((k) => {
           const value = group[k];
           const textColor = getTextColorForBackground(value);
 

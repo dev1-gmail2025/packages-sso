@@ -3,13 +3,18 @@ import { Stack, Typography, SxProps, Theme } from '@mui/material';
 import { IconElement } from '../icon/icon.element';
 
 export interface UserInfoProps {
-  name: string;
+  name?: string;
   department?: string;
   icon?: string;
   sx?: SxProps<Theme>;
 }
 
-export const UserInfo: React.FC<UserInfoProps> = ({ name, department, icon = 'person', sx }) => {
+export const UserInfo: React.FC<UserInfoProps> = ({
+  name = 'Hệ thống',
+  department = 'Hệ thống',
+  icon = 'person',
+  sx,
+}) => {
   return (
     <Stack sx={sx}>
       <Stack direction="row" alignItems="center" gap={1}>

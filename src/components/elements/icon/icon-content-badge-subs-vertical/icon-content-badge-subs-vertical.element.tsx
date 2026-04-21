@@ -46,7 +46,7 @@ export const IconContentBadgeSubsVerticalElement: React.FC<IconContentBadgeSubsV
     <React.Fragment>
       <Stack sx={{ zIndex: 1 }}>
         <TooltipOnHoverElement
-          placement='right-end'
+          placement="right-end"
           content={content}
           disableHoverListener={!(hiddenContent && hoverWhenHiddenContent)}
           disableFocusListener={!(hiddenContent && hoverWhenHiddenContent)}
@@ -76,7 +76,7 @@ export const IconContentBadgeSubsVerticalElement: React.FC<IconContentBadgeSubsV
               transition={{ duration: 0.2 }}
               style={{ display: 'inline-flex' }}
             >
-              <IconElement icon='arrow_drop_down' />
+              <IconElement icon="arrow_drop_down" />
             </motion.span>
           </StackRowAlignCenter>
         </TooltipOnHoverElement>

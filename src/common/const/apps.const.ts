@@ -361,6 +361,16 @@ export const APP_OBJ = {
   },
 };
 
+// PRODUCT_MANAGEMENT_ADMIN_PORT=12027
+// PRODUCT_MANAGEMENT_ADMIN_URL=https://dev.admin.product-management.sevago.local
+// PRODUCT_MANAGEMENT_BE_URL=https://dev.admin.product-management.sevago.local/api/
+// PRODUCT_MANAGEMENT_SERVE_STATIC_URL=https://dev.admin.product-management.sevago.local/upload/
+
+// QUALITY_MANAGEMENT_ADMIN_PORT=12029
+// QUALITY_MANAGEMENT_ADMIN_URL=https://dev.admin.quality-management.sevago.local
+// QUALITY_MANAGEMENT_BE_URL=https://dev.admin.quality-management.sevago.local/api/
+// QUALITY_MANAGEMENT_SERVE_STATIC_URL=https://dev.admin.quality-management.sevago.local/upload/
+
 export const APP_BLACK_LIST: Record<string, string[]> = {
   [Environment.PRODUCTION_VPS]: [
     'SYSTEM',

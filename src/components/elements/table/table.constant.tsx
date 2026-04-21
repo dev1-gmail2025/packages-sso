@@ -5,10 +5,13 @@ import { Column } from './table.interface';
 import { COLOR, STYLE, OTHER } from '../../../common';
 
 export const BORDER_TABLE = `1px solid ${COLOR.COMMON.gray8}`;
-export const DISABLED_DEFAULT = Object.keys(TableActions).reduce((r, key) => {
-  r[key as keyof typeof TableActions] = false;
-  return r;
-}, {} as Record<keyof typeof TableActions, boolean>);
+export const DISABLED_DEFAULT = Object.keys(TableActions).reduce(
+  (r, key) => {
+    r[key as keyof typeof TableActions] = false;
+    return r;
+  },
+  {} as Record<keyof typeof TableActions, boolean>,
+);
 
 export const getStyleCell = (column: Column<any>, palette: Palette, disableRow?: boolean): SxProps<Theme> => {
   return {

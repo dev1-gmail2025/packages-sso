@@ -8,7 +8,7 @@ import { StackRow } from '../../../styles';
 import { AvatarElement } from '../avatar.element';
 
 export interface AvatarUserInfoUpdateProps {
-  title: string;
+  title?: string;
   nameFile?: string;
   url?: FileWithPreviewOrUrl;
   positions?: string[];

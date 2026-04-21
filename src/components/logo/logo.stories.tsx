@@ -28,7 +28,7 @@ export const GalleryMatrix: Story = {
     const logos = Object.values(LogoName);
     return (
       <StackRow sx={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)' }}>
-        {logos.map(logo => (
+        {logos.map((logo) => (
           <StackRow key={logo}>
             <LogoComponent env={Environment.DEVELOP} logoName={logo} />
           </StackRow>
