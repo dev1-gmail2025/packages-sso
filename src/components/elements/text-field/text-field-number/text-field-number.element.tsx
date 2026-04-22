@@ -15,6 +15,7 @@ export interface TextFieldNumberElementProps extends BaseTextFieldProps {
   onReset?: () => void;
   InputProps?: TextFieldProps['InputProps'];
   isAllowed?: (values: any) => boolean;
+  fixedDecimalScale?: boolean;
 }
 
 export const TextFieldNumberElement: React.FC<TextFieldNumberElementProps> = ({
@@ -33,6 +34,7 @@ export const TextFieldNumberElement: React.FC<TextFieldNumberElementProps> = ({
   showResetButton = false,
   onReset,
   isAllowed,
+  fixedDecimalScale = false,
   ...rest
 }) => {
   return (
@@ -40,10 +42,10 @@ export const TextFieldNumberElement: React.FC<TextFieldNumberElementProps> = ({
       <TextFieldLabelElement label={label} iconLabel={iconLabel} required={rest.required} />
       <NumericFormat
         customInput={TextField}
-        thousandSeparator=","
-        decimalSeparator="."
+        thousandSeparator=','
+        decimalSeparator='.'
         decimalScale={decimalScale} // Giữ tối đa decimalScale số sau dấu thập phân
-        fixedDecimalScale
+        fixedDecimalScale={fixedDecimalScale}
         allowNegative={false}
         value={value}
         onValueChange={(values: any) => {
@@ -59,7 +61,7 @@ export const TextFieldNumberElement: React.FC<TextFieldNumberElementProps> = ({
           ...InputProps,
           endAdornment:
             showResetButton && value && onReset ? (
-              <IconButtonElement icon="close" onClick={onReset} />
+              <IconButtonElement icon='close' onClick={onReset} />
             ) : (
               InputProps?.endAdornment
             ),
