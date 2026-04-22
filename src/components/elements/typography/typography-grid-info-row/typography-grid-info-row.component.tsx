@@ -28,9 +28,9 @@ export const TypographyGridInfoRow: React.FC<TypographyGridInfoRowProps> = ({
       <React.Fragment>
         <StackRow sx={{ display: 'grid', gridTemplateColumns: columns, ...sx }}>
           <Stack>
-            <Typography sx={{ ...STYLE.TYPOGRAPHY.textMd.semiBold, ...sxLabel }}>{label}</Typography>
+            <Typography sx={{ ...STYLE.TYPOGRAPHY.textSm.semiBold, ...sxLabel }}>{label}</Typography>
           </Stack>
-          <Stack sx={{ ...sxValue }}>{value || 'Không có'}</Stack>
+          <Stack sx={{ ...STYLE.TYPOGRAPHY.textSm.regular, ...sxValue }}>{value || 'Không có'}</Stack>
         </StackRow>
       </React.Fragment>
     );
@@ -39,8 +39,8 @@ export const TypographyGridInfoRow: React.FC<TypographyGridInfoRowProps> = ({
   return (
     <React.Fragment>
       <Stack sx={{ gap: 0.5, ...sx }}>
-        <Typography sx={{ ...STYLE.TYPOGRAPHY.textMd.semiBold, ...sxLabel }}>{label}</Typography>
-        <Stack sx={{ ...sxValue }}>{value || 'Không có'}</Stack>
+        <Typography sx={{ ...STYLE.TYPOGRAPHY.textSm.semiBold, ...sxLabel }}>{label}</Typography>
+        <Stack sx={{ ...STYLE.TYPOGRAPHY.textSm.regular, ...sxValue }}>{value || 'Không có'}</Stack>
       </Stack>
     </React.Fragment>
   );
