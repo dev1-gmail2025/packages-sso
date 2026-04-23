@@ -5,6 +5,7 @@ export * from './check-box';
 export * from './collapsible-section';
 export * from './dialog';
 export * from './divider';
+export * from './filters';
 export * from './icon';
 export * from './image';
 export * from './link';
