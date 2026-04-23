@@ -53,7 +53,6 @@ export const WrapperElement: React.FC<WrapperElementProps> = ({
         {label && (
           <StackRowJustBetween
             sx={{
-              paddingBottom: 2,
               position: 'sticky',
               alignItems: 'stretch',
               overflow: 'auto',

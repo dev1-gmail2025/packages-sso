@@ -21,7 +21,7 @@ import { IconContentElement, IconElement } from '../icon';
 
 export interface DialogElementProps extends DialogProps {
   iconLabel?: string;
-  label: string;
+  label?: string;
   nodeLabel?: ReactNode;
   nodeHelp?: ReactNode;
   nodeBottomLeft?: ReactNode;
@@ -200,7 +200,7 @@ export const DialogElement: React.FC<DialogElementProps> = ({
                   )}
                 </StackRow>
 
-                <StackRow sx={{ flex: 1, justifyContent: 'flex-end', gap: STYLE.PADDING_GAP_ITEM_SMALL }}>
+                <StackRow sx={{ flex: 1, justifyContent: 'flex-end' }}>
                   {styledButtonLeft && <ButtonElement {...styledButtonLeft} fullWidth={fullWidth} />}
                   {styledButtonCenter && <ButtonElement {...styledButtonCenter} fullWidth={fullWidth} />}
                   {styledButtonRight && (

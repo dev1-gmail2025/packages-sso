@@ -1,13 +1,14 @@
 import { BaseTextFieldProps, Box, InputAdornment, TextField } from '@mui/material';
 import React, { useState } from 'react';
+import { Timeout } from 'react-number-format/types/types';
 import { STYLE } from '../../../../common';
 import { IconElement } from '../../icon';
 
 export interface TextFieldSearchCustomElementProps extends BaseTextFieldProps {
   onChange?: (event: React.ChangeEvent<HTMLInputElement> | any) => void;
   label?: string;
-  iconLabel?: string;
   value?: string;
+  icon?: string;
 }
 
 export const TextFieldSearchCustomElement: React.FC<TextFieldSearchCustomElementProps> = ({
@@ -16,10 +17,12 @@ export const TextFieldSearchCustomElement: React.FC<TextFieldSearchCustomElement
   onChange,
   value,
   sx = {},
+  name = 'search',
+  icon = 'search',
   ...rest
 }) => {
   const [localValue, setLocalValue] = React.useState(value || '');
-  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+  const [timeoutId, setTimeoutId] = useState<Timeout | null>(null);
 
   const change = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value;
@@ -31,10 +34,7 @@ export const TextFieldSearchCustomElement: React.FC<TextFieldSearchCustomElement
     const newTimeoutId = setTimeout(() => {
       if (onChange) {
         onChange({
-          target: {
-            name: 'search',
-            value: newValue === '' ? null : newValue,
-          },
+          target: { name, value: newValue === '' ? null : newValue },
         });
       }
     }, 300);
@@ -49,7 +49,7 @@ export const TextFieldSearchCustomElement: React.FC<TextFieldSearchCustomElement
         value={localValue}
         placeholder={placeholder}
         onChange={change}
-        name="search"
+        name={name}
         {...(rows && { rows, multiline: true })}
         sx={{
           '& .MuiOutlinedInput-root': {
@@ -72,7 +72,7 @@ export const TextFieldSearchCustomElement: React.FC<TextFieldSearchCustomElement
           input: {
             startAdornment: (
               <InputAdornment position="start">
-                <IconElement sx={{ color: '#7A8188' }} icon={'search'} />
+                <IconElement sx={{ color: '#7A8188' }} icon={icon} />
               </InputAdornment>
             ),
           },
