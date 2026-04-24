@@ -10,7 +10,7 @@ export type TagVariant = 'contained' | 'outlined' | 'outlined-border';
 
 export interface TagElementProps {
   type: string;
-  content: string;
+  content: string | number;
   width?: number;
   sx?: SxProps<Theme>;
   variation?: 'body1' | 'caption';
