@@ -14,6 +14,7 @@ export interface AvatarUserInfoProps {
   sxName?: SxProps<Theme>;
   sxPosition?: SxProps<Theme>;
   sizeAvatar?: SizeProps | string;
+  onClick?: () => void;
 }
 
 export const AvatarUserInfo: React.FC<AvatarUserInfoProps> = ({
@@ -25,27 +26,20 @@ export const AvatarUserInfo: React.FC<AvatarUserInfoProps> = ({
   sxName,
   sxPosition,
   sizeAvatar = SizeProps.MEDIUM,
+  onClick,
 }) => {
   const { palette } = useTheme();
 
   return (
-    <StackRow sx={{ alignItems: 'center', gap: STYLE.PADDING_GAP_ITEM }}>
+    <StackRow sx={{ alignItems: 'center', gap: STYLE.PADDING_GAP_ITEM }} onClick={onClick}>
       <AvatarElement url={url} size={sizeAvatar} />
-      {positions.length > 0 ? (
-        <Stack sx={{ gap: 0 }}>
-          <Typography
-            sx={
-              {
-                fontSize: '14px',
-                lineHeight: '20px',
-                ...getLimitLineCss(1),
-                ...sxName,
-              } as SxProps<Theme>
-            }
-          >
-            {name}
-          </Typography>
 
+      <Stack sx={{ gap: 0 }}>
+        <Typography sx={{ ...STYLE.TYPOGRAPHY.textSm.semiBold, ...getLimitLineCss(1), ...sxName } as SxProps<Theme>}>
+          {name}
+        </Typography>
+
+        {positions.length > 0 && (
           <Typography
             variant="caption"
             sx={
@@ -70,12 +64,8 @@ export const AvatarUserInfo: React.FC<AvatarUserInfoProps> = ({
           >
             {positions.join(' / ')}
           </Typography>
-        </Stack>
-      ) : (
-        <Typography sx={{ ...STYLE.TYPOGRAPHY.textSm.semiBold, ...getLimitLineCss(1), ...sxName } as SxProps<Theme>}>
-          {name}
-        </Typography>
-      )}
+        )}
+      </Stack>
     </StackRow>
   );
 };
