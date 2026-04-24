@@ -55,7 +55,6 @@ export const WrapperElement: React.FC<WrapperElementProps> = ({
             sx={{
               position: 'sticky',
               alignItems: 'stretch',
-              overflow: 'auto',
               flexDirection: 'row',
               ...sxLabel,
             }}
