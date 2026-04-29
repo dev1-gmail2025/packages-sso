@@ -3,11 +3,6 @@ import IconDoc from '../../assets/icon/icon-doc.png';
 import IconExcel from '../../assets/icon/icon-excel.png';
 import IconPDF from '../../assets/icon/icon-pdf.png';
 import IconPPT from '../../assets/icon/icon-ppt.png';
-
-// Global styles (app + ckeditor) bundled with getTheme consumers
-import '../styles/app.css';
-import '../styles/ckeditor.css';
-
 import { COLOR, MODE, STYLE } from '../const';
 import { OPACITY } from '../const/other.const';
 import { Environment, Mode } from '../enums';

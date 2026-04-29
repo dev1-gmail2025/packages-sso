@@ -1,3 +1,5 @@
+import './styles';
+
 export * from './const';
 export * from './enums';
 export * from './interfaces';
