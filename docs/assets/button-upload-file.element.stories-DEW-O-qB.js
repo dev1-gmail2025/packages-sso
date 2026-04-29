@@ -1,0 +1,30 @@
+import{j as p}from"./jsx-runtime-D_zvdyIk.js";import{f as C,w as E,u as s,e as i}from"./index-DtL3pAzF.js";import{B as a}from"./button-upload-file.element-jsy7b6e2.js";import"./index-j62jqFia.js";import"./button-icon.element-DylddgYx.js";/* empty css               */import"./FileSaver.min-DK9gSEGX.js";import"./time.util-BYguZ9lS.js";import"./loading.component-CNPsKUVV.js";import"./typography.style-BuPQcHCI.js";import"./image.element-D5PhqCaM.js";import"./stack.style-CGxIkQ-3.js";import"./memoTheme-JcuT4PI6.js";import"./defaultTheme-CAzuqlo8.js";import"./DefaultPropsProvider-BwONcEM9.js";import"./Stack-BWemv0CO.js";import"./createStack-_FjnXW6X.js";import"./extendSxProp-BhkXlpcg.js";import"./index-DP7gAqwz.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./useTheme--firQ3HK.js";import"./Box-CJND6-sR.js";import"./InputLabel-Xf4L_974.js";import"./useFormControl-CmOg5wnR.js";import"./link.element-BIiOul_5.js";import"./Typography-Bf8WTvH-.js";import"./index-F4SWrtxx.js";import"./isFocusVisible-B8k4qzLc.js";import"./other.util-wHDaNs8P.js";import"./CircularProgress-SwCU_jrE.js";import"./icon-button.element-DnJxtSN_.js";import"./icon.element-CXpbt3XJ.js";import"./useId-CFSqmtgZ.js";import"./ButtonBase-DMmz3Ngg.js";import"./useTimeout-BnjI5Ij7.js";import"./useEnhancedEffect-Dmr-a5D-.js";import"./TransitionGroupContext-DM7DmuUd.js";import"./useForkRef-BVpE-hzr.js";import"./icon-content-badge-subs.element-B371fkJb.js";import"./tooltip-on-click.element-DkCofoav.js";import"./getReactElementRef-BVRziQZO.js";import"./index-CWS0_3Nh.js";import"./index-Ctr1kwqx.js";import"./Grow-DOIJXnb6.js";import"./useSlot-BHAemyrm.js";import"./Tooltip-C-jnBW1Q.js";import"./useControlled-CdETZoY_.js";import"./icon-content-badge.element-q5wmTKFZ.js";import"./icon-content.element-BdQZb-ha.js";import"./Badge-4F4pJWAG.js";import"./ownerWindow-SaFBzm43.js";import"./createSvgIcon-CgF2gLAa.js";import"./proxy-DKXG_8Nh.js";import"./time-ago-content.component-CgAfMA5z.js";import"./avatar-group.element-DpFg7yVC.js";import"./avatar.element-BgnLX07i.js";import"./Popover-Dcprfih5.js";import"./mergeSlotProps-C1T8RA4K.js";import"./createChainedFunction-BO_9K8Jh.js";import"./Fade-NGFjKnxD.js";import"./avatar-online-status.element-DlbeKCTC.js";import"./avatar-user-info-detail.element-EekkG6-M.js";import"./avatar-user-info-update.element-BRqVRgSZ.js";import"./string.util-DkuOPhSi.js";import"./avatar-user-info.element-FGoJfBEl.js";import"./typography-content-caption.component-B-gcDsAY.js";import"./typography-grid-info-row.component-CAMD7bAk.js";import"./typography-info-row.component-COmO6w-2.js";import"./typography-info-user.component-JbEZrZdO.js";import"./text-field-date.element-Z-ryKQot.js";import"./picker.style-d5VMr-sr.js";import"./text-field-label.element-DR40tkgw.js";import"./DatePicker-D7OSG3mP.js";import"./useMobilePicker-FM16C-xH.js";import"./TextField-BEYRgNgZ.js";import"./FormControl-CkqPUPi_.js";import"./isMuiElement-BY4WSVWD.js";import"./List-sl9rBPBu.js";import"./Button-oCoBaHSt.js";import"./ListItem-75WI95rP.js";import"./Chip-XHsgVC5o.js";import"./text-field-date-range.element-C4HA-fET.js";import"./text-field-date-time.element-5e61AyiW.js";import"./MenuItem-DJMfgy9t.js";import"./text-field-email-autocomplete.element-Cti4qvlA.js";import"./Autocomplete-Dt-sWZ6R.js";import"./text-field-number.element-IdCGJYJ8.js";import"./text-field-select.element-DPIIdWBU.js";import"./empty.component-BVbwj1xh.js";import"./text-field-select-search-object.element-ChgBZ9Hs.js";import"./text-highlight.element-IszqYd3y.js";import"./text-field.element-CZmGQCdc.js";import"./Stack-PxG0HRcj.js";import"./typography-limit-one-line.component-BZ_FBgg8.js";import"./time-ago.component-BE2-cffD.js";const go={title:"Elements/Button/ButtonUploadFileElement",component:a,tags:["autodocs"],args:{onChange:C(),multiple:!1,accept:"image/*"},parameters:{layout:"centered",chromatic:{disableSnapshot:!1}}},o={},r={render:t=>p.jsxs("div",{style:{display:"flex",gap:16,flexWrap:"wrap"},children:[p.jsx(a,{...t,accept:"image/*"}),p.jsx(a,{...t,accept:".pdf,.png,.jpg"})]})},e={play:async({canvasElement:t,args:m})=>{const x=E(t).getByRole("button");await s.click(x);const n=t.querySelector('input[type="file"]');await i(n).not.toBeNull();const B=new File(["hello"],"hello.png",{type:"image/png"});await s.upload(n,B),await i(m.onChange).toHaveBeenCalledTimes(1);const v=m.onChange.mock.calls[0][0];await i(v[0].name).toBe("hello.png")}};var l,c,g;o.parameters={...o.parameters,docs:{...(l=o.parameters)==null?void 0:l.docs,source:{originalSource:"{}",...(g=(c=o.parameters)==null?void 0:c.docs)==null?void 0:g.source}}};var u,d,f;r.parameters={...r.parameters,docs:{...(u=r.parameters)==null?void 0:u.docs,source:{originalSource:`{
+  render: args => <div style={{
+    display: 'flex',
+    gap: 16,
+    flexWrap: 'wrap'
+  }}>\r
+      <ButtonUploadFileElement {...args} accept="image/*" />\r
+      <ButtonUploadFileElement {...args} accept=".pdf,.png,.jpg" />\r
+    </div>
+}`,...(f=(d=r.parameters)==null?void 0:d.docs)==null?void 0:f.source}}};var h,y,w;e.parameters={...e.parameters,docs:{...(h=e.parameters)==null?void 0:h.docs,source:{originalSource:`{
+  play: async ({
+    canvasElement,
+    args
+  }) => {
+    const canvas = within(canvasElement);
+
+    // MUI ButtonIconElement renders a <button>
+    const trigger = canvas.getByRole('button');
+    await userEvent.click(trigger);
+    const input = canvasElement.querySelector('input[type="file"]') as HTMLInputElement | null;
+    await expect(input).not.toBeNull();
+    const file = new File(['hello'], 'hello.png', {
+      type: 'image/png'
+    });
+    await userEvent.upload(input!, file);
+    await expect(args.onChange).toHaveBeenCalledTimes(1);
+    const firstCallArg = (args.onChange as any).mock.calls[0][0];
+    await expect(firstCallArg[0].name).toBe('hello.png');
+  }
+}`,...(w=(y=e.parameters)==null?void 0:y.docs)==null?void 0:w.source}}};const uo=["Default","AcceptVariants","UploadCallsOnChange"];export{r as AcceptVariants,o as Default,e as UploadCallsOnChange,uo as __namedExportsOrder,go as default};
