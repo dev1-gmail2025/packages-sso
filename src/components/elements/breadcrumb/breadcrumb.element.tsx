@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 import React from 'react';
-import { StackRowAlignCenter, StackRow } from '../../styles';
+import { StackRowAlignCenter } from '../../styles';
 import { IconElement } from '../icon';
 
 export interface BreadcrumbItem {
@@ -15,9 +15,9 @@ interface BreadcrumbElementProps {
 
 export const BreadcrumbElement: React.FC<BreadcrumbElementProps> = ({ items }) => {
   return (
-    <StackRowAlignCenter sx={{ height: '32px', gap: '6px' }}>
+    <StackRowAlignCenter sx={{ height: '32px', gap: 1 }}>
       {items.map((item, index) => (
-        <StackRow key={index}>
+        <StackRowAlignCenter key={index} gap={1}>
           {item.onClick ? (
             <Typography
               onClick={item.onClick}
@@ -29,7 +29,7 @@ export const BreadcrumbElement: React.FC<BreadcrumbElementProps> = ({ items }) =
             <Typography>{item.label}</Typography>
           )}
           {index < items.length - 1 && <IconElement icon={'keyboard_arrow_right'} sx={{ color: '#737676' }} />}
-        </StackRow>
+        </StackRowAlignCenter>
       ))}
     </StackRowAlignCenter>
   );
