@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
@@ -33,9 +33,7 @@ export const Default: Story = {
       <Typography variant="caption">
         Click the apps icon to open sidebar. currentApp depends on window.location.href.
       </Typography>
-      <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
-        <SystemMonitorSidebarPart {...args} />
-      </Box>
+      <SystemMonitorSidebarPart {...args} />
     </Stack>
   ),
 };

@@ -1,11 +1,10 @@
-import { Box, Divider, Stack, Typography } from '@mui/material';
+import { Divider, Stack, Typography } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { ICONS } from './icons.const';
-import { ImageElement, ImageSizeType, StackRow } from '../../components';
-import { SizeProps } from '../enums';
 import { COLOR, STYLE } from '.';
+import { ImageElement, StackRow } from '../../components';
+import { ICONS } from './icons.const';
 
 const meta: Meta = {
   title: 'Const/Icons',
@@ -29,11 +28,7 @@ const IconGrid: React.FC<{ title: string; keys: string[] }> = ({ title, keys }) 
           const src = (ICONS as Record<string, string>)[k];
           return (
             <Stack key={k}>
-              <ImageElement
-                url={src}
-                sx={{ width: 'fit-content', height: 'fit-content' }}
-                sizeType={ImageSizeType.SQUARE}
-              />
+              <ImageElement url={src} sx={{ width: 'fit-content', height: 'fit-content' }} sizeType={'SQUARE'} />
               <Typography>{k}</Typography>
             </Stack>
           );

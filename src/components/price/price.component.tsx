@@ -1,8 +1,8 @@
 import { Stack, SxProps, Theme, Typography, useTheme } from '@mui/material';
 import React from 'react';
+import { STYLE } from '../../common';
 import { IconElement } from '../elements/icon/icon.element';
 import { StackRowAlignCenter } from '../styles/stack.style';
-import { STYLE } from '../../common';
 
 export interface PriceComponentProps {
   isLineHeight1?: boolean;
@@ -54,7 +54,6 @@ export const PriceComponent: React.FC<PriceComponentProps> = ({
                 content: "''",
                 borderTop: `1px solid ${palette.text.disabled}`,
                 width: '100%',
-                backgroundColor: 'blue',
               },
             }}
           >

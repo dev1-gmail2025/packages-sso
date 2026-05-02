@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { AppInfo, Environment, ICONS } from '../../common';
-import { AppGridItem } from '../app-grid';
-import { ImageElement, ImageSizeType } from '../elements';
-import { AppsSidebar } from './apps-sidebar.component';
 import { APP_OBJ } from '../../common/const/apps.const';
+import { AppGridItem } from '../app-grid';
+import { ImageElement } from '../elements';
+import { StackRowAlignCenter } from '../styles';
+import { AppsSidebar } from './apps-sidebar.component';
 
 export interface SystemMonitorSidebarPartProps {
   position?: 'left' | 'right';
@@ -25,33 +26,19 @@ export const SystemMonitorSidebarPart: React.FC<SystemMonitorSidebarPartProps> =
   direction = 'row',
 }) => {
   const [open, setOpen] = useState(false);
-  const [currentApp, setCurrentApp] = useState<AppInfo | null>(null);
-
-  useEffect(() => {
-    const href = window.location.href;
-    const matchedKey = Object.keys(APP_OBJ).find((key) => {
-      const app = APP_OBJ[key as keyof typeof APP_OBJ] as AppInfo;
-      const target = app.path[env];
-      return !!target && href.startsWith(target);
-    });
-
-    setCurrentApp(matchedKey ? (APP_OBJ[matchedKey as keyof typeof APP_OBJ] as AppInfo) : null);
-  }, [window.location.href]);
 
   return (
-    <>
-      <ImageElement url={ICONS.iconApps} onClick={() => setOpen(true)} sizeType={ImageSizeType.SQUARE} />
+    <StackRowAlignCenter>
+      <ImageElement url={ICONS.iconApps} onClick={() => setOpen(true)} sizeType={'SQUARE'} />
 
-      {currentApp && (
-        <AppGridItem
-          app={currentApp}
-          iconSize={32}
-          iconRadius={3}
-          showNameApps={showNameApps}
-          showIconApps={showIconApps}
-          direction={direction}
-        />
-      )}
+      <AppGridItem
+        app={APP_OBJ.SYSTEM}
+        iconSize={32}
+        iconRadius={3}
+        showNameApps={showNameApps}
+        showIconApps={showIconApps}
+        direction={direction}
+      />
 
       <AppsSidebar
         isOpen={open}
@@ -61,6 +48,6 @@ export const SystemMonitorSidebarPart: React.FC<SystemMonitorSidebarPartProps> =
         env={env}
         onClickApp={onClickApp}
       />
-    </>
+    </StackRowAlignCenter>
   );
 };

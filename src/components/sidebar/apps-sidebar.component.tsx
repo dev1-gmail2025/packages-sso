@@ -1,12 +1,13 @@
-import { Box, IconButton, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import React from 'react';
+import { AppGroup, AppInfo, Environment } from '../../common';
+import { APP_OBJ, SSO } from '../../common/const/apps.const';
+import { PADDING_GAP_LAYOUT } from '../../common/const/style.const';
 import { AppGrid } from '../app-grid/app-grid.component';
-import { Environment, AppInfo, AppGroup } from '../../common';
-import { PADDING_GAP_LAYOUT, PADDING_GAP_ITEM } from '../../common/const/style.const';
 import { IconElement } from '../elements';
 import { MotionBox } from '../motion';
-import { APP_OBJ, SSO } from '../../common/const/apps.const';
+import { StackRowAlignCenterJustBetween } from '../styles';
 
 export interface AppsSidebarProps {
   isOpen: boolean;
@@ -44,7 +45,7 @@ export const AppsSidebar: React.FC<AppsSidebarProps> = ({
 
   return (
     <>
-      <Box
+      <Stack
         onClick={onClose}
         sx={{
           position: 'fixed',
@@ -58,58 +59,29 @@ export const AppsSidebar: React.FC<AppsSidebarProps> = ({
       />
 
       {/* Sidebar */}
-      <MotionBox
+      <Stack
         preset="fadeInLeft"
+        component={MotionBox}
         sx={{
           position: 'fixed',
           top: 0,
           left: position === 'left' ? 0 : 'auto',
           right: position === 'right' ? 0 : 'auto',
-          height: '100vh',
+          height: '100%',
           backgroundColor: theme.palette.common.white,
           zIndex: 100,
           padding: PADDING_GAP_LAYOUT,
-          gap: PADDING_GAP_ITEM,
-          display: 'flex',
-          flexDirection: 'column',
+          overflowY: 'auto',
         }}
       >
         {/* Header */}
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <IconButton
-            onClick={onClose}
-            sx={{
-              color: theme.palette.grey[600],
-              '&:hover': { backgroundColor: theme.palette.grey[100] },
-            }}
-          >
-            <IconElement icon="close" />
-          </IconButton>
-          <IconButton
-            sx={{
-              color: theme.palette.grey[600],
-              '&:hover': { backgroundColor: theme.palette.grey[100] },
-            }}
-          >
-            <IconElement icon="home" onClick={() => (window.location.href = SSO[env])} />
-          </IconButton>
-        </Box>
+        <StackRowAlignCenterJustBetween>
+          <IconElement icon="close" onClick={onClose} />
+          <IconElement icon="home" onClick={() => (window.location.href = SSO[env])} />
+        </StackRowAlignCenterJustBetween>
 
         {Object.keys(appsGroupObj).map((group) => (
-          <Box
-            key={group}
-            sx={{
-              gap: PADDING_GAP_ITEM,
-              display: 'flex',
-              flexDirection: 'column',
-            }}
-          >
+          <Stack key={group}>
             <Typography variant="subtitle2">
               {group === AppGroup.PLATFORM_AND_INFO ? 'Platform & Info' : group}
             </Typography>
@@ -117,16 +89,16 @@ export const AppsSidebar: React.FC<AppsSidebarProps> = ({
               apps={appsGroupObj[group as AppGroup]}
               iconSize={60}
               iconRadius={5.5}
-              gap={PADDING_GAP_ITEM}
               titleVariant="body1"
               captionVariant="caption"
               titleColor={theme.palette.grey[800]}
               captionColor={theme.palette.grey[600]}
               onClickApp={onClickApp}
+              showPagination={false}
             />
-          </Box>
+          </Stack>
         ))}
-      </MotionBox>
+      </Stack>
     </>
   );
 };

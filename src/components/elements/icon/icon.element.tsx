@@ -45,6 +45,7 @@ export const IconElement: React.FC<IconElementProps> = ({
         fontSize: STYLE.FONT_SIZE_ICON[size],
         fontVariationSettings: `'FILL' ${fill}, 'wght' 100, 'GRAD' 200, 'opsz' 24`,
         alignContent: 'center',
+        opacity: disabled ? 0.3 : 1,
         ...sx,
       }}
       component={'span'}

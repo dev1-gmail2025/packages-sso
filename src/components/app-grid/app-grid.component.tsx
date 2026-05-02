@@ -1,16 +1,15 @@
-import { Box, IconButton } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import React from 'react';
-import IconLeft from '../../assets/icon-tsx/icon-left';
-import IconRight from '../../assets/icon-tsx/icon-right';
-import { AppInfo } from '../../common';
+import { AppInfo, COLOR } from '../../common';
 import {
-  PADDING_GAP_ITEM,
+  BORDER_RADIUS_ELEMENT_WRAPPER,
   PADDING_GAP_BUTTON,
   PADDING_GAP_ITEM_SMALL,
-  BORDER_RADIUS_ELEMENT_WRAPPER,
 } from '../../common/const/style.const';
+import { IconElement } from '../elements';
 import { MotionBox } from '../motion';
+import { StackAlignCenter, StackRowAlignCenter } from '../styles';
 import { AppGridItem } from './app-grid-item.component';
 
 export interface AppGridProps {
@@ -19,7 +18,6 @@ export interface AppGridProps {
   rows?: number;
   iconSize?: number;
   iconRadius?: number;
-  gap?: number | string;
   titleVariant?: 'subtitle1' | 'body1' | 'caption';
   captionVariant?: 'caption' | 'body2';
   titleColor?: string;
@@ -35,7 +33,6 @@ export const AppGrid: React.FC<AppGridProps> = ({
   rows = 3,
   iconSize = 80,
   iconRadius = 7,
-  gap = PADDING_GAP_ITEM,
   titleVariant = 'subtitle1',
   titleColor,
   showPagination = true,
@@ -60,128 +57,90 @@ export const AppGrid: React.FC<AppGridProps> = ({
   const placeholderHeight = isShowAppHidden ? iconSize + 36.5 : 0;
 
   return (
-    <Box sx={{ position: 'relative' }}>
-      <Box
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: `repeat(${columns}, 1fr)`,
-          gap,
-        }}
-      >
-        {visibleApps.map((app, index) => {
-          return (
-            <MotionBox
-              key={index}
-              preset="staggerItem"
-              index={index}
-              hover
-              sx={{
-                cursor: 'pointer',
-                display: 'flex',
-                flex: 1,
-                alignItems: 'center',
-                flexDirection: 'column',
-              }}
-              onClick={() => onClickApp(app)}
-            >
-              <AppGridItem
-                app={app}
-                iconSize={iconSize}
-                iconRadius={iconRadius}
-                titleVariant={titleVariant}
-                titleColor={titleColor ?? theme.palette.common.white}
+    <StackAlignCenter sx={{ width: '100%', gap: 3 }}>
+      <StackRowAlignCenter sx={{ width: '100%', gap: 3 }}>
+        {showPagination && (
+          <IconElement
+            icon="arrow_back"
+            size="large"
+            onClick={() => setPage((p) => Math.max(0, p - 1))}
+            disabled={apps.length < pageSize || page !== totalPages - 1}
+            sx={{ color: `${COLOR.GRAY[300]} !important` }}
+          />
+        )}
+
+        <Stack sx={{ display: 'grid', gridTemplateColumns: `repeat(${columns}, 1fr)`, width: '100%' }}>
+          {visibleApps.map((app, index) => {
+            return (
+              <StackAlignCenter
+                component={MotionBox}
+                key={index}
+                preset="staggerItem"
+                index={index}
+                hover
+                sx={{ cursor: 'pointer', flex: 1 }}
+                onClick={() => onClickApp(app)}
+              >
+                <AppGridItem
+                  app={app}
+                  iconSize={iconSize}
+                  iconRadius={iconRadius}
+                  titleVariant={titleVariant}
+                  titleColor={titleColor ?? theme.palette.common.white}
+                />
+              </StackAlignCenter>
+            );
+          })}
+          {placeholdersCount > 0 &&
+            Array.from({ length: placeholdersCount }).map((_, fillerIndex) => (
+              <Box
+                key={`placeholder-${fillerIndex}`}
+                sx={{
+                  visibility: 'hidden',
+                  width: 1,
+                  minHeight: placeholderHeight,
+                }}
               />
-            </MotionBox>
-          );
-        })}
-        {placeholdersCount > 0 &&
-          Array.from({ length: placeholdersCount }).map((_, fillerIndex) => (
+            ))}
+        </Stack>
+
+        {showPagination && (
+          <IconElement
+            icon="arrow_forward"
+            size="large"
+            onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+            disabled={apps.length < pageSize || page === totalPages - 1}
+            sx={{ color: `${COLOR.GRAY[300]} !important` }}
+          />
+        )}
+      </StackRowAlignCenter>
+
+      {showPagination && totalPages > 1 && (
+        <StackRowAlignCenter
+          sx={{
+            px: PADDING_GAP_BUTTON,
+            py: PADDING_GAP_ITEM_SMALL,
+            borderRadius: BORDER_RADIUS_ELEMENT_WRAPPER,
+            backgroundColor: 'rgba(255,255,255,0.15)',
+            width: 'fit-content',
+          }}
+        >
+          {Array.from({ length: totalPages }).map((_, i) => (
             <Box
-              key={`placeholder-${fillerIndex}`}
+              key={i}
+              onClick={() => setPage(i)}
               sx={{
-                visibility: 'hidden',
-                width: 1,
-                minHeight: placeholderHeight,
+                height: 10,
+                borderRadius: BORDER_RADIUS_ELEMENT_WRAPPER,
+                cursor: 'pointer',
+                transition: 'width 0.3s ease',
+                width: i === page ? '40px' : '10px',
+                backgroundColor: i === page ? theme.palette.common.white : 'rgba(255,255,255,0.35)',
               }}
             />
           ))}
-      </Box>
-
-      {showPagination && totalPages > 1 && (
-        <>
-          {page === totalPages - 1 && (
-            <IconButton
-              size="small"
-              onClick={() => setPage((p) => Math.max(0, p - 1))}
-              disabled={page === 0}
-              sx={{
-                position: 'absolute',
-                top: '50%',
-                left: -30,
-                transform: 'translateY(-120%)',
-                color: theme.palette.divider,
-              }}
-            >
-              <IconLeft />
-            </IconButton>
-          )}
-
-          {/* Right arrow */}
-          {page !== totalPages - 1 && (
-            <IconButton
-              size="small"
-              onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
-              disabled={page === totalPages - 1}
-              sx={{
-                position: 'absolute',
-                top: '50%',
-                right: -30,
-                transform: 'translateY(-120%)',
-                color: theme.palette.divider,
-              }}
-            >
-              <IconRight />
-            </IconButton>
-          )}
-
-          {/* Dots bar */}
-          <Box
-            sx={{
-              mt: 2,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: PADDING_GAP_BUTTON,
-                px: PADDING_GAP_BUTTON,
-                py: PADDING_GAP_ITEM_SMALL,
-                borderRadius: BORDER_RADIUS_ELEMENT_WRAPPER,
-                backgroundColor: 'rgba(255,255,255,0.15)',
-              }}
-            >
-              {Array.from({ length: totalPages }).map((_, i) => (
-                <Box
-                  key={i}
-                  onClick={() => setPage(i)}
-                  sx={{
-                    height: 10,
-                    borderRadius: BORDER_RADIUS_ELEMENT_WRAPPER,
-                    cursor: 'pointer',
-                    transition: 'width 0.3s ease',
-                    width: i === page ? '40px' : '10px',
-                    backgroundColor: i === page ? theme.palette.common.white : 'rgba(255,255,255,0.35)',
-                  }}
-                />
-              ))}
-            </Box>
-          </Box>
-        </>
+        </StackRowAlignCenter>
       )}
-    </Box>
+    </StackAlignCenter>
   );
 };

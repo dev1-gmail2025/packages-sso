@@ -15,7 +15,7 @@ export const imageArgTypes: Partial<ArgTypes<ImageElementProps>> = {
     description: 'Shape / sizing behavior.',
     table: {
       type: { summary: 'ImageSizeType' },
-      defaultValue: { summary: ImageSizeType.CIRCLE },
+      defaultValue: { summary: 'CIRCLE' },
     },
   },
   size: {

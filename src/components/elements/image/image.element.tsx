@@ -1,15 +1,14 @@
 import { Box, type BoxProps, Skeleton, useTheme } from '@mui/material';
 import React, { type ReactNode, useState } from 'react';
 import { SizeProps, STYLE } from '../../../common';
-import { StackRow } from '../../styles/stack.style';
-import { ImageSizeType } from './image.enum';
 import { MAP_SIZE } from '../../../common/const/style.const';
+import { StackRow } from '../../styles/stack.style';
 
 export interface ImageElementProps extends BoxProps {
   url: string;
   isBorder?: boolean;
   isWrap?: boolean;
-  sizeType?: ImageSizeType;
+  sizeType?: 'CIRCLE' | 'SQUARE' | 'FULL_WIDTH';
   size?: SizeProps | string;
 }
 
@@ -23,7 +22,7 @@ export const ImageElement: React.FC<ImageElementProps> = ({
   sx = {},
   isBorder = false,
   isWrap = false,
-  sizeType = ImageSizeType.CIRCLE,
+  sizeType = 'CIRCLE',
   size = SizeProps.MEDIUM,
   ...rest
 }) => {
@@ -32,12 +31,7 @@ export const ImageElement: React.FC<ImageElementProps> = ({
 
   if (onClick) sx = { ...sx, cursor: 'pointer' };
 
-  const borderRadius =
-    sizeType === ImageSizeType.CIRCLE
-      ? '50%'
-      : sizeType === ImageSizeType.SQUARE
-        ? STYLE.BORDER_RADIUS_ELEMENT_SMALL
-        : 0;
+  const borderRadius = sizeType === 'CIRCLE' ? '50%' : sizeType === 'SQUARE' ? STYLE.BORDER_RADIUS_ELEMENT_SMALL : 0;
 
   return (
     <ImageWrapper isWrap={isWrap}>

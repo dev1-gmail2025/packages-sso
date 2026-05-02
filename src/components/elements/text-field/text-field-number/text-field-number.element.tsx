@@ -1,7 +1,7 @@
 import { BaseTextFieldProps, Box, TextField, TextFieldProps } from '@mui/material';
 import React from 'react';
 import { NumericFormat } from 'react-number-format';
-import { IconButtonElement } from '../../icon';
+import { IconElement } from '../../icon';
 import { TextFieldLabelElement } from '../text-field-label/text-field-label.element';
 
 export interface TextFieldNumberElementProps extends BaseTextFieldProps {
@@ -42,8 +42,8 @@ export const TextFieldNumberElement: React.FC<TextFieldNumberElementProps> = ({
       <TextFieldLabelElement label={label} iconLabel={iconLabel} required={rest.required} />
       <NumericFormat
         customInput={TextField}
-        thousandSeparator=','
-        decimalSeparator='.'
+        thousandSeparator=","
+        decimalSeparator="."
         decimalScale={decimalScale} // Giữ tối đa decimalScale số sau dấu thập phân
         fixedDecimalScale={fixedDecimalScale}
         allowNegative={false}
@@ -61,7 +61,7 @@ export const TextFieldNumberElement: React.FC<TextFieldNumberElementProps> = ({
           ...InputProps,
           endAdornment:
             showResetButton && value && onReset ? (
-              <IconButtonElement icon='close' onClick={onReset} />
+              <IconElement icon="close" onClick={onReset} size="small" sx={{ transform: 'translateX(2px)' }} />
             ) : (
               InputProps?.endAdornment
             ),

@@ -1,6 +1,5 @@
 import { Box, Stack, Typography } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 
 import { SizeProps } from '../../../common';
 import { imageArgTypes } from './image.argtypes';
@@ -13,7 +12,7 @@ const meta: Meta<typeof ImageElement> = {
   tags: ['autodocs'],
   args: {
     url: 'https://picsum.photos/200',
-    sizeType: ImageSizeType.CIRCLE,
+    sizeType: 'CIRCLE',
     size: SizeProps.MEDIUM,
     isBorder: false,
     isWrap: false,
@@ -31,11 +30,11 @@ export const SizeTypes: Story = {
     <Stack direction="row" spacing={4} alignItems="center" flexWrap="wrap">
       <Box>
         <Typography variant="caption">Circle</Typography>
-        <ImageElement {...args} sizeType={ImageSizeType.CIRCLE} />
+        <ImageElement {...args} sizeType={'CIRCLE'} />
       </Box>
       <Box>
         <Typography variant="caption">Square</Typography>
-        <ImageElement {...args} sizeType={ImageSizeType.SQUARE} />
+        <ImageElement {...args} sizeType={'SQUARE'} />
       </Box>
       <Box>
         <Typography variant="caption">Full width (no radius)</Typography>

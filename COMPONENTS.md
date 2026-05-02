@@ -823,8 +823,8 @@ import { IconElement } from 'sevago-sso-fe';
 ```tsx
 import { ImageElement, ImageSizeType } from 'sevago-sso-fe';
 
-<ImageElement url="/images/avatar.jpg" sizeType={ImageSizeType.CIRCLE} size={SizeProps.LARGE} />
-<ImageElement url="/images/product.jpg" sizeType={ImageSizeType.SQUARE} sx={{ width: 120, height: 120 }} />
+<ImageElement url="/images/avatar.jpg" sizeType={'CIRCLE'} size={SizeProps.LARGE} />
+<ImageElement url="/images/product.jpg" sizeType={'SQUARE'} sx={{ width: 120, height: 120 }} />
 ```
 
 | `ImageSizeType` | Mô tả        |

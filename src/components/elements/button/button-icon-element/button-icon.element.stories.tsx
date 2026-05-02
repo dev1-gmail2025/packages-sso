@@ -1,13 +1,9 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { expect, fn, within } from '@storybook/test';
-import { userEvent } from '@storybook/test';
-
-import { ButtonIconElement } from './button-icon.element';
-import { buttonIconArgTypes } from './button-icon.argtypes';
 import { Stack } from '@mui/system';
+import type { Meta, StoryObj } from '@storybook/react';
+import { expect, fn, userEvent, within } from '@storybook/test';
 import { STYLE } from '../../../../common';
-import { ImageSizeType } from '../../image';
+import { buttonIconArgTypes } from './button-icon.argtypes';
+import { ButtonIconElement } from './button-icon.element';
 
 const meta: Meta<typeof ButtonIconElement> = {
   title: 'Elements/Button/ButtonIconElement',
@@ -39,9 +35,9 @@ export const Variants: Story = {
         <ButtonIconElement {...args} variant="text" />
       </div>
       <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-        <ButtonIconElement {...args} variant="contained" sizeType={ImageSizeType.CIRCLE} />
-        <ButtonIconElement {...args} variant="outlined" sizeType={ImageSizeType.CIRCLE} />
-        <ButtonIconElement {...args} variant="text" sizeType={ImageSizeType.CIRCLE} />
+        <ButtonIconElement {...args} variant="contained" sizeType={'CIRCLE'} />
+        <ButtonIconElement {...args} variant="outlined" sizeType={'CIRCLE'} />
+        <ButtonIconElement {...args} variant="text" sizeType={'CIRCLE'} />
       </div>
     </Stack>
   ),

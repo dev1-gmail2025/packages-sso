@@ -2,7 +2,7 @@ import { BaseTextFieldProps, Box, TextField, TextFieldProps, Typography } from '
 import React, { useEffect, useState } from 'react';
 import { NumericFormat } from 'react-number-format';
 import { StackRowAlignCenter } from '../../../styles';
-import { IconButtonElement } from '../../icon';
+import { IconElement } from '../../icon';
 import { TextFieldLabelElement } from '../text-field-label/text-field-label.element';
 
 export interface TextFieldHourMinuteElementProps extends BaseTextFieldProps {
@@ -249,7 +249,7 @@ export const TextFieldHourMinuteElement: React.FC<TextFieldHourMinuteElementProp
             ...InputProps,
             endAdornment:
               showResetButton && (hourValue || minuteValue) ? (
-                <IconButtonElement icon="close" onClick={handleReset} />
+                <IconElement icon="close" onClick={onReset} size="small" sx={{ transform: 'translateX(2px)' }} />
               ) : (
                 InputProps?.endAdornment
               ),

@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import React from 'react';
-import { AppInfo, STYLE } from '../../common';
-import { ImageElement, ImageSizeType } from '../elements';
+import { AppInfo } from '../../common';
+import { ImageElement } from '../elements';
 import { StackRowAlignCenter, StackRowAlignJustCenter } from '../styles';
 
 export interface AppGridItemProps {
@@ -26,16 +26,12 @@ export const AppGridItem: React.FC<AppGridItemProps> = ({
   direction = 'column',
 }) => {
   return (
-    <StackRowAlignCenter sx={{ flexDirection: direction, gap: STYLE.PADDING_GAP_ITEM }}>
+    <StackRowAlignCenter sx={{ flexDirection: direction }}>
       {showIconApps && (
         <StackRowAlignJustCenter
           sx={{ width: iconSize, height: iconSize, borderRadius: iconRadius, background: app.color }}
         >
-          <ImageElement
-            sx={{ width: iconSize * 0.56, height: iconSize * 0.56 }}
-            url={app.icon}
-            sizeType={ImageSizeType.SQUARE}
-          />
+          <ImageElement sx={{ width: iconSize * 0.56, height: iconSize * 0.56 }} url={app.icon} sizeType={'SQUARE'} />
         </StackRowAlignJustCenter>
       )}
 

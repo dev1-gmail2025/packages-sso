@@ -2,20 +2,21 @@ import { Button, ButtonProps } from '@mui/material';
 import { STYLE } from '../../../../common';
 import { LoadingComponent } from '../../../loading';
 import { IconElement } from '../../icon';
-import { ImageSizeType } from '../../image';
 
 export interface ButtonIconElementProps extends ButtonProps {
   icon: string;
   loading?: boolean;
   permission?: boolean;
-  sizeType?: ImageSizeType;
+  sizeType?: 'CIRCLE' | 'SQUARE' | 'FULL_WIDTH';
 }
 
 export const ButtonIconElement: React.FC<ButtonIconElementProps> = ({
   icon,
   loading = false,
   permission,
-  sizeType = ImageSizeType.SQUARE,
+  sizeType = 'SQUARE',
+  size = 'medium',
+  disabled = false,
   sx,
   ...rest
 }) => {
@@ -24,23 +25,21 @@ export const ButtonIconElement: React.FC<ButtonIconElementProps> = ({
   return (
     <Button
       {...rest}
+      disabled={disabled}
+      size={size}
       sx={{
         textTransform: 'none',
-        borderRadius:
-          sizeType === ImageSizeType.CIRCLE
-            ? '50%'
-            : sizeType === ImageSizeType.SQUARE
-              ? STYLE.BORDER_RADIUS_ELEMENT_SMALL
-              : 0,
-        width: STYLE.HEIGHT_TEXT_FIELD_BUTTON.medium,
+        borderRadius: sizeType === 'CIRCLE' ? '50%' : sizeType === 'SQUARE' ? STYLE.BORDER_RADIUS_ELEMENT_SMALL : 0,
         minWidth: 'unset',
+        width: STYLE.HEIGHT_TEXT_FIELD_BUTTON[size],
+        height: STYLE.HEIGHT_TEXT_FIELD_BUTTON[size],
         ...sx,
       }}
     >
       {loading ? (
-        <LoadingComponent color="primary" size="small" sx={{ minHeight: 24.5 }} />
+        <LoadingComponent color="primary" size={size} />
       ) : (
-        <IconElement icon={icon} sx={{ height: 24.5 }} />
+        <IconElement icon={icon} size={size} disabled={disabled} />
       )}
     </Button>
   );
