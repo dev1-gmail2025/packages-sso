@@ -37,7 +37,7 @@ export const ButtonIconElement: React.FC<ButtonIconElementProps> = ({
       }}
     >
       {loading ? (
-        <LoadingComponent color="primary" size={size} />
+        <LoadingComponent color='primary' size={size} />
       ) : (
         <IconElement icon={icon} size={size} disabled={disabled} />
       )}

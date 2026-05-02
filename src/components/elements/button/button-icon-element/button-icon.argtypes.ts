@@ -1,6 +1,5 @@
 import type { ArgTypes } from '@storybook/react';
 import type { ButtonIconElementProps } from './button-icon.element';
-import { ImageSizeType } from '../../image';
 
 export const buttonIconArgTypes: ArgTypes<ButtonIconElementProps> = {
   icon: { control: 'text' },
@@ -20,7 +19,7 @@ export const buttonIconArgTypes: ArgTypes<ButtonIconElementProps> = {
   },
   sizeType: {
     control: 'select',
-    options: Object.values(ImageSizeType),
+    options: ['CIRCLE', 'SQUARE', 'FULL_WIDTH'],
   },
   onClick: { action: 'clicked' },
 };

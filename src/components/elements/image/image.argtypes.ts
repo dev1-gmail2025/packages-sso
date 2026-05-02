@@ -1,7 +1,6 @@
 import type { ArgTypes } from '@storybook/react';
 import { SizeProps } from '../../../common';
 import type { ImageElementProps } from './image.element';
-import { ImageSizeType } from './image.enum';
 
 export const imageArgTypes: Partial<ArgTypes<ImageElementProps>> = {
   url: {
@@ -11,7 +10,7 @@ export const imageArgTypes: Partial<ArgTypes<ImageElementProps>> = {
   },
   sizeType: {
     control: 'select',
-    options: Object.values(ImageSizeType),
+    options: ['CIRCLE', 'SQUARE', 'FULL_WIDTH'],
     description: 'Shape / sizing behavior.',
     table: {
       type: { summary: 'ImageSizeType' },
