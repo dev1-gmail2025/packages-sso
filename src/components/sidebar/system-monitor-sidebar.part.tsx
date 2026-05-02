@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { AppInfo, Environment, ICONS } from '../../common';
 import { APP_OBJ } from '../../common/const/apps.const';
 import { AppGridItem } from '../app-grid';
@@ -27,12 +27,19 @@ export const SystemMonitorSidebarPart: React.FC<SystemMonitorSidebarPartProps> =
 }) => {
   const [open, setOpen] = useState(false);
 
+  const app = useMemo(() => {
+    return (
+      Object.values(APP_OBJ).find((e) => Object.values(e.path).some((k) => k.includes(window.location.href))) ||
+      APP_OBJ.SYSTEM
+    );
+  }, [window.location.href]);
+
   return (
     <StackRowAlignCenter>
       <ImageElement url={ICONS.iconApps} onClick={() => setOpen(true)} sizeType={'SQUARE'} />
 
       <AppGridItem
-        app={APP_OBJ.SYSTEM}
+        app={app}
         iconSize={32}
         iconRadius={3}
         showNameApps={showNameApps}
