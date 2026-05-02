@@ -28,10 +28,7 @@ export const SystemMonitorSidebarPart: React.FC<SystemMonitorSidebarPartProps> =
   const [open, setOpen] = useState(false);
 
   const app = useMemo(() => {
-    return (
-      Object.values(APP_OBJ).find((e) => Object.values(e.path).some((k) => k.includes(window.location.href))) ||
-      APP_OBJ.SYSTEM
-    );
+    return Object.values(APP_OBJ).find(e => window.location.href.startsWith(e.path[env])) || APP_OBJ.SYSTEM;
   }, [window.location.href]);
 
   return (
