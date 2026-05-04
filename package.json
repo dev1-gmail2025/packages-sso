@@ -36,12 +36,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dev1-gmail2025/sevago-sso-fe"
+    "url": "git+https://github.com/core-sevago/sevago-library"
   },
   "bugs": {
-    "url": "https://github.com/dev1-gmail2025/sevago-sso-fe"
+    "url": "https://github.com/core-sevago/sevago-library"
   },
-  "homepage": "https://github.com/dev1-gmail2025/sevago-sso-fe",
+  "homepage": "https://github.com/core-sevago/sevago-library",
   "peerDependencies": {
     "@emotion/react": ">=11",
     "@emotion/styled": ">=11",

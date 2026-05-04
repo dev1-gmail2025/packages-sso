@@ -1,8 +1,8 @@
 # Sevago SSO FE – Hướng dẫn sử dụng Components
 
-> **Package**: `sevago-sso-fe` v1.0.125  
+> **Package**: `sevago-library` v1.0.125  
 > **Framework**: React + TypeScript + MUI v5  
-> Tất cả components / elements đều được export từ `sevago-sso-fe`.
+> Tất cả components / elements đều được export từ `sevago-library`.
 
 ---
 
@@ -57,7 +57,7 @@
 **Import**:
 
 ```tsx
-import { AppGrid } from 'sevago-sso-fe';
+import { AppGrid } from 'sevago-library';
 ```
 
 **Props**:
@@ -91,7 +91,7 @@ import { AppGrid } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { AppGridItem } from 'sevago-sso-fe';
+import { AppGridItem } from 'sevago-library';
 ```
 
 **Props**:
@@ -122,7 +122,7 @@ import { AppGridItem } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { BannerComponent } from 'sevago-sso-fe';
+import { BannerComponent } from 'sevago-library';
 ```
 
 **Props**:
@@ -146,7 +146,7 @@ import { BannerComponent } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { Breadcrumbs } from 'sevago-sso-fe';
+import { Breadcrumbs } from 'sevago-library';
 ```
 
 **Props**:
@@ -173,7 +173,7 @@ import { Breadcrumbs } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { EmptyComponent } from 'sevago-sso-fe';
+import { EmptyComponent } from 'sevago-library';
 ```
 
 **Ví dụ**:
@@ -193,7 +193,7 @@ import { EmptyComponent } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { DefaultLayout } from 'sevago-sso-fe';
+import { DefaultLayout } from 'sevago-library';
 ```
 
 **Props**:
@@ -219,7 +219,7 @@ import { DefaultLayout } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { LoadingComponent } from 'sevago-sso-fe';
+import { LoadingComponent } from 'sevago-library';
 ```
 
 **Props**:
@@ -247,7 +247,7 @@ import { LoadingComponent } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { LogoComponent } from 'sevago-sso-fe';
+import { LogoComponent } from 'sevago-library';
 ```
 
 **Props**:
@@ -273,7 +273,7 @@ import { LogoComponent } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { MotionBox } from 'sevago-sso-fe';
+import { MotionBox } from 'sevago-library';
 ```
 
 **Props**:
@@ -329,7 +329,7 @@ import { MotionBox } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { NoteComponent } from 'sevago-sso-fe';
+import { NoteComponent } from 'sevago-library';
 ```
 
 **Props**:
@@ -357,7 +357,7 @@ import { NoteComponent } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { PriceComponent } from 'sevago-sso-fe';
+import { PriceComponent } from 'sevago-library';
 ```
 
 **Props**:
@@ -386,7 +386,7 @@ import { PriceComponent } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { ReviewComponent } from 'sevago-sso-fe';
+import { ReviewComponent } from 'sevago-library';
 ```
 
 **Props**:
@@ -413,7 +413,7 @@ import { ReviewComponent } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { AppsSidebar } from 'sevago-sso-fe';
+import { AppsSidebar } from 'sevago-library';
 ```
 
 **Props**:
@@ -449,7 +449,7 @@ const [open, setOpen] = useState(false);
 **Import**:
 
 ```tsx
-import { SystemMonitorSidebarPart } from 'sevago-sso-fe';
+import { SystemMonitorSidebarPart } from 'sevago-library';
 ```
 
 **Props**:
@@ -483,7 +483,7 @@ import { SystemMonitorSidebarPart } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { SystemMonitorScreen } from 'sevago-sso-fe';
+import { SystemMonitorScreen } from 'sevago-library';
 ```
 
 **Props**:
@@ -517,7 +517,7 @@ import { SystemMonitorScreen } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { AvatarElement } from 'sevago-sso-fe';
+import { AvatarElement } from 'sevago-library';
 ```
 
 **Props**:
@@ -563,7 +563,7 @@ import { AvatarElement } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { ButtonElement } from 'sevago-sso-fe';
+import { ButtonElement } from 'sevago-library';
 ```
 
 | Prop        | Kiểu                     | Mặc định      | Mô tả                                        |
@@ -647,7 +647,7 @@ import { ButtonElement } from 'sevago-sso-fe';
 **Mô tả**: Checkbox có label, mở rộng từ MUI Checkbox.
 
 ```tsx
-import { CheckboxElement } from 'sevago-sso-fe';
+import { CheckboxElement } from 'sevago-library';
 
 <CheckboxElement label="Tôi đồng ý điều khoản" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} />;
 ```
@@ -663,7 +663,7 @@ import { CheckboxElement } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { DialogElement } from 'sevago-sso-fe';
+import { DialogElement } from 'sevago-library';
 ```
 
 **Props chính**:
@@ -721,7 +721,7 @@ import { DialogElement } from 'sevago-sso-fe';
 **Mô tả**: Đường phân cách kiểu nét đứt hoặc solid, hỗ trợ chiều ngang và chiều dọc.
 
 ```tsx
-import { DashedDividerElement } from 'sevago-sso-fe';
+import { DashedDividerElement } from 'sevago-library';
 
 // Ngang
 <DashedDividerElement />
@@ -742,7 +742,7 @@ import { DashedDividerElement } from 'sevago-sso-fe';
 **Mô tả**: Hiển thị Material Symbols icon. Hỗ trợ click handler, disabled state, filled/outline style.
 
 ```tsx
-import { IconElement } from 'sevago-sso-fe';
+import { IconElement } from 'sevago-library';
 
 <IconElement icon="home" size="medium" />
 <IconElement icon="star" fill={1} color="warning" />
@@ -821,7 +821,7 @@ import { IconElement } from 'sevago-sso-fe';
 **Mô tả**: Hiển thị ảnh với skeleton loading, fallback khi lỗi, hỗ trợ các kiểu bo góc.
 
 ```tsx
-import { ImageElement, ImageSizeType } from 'sevago-sso-fe';
+import { ImageElement, ImageSizeType } from 'sevago-library';
 
 <ImageElement url="/images/avatar.jpg" sizeType={'CIRCLE'} size={SizeProps.LARGE} />
 <ImageElement url="/images/product.jpg" sizeType={'SQUARE'} sx={{ width: 120, height: 120 }} />
@@ -858,7 +858,7 @@ import { ImageElement, ImageSizeType } from 'sevago-sso-fe';
 **Mô tả**: `<a>` tag không có gạch chân, hỗ trợ `onClick` với `preventDefault`.
 
 ```tsx
-import { LinkElement } from 'sevago-sso-fe';
+import { LinkElement } from 'sevago-library';
 
 <LinkElement href="/dashboard">Trang chủ</LinkElement>
 <LinkElement onClick={() => navigate('/profile')}>Hồ sơ</LinkElement>
@@ -881,7 +881,7 @@ import { LinkElement } from 'sevago-sso-fe';
 **Mô tả**: Component phân trang đầy đủ với nút first/last, và dropdown chọn số hàng mỗi trang.
 
 ```tsx
-import { PaginationElement } from 'sevago-sso-fe';
+import { PaginationElement } from 'sevago-library';
 
 <PaginationElement
   total={200}
@@ -910,7 +910,7 @@ import { PaginationElement } from 'sevago-sso-fe';
 **Mô tả**: Radio button đơn lẻ có label.
 
 ```tsx
-import { RadioElement } from 'sevago-sso-fe';
+import { RadioElement } from 'sevago-library';
 
 <RadioElement name="gender" value="male" label="Nam" checked={gender === 'male'} onChange={onGenderChange} />;
 ```
@@ -935,7 +935,7 @@ import { RadioElement } from 'sevago-sso-fe';
 **Mô tả**: Toggle switch tuỳ chỉnh dùng `framer-motion`, trả về giá trị boolean.
 
 ```tsx
-import { SwitchElement } from 'sevago-sso-fe';
+import { SwitchElement } from 'sevago-library';
 
 <SwitchElement name="isActive" value={isActive} onChange={(e) => setIsActive(e.target.value)} />;
 ```
@@ -957,7 +957,7 @@ import { SwitchElement } from 'sevago-sso-fe';
 **Mô tả**: Thanh tab với animation trượt (framer-motion layout animation). Hỗ trợ 2 variant: `contained` (nền màu chính) và `outlined` (MUI Tabs).
 
 ```tsx
-import { TabsComponent } from 'sevago-sso-fe';
+import { TabsComponent } from 'sevago-library';
 
 const tabs = [
   { id: 'overview', name: 'Tổng quan', icon: 'dashboard' },
@@ -1021,7 +1021,7 @@ const tabs: TabSubs[] = [
 **Mô tả**: Thẻ nhãn (tag/badge) với 3 variant và nhiều màu tuỳ chỉnh.
 
 ```tsx
-import { TagElement } from 'sevago-sso-fe';
+import { TagElement } from 'sevago-library';
 
 // Dùng màu hex
 <TagElement type="#22c55e" content="Đang hoạt động" size="small" />
@@ -1058,7 +1058,7 @@ import { TagElement } from 'sevago-sso-fe';
 **Import**:
 
 ```tsx
-import { highlightText, highlightYellow } from 'sevago-sso-fe';
+import { highlightText, highlightYellow } from 'sevago-library';
 ```
 
 ```tsx
@@ -1081,7 +1081,7 @@ const highlighted = highlightYellow('Hello World', 'world', false);
 **Mô tả**: Hiển thị thời gian tương đối (vd: "3 phút trước", "2 giờ trước").
 
 ```tsx
-import { TimeAgoComponent } from 'sevago-sso-fe';
+import { TimeAgoComponent } from 'sevago-library';
 
 <TimeAgoComponent time={new Date(post.createdAt)} hasText />;
 // Output: "Cập nhật lúc 5 phút trước"
@@ -1104,7 +1104,7 @@ import { TimeAgoComponent } from 'sevago-sso-fe';
 **Mô tả**: Tooltip hiển thị khi hover, hỗ trợ ReactNode làm content.
 
 ```tsx
-import { TooltipOnHoverElement } from 'sevago-sso-fe';
+import { TooltipOnHoverElement } from 'sevago-library';
 
 <TooltipOnHoverElement content={<UserCard user={user} />} placement="top">
   <AvatarElement url={user.avatar} />
@@ -1130,7 +1130,7 @@ import { TooltipOnHoverElement } from 'sevago-sso-fe';
 **Mô tả**: 2 dòng text: tiêu đề chính + phụ đề (caption), có thể thêm dòng userTitleName.
 
 ```tsx
-import { TypographyContentCaption } from 'sevago-sso-fe';
+import { TypographyContentCaption } from 'sevago-library';
 
 <TypographyContentCaption content="Nguyễn Văn A" caption="nguyenvana@email.com" userTitleName="Admin" />;
 ```
@@ -1140,7 +1140,7 @@ import { TypographyContentCaption } from 'sevago-sso-fe';
 **Mô tả**: Hàng thông tin label–value dạng grid (hỗ trợ layout `horizontal` và `vertical`).
 
 ```tsx
-import { TypographyGridInfoRow } from 'sevago-sso-fe';
+import { TypographyGridInfoRow } from 'sevago-library';
 
 <TypographyGridInfoRow label="Họ và tên" value="Nguyễn Văn A" />
 <TypographyGridInfoRow label="Email" value="email@example.com" layout="vertical" />
@@ -1151,7 +1151,7 @@ import { TypographyGridInfoRow } from 'sevago-sso-fe';
 **Mô tả**: Hàng thông tin đơn giản `label: value` (row hoặc column).
 
 ```tsx
-import { TypographyInfoRow } from 'sevago-sso-fe';
+import { TypographyInfoRow } from 'sevago-library';
 
 <TypographyInfoRow label="Phòng ban" value={user.department} />
 <TypographyInfoRow label="Ghi chú" value={user.note} isColumn lineLimit={3} />
@@ -1162,7 +1162,7 @@ import { TypographyInfoRow } from 'sevago-sso-fe';
 **Mô tả**: Grid nhiều cột hiển thị thông tin người dùng dạng label: value. Hỗ trợ highlight tìm kiếm.
 
 ```tsx
-import { TypographyInfoUser } from 'sevago-sso-fe';
+import { TypographyInfoUser } from 'sevago-library';
 
 const items = [
   { label: 'Họ tên', value: user.name },
@@ -1179,7 +1179,7 @@ const items = [
 **Mô tả**: Text giới hạn 1 dòng với ellipsis (...).
 
 ```tsx
-import { TypographyOneLine } from 'sevago-sso-fe';
+import { TypographyOneLine } from 'sevago-library';
 
 <TypographyOneLine content={longTitle} sx={{ maxWidth: 200 }} />;
 ```
@@ -1193,7 +1193,7 @@ import { TypographyOneLine } from 'sevago-sso-fe';
 **Mô tả**: Hiển thị tên và phòng ban của người dùng với icon.
 
 ```tsx
-import { UserInfo } from 'sevago-sso-fe';
+import { UserInfo } from 'sevago-library';
 
 <UserInfo name="Nguyễn Văn A" department="Phòng Kỹ thuật" icon="person" />;
 ```
@@ -1207,7 +1207,7 @@ import { UserInfo } from 'sevago-sso-fe';
 **Mô tả**: Container trang/section với label tiêu đề, actions và loading state. Dùng để bọc một section chính trong trang.
 
 ```tsx
-import { WrapperElement } from 'sevago-sso-fe';
+import { WrapperElement } from 'sevago-library';
 
 <WrapperElement
   label="Danh sách người dùng"
@@ -1270,20 +1270,20 @@ import {
   StackBgDefaultBorRadLayCol, // background.default + padding + border-radius
   StackBgPaperBorRadLayCol, // background.paper + padding + border-radius
   StackTabs, // styled container cho tabs
-} from 'sevago-sso-fe';
+} from 'sevago-library';
 ```
 
 ### Typography Styles
 
 ```tsx
-import { TypographyFilter } from 'sevago-sso-fe';
+import { TypographyFilter } from 'sevago-library';
 // Typography dạng filter chip, hover đổi màu primary
 ```
 
 ### Paper Styles
 
 ```tsx
-import { PaperSelect } from 'sevago-sso-fe';
+import { PaperSelect } from 'sevago-library';
 // Paper dùng cho dropdown/autocomplete, hỗ trợ tree-select styling
 ```
 
@@ -1379,5 +1379,5 @@ import {
   StackTabs,
   TypographyFilter,
   PaperSelect,
-} from 'sevago-sso-fe';
+} from 'sevago-library';
 ```
