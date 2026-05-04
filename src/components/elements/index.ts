@@ -12,6 +12,7 @@ export * from './link';
 export * from './list';
 export * from './pagination';
 export * from './radio';
+export * from './section';
 export * from './switch';
 export * from './table';
 export * from './tabs';
