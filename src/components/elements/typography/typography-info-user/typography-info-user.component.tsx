@@ -11,6 +11,7 @@ export interface InfoItem {
   value: string | React.ReactNode;
   sxValue?: SxProps<Theme>;
   statusTag?: boolean;
+  color?: string;
 }
 
 export interface TypographyInfoGridProps {
@@ -23,7 +24,6 @@ export interface TypographyInfoGridProps {
   gap?: number | string;
   highlightQuery?: string;
   direction?: 'row' | 'column';
-  color?: string;
 }
 
 export const TypographyInfoUser: React.FC<TypographyInfoGridProps> = ({
@@ -36,7 +36,6 @@ export const TypographyInfoUser: React.FC<TypographyInfoGridProps> = ({
   gridTemplateColumns = '1.75fr 2fr',
   highlightQuery,
   direction = 'row',
-  color,
 }) => {
   return (
     <StackRow
@@ -66,7 +65,7 @@ export const TypographyInfoUser: React.FC<TypographyInfoGridProps> = ({
             <TagElement
               sx={{ textTransform: 'none', width: '100%', ...sx }}
               content={item.value as string}
-              type={color || 'inherit'}
+              type={item.color || 'inherit'}
             />
           ) : (
             <Typography
