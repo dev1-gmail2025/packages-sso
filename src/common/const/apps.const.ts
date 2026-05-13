@@ -303,7 +303,7 @@ export const APP_OBJ = {
       production_vps: '',
     },
     icon: ICONS.iconTrackingProductionClient,
-    content: 'Mua hàng',
+    content: 'Thực thi sản xuất',
     group: AppGroup.MANUFACTURING,
     color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
   },

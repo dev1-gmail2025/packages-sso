@@ -1,0 +1,29 @@
+import{j as t}from"./jsx-runtime-D_zvdyIk.js";import{T as r}from"./text-field.element-C1VFV5fR.js";/* empty css               */import"./FileSaver.min-BMv5fHHc.js";import"./index-j62jqFia.js";import"./time.util-BYguZ9lS.js";import"./typography.style-BgvzpQXm.js";import"./image.element-BMkBHvjG.js";import"./stack.style-BqTSJB_E.js";import"./memoTheme-HOUyZqrd.js";import"./defaultTheme-BGAZNSBz.js";import"./DefaultPropsProvider-BVc36nx7.js";import"./Stack-Up7TlUQf.js";import"./index-3f0Hh3Ub.js";import"./index-DP7gAqwz.js";import"./createSimplePaletteValueFilter-bm0fmN_7.js";import"./useTheme-BcF2JLY5.js";import"./Box-CNziy5N6.js";import"./InputLabel-BMPpu4_O.js";import"./useFormControl-CmOg5wnR.js";import"./link.element-BfA8Monr.js";import"./Typography-CDoNwpf8.js";import"./isFocusVisible-B8k4qzLc.js";import"./other.util-D3WwIlNy.js";import"./tooltip-on-click.element-Bbda5Vu_.js";import"./useForkRef-BVpE-hzr.js";import"./getReactElementRef-BVRziQZO.js";import"./TransitionGroupContext-DM7DmuUd.js";import"./index-CWS0_3Nh.js";import"./index-Ctr1kwqx.js";import"./useTimeout-B9dDFdNe.js";import"./useEnhancedEffect-Dmr-a5D-.js";import"./Grow-Dtpwe2QC.js";import"./useSlot-DiW1_K6U.js";import"./Tooltip-mLaLfpgP.js";import"./useId-CFSqmtgZ.js";import"./icon-content-badge-subs.element-D8A3z4d3.js";import"./icon.element-C4k-nGr5.js";import"./icon-content-badge.element-ClOzJ67A.js";import"./icon-content.element-ByXkQ2iZ.js";import"./Badge-CDUJ6Vev.js";import"./ownerWindow-BMbJ5sQi.js";import"./createSvgIcon-Bxbv8U67.js";import"./ButtonBase-BG16-y-d.js";import"./proxy-DKXG_8Nh.js";import"./text-field-label.element-BS6BHgaj.js";import"./TextField-CdoyRMcl.js";import"./FormControl-N1E60Pih.js";import"./isMuiElement-BY4WSVWD.js";import"./Popover-DjgrQDlz.js";import"./mergeSlotProps-DMBL9KJu.js";import"./createChainedFunction-BO_9K8Jh.js";import"./Fade-BcpUhxIW.js";import"./List-b54nGxOK.js";const L={name:{control:"text",description:"Field name returned in change payload.",table:{type:{summary:"string"}}},label:{control:"text",description:"Label text rendered by TextFieldLabelElement.",table:{type:{summary:"string | ReactNode"}}},iconLabel:{control:"text",description:"Material icon name displayed next to the label.",table:{type:{summary:"string"}}},placeholder:{control:"text",description:"Placeholder text.",table:{type:{summary:"string"}}},value:{control:"text",description:"Controlled value. In stories we manage this via state.",table:{type:{summary:"any"}}},description:{control:"text",description:"Optional note shown below the field.",table:{type:{summary:"string | null"}}},showResetButton:{control:"boolean",description:"If true and value is set, shows a reset icon button.",table:{type:{summary:"boolean"}}},required:{control:"boolean",description:"Marks label required.",table:{type:{summary:"boolean"}}},disabled:{control:"boolean",description:"Disable input.",table:{type:{summary:"boolean"}}},error:{control:"text",description:"Error message (truthy triggers error state).",table:{type:{summary:"any"}}},helperText:{control:"text",description:"Helper text shown below the input.",table:{type:{summary:"ReactNode"}}},rows:{control:{type:"number",min:1,max:10,step:1},description:"If set, enables multiline.",table:{type:{summary:"number"}}},onChange:{action:"changed",description:"Called with shape { target: { name, value } }.",table:{type:{summary:"(eventLike: { target: { name?: string; value: any } }) => void"}}},onReset:{action:"reset",description:"Called when reset button clicked.",table:{type:{summary:"() => void"}}},InputProps:{control:!1},sx:{control:!1}},Ee={title:"Elements/TextField/TextField",component:r,tags:["autodocs"],args:{name:"field",label:"Field label",iconLabel:"edit",placeholder:"Nhập dữ liệu...",value:"Hello",showResetButton:!0,required:!1,disabled:!1,error:"",helperText:"Helper text",onReset:void 0,onChange:void 0},parameters:{layout:"padded"},argTypes:L},o={render:e=>t.jsx(r,{...e})},a={render:e=>t.jsx(r,{...e}),args:{label:void 0,iconLabel:""}},i={render:e=>t.jsx(r,{...e}),args:{required:!0}},n={render:e=>t.jsx(r,{...e}),args:{error:"Invalid value",helperText:"Please check your input"}},s={render:e=>t.jsx(r,{...e}),args:{rows:3,value:`Line 1
+Line 2
+Line 3`,showResetButton:!1}};var l,p,m;o.parameters={...o.parameters,docs:{...(l=o.parameters)==null?void 0:l.docs,source:{originalSource:`{
+  render: args => <TextFieldElement {...args} />
+}`,...(m=(p=o.parameters)==null?void 0:p.docs)==null?void 0:m.source}}};var d,c,u;a.parameters={...a.parameters,docs:{...(d=a.parameters)==null?void 0:d.docs,source:{originalSource:`{
+  render: args => <TextFieldElement {...args} />,
+  args: {
+    label: undefined,
+    iconLabel: ''
+  }
+}`,...(u=(c=a.parameters)==null?void 0:c.docs)==null?void 0:u.source}}};var b,g,y;i.parameters={...i.parameters,docs:{...(b=i.parameters)==null?void 0:b.docs,source:{originalSource:`{
+  render: args => <TextFieldElement {...args} />,
+  args: {
+    required: true
+  }
+}`,...(y=(g=i.parameters)==null?void 0:g.docs)==null?void 0:y.source}}};var x,h,v;n.parameters={...n.parameters,docs:{...(x=n.parameters)==null?void 0:x.docs,source:{originalSource:`{
+  render: args => <TextFieldElement {...args} />,
+  args: {
+    error: 'Invalid value',
+    helperText: 'Please check your input'
+  }
+}`,...(v=(h=n.parameters)==null?void 0:h.docs)==null?void 0:v.source}}};var f,T,w;s.parameters={...s.parameters,docs:{...(f=s.parameters)==null?void 0:f.docs,source:{originalSource:`{
+  render: args => <TextFieldElement {...args} />,
+  args: {
+    rows: 3,
+    value: 'Line 1\\nLine 2\\nLine 3',
+    showResetButton: false
+  }
+}`,...(w=(T=s.parameters)==null?void 0:T.docs)==null?void 0:w.source}}};const Fe=["Default","WithoutLabel","Required","ErrorState","Multiline"];export{o as Default,n as ErrorState,s as Multiline,i as Required,a as WithoutLabel,Fe as __namedExportsOrder,Ee as default};
