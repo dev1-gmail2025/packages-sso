@@ -294,6 +294,19 @@ export const APP_OBJ = {
   },
 
   // MANUFACTURING
+  TRACKING_PRODUCTION_CLIENT: {
+    path: {
+      local: 'http://localhost:12030',
+      develop: 'https://dev.trackingproductionclient.sevago.local/',
+      staging: 'https://sta.trackingproductionclient.sevago.local/',
+      production: 'https://trackingproductionclient.sevago.local/',
+      production_vps: '',
+    },
+    icon: ICONS.iconTrackingProductionClient,
+    content: 'Mua hàng',
+    group: AppGroup.MANUFACTURING,
+    color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],
+  },
   PURCHASE: {
     path: {
       local: 'http://localhost:12015',

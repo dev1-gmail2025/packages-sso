@@ -13,6 +13,7 @@ import iconProject from '../../assets/icon/icon-project.svg';
 import iconRequest from '../../assets/icon/icon-request.svg';
 import iconSystem from '../../assets/icon/icon-system.svg';
 import iconTimekeeping from '../../assets/icon/icon-timekeeping.svg';
+import iconTrackingProductionClient from '../../assets/icon/icon-tracking-production-client.svg';
 import iconTraining from '../../assets/icon/icon-training.svg';
 import logoMain from '../../assets/logo/logo-main.svg';
 import logoSub1 from '../../assets/logo/logo-sub-1.svg';
@@ -43,6 +44,7 @@ export const ICONS = {
   iconForm,
   iconInside,
   iconSystem,
+  iconTrackingProductionClient,
 
   //
   iconDefault,
