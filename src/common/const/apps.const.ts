@@ -9,7 +9,7 @@ export const APP_GROUP_COLOR = {
   [AppGroup.B2B]: 'linear-gradient(180deg, #FF9A56 0%, #EB6262 100%)',
   [AppGroup.CLIENT]: 'linear-gradient(180deg, #FF9A56 0%, #FF6A43 100%)',
   [AppGroup.OTHER]: 'linear-gradient(180deg, #A509D4 0%, #1B0755 100%)',
-  [AppGroup.MANUFACTURING]: 'linear-gradient(180deg, #D48009 0%, #83610A 100%)',
+  [AppGroup.MANUFACTURING]: 'linear-gradient(180deg, #FE7B7B 0%, #C00707 100%)',
 };
 
 export const SSO = {
@@ -315,7 +315,7 @@ export const APP_OBJ = {
       production: 'https://admin.purchase.sevago.local',
       production_vps: '',
     },
-    icon: ICONS.iconDefault,
+    icon: ICONS.iconPurchase,
     content: 'Mua hàng',
     group: AppGroup.MANUFACTURING,
     color: APP_GROUP_COLOR[AppGroup.MANUFACTURING],

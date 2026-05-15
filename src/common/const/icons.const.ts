@@ -8,6 +8,7 @@ import iconInside from '../../assets/icon/icon-inside.svg';
 import iconMaterialControl from '../../assets/icon/icon-material-control.svg';
 import iconMeal from '../../assets/icon/icon-meal.svg';
 import iconOrg from '../../assets/icon/icon-org.svg';
+import iconPurchase from '../../assets/icon/icon-purchase.svg';
 import iconPayroll from '../../assets/icon/icon-payroll.svg';
 import iconProject from '../../assets/icon/icon-project.svg';
 import iconRequest from '../../assets/icon/icon-request.svg';
@@ -36,6 +37,7 @@ export const ICONS = {
   iconPayroll,
   iconOrg,
   iconTimekeeping,
+  iconPurchase,
   iconProject,
   iconRequest,
   iconMeal,
